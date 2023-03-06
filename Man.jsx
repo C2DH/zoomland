@@ -4,18 +4,19 @@ Command: npx gltfjsx@6.1.4 public/models/man.gltf
 */
 
 import React, { useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/man.gltf')
-  const { actions } = useAnimations(animations, group)
+  const { nodes, materials } = useGLTF('/man.gltf')
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group>
-        <primitive object={nodes.mixamorigHips} />
-        <skinnedMesh name="Cube" geometry={nodes.Cube.geometry} material={nodes.Cube.material} skeleton={nodes.Cube.skeleton} />
-      </group>
+    <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube1.geometry}
+        material={nodes.Cube1.material}
+        position={[0, 0.01, -1.91]}
+      />
     </group>
   )
 }
