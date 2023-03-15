@@ -3,6 +3,10 @@
         "generator" : "Khronos glTF Blender I/O v3.3.32",
         "version" : "2.0"
     },
+    "extensionsUsed" : [
+        "KHR_materials_specular",
+        "KHR_materials_ior"
+    ],
     "scene" : 0,
     "scenes" : [
         {
@@ -16405,16 +16409,28 @@
     "materials" : [
         {
             "doubleSided" : true,
+            "extensions" : {
+                "KHR_materials_specular" : {
+                    "specularColorFactor" : [
+                        0.711407312601205,
+                        0.711407312601205,
+                        0.711407312601205
+                    ]
+                },
+                "KHR_materials_ior" : {
+                    "ior" : 1.4500000476837158
+                }
+            },
             "name" : "Skin",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     1,
-                    0.8320000171661377,
-                    0.7900000214576721,
+                    0.6993820667266846,
+                    0.45841625332832336,
                     1
                 ],
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.5527864098548889
+                "roughnessFactor" : 0.5
             }
         },
         {
@@ -16422,13 +16438,12 @@
             "name" : "Skirt",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.615686297416687,
-                    0.800000011920929,
-                    0.4156862795352936,
+                    0.28304970264434814,
+                    0.710560142993927,
+                    0.10952001065015793,
                     1
                 ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.5527864098548889
+                "metallicFactor" : 0
             }
         },
         {
@@ -16437,12 +16452,12 @@
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     1,
-                    0.25,
-                    0.42500001192092896,
+                    0.14819321036338806,
+                    0.01641813851892948,
                     1
                 ],
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.5527864098548889
+                "roughnessFactor" : 0.20000000298023224
             }
         }
     ],
