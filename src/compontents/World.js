@@ -3,9 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { Vector3 } from 'three'
 import { CharacterAnimationsProvider } from '../contexts/CharacterAnimations'
-import CameraDolly from './CameraDolly'
-import Man from './Man'
-import Woman from './Woman'
+import Hero from './Hero'
 import WorldControls from './WorldControls'
 // const JUMP = new Vector3(0, 1, 0)
 const FORWARD = new Vector3(0, 0, -1)
@@ -66,7 +64,7 @@ const World = ({ width, height }) => {
           {/* <OrthographicCamera makeDefault fov /> */}
           <Suspense fallback={null}>
             <Stage controls={stageRef} preset="rembrandt" intensity={1} environment="city">
-              <Man scale={0.01} />
+              <Hero scale={0.01} />
             </Stage>
           </Suspense>
           {/* <gridHelper args={[16, 16, 'blue', 'gray']} />
