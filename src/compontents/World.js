@@ -61,9 +61,11 @@ const World = ({ width, height }) => {
       {JSON.stringify(position)}
       <CharacterAnimationsProvider>
         <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
+          <ambientLight intensity={0.1} />
+          <directionalLight intensity={0.4} castShadow color="red" position={[5, 0.5, 5]} />
           {/* <OrthographicCamera makeDefault fov /> */}
           <Suspense fallback={null}>
-            <Stage controls={stageRef} preset="rembrandt" intensity={1} environment="city">
+            <Stage controls={stageRef} preset="rembrandt" intensity={0.5} environment="city">
               <Hero scale={0.01} />
             </Stage>
           </Suspense>
