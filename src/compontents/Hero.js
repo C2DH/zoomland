@@ -5,19 +5,15 @@ import { useCharacterAnimations } from '../contexts/CharacterAnimations'
 const Hero = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./models/Hero.gltf')
-  const { setAnimations, animationIndex } = useCharacterAnimations()
+  const { animationIndex } = useCharacterAnimations()
   const { actions, names } = useAnimations(animations, group)
 
   useEffect(() => {
-    setAnimations(names)
-  }, [names])
-
-  useEffect(() => {
-    console.debug('actions: ', actions)
-    actions[names[animationIndex]].reset().fadeIn(0.5).play()
-    return () => {
-      actions[names[animationIndex]].fadeOut(0.5)
-    }
+    console.debug('actions: ', names[animationIndex])
+    actions[names[animationIndex]].play()
+    // return () => {
+    //   actions[names[animationIndex]].fadeOut(0.5)
+    // }
   }, [animationIndex])
   return (
     <group ref={group} {...props} dispose={null}>

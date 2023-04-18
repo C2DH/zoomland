@@ -2,20 +2,18 @@ import { createContext, useContext, useState } from 'react'
 
 const CharacterAnimationsContext = createContext({})
 
-export const CharacterAnimationsProvider = (props) => {
-  const [animationIndex, setAnimationIndex] = useState(2)
+export const CharacterAnimationsProvider = ({ animationIndex, children }) => {
   const [animations, setAnimations] = useState([])
-
+  console.info('CharacterAnimationsProvider', animationIndex)
   return (
     <CharacterAnimationsContext.Provider
       value={{
         animationIndex,
-        setAnimationIndex,
         animations,
         setAnimations,
       }}
     >
-      {props.children}
+      {children}
     </CharacterAnimationsContext.Provider>
   )
 }
