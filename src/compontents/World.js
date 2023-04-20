@@ -5,17 +5,21 @@ import { Suspense } from 'react'
 import Player from './Player'
 import Landscape from './Landscape'
 import Lights from './Lights'
+import Egg from './Egg'
 
 const World = ({ width = 500, height = 800 }) => {
   return (
-    <div className="World" style={{ width, height, margin: 'auto', border: '1px solid' }}>
+    <div
+      className="World"
+      style={{ width, height, margin: 'auto', border: '1px solid', backgroundColor: 'pink' }}
+    >
       <KeyboardControls
         map={[
           { keys: ['KeyW', 'ArrowUp'], name: 'moveForward' },
           { keys: ['KeyS', 'ArrowDown'], name: 'moveBackward' },
           { keys: ['KeyA', 'ArrowLeft'], name: 'moveLeft' },
           { keys: ['KeyD', 'ArrowRight'], name: 'moveRight' },
-          { keys: ['Space'], name: 'jump' },
+          { keys: ['Space', 'KeyJ'], name: 'jump' },
         ]}
       >
         <Canvas>
@@ -37,9 +41,9 @@ const World = ({ width = 500, height = 800 }) => {
                   <meshStandardMaterial />
                 </mesh>
               </RigidBody> */}
+
               <Player> </Player>
-              <Landscape position={[0, -1, 0]} scale={5} />
-              <CuboidCollider position={[0, -2, 0]} args={[40, 0.5, 40]} />
+              <Landscape position={[0, -1, 0]} scale={10} fixed />
             </Physics>
           </Suspense>
         </Canvas>

@@ -7,12 +7,12 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { RigidBody, Debug } from '@react-three/rapier'
 
-const Landscape = (props) => {
+const Landscape = ({ fixed, ...props }) => {
   const { nodes, materials } = useGLTF('./models/Landscape.gltf')
   return (
     <>
       <Debug />
-      <RigidBody colliders={'trimesh'} restitution={0.3}>
+      <RigidBody fixed colliders={'trimesh'} restitution={0.3}>
         <group {...props} dispose={null}>
           <mesh
             geometry={nodes['Sculpting_map-s2'].geometry}
