@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import Player from './Player'
 import Landscape from './Landscape'
 import Lights from './Lights'
+import BigTree from './BigTree'
 
 const World = ({ width = 500, height = 800 }) => {
   return (
@@ -37,6 +38,7 @@ const World = ({ width = 500, height = 800 }) => {
                   <meshStandardMaterial />
                 </mesh>
               </RigidBody> */}
+              <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree>
               <Player> </Player>
               <Landscape position={[0, -1, 0]} scale={5} />
               <CuboidCollider position={[0, -2, 0]} args={[40, 0.5, 40]} />
