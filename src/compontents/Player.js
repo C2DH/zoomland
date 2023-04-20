@@ -77,12 +77,12 @@ const Player = () => {
 
     const cameraPosition = new Vector3()
     cameraPosition.copy(bodyPosition)
-    cameraPosition.z += 6.25
-    cameraPosition.y += 1.95
+    cameraPosition.z += 1.5
+    cameraPosition.y += 0.4
 
     const cameraTarget = new Vector3()
     cameraTarget.copy(bodyPosition)
-    cameraTarget.y += 1.5
+    cameraTarget.y += 0.5
 
     smoothedCameraPosition.lerp(cameraPosition, 5 * dt)
     smoothedCameraTarget.lerp(cameraTarget, 5 * dt)
@@ -93,7 +93,7 @@ const Player = () => {
 
   return (
     <CharacterAnimationsProvider animationIndex={animationIndex}>
-      <group ref={hero} position={[0, 1, 0]}>
+      <group ref={hero} scale={0.3} position={[0, 1, 0]}>
         <Hero />
       </group>
       <RigidBody

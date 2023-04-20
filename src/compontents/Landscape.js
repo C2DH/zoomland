@@ -15,8 +15,19 @@ const Landscape = ({ fixed, ...props }) => {
       <RigidBody fixed colliders={'trimesh'} restitution={0.3}>
         <group {...props} dispose={null}>
           <mesh
-            geometry={nodes['Sculpting_map-s2'].geometry}
-            material={materials['Material.005']}
+            castShadow
+            receiveShadow
+            geometry={nodes.Text.geometry}
+            material={nodes.Text.material}
+            position={[-8.82, 6.47, -5.55]}
+            rotation={[Math.PI / 2, 0, -0.92]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Map.geometry}
+            material={materials['Material.004']}
+            position={[0, 0.05, 0]}
           />
         </group>
       </RigidBody>

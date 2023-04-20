@@ -6,6 +6,7 @@ import Player from './Player'
 import Landscape from './Landscape'
 import Lights from './Lights'
 import Egg from './Egg'
+import BigTree from './BigTree'
 
 const World = ({ width = 500, height = 800 }) => {
   return (
@@ -41,7 +42,7 @@ const World = ({ width = 500, height = 800 }) => {
                   <meshStandardMaterial />
                 </mesh>
               </RigidBody> */}
-
+              <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree>
               <Player> </Player>
               <Landscape position={[0, -1, 0]} scale={10} fixed />
             </Physics>
