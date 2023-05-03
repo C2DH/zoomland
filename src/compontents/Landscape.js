@@ -5,14 +5,14 @@ Command: npx gltfjsx@6.1.4 public/models/Landscape.gltf
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { RigidBody, Debug } from '@react-three/rapier'
+import { RigidBody, Debug, CuboidCollider } from '@react-three/rapier'
 
-const Landscape = ({ fixed, ...props }) => {
+const Landscape = ({ debug = false, ...props }) => {
   const { nodes, materials } = useGLTF('./models/Landscape.gltf')
   return (
     <>
-      <Debug />
-      <RigidBody fixed colliders={'trimesh'} restitution={0.3}>
+      {debug && <Debug />}
+      <RigidBody type="fixed" colliders={'trimesh'} restitution={0} friction={3}>
         <group {...props} dispose={null}>
           <mesh
             castShadow
@@ -30,6 +30,7 @@ const Landscape = ({ fixed, ...props }) => {
             position={[0, 0.05, 0]}
           />
         </group>
+        <CuboidCollider args={[40, 0, 40]} />
       </RigidBody>
     </>
   )
