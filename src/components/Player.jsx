@@ -16,7 +16,9 @@ const Player = ({ debug = false, scale = 0.5 }) => {
   const [subscribeKeys, getKeys] = useKeyboardControls()
   useFrame((state, dt) => {
     const { moveForward, moveBackward, moveLeft, moveRight, jump } = getKeys()
-    console.debug('[Player] move', { moveForward, moveBackward, moveLeft, moveRight, jump })
+    if (moveBackward || moveForward || moveLeft || moveRight || jump) {
+      console.debug('[Player] move', { moveForward, moveBackward, moveLeft, moveRight, jump })
+    }
     const impulse = { x: 0, y: 0, z: 0 }
     if (jump && isOnFloor.current) {
       impulse.y += JumpForce
@@ -37,9 +39,11 @@ const Player = ({ debug = false, scale = 0.5 }) => {
     }
     if (moveBackward && linvel.z < MaxVelocity) {
       impulse.z += Speed
+      changeRotation = true
     }
     if (moveForward && linvel.z > -MaxVelocity) {
       impulse.z -= Speed
+      changeRotation = true
     }
 
     rigidbody.current.applyImpulse(impulse, true)
