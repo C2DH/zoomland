@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 import Player from './Player'
 import Landscape from './Landscape'
 import Lights from './Lights'
-
+import SmallTree from './SmallTree'
 import BigTree from './BigTree'
 import './World.css'
 
@@ -46,6 +46,7 @@ const World = ({ width = 500, height = 800, debug = true }) => {
               </RigidBody> */}
 
               <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree>
+              <SmallTree position={[-3, 0.4, 0]} scale={(1, 1, 1)}></SmallTree>
               <Player debug={debug}> </Player>
               <Landscape position={[0, -1, 0]} scale={10} debug={debug} />
             </Physics>
