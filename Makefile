@@ -1,25 +1,25 @@
 BUILD_TAG ?= latest
 
 run-dev:
-	REACT_APP_GIT_TAG=${BUILD_TAG} \
-	REACT_APP_GIT_REMOTE=$(shell git config --get remote.origin.url) \
-	REACT_APP_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
-	REACT_APP_GIT_REVISION=$(shell git rev-parse --short HEAD) \
-	npm start
+	VITE_GIT_TAG=${BUILD_TAG} \
+	VITE_GIT_REMOTE=$(shell git config --get remote.origin.url) \
+	VITE_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
+	VITE_GIT_REVISION=$(shell git rev-parse --short HEAD) \
+	yarn dev
 
 run-build:
-	REACT_APP_GIT_TAG=${BUILD_TAG} \
-	REACT_APP_GIT_REMOTE=$(shell git config --get remote.origin.url) \
-	REACT_APP_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
-	REACT_APP_GIT_REVISION=$(shell git rev-parse --short HEAD) \
-	npm run build
+	VITE_GIT_TAG=${BUILD_TAG} \
+	VITE_GIT_REMOTE=$(shell git config --get remote.origin.url) \
+	VITE_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
+	VITE_GIT_REVISION=$(shell git rev-parse --short HEAD) \
+	yarn build
 
 run-build-netlify:
-	REACT_APP_GIT_TAG=${BUILD_TAG} \
-	REACT_APP_GIT_REMOTE=$(shell git config --get remote.origin.url) \
-	REACT_APP_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
-	REACT_APP_GIT_REVISION=$(shell git rev-parse --short HEAD) \
-	npm run build && \
+	VITE_GIT_TAG=${BUILD_TAG} \
+	VITE_GIT_REMOTE=$(shell git config --get remote.origin.url) \
+	VITE_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
+	VITE_GIT_REVISION=$(shell git rev-parse --short HEAD) \
+	yarn build && \
 	netlify deploy --alias=${BUILD_TAG} --dir=build
 
 run-deploy-netlify:
