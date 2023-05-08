@@ -8,6 +8,7 @@ import Placeholder from './Placeholder'
 import Forest from './Forest'
 // import BigTree from './BigTree'
 import './World.css'
+import Player from './Player'
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 const FarAwayCamera = {
   position: [111.8923846860428, 132.97427986352267, 100.68959842565253],
@@ -17,7 +18,7 @@ const CloseCamera = {
   position: [10, 13, 10],
 }
 
-const World = ({ width = 500, height = 800, debug = true, debugPhysics = false }) => {
+const World = ({ width = 500, height = 800, debug = true, debugPhysics = true }) => {
   return (
     <div
       className="World"
@@ -45,8 +46,8 @@ const World = ({ width = 500, height = 800, debug = true, debugPhysics = false }
                 />
               </RigidBody>
               <Placeholder />
-              {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree>
-              <Player debug={debug}> </Player> */}
+              {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
+              <Player debug={debug}> </Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest />
             </Physics>
