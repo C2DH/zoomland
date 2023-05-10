@@ -7,9 +7,11 @@ import Lights from './Lights'
 import Placeholder from './Placeholder'
 import Forest from './Forest'
 import SmallTree from './SmallTree'
-import BigTree from './BigTree'
+// import BigTree from './BigTree'
 import './World.css'
 import Player from './Player'
+
+import { default as SmallTrees } from '../data/SmallTrees'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -50,11 +52,12 @@ const World = ({ width = 500, height = 800, debug = true, debugPhysics = true })
               </RigidBody>
               <Placeholder />
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
-              <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree>
-              <SmallTree position={[-3, 0.4, 0]} scale={(1, 1, 1)}></SmallTree>
+              {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
               <Player debug={debug}> </Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
-              <Forest />
+              <Forest positions={SmallTrees.positions}>
+                <SmallTree />
+              </Forest>
             </Physics>
 
             {debug && <OrbitControls />}

@@ -1,39 +1,41 @@
-import { Matrix4, Vector3, Quaternion } from 'three'
-import { useEffect, useMemo, useRef } from 'react'
-import { Gltf } from '@react-three/drei'
-import { InstancedRigidBodies } from '@react-three/rapier'
-/**
- * This component use instancedMesh to render a forest of trees.
- * Given the number of desired tree and an array of their positions,
- * it will render a forest of trees with random scale and rotation.
- */
-const Forest = ({ treesCount = 200 }) => {
-  const trees = useRef()
+import React from 'react'
+import { RigidBody } from '@react-three/rapier'
 
-  const instances = useMemo(() => {
-    const instances = []
+const Forest = ({ positions = [], children }) => {
+  // generate random scales and rotations for each element in position index
+  //
+  const randomScale = () => {
+    return Math.random() * 2 + 0.2
+  }
+  const randomRotation = () => {
+    return Math.random() * Math.PI * 2
+  }
 
-    for (let i = 0; i < treesCount; i++) {
-      const x = Math.random() * 100 - 50
-      const z = Math.random() * 100 - 50
-      const y = Math.random() * 2
-      instances.push({
-        position: [x, y, z],
-        rotation: [0, Math.random() * Math.PI * 2, 0],
-        scale: Math.random() * 2 + 0.2,
-        key: i,
-      })
-    }
-    return instances
-  }, [treesCount])
-  console.debug('[Forest] transformations:', instances)
   return (
-    <InstancedRigidBodies type="fixed" instances={instances} colliders="cuboid">
-      <instancedMesh ref={trees} castShadow args={[null, null, treesCount]}>
-        <boxGeometry></boxGeometry>
-        <meshStandardMaterial color="green"></meshStandardMaterial>
-      </instancedMesh>
-    </InstancedRigidBodies>
+    <>
+      {positions.map((position, index) => {
+        const scale = Math.random() * 2 + 0.2
+        const rotation = Math.random() * Math.PI * 2
+        return (
+          <React.Fragment key={index}>
+            <RigidBody colliders="cuboid" position={position} scale={[1, 20, 1]} type="fixed">
+              <mesh>
+                <boxBufferGeometry args={[0.6, 0.6, 0.6]} />
+                <meshStandardMaterial
+                  color="transparent"
+                  opacity={0}
+                  transparent
+                ></meshStandardMaterial>
+              </mesh>
+            </RigidBody>
+            <group position={position} scale={[scale, scale, scale]} rotation={[0, rotation, 0]}>
+              {children}
+            </group>
+          </React.Fragment>
+        )
+      })}
+    </>
   )
 }
+
 export default Forest
