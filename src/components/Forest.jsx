@@ -1,7 +1,7 @@
 import React from 'react'
 import { RigidBody } from '@react-three/rapier'
 
-const Forest = ({ positions = [], children }) => {
+const Forest = ({ positions = [], scales = {}, children }) => {
   // generate random scales and rotations for each element in position index
   //
   const randomScale = () => {
@@ -28,7 +28,11 @@ const Forest = ({ positions = [], children }) => {
                 ></meshStandardMaterial>
               </mesh>
             </RigidBody>
-            <group position={position} scale={[scale, scale, scale]} rotation={[0, rotation, 0]}>
+            <group
+              position={position}
+              scale={scales[index] || [scale, scale, scale]}
+              rotation={[0, rotation, 0]}
+            >
               {children}
             </group>
           </React.Fragment>

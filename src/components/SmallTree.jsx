@@ -5,11 +5,11 @@ import { useFrame } from '@react-three/fiber'
 const SmallTree = (props) => {
   const treeRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/SmallTree.glb')
-
+  const seed = Math.random() + 0.8
   // Animate the tree
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime()
-    const bendFactor = Math.sin(time * 1.5) * 0.3 + 0.3
+    const bendFactor = Math.sin(time * seed) * 0.3 + 0.3
     treeRef.current.rotation.z = bendFactor * 0.1
     treeRef.current.rotation.y = bendFactor * 0.15
   })

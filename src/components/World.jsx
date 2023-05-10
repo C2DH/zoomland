@@ -55,7 +55,7 @@ const World = ({ width = 500, height = 800, debug = true, debugPhysics = true })
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
               <Player debug={debug}> </Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
-              <Forest positions={SmallTrees.positions}>
+              <Forest positions={SmallTrees.positions} scales={SmallTrees.scales}>
                 <SmallTree />
               </Forest>
             </Physics>
