@@ -1,11 +1,46 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import {
+  AnimationIdle,
+  AnimationRun,
+  AnimationWalk,
+  AnimationJump,
+  useAnimationStore,
+} from '../store'
 
 const Hero = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Hero.gltf')
   const { actions, names } = useAnimations(animations, group)
+  console.log('[Hero]', { nodes, materials, animations, actions, names })
+  // remap animation names to current const
+  const mappedActions = {
+    [AnimationIdle]: actions['idle_Armature'],
+    [AnimationRun]: actions['runnig'], // sic
+    [AnimationWalk]: actions['walking'],
+    [AnimationJump]: actions['jumping'],
+  }
 
+  const [animation, previousAnimation] = useAnimationStore((state) => [
+    state.animation,
+    state.previousAnimation,
+  ])
+
+  useEffect(() => {
+    const action = mappedActions[animation]
+
+    console.debug('[Hero] animation changed', animation, action, actions)
+
+    // if previousAction is not the same as current action, stop previous action
+    // and play current action
+    if (previousAnimation) {
+      const previousAction = mappedActions[previousAnimation]
+      previousAction.fadeOut(0.5)
+    }
+    if (action) {
+      action.reset().setEffectiveTimeScale(1).setEffectiveWeight(1).fadeIn(0.5).play()
+    }
+  }, [actions, animation, previousAnimation])
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">

@@ -1,23 +1,30 @@
 import Hero from './Hero'
-import { useRef } from 'react'
+import { Suspense, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { RigidBody, CapsuleCollider } from '@react-three/rapier'
 import { useKeyboardControls } from '@react-three/drei'
 import { Vector3 } from 'three'
+import { AnimationIdle, AnimationRun, AnimationWalk, useAnimationStore } from '../store'
 
 const JumpForce = 0.5
 const Speed = 0.1
-const MaxVelocity = 3
+const MaxWalkingVelocity = 1
+const MaxVelocity = 2
 
 const Player = ({ debug = false, scale = 0.5 }) => {
   const rigidbody = useRef()
   const isOnFloor = useRef(false)
   const character = useRef()
   const [subscribeKeys, getKeys] = useKeyboardControls()
+  const setAnimation = useAnimationStore((state) => state.setAnimation)
+
   useFrame((state, dt) => {
     const { moveForward, moveBackward, moveLeft, moveRight, jump } = getKeys()
+
     if (moveBackward || moveForward || moveLeft || moveRight || jump) {
       console.debug('[Player] move', { moveForward, moveBackward, moveLeft, moveRight, jump })
+    } else {
+      setAnimation(AnimationIdle)
     }
     const impulse = { x: 0, y: 0, z: 0 }
     if (jump && isOnFloor.current) {
@@ -41,9 +48,16 @@ const Player = ({ debug = false, scale = 0.5 }) => {
       impulse.z += Speed
       changeRotation = true
     }
-    if (moveForward && linvel.z > -MaxVelocity) {
-      impulse.z -= Speed
-      changeRotation = true
+    if (moveForward) {
+      if (linvel.z > -MaxWalkingVelocity) {
+        setAnimation(AnimationWalk)
+      } else {
+        setAnimation(AnimationRun)
+      }
+      if (linvel.z > -MaxVelocity) {
+        impulse.z -= Speed
+        changeRotation = true
+      }
     }
 
     rigidbody.current.applyImpulse(impulse, true)
@@ -87,7 +101,9 @@ const Player = ({ debug = false, scale = 0.5 }) => {
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
         <group ref={character}>
-          <Hero></Hero>
+          <Suspense fallback={null}>
+            <Hero></Hero>
+          </Suspense>
         </group>
       </RigidBody>
     </group>
