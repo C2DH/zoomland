@@ -41,6 +41,9 @@ const Hero = (props) => {
       action.reset().setEffectiveTimeScale(1).setEffectiveWeight(1).fadeIn(0.5).play()
     }
   }, [actions, animation, previousAnimation])
+  useEffect(() => {
+    actions['idle_Armature'].play()
+  }, [])
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">

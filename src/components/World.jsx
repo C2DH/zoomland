@@ -59,8 +59,6 @@ const World = ({ width = 500, height = 800, debug = true, debugPhysics = true })
                 <SmallTree />
               </Forest>
             </Physics>
-
-            {debug && <OrbitControls />}
           </Suspense>
         </Canvas>
       </KeyboardControls>

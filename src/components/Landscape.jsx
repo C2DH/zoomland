@@ -7,26 +7,41 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody, CuboidCollider } from '@react-three/rapier'
 
 const Landscape = ({ debug = false, ...props }) => {
-  const { nodes, materials } = useGLTF('../assets/models/Landscape.gltf')
+  const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
   return (
     <>
       {/* {debug && <Debug />*/}
-      <RigidBody type="fixed" colliders={'trimesh'}>
+      <RigidBody type="fixed" colliders={'trimesh'} friction={0.1}>
         <group {...props} dispose={null}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Map.geometry}
+            material={materials.Land}
+            position={[0, 0.05, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Ocean.geometry}
+            material={materials.Material}
+            position={[0, 0.04, 0]}
+            scale={23.34}
+          />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Text.geometry}
             material={nodes.Text.material}
-            position={[-8.82, 6.47, -5.55]}
+            position={[-8.52, 6.09, -7.63]}
             rotation={[Math.PI / 2, 0, -0.92]}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Map.geometry}
-            material={materials['Material.004']}
-            position={[0, 0.05, 0]}
+            geometry={nodes.Bridge.geometry}
+            material={materials['Bridge.002']}
+            scale={-0.35}
           />
         </group>
       </RigidBody>
@@ -34,6 +49,6 @@ const Landscape = ({ debug = false, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Landscape.gltf')
+useGLTF.preload('../assets/models/Landscape.glb')
 
 export default Landscape
