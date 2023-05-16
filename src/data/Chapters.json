@@ -1,0 +1,12 @@
+;[
+  {
+    url: 'image1.jpg',
+    title: 'Image 1',
+    abstract: 'Abstract for Image 1',
+  },
+  {
+    url: 'image2.jpg',
+    title: 'Image 2',
+    abstract: 'Abstract for Image 2',
+  },
+]

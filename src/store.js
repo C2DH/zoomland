@@ -20,6 +20,20 @@ export const useAnimationStore = create((set, get) => ({
   },
 }))
 
-// const usePlayerStore = create((set) => ({
+export const NumberOfChapters = 17
 
-// }))
+export const usePlayerStore = create((set, get) => ({
+  progress: 0,
+  collectedChapters: [],
+  collectChapter: (chapter) => {
+    console.debug('[store] collectChapter:', chapter)
+    const collectedChapters = get().collectedChapters
+    if (collectedChapters.find((chapter) => chapter.id)) {
+      console.debug('[store] collectChapter: already collected', chapter)
+      return
+    }
+    set((state) => ({
+      collectedChapters: [...state.collectedChapters, chapter],
+    }))
+  },
+}))

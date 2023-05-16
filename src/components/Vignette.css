@@ -1,0 +1,30 @@
+.Vignette {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index-vignette);
+}
+
+.Vignette button {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.Vignette::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.75) 100%);
+}

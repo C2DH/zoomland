@@ -7,6 +7,7 @@ import Lights from './Lights'
 import Placeholder from './Placeholder'
 import Forest from './Forest'
 import SmallTree from './SmallTree'
+import CollectedChapters from './CollectedChapters'
 // import BigTree from './BigTree'
 import './World.css'
 import Player from './Player'
@@ -23,12 +24,13 @@ const CloseCamera = {
   position: [10, 13, 10],
 }
 
-const World = ({ width = 500, height = 800, debug = true, debugPhysics = true }) => {
+const World = ({ width = 500, height = 800, debug = false, debugPhysics = false }) => {
   return (
     <div
       className="World"
       style={{ width, height, marginLeft: -width / 2, marginTop: -height / 2 }}
     >
+      <CollectedChapters />
       <KeyboardControls
         map={[
           { keys: ['KeyW', 'ArrowUp'], name: 'moveForward' },
@@ -53,7 +55,9 @@ const World = ({ width = 500, height = 800, debug = true, debugPhysics = true })
               <Placeholder />
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
-              <Player debug={debug}> </Player>
+              <Player debug={debug} position={[-18, 1.1, -4]}>
+                {' '}
+              </Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={SmallTrees.positions} scales={SmallTrees.scales}>
                 <SmallTree />

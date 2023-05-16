@@ -1,9 +1,12 @@
+import Vignette from './components/Vignette'
 import World from './components/World'
 
 function App() {
   return (
     <>
-      <World width={window.innerWidth * 0.9} height={window.innerHeight * 0.8} />
+      <Vignette>
+        <World width={window.innerWidth} height={window.innerHeight} />
+      </Vignette>
     </>
   )
 }

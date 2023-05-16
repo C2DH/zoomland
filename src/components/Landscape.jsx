@@ -11,7 +11,7 @@ const Landscape = ({ debug = false, ...props }) => {
   return (
     <>
       {/* {debug && <Debug />*/}
-      <RigidBody type="fixed" colliders={'trimesh'} friction={0.1}>
+      <RigidBody type="fixed" colliders={'trimesh'} friction={0.91}>
         <group {...props} dispose={null}>
           <mesh
             castShadow
