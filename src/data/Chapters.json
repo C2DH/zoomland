@@ -1,12 +1,20 @@
-;[
+[
   {
-    url: 'image1.jpg',
-    title: 'Image 1',
-    abstract: 'Abstract for Image 1',
+    "id": "0-introduction",
+    "url": "image1.jpg",
+    "title": "Introduction",
+    "abstract": "A sweet introduction"
   },
   {
-    url: 'image2.jpg',
-    title: 'Image 2',
-    abstract: 'Abstract for Image 2',
+    "id": "1-chapter-1",
+    "url": "image1.jpg",
+    "title": "Chapter 1",
+    "abstract": "Call me Ishmael"
   },
+  {
+    "id": "2-chapter-2",
+    "url": "image2.jpg",
+    "title": "Chapter 2",
+    "abstract": "Anoter chapter"
+  }
 ]

@@ -4,4 +4,6 @@
   left: 0;
   right: 0;
   height: 50px;
+  color: white;
+  z-index: var(--z-index-collected-chapters);
 }

@@ -1,4 +1,6 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+
 export const AnimationIdle = 'idle'
 export const AnimationWalk = 'walk'
 export const AnimationRun = 'run'
@@ -21,19 +23,71 @@ export const useAnimationStore = create((set, get) => ({
 }))
 
 export const NumberOfChapters = 17
+export const NumberOfQuests = 10
 
-export const usePlayerStore = create((set, get) => ({
-  progress: 0,
-  collectedChapters: [],
-  collectChapter: (chapter) => {
-    console.debug('[store] collectChapter:', chapter)
-    const collectedChapters = get().collectedChapters
-    if (collectedChapters.find((chapter) => chapter.id)) {
-      console.debug('[store] collectChapter: already collected', chapter)
-      return
-    }
-    set((state) => ({
-      collectedChapters: [...state.collectedChapters, chapter],
-    }))
-  },
-}))
+export const usePlayerStore = create(
+  persist(
+    (set, get) => ({
+      progress: 0,
+      isCollectingQuest: false,
+      collectedQuests: [],
+      collectQuest: (quest) => {
+        console.debug('[store] collectQuest:', quest.id)
+        const collectedQuests = get().collectedQuests
+        const alreadyCollectedQuestIndex = collectedQuests.findIndex((q) => q.id === quest.id)
+        if (alreadyCollectedQuestIndex > -1) {
+          return set({
+            isCollectingQuest: true,
+            collectedQuests: collectedQuests.map((q, i) => {
+              if (i !== alreadyCollectedQuestIndex) {
+                return q
+              }
+              return {
+                ...q,
+                meetings: (q.meetings || []).concat(new Date().toISOString()),
+              }
+            }),
+          })
+        }
+        return set({
+          isCollectingQuest: true,
+          collectedQuests: [...collectedQuests, quest],
+        })
+      },
+      doneCollectingQuest: () => set({ isCollectingQuest: false }),
+      resetCollectedQuests: () => set({ collectedQuests: [], isCollectingQuest: false }),
+      isCollectingChapter: false,
+      collectedChapters: [],
+      collectChapter: (chapter) => {
+        console.debug('[store] collectChapter:', chapter.id)
+        const collectedChapters = get().collectedChapters
+        const alreadyCollectedChapterIndex = collectedChapters.findIndex((c) => c.id === chapter.id)
+        if (alreadyCollectedChapterIndex > -1) {
+          return set({
+            isCollectingChapter: true,
+            collectedChapters: collectedChapters.map((d, i) => {
+              if (i !== alreadyCollectedChapterIndex) {
+                return d
+              }
+              return {
+                ...d,
+                readings: (d.readings || []).concat(new Date().toISOString()),
+              }
+            }),
+          })
+        }
+        return set({
+          isCollectingChapter: true,
+          collectedChapters: [...collectedChapters, chapter],
+          progress: (collectedChapters.length + 1) / NumberOfChapters,
+        })
+      },
+      doneCollectingChapter: () => set({ isCollectingChapter: false }),
+      resetCollectedChapters: () =>
+        set({ progress: 0, collectedChapters: [], isCollectingChapter: false }),
+    }),
+    {
+      name: 'player-store',
+    },
+  ),
+)

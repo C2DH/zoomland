@@ -1,0 +1,22 @@
+.Quest {
+  color: white;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+
+.Quest_sentence {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  margin: auto;
+}
+
+.Quest_buttons {
+  display: flex;
+  justify-content: right;
+  pointer-events: auto;
+}
+.Quest_buttons .btn {
+  width: 120px;
+}

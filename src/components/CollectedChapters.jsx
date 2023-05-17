@@ -9,12 +9,12 @@ const CollectedChapters = () => {
     state.collectedChapters,
   ])
   return (
-    <div className="CollectedChapters">
-      <Container fluid>
+    <div className="CollectedChapters m-5">
+      <Container>
         <Row>
           <Col>{progress} %</Col>
           <Col>
-            {collectedChapters} / {NumberOfChapters}
+            {collectedChapters.length} / {NumberOfChapters}
           </Col>
         </Row>
       </Container>

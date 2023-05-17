@@ -7,12 +7,12 @@ import Lights from './Lights'
 import Placeholder from './Placeholder'
 import Forest from './Forest'
 import SmallTree from './SmallTree'
-import CollectedChapters from './CollectedChapters'
 // import BigTree from './BigTree'
 import './World.css'
 import Player from './Player'
 
 import { default as SmallTrees } from '../data/SmallTrees'
+import Clouds from './Clouds'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -30,7 +30,6 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
       className="World"
       style={{ width, height, marginLeft: -width / 2, marginTop: -height / 2 }}
     >
-      <CollectedChapters />
       <KeyboardControls
         map={[
           { keys: ['KeyW', 'ArrowUp'], name: 'moveForward' },
@@ -45,6 +44,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
 
           <Suspense>
             <Lights />
+            <Clouds />
             <Physics debug={debugPhysics}>
               <RigidBody position={[6, 6, 0]} rotation={[0.5, -0.9, 0.2]} colliders="hull">
                 <Gltf

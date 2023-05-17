@@ -9,9 +9,9 @@
   z-index: var(--z-index-vignette);
 }
 
-.Vignette button {
+.Vignette .btn-group {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   right: 0;
   transform: translate(-50%, -50%);
   pointer-events: auto;
@@ -26,5 +26,18 @@
   bottom: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.Vignette_subs {
+  color: var(--vignette-text-color);
+  margin: auto;
+  position: absolute;
+  bottom: 100px;
+  width: 50%;
+  left: 25%;
+  text-align: center;
+}
+
+.Vignette_subs h3 {
+  font-size: var(--vignette-font-size);
 }

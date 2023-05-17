@@ -1,0 +1,51 @@
+[
+  {
+    "id": "BigFella",
+    "characterName": "A very big fella",
+    "chapter": "1-chapter-1",
+    "dialogues": {
+      "firstMeetingWithChapter": [
+        "Hey there!",
+        "...",
+        "I am BigFella. I don't think you need anything from me. See you around!",
+        "Ok bye!"
+      ],
+      "secondMeetingWithChapter": [
+        "Hey there! I see you have found your chapter. Great!",
+        "...",
+        "I should have hidden it better... Bah!",
+        "Ehm... ok bye!"
+      ],
+      "runIntoWithChapter": ["Nothing else for you here, I'm afraid.", "Ehm... ok bye!"],
+      "firstMeetingWithoutChapter": [
+        "I am BigFella. I guees you have lost something precious.",
+        "...",
+        "I'm pretty sure about it.",
+        "Ok... So... have you seen a well written chapter around here? A sudden gust of wind blew it away from me.",
+        "Of course! I put it aside for you. You have only to answer to this simple riddle and they are yours.",
+        "no way!!",
+        "I'm an object for adventure, that much is true,",
+        "...",
+        "With my 'zoom-tastic' abilities, I'm perfect for you!"
+      ],
+      "secondMeetingWithoutChapter": [
+        "Ehy you! Still nothing eh?",
+        "...",
+        "As I already mentioned, I put it aside for you. But I see you're in a rush...",
+        "... and ... ?",
+        "From where can you zoom out clearly and see everything?",
+        "... ehm the mountain?",
+        "And how can you see the mountain if you're on it! Let me continue please...",
+        "...",
+        "So pack your bags, and hop on board..."
+      ],
+      "runIntoWithoutChapter": [
+        "Still nothing eh?",
+        "... nope ...",
+        "Once again, from where can you zoom out clearly and see everything?",
+        "... ehm a tower?",
+        "You're without hope ... Look above you, and you'll find it."
+      ]
+    }
+  }
+]
