@@ -20,7 +20,7 @@ run-build-netlify:
 	VITE_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
 	VITE_GIT_REVISION=$(shell git rev-parse --short HEAD) \
 	yarn build && \
-	netlify deploy --alias=${BUILD_TAG} --dir=build
+	netlify deploy --alias=${BUILD_TAG} --dir=dist
 
 run-deploy-netlify:
-	netlify deploy --prod --dir=build
+	netlify deploy --prod --dir=dist
