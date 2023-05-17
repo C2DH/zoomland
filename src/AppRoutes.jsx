@@ -14,8 +14,9 @@ const AppRoutes = ({ children }) => {
 
   return (
     <div
-      className={`${transitionStage}`}
+      className={`AppRoutes ${transitionStage}`}
       onAnimationEnd={() => {
+        console.info('onAnimationEnd', transitionStage)
         if (transitionStage === 'fadeOut') {
           setTransistionStage('fadeIn')
           setDisplayLocation(location)

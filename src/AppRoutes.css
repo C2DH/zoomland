@@ -1,5 +1,16 @@
+.AppRoutes {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+
+  z-index: 10;
+}
 .AppRoutes .page {
-  height: 500px;
+  pointer-events: all;
+  height: 100%;
+  width: 100%;
   background-color: lightcoral;
 }
 

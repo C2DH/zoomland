@@ -1,4 +1,5 @@
 import { useSpring } from '@react-spring/web'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   // const {} useSpring()
@@ -10,6 +11,9 @@ const About = () => {
 
   return (
     <div className="page">
+      <h2>
+        <Link to="/">back</Link>
+      </h2>
       <h1>About</h1>
       <p>"Zoomland. Exploring Scale in Digital History and Humanities"</p>
       <p>
