@@ -25,6 +25,18 @@
 
   --vignette-text-color: rgba(255, 255, 255, 0.87);
   --vignette-font-size: 2em;
+
+  --font-size-1: 0.75rem;
+  --font-size-2: 0.875rem;
+  --font-size-3: 1rem;
+  --font-size-4: 1.125rem;
+  --font-size-5: 1.25rem;
+  --font-size-6: 1.5rem;
+  --font-size-7: 1.75rem;
+  --font-size-8: 2rem;
+
+  --bs-font-sans-serif: 'Fira Sans', sans-serif;
+  --bs-font-hand-written: 'Permanent Marker', cursive;
 }
 
 a {

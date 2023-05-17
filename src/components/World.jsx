@@ -13,6 +13,7 @@ import Player from './Player'
 
 import { default as SmallTrees } from '../data/SmallTrees'
 import Clouds from './Clouds'
+import { Airship } from './Airship'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -45,6 +46,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
           <Suspense>
             <Lights />
             <Clouds />
+            <Airship position={[6, 16, 0]} />
             <Physics debug={debugPhysics}>
               <RigidBody position={[6, 6, 0]} rotation={[0.5, -0.9, 0.2]} colliders="hull">
                 <Gltf

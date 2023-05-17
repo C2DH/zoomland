@@ -6,4 +6,13 @@
   height: 50px;
   color: white;
   z-index: var(--z-index-collected-chapters);
+  font-family: var(--bs-font-hand-written);
+  font-size: var(--font-size-6);
+  /* anice pixel around the text */
+  text-shadow: 0 0 4px black;
+}
+
+.CollectedChapters h1 {
+  font-size: var(--font-size-8);
+  color: white;
 }
