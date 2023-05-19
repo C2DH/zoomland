@@ -13,12 +13,13 @@ import {
 } from '../store'
 
 const JumpForce = 0.5
+const Speed = 0.1
+const MaxVel = 3
+const RunVel = 1.5
 
-const Player = ({ debug = false, scale = 0.5, position = [2, 4, 2] }) => {
+const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
   const rigidbody = useRef()
-  const orbitControls = useRef()
-  const isOnFloor = useRef(false)
-  const isOrbiting = useRef(false)
+  const isOnFloor = useRef(true)
   const character = useRef()
   const [, getKeys] = useKeyboardControls()
   const setAnimation = useAnimationStore((state) => state.setAnimation)
@@ -26,60 +27,84 @@ const Player = ({ debug = false, scale = 0.5, position = [2, 4, 2] }) => {
   const [smoothedCameraPosition] = useState(() => new Vector3())
   const [smoothedCameraTarget] = useState(() => new Vector3())
 
-  useFrame((state, dt) => {
+  // const resetPosition = () => {
+  //   rigidbody.current.setTranslation(vec3({ x: 0, y: 0, z: 0 }));
+  //   rigidbody.current.setLinvel(vec3({ x: 0, y: 0, z: 0 }));
+  // }
+  useFrame((state, delta) => {
     const { moveForward, moveBackward, moveLeft, moveRight, jump } = getKeys()
     const impulse = { x: 0, y: 0, z: 0 }
-
     if (jump && isOnFloor.current) {
       impulse.y += JumpForce
       isOnFloor.current = false
-      rigidbody.current.applyImpulse(impulse, true)
       setAnimation(AnimationJump)
-    } else if (moveForward || moveBackward || moveLeft || moveRight) {
-      setAnimation(AnimationWalk)
-      if (moveForward) {
-        impulse.z -= 2.5 * dt
-      } else if (moveBackward) {
-        impulse.z += 2.5 * dt
-      } else if (moveLeft) {
-        impulse.x -= 2.5 * dt
-      } else if (moveRight) {
-        impulse.x += 2.5 * dt
-      }
-      rigidbody.current.applyImpulse(impulse)
+    }
+
+    const linvel = rigidbody.current.linvel()
+    let changeRotation = false
+    if (moveRight && linvel.x < MaxVel) {
+      impulse.x += Speed
+      changeRotation = true
+    }
+    if (moveLeft && linvel.x > -MaxVel) {
+      impulse.x -= Speed
+      changeRotation = true
+    }
+    if (moveBackward && linvel.z < MaxVel) {
+      impulse.z += Speed
+      changeRotation = true
+    }
+    if (moveForward && linvel.z > -MaxVel) {
+      impulse.z -= Speed
+      changeRotation = true
+    }
+
+    rigidbody.current.applyImpulse(impulse, true)
+
+    if (Math.abs(linvel.x) > RunVel || Math.abs(linvel.z) > RunVel) {
+      setAnimation(AnimationRun)
     } else {
-      rigidbody.current.resetForces()
       setAnimation(AnimationIdle)
     }
 
-    const bodyPosition = rigidbody.current.translation()
-    const cameraPosition = new Vector3()
-    cameraPosition.copy(bodyPosition)
-    cameraPosition.y += 0.8
-    cameraPosition.z += 1.5
-    smoothedCameraPosition.lerp(cameraPosition, 0.1)
-
-    const cameraTarget = new Vector3()
-    cameraTarget.copy(bodyPosition)
-    cameraTarget.y += 0.25
-    cameraTarget.z -= 0.5
-    smoothedCameraTarget.lerp(cameraTarget, 0.1)
-    if (jump || moveForward || moveBackward || moveLeft || moveRight) {
-      if (isOrbiting.current === false) {
-        state.camera.position.copy(smoothedCameraPosition)
-        // orbitControls.current.target = smoothedCameraTarget
-      }
+    if (changeRotation) {
+      const angle = Math.atan2(linvel.x, linvel.z)
+      character.current.rotation.y = angle
     }
-    orbitControls.current.target = cameraTarget
-  })
 
-  // check if orbitControls control ended
-  const lock = () => {
-    isOrbiting.current = true
-  }
-  const unlock = () => {
-    isOrbiting.current = false
-  }
+    // CAMERA FOLLOW
+    const characterWorldPosition = character.current.getWorldPosition(new Vector3())
+
+    const targetCameraPosition = new Vector3(
+      characterWorldPosition.x,
+      0,
+      characterWorldPosition.z + 4,
+    )
+
+    // if (gameState === gameStates.GAME) {
+    targetCameraPosition.y = 2.5
+    // }
+    // if (gameState !== gameStates.GAME) {
+    // targetCameraPosition.y = 0
+    // }
+
+    state.camera.position.lerp(targetCameraPosition, delta * 2)
+
+    const targetLookAt = new Vector3(characterWorldPosition.x, 1, characterWorldPosition.z)
+
+    const direction = new Vector3()
+    state.camera.getWorldDirection(direction)
+
+    const position = new Vector3()
+    state.camera.getWorldPosition(position)
+
+    const currentLookAt = position.clone().add(direction)
+    const lerpedLookAt = new Vector3()
+
+    lerpedLookAt.lerpVectors(currentLookAt, targetLookAt, delta * 2)
+
+    state.camera.lookAt(lerpedLookAt)
+  })
 
   return (
     <>
@@ -95,12 +120,9 @@ const Player = ({ debug = false, scale = 0.5, position = [2, 4, 2] }) => {
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
         <group ref={character}>
-          <Suspense fallback={null}>
-            <Hero></Hero>
-          </Suspense>
+          <Hero />
         </group>
       </RigidBody>
-      <OrbitControls onStart={lock} onEnd={unlock} ref={orbitControls} />
     </>
   )
 }
