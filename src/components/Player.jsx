@@ -21,6 +21,7 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
   const rigidbody = useRef()
   const isOnFloor = useRef(true)
   const character = useRef()
+  const directionOffset = useRef({ x: 0, y: 0, z: 4 })
   const [, getKeys] = useKeyboardControls()
   const setAnimation = useAnimationStore((state) => state.setAnimation)
   // const camera = useThree((state) => state.camera)
@@ -45,19 +46,27 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
     if (moveRight && linvel.x < MaxVel) {
       impulse.x += Speed
       changeRotation = true
+      directionOffset.current = { x: -7, y: 0, z: 3 }
     }
     if (moveLeft && linvel.x > -MaxVel) {
       impulse.x -= Speed
       changeRotation = true
+      directionOffset.current = { x: 5, y: 0, z: 3 }
     }
     if (moveBackward && linvel.z < MaxVel) {
       impulse.z += Speed
       changeRotation = true
+      directionOffset.current = { x: 0, y: 0, z: 3 }
     }
     if (moveForward && linvel.z > -MaxVel) {
       impulse.z -= Speed
       changeRotation = true
+      directionOffset.current = { x: 0, y: 0, z: 3 }
+      // directionOffset.current = { x: 0, y: 0, z: 5 }
     }
+    // if (!moveForward && !moveBackward && !moveLeft && !moveRight) {
+    //   directionOffset.current = { x: 0, y: 0, z: 5 }
+    // }
 
     rigidbody.current.applyImpulse(impulse, true)
 
@@ -72,22 +81,16 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
     const characterWorldPosition = character.current.getWorldPosition(new Vector3())
 
     const targetCameraPosition = new Vector3(
-      characterWorldPosition.x,
+      characterWorldPosition.x + directionOffset.current.x,
       characterWorldPosition.y + 2.5,
-      characterWorldPosition.z + 5,
+      characterWorldPosition.z + directionOffset.current.z,
     )
     if (changeRotation) {
       // gently rotate the character towards the direction of movement
       character.current.rotation.y = character.current.rotation.y * 0.8 + angle * 0.2
     }
-    // if (gameState === gameStates.GAME) {
-    // targetCameraPosition.y = 2.5
-    // }
-    // if (gameState !== gameStates.GAME) {
-    // targetCameraPosition.y = 0
-    // }
 
-    state.camera.position.lerp(targetCameraPosition, delta * 2)
+    state.camera.position.lerp(targetCameraPosition, delta * 0.8)
 
     const targetLookAt = new Vector3(
       characterWorldPosition.x,
