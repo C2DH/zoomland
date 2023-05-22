@@ -1,4 +1,4 @@
-import { useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Link } from 'react-router-dom'
 
@@ -44,6 +44,14 @@ const Map = () => {
             scale={-0.35}
           />
         </group>
+        <OrbitControls
+          minAzimuthAngle={0}
+          maxAzimuthAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 6}
+          maxPolarAngle={Math.PI / 3}
+          minDistance={10}
+          maxDistance={30}
+        />
       </Canvas>
     </div>
   )
