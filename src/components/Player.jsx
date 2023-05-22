@@ -67,22 +67,21 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
       setAnimation(AnimationIdle)
     }
 
-    if (changeRotation) {
-      const angle = Math.atan2(linvel.x, linvel.z)
-      character.current.rotation.y = angle
-    }
-
+    const angle = Math.atan2(linvel.x, linvel.z)
     // CAMERA FOLLOW
     const characterWorldPosition = character.current.getWorldPosition(new Vector3())
 
     const targetCameraPosition = new Vector3(
       characterWorldPosition.x,
-      0,
-      characterWorldPosition.z + 4,
+      characterWorldPosition.y + 2.5,
+      characterWorldPosition.z + 5,
     )
-
+    if (changeRotation) {
+      // gently rotate the character towards the direction of movement
+      character.current.rotation.y = character.current.rotation.y * 0.8 + angle * 0.2
+    }
     // if (gameState === gameStates.GAME) {
-    targetCameraPosition.y = 2.5
+    // targetCameraPosition.y = 2.5
     // }
     // if (gameState !== gameStates.GAME) {
     // targetCameraPosition.y = 0
@@ -90,7 +89,11 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
 
     state.camera.position.lerp(targetCameraPosition, delta * 2)
 
-    const targetLookAt = new Vector3(characterWorldPosition.x, 1, characterWorldPosition.z)
+    const targetLookAt = new Vector3(
+      characterWorldPosition.x,
+      characterWorldPosition.y + 1.5,
+      characterWorldPosition.z,
+    )
 
     const direction = new Vector3()
     state.camera.getWorldDirection(direction)
