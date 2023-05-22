@@ -1,5 +1,262 @@
 [
   {
+    "characterName": "Andreas Fickers",
+    "id": "AndreasFickers",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hey there, Editor Extraordinaire!",
+        "Ehm, hello Andreas!",
+        "How's my chapter editor extraordinaire doing? Making my words shine like gold, I hope?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Florentina Armaselu",
+    "id": "FlorentinaArmaselu",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Greetings, Editor Maestro! How's the magical touch of your editing wand coming along? Any progress turning my scribbles into a masterpiece?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Alex Butterworth",
+    "id": "AlexButterworth",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Ahoy, Captain Editor! How's the good ship of editing sailing? Have you navigated through my chapter's treacherous waters yet?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Christian Wachter",
+    "id": "ChristianWachter",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hey, Editing Dynamo! How's the battle against typos and grammatical foes going? Any victories to report in my chapter's editing crusade?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Amanda Madden",
+    "id": "AmandaMadden",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hello, Editor Extraordinaire! How's the secret art of transforming my words into literary gems? Any progress in the alchemical process?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Khanh Vo",
+    "id": "KhanhVo",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Greetings, Word Whisperer! How's the mystical dance of editing enchantments going? Any magical revelations in my chapter so far?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Fred Pailler",
+    "id": "FredPailler",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Salutations, Editing Ninja! How's your stealthy progress in slicing and dicing my chapter's content? Any ninja-worthy editing maneuvers to share?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Valérie Schafer",
+    "id": "ValerieSchafer",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hey there, Editor Extraordinaire! How's the fine art of polishing my words to perfection? Any breakthroughs in your editing masterpiece?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Landry Digeon",
+    "id": "LandryDigeon",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Greetings, Editing Maestro! How's the symphony of words coming along? Any harmonious editing progress in shaping my chapter?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Anjal Amin",
+    "id": "AnjalAmin",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Ahoy, Captain Editor! How's the voyage of navigating my chapter's seas? Any intriguing discoveries in the depths of your editing endeavors?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Nadezhda Povroznik",
+    "id": "NadezhdaPovroznik",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hello, Editor Extraordinaire! How's the surgical precision of your editing scalpel? Any noteworthy operations performed on my chapter's content?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Daniil Renev",
+    "id": "DaniilRenev",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Greetings, Editing Magician! How's the spellbinding process of turning my words into literary wonders? Any enchanting progress to share?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Vladimir Beresnev",
+    "id": "VladimirBeresnev",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hey there, Editing Dynamo! How's the battle against the grammar gremlins going? Any victories in the war of words within my chapter?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Johan Malmstedt",
+    "id": "JohanMalmstedt",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Salutations, Word Whisperer! How's the mastery of transforming my thoughts into eloquent prose? Any linguistic triumphs in my chapter's journey?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Chris Tanasescu",
+    "id": "ChrisTanasescu",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Greetings, Editing Extraordinaire! How's the fine art of crafting my words into a tapestry of brilliance? Any strokes of editing genius in progress?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Raluca Tanasescu",
+    "id": "RalucaTanasescu",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hello, Editing Maestro! How's the creative dance of shaping my chapter's narrative? Any innovative editing techniques you've been experimenting with?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
+    "characterName": "Raluca Tanasescu",
+    "id": "RalucaTanasescu",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hey there, Editor Extraordinaire! How's the magic of your editing wand? Any spells cast upon my chapter's pages for a touch of brilliance?"
+      ],
+      "secondMeetingWithoutChapter": [],
+      "runIntoWithoutChapter": [],
+      "firstMeetingWithChapter": [],
+      "secondMeetingWithChapter": [],
+      "runIntoWithChapter": []
+    }
+  },
+  {
     "id": "BigFella",
     "characterName": "A very big fella",
     "chapter": "1-chapter-1",
