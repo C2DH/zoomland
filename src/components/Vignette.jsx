@@ -5,16 +5,16 @@ import Quests from '../data/quests'
 import './Vignette.css' // Import CSS styles
 import { animated, useSpring } from '@react-spring/web'
 import Quest from './Quest'
+import Chapter from './Chapter'
 
 const interpolator = (v) => {
   return `radial-gradient(ellipse at center, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 1) 100%)`
 }
 
 const Vignette = ({ children, visible = true }) => {
-  const [isCollectingChapter, collectedChapters] = usePlayerStore((state) => [
-    state.isCollectingChapter,
-    state.collectedChapters,
-  ])
+  const [currentCollectedChapter, isCollectingChapter, collectedChapters] = usePlayerStore(
+    (state) => [state.currentCollectedChapter, state.isCollectingChapter, state.collectedChapters],
+  )
   const [isCollectingQuest, collectedQuests] = usePlayerStore((state) => [
     state.isCollectingQuest,
     state.collectedQuests,
@@ -29,10 +29,6 @@ const Vignette = ({ children, visible = true }) => {
     state.doneCollectingQuest,
     state.resetCollectedQuests,
   ])
-
-  const lastCollectedChapter = collectedChapters.length
-    ? collectedChapters[collectedChapters.length - 1]
-    : null
 
   const lastCollectedQuest = collectedQuests.length
     ? collectedQuests[collectedQuests.length - 1]
@@ -84,27 +80,24 @@ const Vignette = ({ children, visible = true }) => {
   return (
     <>
       <animated.div className="Vignette" style={{ background: props.qty.to(interpolator) }}>
-        <div class="btn-group" role="group">
-          <button onClick={handleToggle} type="button" class="btn btn-primary">
+        <div className="btn-group" role="group">
+          <button onClick={handleToggle} type="button" className="btn btn-primary">
             random chapter
           </button>
-          <button onClick={handleReset} type="button" class="btn btn-primary">
+          <button onClick={handleReset} type="button" className="btn btn-primary">
             reset chapters
           </button>
-          <button onClick={handleTestQuests} type="button" class="btn btn-primary">
+          <button onClick={handleTestQuests} type="button" className="btn btn-primary">
             pick random quests
           </button>
-          <button onClick={handleResetQuests} type="button" class="btn btn-primary">
+          <button onClick={handleResetQuests} type="button" className="btn btn-primary">
             reset quests
           </button>
         </div>
 
         {isCollectingChapter && (
           <div className="Vignette_subs">
-            <h3>
-              {isCollectingChapter} {lastCollectedChapter.title}
-            </h3>
-            <p>{lastCollectedChapter.abstract}</p>
+            <Chapter chapter={currentCollectedChapter}> </Chapter>
           </div>
         )}
         {isCollectingQuest && (

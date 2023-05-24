@@ -1,4 +1,4 @@
-.CollectedChapters {
+.Header {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
   text-shadow: 0 0 4px black;
 }
 
-.CollectedChapters h1 {
+.Header h1 {
   font-size: var(--font-size-8);
   color: white;
 }

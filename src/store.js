@@ -58,6 +58,7 @@ export const usePlayerStore = create(
       resetCollectedQuests: () => set({ collectedQuests: [], isCollectingQuest: false }),
       isCollectingChapter: false,
       collectedChapters: [],
+      currentCollectedChapter: null,
       collectChapter: (chapter) => {
         console.debug('[store] collectChapter:', chapter.id)
         const collectedChapters = get().collectedChapters
@@ -65,6 +66,7 @@ export const usePlayerStore = create(
         if (alreadyCollectedChapterIndex > -1) {
           return set({
             isCollectingChapter: true,
+            currentCollectedChapter: chapter,
             collectedChapters: collectedChapters.map((d, i) => {
               if (i !== alreadyCollectedChapterIndex) {
                 return d
@@ -78,16 +80,36 @@ export const usePlayerStore = create(
         }
         return set({
           isCollectingChapter: true,
+          currentCollectedChapter: chapter,
           collectedChapters: [...collectedChapters, chapter],
           progress: (collectedChapters.length + 1) / NumberOfChapters,
         })
       },
-      doneCollectingChapter: () => set({ isCollectingChapter: false }),
+      doneCollectingChapter: () =>
+        set({ isCollectingChapter: false, currentCollectedChapter: null }),
       resetCollectedChapters: () =>
-        set({ progress: 0, collectedChapters: [], isCollectingChapter: false }),
+        set({
+          progress: 0,
+          collectedChapters: [],
+          isCollectingChapter: false,
+          currentCollectedChapter: null,
+        }),
     }),
     {
       name: 'player-store',
     },
   ),
 )
+
+export const useWindowStore = create((set) => ({
+  width: window.innerWidth,
+  height: window.innerHeight,
+  memo: [window.innerWidth, window.innerHeight].join('x'),
+  updateDimensions: () => {
+    const width = window.innerWidth
+    const height = window.innerHeight
+    const memo = [width, height].join('x')
+    console.debug('[store] updateDimensions', memo)
+    return set({ width, height, memo })
+  },
+}))

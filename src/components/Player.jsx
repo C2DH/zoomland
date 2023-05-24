@@ -116,6 +116,7 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
     <>
       <RigidBody
         ref={rigidbody}
+        name="player"
         colliders={false}
         enabledRotations={[false, false, false]}
         onCollisionEnter={() => {

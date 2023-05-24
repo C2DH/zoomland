@@ -10,10 +10,11 @@ import SmallTree from './SmallTree'
 // import BigTree from './BigTree'
 import './World.css'
 import Player from './Player'
-
+import Chapters from '../data/Chapters'
 import { default as SmallTrees } from '../data/SmallTrees'
 import Clouds from './Clouds'
 import { Airship } from './Airship'
+import Target from './Target'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -64,6 +65,10 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               <Forest positions={SmallTrees.positions} scales={SmallTrees.scales}>
                 <SmallTree />
               </Forest>
+              {/* add one target per chap^ter in the desired position */}
+              {Chapters.map((d) => (
+                <Target key={d.id} chapter={d} position={d.position} />
+              ))}
             </Physics>
           </Suspense>
         </Canvas>

@@ -1,0 +1,12 @@
+.Page .scrollable {
+  overflow: scroll;
+}
+
+.Page .h5 {
+  font-size: 2rem;
+  line-height: 1.25em;
+}
+
+.Page h6 {
+  font-variant: small-caps;
+}

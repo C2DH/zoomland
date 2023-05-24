@@ -1,0 +1,234 @@
+[
+  {
+    "id": "0-introduction",
+    "title": "Introduction",
+    "n": 0,
+    "viewType": "birdEye",
+    "authors": ["Andreas Fickers", "Florentina Armaselu"],
+    "incipit": ""
+  },
+  {
+    "id": "1-adventure-in-zoomland",
+    "title": "Adventure in Zoomland",
+    "n": 1,
+    "viewType": "birdEye",
+    "authors": ["Alex Butterworth"],
+    "category": "history",
+    "keywords": [
+      "exploratory interfaces",
+      "digital hermeneutics",
+      "knowledge graph",
+      "scalable data",
+      " historical narrative"
+    ],
+    "excerpt": "The chapter proposes a conceptual framework for the design of graphical interfaces to knowledge graphs that employ the concept of ‘zoom’, broadly defined to encompass levels of scale, resolution and abstraction ..."
+  },
+  {
+    "id": "2-capturing-discourse-through-the-digital-lens",
+    "title": "Capturing Discourse through the Digital Lens: Towards a framework for the analysis of pro-democratic discourse in the Weimar Republic",
+    "n": 2,
+    "viewType": "birdEye",
+    "category": "History",
+    "authors": ["Christian Wachter"],
+    "keywords": [
+      "scalable reading",
+      "discourse analysis",
+      "heuristics",
+      "Weimar Republic",
+      "democracy"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "3-menocchio-mapped",
+    "title": "Menocchio Mapped: Italian Microhistory and the Digital Spatial Turn",
+    "n": 3,
+    "viewType": "overhead",
+    "category": "History",
+    "authors": ["Amanda Madden"],
+    "keywords": ["microhistory", "digital history", "spatial history", "GIS"]
+  },
+  {
+    "id": "4-scaling-digital-history-and-documenting-the-self-emancipated",
+    "title": "Scaling Digital History and Documenting the Self-Emancipated",
+    "n": 4,
+    "viewType": "ground",
+    "category": "History",
+    "authors": ["Mariaelena DiBenigno", "Khanh Vo"],
+    "keywords": [
+      "digital humanities",
+      "digital history",
+      "public history",
+      "slavery",
+      "community networks"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "5-keep-calm-and-stay-focused",
+    "title": "Keep calm and stay focused: Historicising and intertwining scales and temporalities of online virality",
+    "n": 5,
+    "viewType": "overhead",
+    "category": "Media",
+    "authors": ["Fred Pailler", "Valérie Schafer"],
+    "keywords": ["memes", "virality", "Harlem Shake", "scalable reading", "medium reading"]
+  },
+  {
+    "id": "6-zooming-in-on-shot-scales",
+    "title": "Zooming in on Shot Scales: A Digital Approach to Reframing Transnational TV series Adaptations",
+    "n": 6,
+    "viewType": "overhead",
+    "category": "Media",
+    "authors": ["Landry Digeon", "Anjal Amin"],
+    "keywords": [
+      "transnational TV series adaptations",
+      "artificial intelligence",
+      "culture",
+      "big data",
+      "cross-cultural comparison"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "7-adapting-the-optics",
+    "title": "Adapting the optics: Zoom-in, Zoom-out, and Zoom-zero modes to understand the religious sculpture",
+    "n": 7,
+    "viewType": "ground",
+    "category": "Media",
+    "authors": ["Nadezhda Povroznik", "Daniil Renev", "Vladimir Beresnev"],
+    "keywords": [
+      "digital representation",
+      "cultural heritage",
+      "wooden sculpture",
+      "research optics",
+      "authenticity"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "8-scale-exercises",
+    "title": "Scale Exercises: Listening to the sonic diversity in 5000 hours of Swedish radio with computers and ears",
+    "n": 8,
+    "viewType": "ground",
+    "category": "Media",
+    "authors": ["Johan Malmstedt"],
+    "keywords": [
+      "radio history",
+      "audio analysis",
+      "sound studies",
+      "signal processing",
+      "media studies"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "9-complexity-and-analytical-creative-approaches-at-scale",
+    "title": "Complexity and Analytical-creative Approaches at Scale: Iconicity, Monstrosity, and #GraphPoem",
+    "n": 9,
+    "viewType": "overhead",
+    "category": "Hermeneutics",
+    "authors": ["Chris Tanasescu", "Raluca Tanasescu"],
+    "keywords": [
+      "digital writing",
+      "complex dynamic systems",
+      "monstrosity",
+      "iconicity",
+      "network analysis"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "10-the-scales-of-computational-literary-studies",
+    "title": "The scales of (computational) literary studies: Martin Mueller’s concept of scalable reading in theory and practice",
+    "n": 10,
+    "viewType": "overhead",
+    "category": "Hermeneutics",
+    "authors": ["Benjamin Krautter"],
+    "keywords": [
+      "mixed-methods",
+      "scalable reading",
+      "(computational) literary studies",
+      "literary theory",
+      "network analysis"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "11-text-fractal-dust-and-informational-granularity",
+    "title": "Text, Fractal Dust and Informational Granularity: A Study of Scale",
+    "n": 11,
+    "viewType": "overhead",
+    "category": "Hermeneutics",
+    "authors": ["Florentina Armaselu"],
+    "keywords": [
+      "scalable text",
+      "topic modelling",
+      "fractal geometry",
+      "informational granularity maps",
+      "digital hermeneutics"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "12-scale-and-narrative",
+    "title": "Scale and Narrative: Conceiving a long-form digital argument for data-driven microhistory",
+    "n": 12,
+    "viewType": "ground",
+    "category": "Hermeneutics",
+    "authors": ["Stephen Robertson"],
+    "keywords": ["digital history", "microhistory", "narrative", "argument", "data"],
+    "excerpt": ""
+  },
+  {
+    "id": "13-meaningful-aesthetics",
+    "title": "Meaningful Aesthetics: A Comparison of Open Source Network Analysis Tools",
+    "n": 13,
+    "viewType": "bird-eye",
+    "category": "Digital landscapes",
+    "authors": ["Natalie M. Houston"],
+    "keywords": ["network analysis", "data visualization", "aesthetics"],
+    "excerpt": ""
+  },
+  {
+    "id": "14-defining-level-and-scale-as-socio-technical-operators-for-mining-digital-traces",
+    "title": "Defining Level and Scale as Socio-technical Operators for Mining Digital Traces",
+    "n": 14,
+    "viewType": "bird-eye",
+    "category": "Digital landscapes",
+    "authors": ["Quentin Lobbé", "David Chavalarias", "Alexandre Delanoë"],
+    "keywords": ["level", "scale", "phylomemy", "semantic map", "macroscope"],
+    "excerpt": ""
+  },
+  {
+    "id": "15-zooming-is-not-just-scaling",
+    "title": "Zooming is (not just) scaling: Considerations of scale in old maps from cartographic perspectives on generalisation",
+    "n": 15,
+    "viewType": "overhead",
+    "category": "Digital landscapes",
+    "authors": ["Francis Harvey", "Marta Kuźma"],
+    "keywords": [
+      "generalisation",
+      "cartographic scale",
+      "historical maps",
+      "old maps",
+      "map interpretation"
+    ],
+    "excerpt": ""
+  },
+  {
+    "id": "16-weather-map",
+    "title": "Weather Map: A Diachronic Visual Model for Controversy Mapping",
+    "n": 16,
+    "viewType": "ground",
+    "category": "Digital landscapes",
+    "authors": ["Dario Rodighiero", "Jean Daniélou"],
+    "keywords": [
+      "controversy mapping",
+      "data literacy",
+      "network visualization",
+      "visual literacy",
+      "weather maps"
+    ],
+    "excerpt": ""
+  }
+]

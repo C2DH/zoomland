@@ -1,0 +1,16 @@
+{
+  "id": "1-adventure-in-zoomland",
+  "title": "Adventure in Zoomland",
+  "n": 1,
+  "viewType": "birdEye",
+  "authors": ["Alex Butterworth"],
+  "category": "history",
+  "keywords": [
+    "exploratory interfaces",
+    "digital hermeneutics",
+    "knowledge graph",
+    "scalable data",
+    " historical narrative"
+  ],
+  "excerpt": "The chapter proposes a conceptual framework for the design of graphical interfaces to knowledge graphs that employ the concept of ‘zoom’, broadly defined to encompass levels of scale, resolution and abstraction ..."
+}

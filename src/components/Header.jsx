@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { usePlayerStore, NumberOfChapters } from '../store'
-import './CollectedChapters.css'
+import './Header.css'
 
-const CollectedChapters = ({ children }) => {
+const Header = ({ children }) => {
   const [progress, collectedChapters] = usePlayerStore((state) => [
     state.progress,
     state.collectedChapters,
@@ -11,7 +11,7 @@ const CollectedChapters = ({ children }) => {
 
   const HumanreadableProgress = Math.round(progress * 100)
   return (
-    <div className="CollectedChapters m-5">
+    <div className="Header m-5">
       <Container>
         <Row>
           <Col>
@@ -37,4 +37,4 @@ const CollectedChapters = ({ children }) => {
   )
 }
 
-export default CollectedChapters
+export default Header
