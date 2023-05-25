@@ -16,23 +16,16 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Map.geometry}
-            material={materials.Land}
-            position={[0, 0.05, 0]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Ocean.geometry}
-            material={materials.Material}
-            position={[0, 0.04, 0]}
-            scale={23.34}
+            geometry={nodes.Harbor.geometry}
+            material={materials.Harbor}
+            position={[9.12, 0.12, -1.45]}
+            rotation={[0, 1.57, 0]}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Text.geometry}
-            material={nodes.Text.material}
+            material={materials.Zoomland}
             position={[-8.52, 6.09, -7.63]}
             rotation={[Math.PI / 2, 0, -0.92]}
           />
@@ -42,6 +35,209 @@ const Landscape = ({ debug = false, ...props }) => {
             geometry={nodes.Bridge.geometry}
             material={materials['Bridge.002']}
             scale={-0.35}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence.geometry}
+            material={materials.Fence}
+            position={[-4.26, 1.11, 7.08]}
+            rotation={[0, 1.26, 0]}
+            scale={[0.2, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence001.geometry}
+            material={materials.Fence}
+            position={[-5.31, 0.27, 0.82]}
+            rotation={[0, 0, -0.41]}
+            scale={[0.22, 0.17, 0.22]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence002.geometry}
+            material={materials.Fence}
+            position={[-5.62, 0.42, 0.88]}
+            rotation={[0, 0.31, -0.55]}
+            scale={[0.25, 0.17, 0.22]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence003.geometry}
+            material={materials.Fence}
+            position={[-5.92, 0.6, 0.96]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence004.geometry}
+            material={materials.Fence}
+            position={[8.87, 0.31, -3.55]}
+            rotation={[0.35, 1.1, -0.21]}
+            scale={[0.21, 0.16, 0.21]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence005.geometry}
+            material={materials.Fence}
+            position={[8.95, 0.33, -3.84]}
+            rotation={[1.36, 1.43, -1.36]}
+            scale={[0.21, 0.16, 0.21]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence006.geometry}
+            material={materials.Fence}
+            position={[8.96, 0.33, -4.21]}
+            rotation={[1.36, 1.43, -1.36]}
+            scale={[0.3, 0.16, 0.21]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence007.geometry}
+            material={materials.Fence}
+            position={[-4.6, 2.87, -5.41]}
+            rotation={[0.2, 0.82, -0.15]}
+            scale={[0.28, 0.15, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence008.geometry}
+            material={materials.Fence}
+            position={[-4.83, 2.87, -5.16]}
+            rotation={[0.2, 0.82, -0.15]}
+            scale={[0.2, 0.15, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence009.geometry}
+            material={materials.Fence}
+            position={[-5.11, 2.87, -4.96]}
+            rotation={[0.15, 0.52, -0.08]}
+            scale={[0.28, 0.15, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence010.geometry}
+            material={materials.Fence}
+            position={[6.15, 2.24, -8.5]}
+            rotation={[2.51, 1.03, -2.4]}
+            scale={[0.26, 0.14, 0.18]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence011.geometry}
+            material={materials.Fence}
+            position={[4.77, 2.31, -8.79]}
+            rotation={[-0.03, 0.07, 0]}
+            scale={[0.2, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence012.geometry}
+            material={materials.Fence}
+            position={[4.44, 2.31, -8.77]}
+            rotation={[-0.03, 0.07, 0]}
+            scale={[0.26, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence013.geometry}
+            material={materials.Fence}
+            position={[-5.39, 2.89, -4.76]}
+            rotation={[0.2, 0.82, -0.15]}
+            scale={[0.2, 0.15, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence014.geometry}
+            material={materials.Fence}
+            position={[-8.44, 1.14, 6.49]}
+            rotation={[2.56, -1.33, 2.57]}
+            scale={[0.28, 0.15, 0.19]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence015.geometry}
+            material={materials.Fence}
+            position={[8.77, 0.39, -4.81]}
+            rotation={[3.04, 1.01, -2.93]}
+            scale={[0.3, 0.16, 0.21]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence016.geometry}
+            material={materials.Fence}
+            position={[5.08, 2.31, -8.81]}
+            rotation={[-0.03, -0.3, -0.01]}
+            scale={[0.26, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence017.geometry}
+            material={materials.Fence}
+            position={[-5.62, 2.88, -4.59]}
+            rotation={[0.14, 0.37, -0.06]}
+            scale={[0.23, 0.15, 0.23]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence018.geometry}
+            material={materials.Fence}
+            position={[-4.47, 1.12, 7.27]}
+            rotation={[Math.PI, -0.53, Math.PI]}
+            scale={[0.2, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence019.geometry}
+            material={materials.Fence}
+            position={[-8.36, 1.14, 6.86]}
+            rotation={[0.21, -0.87, 0.15]}
+            scale={[0.28, 0.15, 0.19]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence020.geometry}
+            material={materials.Fence}
+            position={[-6.2, 0.81, 1.06]}
+            rotation={[-0.01, 0.27, -0.62]}
+            scale={[0.25, 0.17, 0.22]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence021.geometry}
+            material={materials.Fence}
+            position={[-6.45, 0.99, 1.17]}
+            rotation={[0.12, 0.6, -0.42]}
+            scale={[0.25, 0.17, 0.22]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Map.geometry}
+            material={materials.Land}
+            position={[0, 0.05, 0]}
           />
         </group>
       </RigidBody>
