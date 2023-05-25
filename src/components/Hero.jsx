@@ -64,18 +64,24 @@ const Hero = (props) => {
               geometry={nodes.Mesh.geometry}
               material={materials.Skin}
               skeleton={nodes.Mesh.skeleton}
+              castShadow
+              receiveShadow
             />
             <skinnedMesh
               name="Mesh_1"
               geometry={nodes.Mesh_1.geometry}
               material={materials.Skirt}
               skeleton={nodes.Mesh_1.skeleton}
+              castShadow
+              receiveShadow
             />
             <skinnedMesh
               name="Mesh_2"
               geometry={nodes.Mesh_2.geometry}
               material={materials.Head}
               skeleton={nodes.Mesh_2.skeleton}
+              castShadow
+              receiveShadow
             />
           </group>
         </group>
