@@ -41,7 +41,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
           { keys: ['Space', 'KeyJ'], name: 'jump' },
         ]}
       >
-        <Canvas camera={CloseCamera}>
+        <Canvas camera={CloseCamera} shadows>
           {debug && <WorldDashboard />}
 
           <Suspense>

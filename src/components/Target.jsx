@@ -50,14 +50,14 @@ const Target = ({ chapter, position, children }) => {
         onCollisionEnter={collisionEnterHandler}
         onCollisionExit={collisionExitHandler}
       >
-        <mesh>
+        <mesh castShadow receiveShadow>
           <boxBufferGeometry />
           <meshStandardMaterial opacity={0} transparent />
         </mesh>
       </RigidBody>
       {children}
       <group ref={price} scale={0.5} position={pricePosition}>
-        <mesh>
+        <mesh castShadow receiveShadow>
           <boxBufferGeometry />
           <meshStandardMaterial color={'pink'} />
         </mesh>
