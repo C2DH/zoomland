@@ -13,11 +13,11 @@ import {
 } from '../store'
 
 const JumpForce = 0.5
-const Speed = 0.1
-const MaxVel = 3
-const RunVel = 1.5
+const Speed = 0.25
+const MaxVel = 3.5
+const RunVel = 1.6
 
-const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
+const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
   const rigidbody = useRef()
   const isOnFloor = useRef(true)
   const character = useRef()
@@ -79,22 +79,30 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
     const angle = Math.atan2(linvel.x, linvel.z)
     // CAMERA FOLLOW
     const characterWorldPosition = character.current.getWorldPosition(new Vector3())
-
     const targetCameraPosition = new Vector3(
       characterWorldPosition.x + directionOffset.current.x,
       characterWorldPosition.y + 2.5,
       characterWorldPosition.z + directionOffset.current.z,
     )
     if (changeRotation) {
+      console.info(
+        'characterWorldPosition \n',
+        JSON.stringify([
+          Number(characterWorldPosition.x).toFixed(1),
+          Number(characterWorldPosition.y).toFixed(1),
+          Number(characterWorldPosition.z).toFixed(1),
+        ]),
+      )
+
       // gently rotate the character towards the direction of movement
       character.current.rotation.y = character.current.rotation.y * 0.8 + angle * 0.2
     }
 
-    state.camera.position.lerp(targetCameraPosition, delta * 0.8)
+    state.camera.position.lerp(targetCameraPosition, delta * 2)
 
     const targetLookAt = new Vector3(
       characterWorldPosition.x,
-      characterWorldPosition.y + 1.5,
+      characterWorldPosition.y + 2,
       characterWorldPosition.z,
     )
 
@@ -108,7 +116,6 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
     const lerpedLookAt = new Vector3()
 
     lerpedLookAt.lerpVectors(currentLookAt, targetLookAt, delta * 2)
-
     state.camera.lookAt(lerpedLookAt)
   })
 
@@ -125,7 +132,7 @@ const Player = ({ scale = 0.5, position = [2, 4, 2] }) => {
         position={position}
         scale={[scale, scale, scale]}
       >
-        <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
+        <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.01, 0]} />
         <group ref={character}>
           <Hero />
         </group>

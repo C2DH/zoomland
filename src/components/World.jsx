@@ -15,6 +15,26 @@ import { default as SmallTrees } from '../data/SmallTrees'
 import Clouds from './Clouds'
 import { Airship } from './Airship'
 import Target from './Target'
+import Pound from './Pound'
+import Ocean from './Ocean'
+import Windmill from './Windmill'
+import Lighttower from './Lighttower'
+import WindTurbine from './WindTurbine'
+import BigTree from './BigTree'
+import Antenna from './Antenna'
+import SwedishHorse from './SwedishHorse'
+import Banjo from './Banjo'
+import Megaphone from './Megaphone'
+import Ufo from './Ufo'
+import Kite from './Kite'
+import Balloon from './Balloon'
+import Arch from './Arch'
+import StoneBig from './StoneBig'
+import FishNet from './FishNet'
+import Boat from './Boat'
+import House from './House'
+import Cinema from './Cinema'
+import Umbrella from './Umbrella'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -48,6 +68,77 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <Lights />
             <Clouds />
             <Airship position={[6, 16, 0]} />
+            <Pound />
+            <Ocean scale={[12, 12, 12]} position={[0, -1.6, 0]} />
+            <Antenna rotation={[0, 0, 0]} scale={[2, 2, 2]} position={[-24.2, -1, -6.8]} />
+            <SwedishHorse rotation={[0, 1, 0]} scale={[2, 2, 2]} position={[53.5, 11.3, 24.4]} />
+            <Banjo rotation={[0, 0, -0.1]} scale={[0.2, 0.2, 0.2]} position={[6.5, 6, 11.6]} />
+            <Megaphone rotation={[0, 0, 0.3]} scale={[0.3, 0.3, 0.3]} position={[8, 8, 11.6]} />
+            <Ufo rotation={[0, 0, 0]} scale={[0.4, 0.4, 0.4]} position={[-76.9, 9.6, 22.5]} />
+            <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[-4.6, 0.2, 54.8]} />
+            <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.1, 47.6]} />
+            <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} position={[-54.4, -0.1, -19.6]} />
+            <Arch rotation={[0, 0.3, 0]} scale={[2.2, 2.2, 2.2]} position={[-1.2, 13.5, -65.7]} />
+            <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -0.8, -10.2]} />
+            <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
+            <StoneBig rotation={[0, 1, 0]} scale={[1.5, 1.5, 1.5]} position={[0.4, 14.2, -72.6]} />
+            <StoneBig rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-34.0, 0.3, 31.8]} />
+            <StoneBig rotation={[0, 0, 0]} scale={[2, 1.5, 2]} position={[4.8, 12.6, -58.4]} />
+            <StoneBig rotation={[1, 1.5, 1]} scale={[2.5, 1.5, 2]} position={[11.2, 12.5, -70.1]} />
+            <Cinema rotation={[0, 0.2, 0]} scale={[3, 3, 3]} position={[-20, -0.7, 6]} />
+            <Umbrella
+              rotation={[-0.2, 0, 0.2]}
+              scale={[1.5, 1.5, 1.5]}
+              position={[-26.3, -0.7, 63.1]}
+              color={'#E7DF29'}
+            />
+            <Umbrella
+              rotation={[-0.1, 0, -0.2]}
+              scale={[1.5, 1.5, 1.5]}
+              position={[-22.7, -0.5, 61.1]}
+              color={'#E7DF29'}
+            />
+            <Umbrella
+              rotation={[-0.7, 0, -0.4]}
+              scale={[1.5, 1.5, 1.5]}
+              position={[-13.1, -1, 64.4]}
+              color={'#E7DF29'}
+            />
+            <House
+              rotation={[0, 0 - 2.2, 0]}
+              scale={[5.5, 5.5, 5.5]}
+              position={[-32, -0.8, -18.4]}
+            />
+            <House rotation={[0, -2, 0]} scale={[5.5, 5.5, 5.5]} position={[-10, -0.8, 46]} />
+            <House
+              rotation={[0, 0 - 1.5, 0]}
+              scale={[5.5, 5.5, 5.5]}
+              position={[-12.0, -0.8, -24.4]}
+            />
+            <WindTurbine
+              scale={[0.25, 0.25, 0.25]}
+              position={[-89, 13.3, 5]}
+              rotation={[0, -0.9, 0]}
+              rotationSpeed={10}
+            />
+            <WindTurbine
+              scale={[0.25, 0.25, 0.25]}
+              position={[-43, 30, -82.1]}
+              rotation={[0, -0.9, 0]}
+              rotationSpeed={2}
+            />
+            <WindTurbine
+              scale={[0.25, 0.25, 0.25]}
+              position={[-21.1, 19.4, -85.9]}
+              rotation={[0, -0.9, 0]}
+              rotationSpeed={20}
+            />
+            <WindTurbine
+              scale={[0.25, 0.25, 0.25]}
+              position={[16.0, 14.2, -88.0]}
+              rotation={[0, -0.9, 0]}
+              rotationSpeed={2}
+            />
             <Physics debug={debugPhysics}>
               <RigidBody position={[6, 6, 0]} rotation={[0.5, -0.9, 0.2]} colliders="hull">
                 <Gltf
@@ -69,6 +160,12 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               {Chapters.map((d) => (
                 <Target key={d.id} chapter={d} position={d.position} />
               ))}
+              <Target chapter={Chapters[0]} position={[-60, 27, -58]}>
+                <Windmill scale={0.3} rotation={[0, 1, 0]} />
+              </Target>
+              <Target chapter={Chapters[0]} position={[54, 20.4, -85]}>
+                <Lighttower scale={5} />
+              </Target>
             </Physics>
           </Suspense>
         </Canvas>

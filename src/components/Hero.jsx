@@ -7,6 +7,7 @@ import {
   AnimationJump,
   useAnimationStore,
 } from '../store'
+import { MeshStandardMaterial } from 'three'
 
 const Hero = (props) => {
   const group = useRef()
@@ -25,6 +26,16 @@ const Hero = (props) => {
     state.animation,
     state.previousAnimation,
   ])
+
+  const skirtMaterial = new MeshStandardMaterial({
+    ...materials.Skirt,
+    color: '#11B2CC',
+  })
+
+  const headtMaterial = new MeshStandardMaterial({
+    ...materials.Head,
+    color: '#FF4336',
+  })
 
   useEffect(() => {
     const action = mappedActions[animation]
@@ -70,7 +81,7 @@ const Hero = (props) => {
             <skinnedMesh
               name="Mesh_1"
               geometry={nodes.Mesh_1.geometry}
-              material={materials.Skirt}
+              material={skirtMaterial}
               skeleton={nodes.Mesh_1.skeleton}
               castShadow
               receiveShadow
@@ -78,7 +89,7 @@ const Hero = (props) => {
             <skinnedMesh
               name="Mesh_2"
               geometry={nodes.Mesh_2.geometry}
-              material={materials.Head}
+              material={headtMaterial}
               skeleton={nodes.Mesh_2.skeleton}
               castShadow
               receiveShadow

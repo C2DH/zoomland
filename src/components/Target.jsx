@@ -42,9 +42,8 @@ const Target = ({ chapter, position, children }) => {
   }
   const pricePosition = [position[0], position[1] + 1, position[2]]
   return (
-    <>
+    <group position={position}>
       <RigidBody
-        position={position}
         colliders="cuboid"
         type={'fixed'}
         onCollisionEnter={collisionEnterHandler}
@@ -62,7 +61,7 @@ const Target = ({ chapter, position, children }) => {
           <meshStandardMaterial color={'pink'} />
         </mesh>
       </group>
-    </>
+    </group>
   )
 }
 
