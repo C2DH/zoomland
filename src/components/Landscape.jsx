@@ -16,10 +16,19 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Harbor.geometry}
-            material={materials.Harbor}
-            position={[9.12, 0.12, -1.45]}
-            rotation={[0, 1.57, 0]}
+            geometry={nodes.Bridge.geometry}
+            material={materials['Bridge.002']}
+            position={[6.23, 1.06, -0.87]}
+            scale={-0.35}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence022.geometry}
+            material={materials.Fence}
+            position={[-4.71, 1.12, 7.49]}
+            rotation={[0, 0.48, 0]}
+            scale={[0.25, 0.16, 0.25]}
           />
           <mesh
             castShadow
@@ -32,43 +41,11 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Bridge.geometry}
-            material={materials['Bridge.002']}
-            scale={-0.35}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Fence.geometry}
-            material={materials.Fence}
-            position={[-4.26, 1.11, 7.08]}
-            rotation={[0, 1.26, 0]}
-            scale={[0.2, 0.16, 0.2]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Fence001.geometry}
             material={materials.Fence}
-            position={[-5.31, 0.27, 0.82]}
-            rotation={[0, 0, -0.41]}
+            position={[-5.31, 0.27, 0.99]}
+            rotation={[-0.08, -0.31, -0.44]}
             scale={[0.22, 0.17, 0.22]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Fence002.geometry}
-            material={materials.Fence}
-            position={[-5.62, 0.42, 0.88]}
-            rotation={[0, 0.31, -0.55]}
-            scale={[0.25, 0.17, 0.22]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Fence003.geometry}
-            material={materials.Fence}
-            position={[-5.92, 0.6, 0.96]}
           />
           <mesh
             castShadow
@@ -82,20 +59,10 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Fence005.geometry}
+            geometry={nodes.Fence003.geometry}
             material={materials.Fence}
-            position={[8.95, 0.33, -3.84]}
-            rotation={[1.36, 1.43, -1.36]}
-            scale={[0.21, 0.16, 0.21]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Fence006.geometry}
-            material={materials.Fence}
-            position={[8.96, 0.33, -4.21]}
-            rotation={[1.36, 1.43, -1.36]}
-            scale={[0.3, 0.16, 0.21]}
+            position={[-6.02, 0.69, 1]}
+            rotation={[0, -0.13, 0]}
           />
           <mesh
             castShadow
@@ -109,20 +76,11 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Fence008.geometry}
+            geometry={nodes.Fence006.geometry}
             material={materials.Fence}
-            position={[-4.83, 2.87, -5.16]}
-            rotation={[0.2, 0.82, -0.15]}
-            scale={[0.2, 0.15, 0.2]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Fence009.geometry}
-            material={materials.Fence}
-            position={[-5.11, 2.87, -4.96]}
-            rotation={[0.15, 0.52, -0.08]}
-            scale={[0.28, 0.15, 0.2]}
+            position={[8.96, 0.33, -4.21]}
+            rotation={[1.36, 1.43, -1.36]}
+            scale={[0.3, 0.16, 0.21]}
           />
           <mesh
             castShadow
@@ -136,20 +94,19 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Fence011.geometry}
+            geometry={nodes.Fence009.geometry}
             material={materials.Fence}
-            position={[4.77, 2.31, -8.79]}
-            rotation={[-0.03, 0.07, 0]}
-            scale={[0.2, 0.16, 0.2]}
+            position={[-5.11, 2.87, -4.96]}
+            rotation={[0.15, 0.52, -0.08]}
+            scale={[0.28, 0.15, 0.2]}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Fence012.geometry}
-            material={materials.Fence}
-            position={[4.44, 2.31, -8.77]}
-            rotation={[-0.03, 0.07, 0]}
-            scale={[0.26, 0.16, 0.2]}
+            geometry={nodes.Harbor.geometry}
+            material={materials.Harbor}
+            position={[9.12, 0.12, -1.45]}
+            rotation={[0, 1.57, 0]}
           />
           <mesh
             castShadow
@@ -163,18 +120,27 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Fence014.geometry}
+            geometry={nodes.Fence012.geometry}
             material={materials.Fence}
-            position={[-8.44, 1.14, 6.49]}
-            rotation={[2.56, -1.33, 2.57]}
-            scale={[0.28, 0.15, 0.19]}
+            position={[4.44, 2.31, -8.77]}
+            rotation={[-0.03, 0.07, 0]}
+            scale={[0.26, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence.geometry}
+            material={materials.Fence}
+            position={[-4.26, 1.11, 7.08]}
+            rotation={[0, 1.26, 0]}
+            scale={[0.2, 0.16, 0.2]}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Fence015.geometry}
             material={materials.Fence}
-            position={[8.77, 0.39, -4.81]}
+            position={[8.85, 0.36, -4.62]}
             rotation={[3.04, 1.01, -2.93]}
             scale={[0.3, 0.16, 0.21]}
           />
@@ -190,29 +156,11 @@ const Landscape = ({ debug = false, ...props }) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Fence017.geometry}
+            geometry={nodes.Fence002.geometry}
             material={materials.Fence}
-            position={[-5.62, 2.88, -4.59]}
-            rotation={[0.14, 0.37, -0.06]}
-            scale={[0.23, 0.15, 0.23]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Fence018.geometry}
-            material={materials.Fence}
-            position={[-4.47, 1.12, 7.27]}
-            rotation={[Math.PI, -0.53, Math.PI]}
-            scale={[0.2, 0.16, 0.2]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Fence019.geometry}
-            material={materials.Fence}
-            position={[-8.36, 1.14, 6.86]}
-            rotation={[0.21, -0.87, 0.15]}
-            scale={[0.28, 0.15, 0.19]}
+            position={[-5.62, 0.42, 0.94]}
+            rotation={[-0.07, 0, -0.57]}
+            scale={[0.25, 0.17, 0.22]}
           />
           <mesh
             castShadow
@@ -222,6 +170,60 @@ const Landscape = ({ debug = false, ...props }) => {
             position={[-6.2, 0.81, 1.06]}
             rotation={[-0.01, 0.27, -0.62]}
             scale={[0.25, 0.17, 0.22]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence005.geometry}
+            material={materials.Fence}
+            position={[8.95, 0.33, -3.84]}
+            rotation={[1.36, 1.43, -1.36]}
+            scale={[0.21, 0.16, 0.21]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence018.geometry}
+            material={materials.Fence}
+            position={[-4.42, 1.12, 7.32]}
+            rotation={[Math.PI, -0.76, Math.PI]}
+            scale={[0.2, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence008.geometry}
+            material={materials.Fence}
+            position={[-4.83, 2.87, -5.16]}
+            rotation={[0.2, 0.82, -0.15]}
+            scale={[0.2, 0.15, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence011.geometry}
+            material={materials.Fence}
+            position={[4.77, 2.31, -8.79]}
+            rotation={[-0.03, 0.07, 0]}
+            scale={[0.2, 0.16, 0.2]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence014.geometry}
+            material={materials.Fence}
+            position={[-8.44, 1.14, 6.49]}
+            rotation={[2.56, -1.33, 2.57]}
+            scale={[0.28, 0.15, 0.19]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Fence017.geometry}
+            material={materials.Fence}
+            position={[-5.62, 2.88, -4.59]}
+            rotation={[0.14, 0.37, -0.06]}
+            scale={[0.23, 0.15, 0.23]}
           />
           <mesh
             castShadow

@@ -1,9 +1,12 @@
 import { useFrame } from '@react-three/fiber'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { Object3D } from 'three'
+import Cloud from './Cloud'
+import { useGLTF } from '@react-three/drei'
 
 const Clouds = ({ count = 100 }) => {
   const [o3d] = useState(() => new Object3D())
+  const { nodes, materials } = useGLTF('../assets/models/Cloud.glb')
   const items = useRef()
   // instances contains initial position, rotation and scale of each cloud
   const instances = useMemo(() => {
@@ -44,10 +47,12 @@ const Clouds = ({ count = 100 }) => {
 
   return (
     <instancedMesh ref={items} args={[null, null, count]}>
-      <boxGeometry></boxGeometry>
-      <meshStandardMaterial color="white"></meshStandardMaterial>
+      <boxGeometry />
+      <meshStandardMaterial color="white" />
     </instancedMesh>
   )
 }
+
+useGLTF.preload('../assets/models/Cloud.glb')
 
 export default Clouds

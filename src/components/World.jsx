@@ -35,6 +35,8 @@ import Boat from './Boat'
 import House from './House'
 import Cinema from './Cinema'
 import Umbrella from './Umbrella'
+import ObservationTower from './ObservationTower'
+import Transmitter from './Transmitter'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -86,6 +88,8 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <StoneBig rotation={[0, 0, 0]} scale={[2, 1.5, 2]} position={[4.8, 12.6, -58.4]} />
             <StoneBig rotation={[1, 1.5, 1]} scale={[2.5, 1.5, 2]} position={[11.2, 12.5, -70.1]} />
             <Cinema rotation={[0, 0.2, 0]} scale={[3, 3, 3]} position={[-20, -0.7, 6]} />
+            <Transmitter scale={[0.2, 0.2, 0.2]} position={[-71.9, 9.45, 65.5]} />
+            <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-31.3, -0.3, 59.1]} />
             <Umbrella
               rotation={[-0.2, 0, 0.2]}
               scale={[1.5, 1.5, 1.5]}
