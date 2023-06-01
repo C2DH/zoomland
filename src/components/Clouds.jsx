@@ -1,23 +1,28 @@
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Object3D } from 'three'
+import { MeshStandardMaterial, Object3D } from 'three'
 
-const Clouds = ({ count = 100 }) => {
+const Clouds = ({ count = 50 }) => {
   const [o3d] = useState(() => new Object3D())
   const { nodes, materials } = useGLTF('../assets/models/Cloud.glb')
   const items = useRef()
 
+  const cloudMaterial = new MeshStandardMaterial({
+    transparent: true,
+    opacity: 0.7,
+  })
+
   const instances = useMemo(() => {
     const instances = []
     for (let i = 0; i < count; i++) {
-      const x = Math.random() * 200 - 50
-      const z = Math.random() * 200 - 50
+      const x = Math.random() * 400 - 200
+      const z = Math.random() * 400 - 200
       const y = Math.random() * 100 + 30
       instances.push({
         position: [x, y, z],
         rotation: [0, Math.random() * Math.PI * 2, 0],
-        scale: Math.random() * 2 + 0.2,
+        scale: Math.random() * 12 + 0.6,
         key: i,
       })
     }
@@ -48,7 +53,7 @@ const Clouds = ({ count = 100 }) => {
   return (
     <instancedMesh
       ref={items}
-      args={[nodes.Icosphere001.geometry, materials.Material, count]}
+      args={[nodes.Icosphere001.geometry, cloudMaterial, count]}
     ></instancedMesh>
   )
 }
