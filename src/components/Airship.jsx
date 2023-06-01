@@ -4,7 +4,8 @@ import { useFrame } from '@react-three/fiber'
 
 export function Airship(props) {
   const mesh = useRef()
-  // rotate around the center
+  const fanRotation = useRef()
+  //rotate around the center
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
     const r = -2.5
@@ -18,10 +19,18 @@ export function Airship(props) {
     mesh.current.rotation.y = Math.atan2(x, z) - Math.PI
   })
 
+  useFrame(({ clock }) => {
+    const elapsedTime = clock.getElapsedTime()
+
+    // Update rotation
+    fanRotation.current.rotation.x = elapsedTime * 5
+  })
+
   const { nodes, materials } = useGLTF('../assets/models/Airship.glb')
   return (
     <group ref={mesh} {...props} dispose={null}>
       <mesh
+        ref={fanRotation}
         geometry={nodes.Fan.geometry}
         material={materials.Metal}
         position={[-8.51, 0, 0]}
