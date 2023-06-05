@@ -3,30 +3,28 @@ import { usePlayerStore } from '../store'
 import { useSpring, config } from '@react-spring/web'
 import { useRef } from 'react'
 
-const Target = ({ chapter, position, children }) => {
+const TheDispatcher = ({ quest, position, children }) => {
   // if vignette should be visible
   const price = useRef()
   const [props, api] = useSpring(() => ({
     scale: 0.5,
-
     // bounce
     config: config.wobbly,
     // },
     onChange: ({ value }) => {
-      console.log('props', value.scale)
       price.current.scale.set(value.scale, value.scale, value.scale)
     },
   }))
 
-  const [collectChapter, doneCollectingChapter] = usePlayerStore((state) => [
-    state.collectChapter,
-    state.doneCollectingChapter,
+  const [collectQuest, doneCollectingQuest] = usePlayerStore((state) => [
+    state.collectQuest,
+    state.doneCollectingQuest,
   ])
   const collisionEnterHandler = (e) => {
-    console.debug('[Target] @collisionEnterHandler', e.rigidBodyObject.name)
+    console.debug('[Dispatcher] @collisionEnterHandler', e.rigidBodyObject.name)
     if (e.rigidBodyObject.name === 'player') {
-      console.log('[Target] collisionEnterHandler', e.rigidBodyObject.name)
-      collectChapter(chapter)
+      console.log('[Dispatcher] collisionEnterHandler', e.rigidBodyObject.name)
+      collectQuest(quest)
       api.start({
         scale: 1.5,
       })
@@ -34,14 +32,14 @@ const Target = ({ chapter, position, children }) => {
   }
   const collisionExitHandler = (e) => {
     if (e.rigidBodyObject.name === 'player') {
-      console.log('[Target] collisionExitHandler', e.rigidBodyObject.name)
-      doneCollectingChapter(chapter)
+      console.log('[Dispatcher] collisionExitHandler', e.rigidBodyObject.name)
+      doneCollectingQuest(quest)
       api.start({
         scale: 0.5,
       })
     }
   }
-  const pricePosition = [position[0], position[1] + 1, position[2]]
+  const pricePosition = [position[0], position[1], position[2]]
   return (
     <group position={position}>
       <RigidBody
@@ -50,12 +48,17 @@ const Target = ({ chapter, position, children }) => {
         onCollisionEnter={collisionEnterHandler}
         onCollisionExit={collisionExitHandler}
       >
-        <mesh castShadow receiveShadow>
-          <boxBufferGeometry />
-          <meshStandardMaterial />
+        <mesh>
+          <cylinderBufferGeometry args={[1, 1, 5, 32]} />{' '}
+          {/* Replace boxBufferGeometry with CylinderBufferGeometry */}
+          <meshStandardMaterial color={'blue'} transparent={true} opacity={0} />
         </mesh>
       </RigidBody>
       {children}
+      <mesh>
+        <cylinderBufferGeometry args={[0.75, 0.75, 0.2, 32]} />{' '}
+        <meshStandardMaterial color={'red'} />
+      </mesh>
       <group ref={price} scale={0.5} position={pricePosition}>
         <mesh castShadow receiveShadow>
           <boxBufferGeometry />
@@ -66,4 +69,4 @@ const Target = ({ chapter, position, children }) => {
   )
 }
 
-export default Target
+export default TheDispatcher

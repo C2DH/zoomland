@@ -10,6 +10,7 @@ import {
   AnimationRun,
   AnimationWalk,
   useAnimationStore,
+  usePlayerStore,
 } from '../store'
 
 const JumpForce = 0.5
@@ -20,10 +21,21 @@ const RunVel = 1.6
 const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
   const rigidbody = useRef()
   const isOnFloor = useRef(true)
+  const previousKeysAndKeyDelta = useRef({
+    moveLeft: false,
+    moveRight: false,
+    moveForward: false,
+    moveBackward: false,
+    kd: 0,
+  })
   const character = useRef()
   const directionOffset = useRef({ x: 0, y: 0, z: 4 })
   const [, getKeys] = useKeyboardControls()
   const setAnimation = useAnimationStore((state) => state.setAnimation)
+  const [isCollectingQuest, isCollectingChapter] = usePlayerStore((state) => [
+    state.isCollectingQuest,
+    state.isCollectingChapter,
+  ])
   // const camera = useThree((state) => state.camera)
   const [smoothedCameraPosition] = useState(() => new Vector3())
   const [smoothedCameraTarget] = useState(() => new Vector3())
@@ -35,7 +47,13 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
   useFrame((state, delta) => {
     const { moveForward, moveBackward, moveLeft, moveRight, jump } = getKeys()
     const impulse = { x: 0, y: 0, z: 0 }
-    if (jump && isOnFloor.current) {
+    // kd increase only if you keep hitting the same key
+    let kd = 0
+    const shouldStayStill = isCollectingQuest || isCollectingChapter
+    if (shouldStayStill) {
+      setAnimation(AnimationIdle)
+    }
+    if (!shouldStayStill && jump && isOnFloor.current) {
       impulse.y += JumpForce
       isOnFloor.current = false
       setAnimation(AnimationJump)
@@ -43,22 +61,35 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
 
     const linvel = rigidbody.current.linvel()
     let changeRotation = false
-    if (moveRight && linvel.x < MaxVel) {
+    if (!shouldStayStill && moveRight && linvel.x < MaxVel) {
       impulse.x += Speed
       changeRotation = true
       directionOffset.current = { x: -7, y: 0, z: 3 }
     }
-    if (moveLeft && linvel.x > -MaxVel) {
-      impulse.x -= Speed
+    if (!shouldStayStill && moveLeft && linvel.x > -MaxVel) {
+      if (previousKeysAndKeyDelta.current.moveLeft) {
+        const kd = previousKeysAndKeyDelta.current.kd + delta
+        const angle = Math.PI * 2 * kd
+        const arcImpulse = {
+          x: -Speed * Math.cos(angle),
+          y: 0,
+          z: Speed * Math.sin(angle),
+        }
+        impulse.x += arcImpulse.x
+        impulse.y += arcImpulse.y
+        impulse.z += arcImpulse.z
+      } else {
+        impulse.x -= Speed / 2 // Add this line to apply a gradual arc impulse to the left
+      }
       changeRotation = true
       directionOffset.current = { x: 5, y: 0, z: 3 }
     }
-    if (moveBackward && linvel.z < MaxVel) {
+    if (!shouldStayStill && moveBackward && linvel.z < MaxVel) {
       impulse.z += Speed
       changeRotation = true
       directionOffset.current = { x: 0, y: 0, z: 3 }
     }
-    if (moveForward && linvel.z > -MaxVel) {
+    if (!shouldStayStill && moveForward && linvel.z > -MaxVel) {
       impulse.z -= Speed
       changeRotation = true
       directionOffset.current = { x: 0, y: 0, z: 3 }
@@ -67,6 +98,8 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
     // if (!moveForward && !moveBackward && !moveLeft && !moveRight) {
     //   directionOffset.current = { x: 0, y: 0, z: 5 }
     // }
+    //
+    previousKeysAndKeyDelta.current = { moveLeft, moveRight, moveForward, moveBackward, kd }
 
     rigidbody.current.applyImpulse(impulse, true)
 

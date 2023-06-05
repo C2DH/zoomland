@@ -3,6 +3,7 @@ import axios from 'axios'
 import { usePlayerStore } from '../store'
 import { animated, useSpring } from '@react-spring/web'
 import { useEffect } from 'react'
+import { Button } from 'react-bootstrap'
 
 const Chapter = ({ chapter }) => {
   const [props, api] = useSpring(() => ({
@@ -15,7 +16,10 @@ const Chapter = ({ chapter }) => {
     },
   }))
 
-  const [collectedChapters] = usePlayerStore((state) => [state.collectedChapters])
+  const [collectedChapters, doneCollectingChapter] = usePlayerStore((state) => [
+    state.collectedChapters,
+    state.doneCollectingChapter,
+  ])
 
   const isCollected = collectedChapters.some(
     (d) => d.id === chapter.id && Array.isArray(d.readings) && d.readings.length,
@@ -47,10 +51,15 @@ const Chapter = ({ chapter }) => {
         YOU FOUND IT!!!!
       </animated.div>
       {data.n > 0}
-      {isCollected ? '✅' : '❌'}
+      {isCollected ? '✅' : 'NEW!!!'}
       Chapter {data.n}
       <h3>{data?.title}</h3>
       <p>{data?.abstract}</p>
+      <div className="btn-group">
+        <Button size="lg" variant={'primary'} onClick={doneCollectingChapter}>
+          OOOOKKK!
+        </Button>
+      </div>
     </>
   )
 }

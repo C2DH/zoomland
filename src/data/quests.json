@@ -9,11 +9,11 @@
         "Ehm, hello Andreas!",
         "How's my chapter editor extraordinaire doing? Making my words shine like gold, I hope?"
       ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
+      "secondMeetingWithoutChapter": ["You should check next to our boat"],
+      "runIntoWithoutChapter": ["Have you double check next to our boat?"],
+      "firstMeetingWithChapter": ["Hey there, I see you got it. One less to go!"],
+      "secondMeetingWithChapter": ["Hey there, I see you got it. One less to go!"],
+      "runIntoWithChapter": ["Hey there, I see you got it. One less to go!"]
     }
   },
   {

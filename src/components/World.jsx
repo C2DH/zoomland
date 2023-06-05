@@ -11,6 +11,7 @@ import SmallTree from './SmallTree'
 import './World.css'
 import Player from './Player'
 import Chapters from '../data/Chapters'
+import Quests from '../data/Quests.json'
 import { default as SmallTrees } from '../data/SmallTrees'
 import Clouds from './Clouds'
 import { Airship } from './Airship'
@@ -38,6 +39,8 @@ import Umbrella from './Umbrella'
 import ObservationTower from './ObservationTower'
 import Transmitter from './Transmitter'
 import Flag from './Flag'
+import TheDispatcher from './TheDispatcher'
+import Lumberjack from './Lumberjack'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -64,7 +67,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
           { keys: ['Space', 'KeyJ'], name: 'jump' },
         ]}
       >
-        <Canvas camera={CloseCamera} shadows>
+        <Canvas camera={CloseCamera} shadows dpr={1}>
           {debug && <WorldDashboard />}
 
           <Suspense>
@@ -161,9 +164,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               <Placeholder />
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
-              <Player debug={debug} position={[-18, 1.1, -4]}>
-                {' '}
-              </Player>
+              <Player debug={debug} position={[-18, 1.1, -4]}></Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={SmallTrees.positions} scales={SmallTrees.scales}>
                 <SmallTree />
@@ -178,6 +179,9 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               <Target chapter={Chapters[0]} position={[54, 20.4, -85]}>
                 <Lighttower scale={5} />
               </Target>
+              <TheDispatcher quest={Quests[0]} position={[-5, -0.5, 7]}>
+                <Lumberjack />
+              </TheDispatcher>
             </Physics>
           </Suspense>
         </Canvas>
