@@ -164,7 +164,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               <Placeholder />
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
-              <Player debug={debug} position={[-18, 1.1, -4]}></Player>
+              <Player debug={debug}></Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={SmallTrees.positions} scales={SmallTrees.scales}>
                 <SmallTree />
