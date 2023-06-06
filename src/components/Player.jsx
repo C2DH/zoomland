@@ -13,7 +13,7 @@ import {
   usePlayerStore,
 } from '../store'
 
-const JumpForce = 0.65
+const JumpForce = 1
 const Speed = 0.24
 const MaxVel = 3.5
 const RunVel = 1.6
@@ -84,6 +84,11 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
         console.log('impulse', impulse, linvel)
         rigidbody.current.applyImpulse(impulse, true)
         //     impulse.z += Speed
+      } else if (moveBackward && quadLinvel < MaxVel * MaxVel) {
+        impulse.x -= Math.sin(angle.current) * Speed * 0.2
+        impulse.z -= Math.cos(angle.current) * Speed * 0.2
+        console.log('impulse', impulse, linvel)
+        rigidbody.current.applyImpulse(impulse, true)
       }
       setAnimation(AnimationWalk)
     }
