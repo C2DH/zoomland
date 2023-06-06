@@ -3,14 +3,14 @@ import { useFrame } from '@react-three/fiber'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { MeshStandardMaterial, Object3D } from 'three'
 
-const Clouds = ({ count = 50 }) => {
+const Clouds = ({ count = 30 }) => {
   const [o3d] = useState(() => new Object3D())
   const { nodes, materials } = useGLTF('../assets/models/Cloud.glb')
   const items = useRef()
 
   const cloudMaterial = new MeshStandardMaterial({
-    transparent: true,
-    opacity: 0.7,
+    // transparent: true,
+    // opacity: 0.7,
   })
 
   const instances = useMemo(() => {

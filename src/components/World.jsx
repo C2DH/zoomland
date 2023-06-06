@@ -98,7 +98,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <Flag
               rotation={[0, 2.7, 0]}
               scale={[0.21, 0.21, 0.21]}
-              position={[39.7, 13.4, -52.5]}
+              position={[39.7, 13.1, -52.5]}
             />
             <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-31.3, -0.3, 59.1]} />
             <Umbrella

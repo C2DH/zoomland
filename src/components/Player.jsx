@@ -14,7 +14,7 @@ import {
 } from '../store'
 
 const JumpForce = 0.5
-const Speed = 0.25
+const Speed = 0.4
 const MaxVel = 3.5
 const RunVel = 1.6
 
