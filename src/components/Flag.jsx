@@ -1,27 +1,14 @@
 import React, { useRef, useEffect } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { AnimationMixer } from 'three'
+import { useAnimations, useGLTF } from '@react-three/drei'
 
 export function Flag(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Flag.glb')
+  const { actions } = useAnimations(animations, group)
 
-  console.log('ANIMATION', animations)
   useEffect(() => {
-    const mixer = new AnimationMixer(group.current)
-
-    // Find the desired animation clip
-    const animationClip = animations.find((clip) => clip.name === 'KeyAction.004')
-
-    if (animationClip) {
-      const action = mixer.clipAction(animationClip)
-      action.play()
-    }
-
-    return () => {
-      mixer.stopAllAction()
-    }
-  }, [animations])
+    actions['KeyAction.004'].play()
+  }, [])
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
