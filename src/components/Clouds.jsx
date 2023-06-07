@@ -9,8 +9,8 @@ const Clouds = ({ count = 30 }) => {
   const items = useRef()
 
   const cloudMaterial = new MeshStandardMaterial({
-    // transparent: true,
-    // opacity: 0.7,
+    transparent: true,
+    opacity: 0.7,
   })
 
   const instances = useMemo(() => {
