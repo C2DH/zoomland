@@ -7,22 +7,34 @@ Source: https://sketchfab.com/3d-models/lumberjack-low-poly-character-d88d033c86
 Title: Lumberjack Low Poly Character
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef, useEffect } from 'react'
+import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Lumberjack = (props) => {
-  const { nodes, materials } = useGLTF('../assets/models/Lumberjack.gltf')
+  const group = useRef()
+  const { nodes, materials, animations } = useGLTF('../assets/models/Lumberjack.glb')
+  const { actions } = useAnimations(animations, group)
+
+  useEffect(() => {
+    actions['Lumberjack2'].play()
+  }, [])
   return (
-    <group position={[0, 1, 0]} dispose={null}>
-      <mesh
-        geometry={nodes.Object_2.geometry}
-        material={materials.Material}
-        rotation={[-Math.PI / 2, 0, 0]}
-      />
+    <group ref={group} {...props} dispose={null}>
+      <group name="Scene">
+        <mesh
+          name="Lumberjack"
+          castShadow
+          receiveShadow
+          geometry={nodes.Lumberjack.geometry}
+          material={materials['Material.001']}
+          morphTargetDictionary={nodes.Lumberjack.morphTargetDictionary}
+          morphTargetInfluences={nodes.Lumberjack.morphTargetInfluences}
+        />
+      </group>
     </group>
   )
 }
 
-useGLTF.preload('../assets/models/Lumberjack.gltf')
+useGLTF.preload('../assets/models/Lumberjack.glb')
 
 export default Lumberjack
