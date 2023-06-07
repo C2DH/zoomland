@@ -174,7 +174,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
                 <FirTree />
               </Forest>
-              <Forest positions={SmallTrees.positions} scales={SmallTrees.scales} maxScale={1.5}>
+              <Forest positions={SmallTrees.positions} scales={SmallTrees.scales} maxScale={1.2}>
                 <FirTreeSmall />
               </Forest>
 
@@ -192,7 +192,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
                 <Lighthouse scale={5} />
               </Target>
               <TheDispatcher quest={Quests[0]} position={[-5, -0.5, 7]}>
-                <Lumberjack />
+                <Lumberjack scale={0.6} />
               </TheDispatcher>
             </Physics>
           </Suspense>
