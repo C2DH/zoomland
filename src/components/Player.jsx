@@ -16,6 +16,7 @@ import {
 const JumpForce = 0.5
 const Speed = 0.4
 const MaxVel = 3.5
+const MaxSprintVel = 5
 const RunVel = 1.6
 
 const updateCamera = (camera, { radius = 2.5, target, delta, angle }) => {
@@ -35,15 +36,7 @@ const updateCamera = (camera, { radius = 2.5, target, delta, angle }) => {
 const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
   const rigidbody = useRef()
   const isOnFloor = useRef(true)
-  const previousKeysAndKeyDelta = useRef({
-    moveLeft: false,
-    moveRight: false,
-    moveForward: false,
-    moveBackward: false,
-    kd: 0,
-  })
   const character = useRef()
-  const directionOffset = useRef({ x: 0, y: 0, z: 4 })
   // current caracter rotation
   const angle = useRef(0)
   const [, getKeys] = useKeyboardControls()
@@ -52,12 +45,27 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
     state.isCollectingQuest,
     state.isCollectingChapter,
   ])
+  const [doneCollectingQuest, doneCollectingChapter] = usePlayerStore((state) => [
+    state.doneCollectingQuest,
+    state.doneCollectingChapter,
+  ])
 
   const [smoothedCameraTarget] = useState(() => new Vector3())
 
   useFrame((state, delta) => {
-    const { moveForward, moveBackward, moveLeft, moveRight, jump } = getKeys()
+    const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = getKeys()
     const shouldStayStill = isCollectingQuest || isCollectingChapter
+
+    // if press space and shouldStaystill, then done collecting stuff
+    if (jump && shouldStayStill) {
+      if (isCollectingQuest) {
+        doneCollectingQuest()
+      } else if (isCollectingChapter) {
+        doneCollectingChapter()
+      }
+      return
+    }
+
     const impulse = { x: 0, y: 0, z: 0 }
     // animation
     if (shouldStayStill || (!moveForward && !moveBackward && !moveLeft && !moveRight && !jump)) {
@@ -70,146 +78,36 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
     } else if (moveForward || moveBackward || moveLeft || moveRight) {
       const linvel = rigidbody.current.linvel()
       if (moveLeft) {
-        angle.current += 2 * delta
-        console.log('angle', angle.current)
+        angle.current += 1.2 * delta
       } else if (moveRight) {
-        angle.current -= 2 * delta
-        console.log('angle', angle.current)
+        angle.current -= 1.2 * delta
       }
       const quadLinvel = linvel.z * linvel.z + linvel.x * linvel.x
-      if (moveForward && quadLinvel < MaxVel * MaxVel) {
+      const maxQuadVel = MaxVel * MaxVel
+      const maxForwardVel = sprint ? MaxSprintVel * MaxSprintVel : maxQuadVel
+      if (moveForward && quadLinvel < maxForwardVel) {
         // add current angle to the impulse
         impulse.x += Math.sin(angle.current) * Speed
         impulse.z += Math.cos(angle.current) * Speed
-        console.log('impulse', impulse, linvel)
         rigidbody.current.applyImpulse(impulse, true)
-        //     impulse.z += Speed
-      } else if (moveBackward && quadLinvel < MaxVel * MaxVel) {
-        impulse.x -= Math.sin(angle.current) * Speed * 0.2
-        impulse.z -= Math.cos(angle.current) * Speed * 0.2
-        console.log('impulse', impulse, linvel)
+      } else if (moveBackward && quadLinvel < maxQuadVel) {
+        impulse.x -= Math.sin(angle.current) * Speed * 0.5
+        impulse.z -= Math.cos(angle.current) * Speed * 0.5
         rigidbody.current.applyImpulse(impulse, true)
       }
-      setAnimation(AnimationWalk)
+      if (moveForward && sprint) {
+        setAnimation(AnimationRun)
+      } else {
+        setAnimation(AnimationWalk)
+      }
     }
 
     const characterWorldPosition = character.current.getWorldPosition(new Vector3())
     // smooth rotation angle
     // character.current.rotation.y += angle.current * 0.1
-    character.current.rotation.y += (angle.current - character.current.rotation.y) * 0.1
+    character.current.rotation.y += (angle.current - character.current.rotation.y) * 0.75
     updateCamera(state.camera, { target: characterWorldPosition, delta, angle: angle.current })
   })
-  // const resetPosition = () => {
-  //   rigidbody.current.setTranslation(vec3({ x: 0, y: 0, z: 0 }));
-  //   rigidbody.current.setLinvel(vec3({ x: 0, y: 0, z: 0 }));
-  // }
-  // useFrame((state, delta) => {
-  //   const { moveForward, moveBackward, moveLeft, moveRight, jump } = getKeys()
-  //   const impulse = { x: 0, y: 0, z: 0 }
-  //   // kd increase only if you keep hitting the same key
-  //   let kd = 0
-  //   const shouldStayStill = isCollectingQuest || isCollectingChapter
-  //   if (shouldStayStill) {
-  //     setAnimation(AnimationIdle)
-  //   }
-  //   if (!shouldStayStill && jump && isOnFloor.current) {
-  //     impulse.y += JumpForce
-  //     isOnFloor.current = false
-  //     setAnimation(AnimationJump)
-  //   }
-
-  //   const linvel = rigidbody.current.linvel()
-  //   let changeRotation = false
-  //   if (!shouldStayStill && moveRight && linvel.x < MaxVel) {
-  //     impulse.x += Speed
-  //     changeRotation = true
-  //     directionOffset.current = { x: -7, y: 0, z: 3 }
-  //   }
-  //   if (!shouldStayStill && moveLeft && linvel.x > -MaxVel) {
-  //     if (previousKeysAndKeyDelta.current.moveLeft) {
-  //       const kd = previousKeysAndKeyDelta.current.kd + delta
-  //       const angle = Math.PI * 2 * kd
-  //       const arcImpulse = {
-  //         x: -Speed * Math.cos(angle),
-  //         y: 0,
-  //         z: Speed * Math.sin(angle),
-  //       }
-  //       impulse.x += arcImpulse.x
-  //       impulse.y += arcImpulse.y
-  //       impulse.z += arcImpulse.z
-  //     } else {
-  //       impulse.x -= Speed / 2 // Add this line to apply a gradual arc impulse to the left
-  //     }
-  //     changeRotation = true
-  //     directionOffset.current = { x: 5, y: 0, z: 3 }
-  //   }
-  //   if (!shouldStayStill && moveBackward && linvel.z < MaxVel) {
-  //     impulse.z += Speed
-  //     changeRotation = true
-  //     directionOffset.current = { x: 0, y: 0, z: 3 }
-  //   }
-  //   if (!shouldStayStill && moveForward && linvel.z > -MaxVel) {
-  //     impulse.z -= Speed
-  //     changeRotation = true
-  //     directionOffset.current = { x: 0, y: 0, z: 3 }
-  //     // directionOffset.current = { x: 0, y: 0, z: 5 }
-  //   }
-  //   // if (!moveForward && !moveBackward && !moveLeft && !moveRight) {
-  //   //   directionOffset.current = { x: 0, y: 0, z: 5 }
-  //   // }
-  //   //
-  //   previousKeysAndKeyDelta.current = { moveLeft, moveRight, moveForward, moveBackward, kd }
-
-  //   rigidbody.current.applyImpulse(impulse, true)
-
-  //   if (Math.abs(linvel.x) > RunVel || Math.abs(linvel.z) > RunVel) {
-  //     setAnimation(AnimationRun)
-  //   } else {
-  //     setAnimation(AnimationIdle)
-  //   }
-
-  //   const angle = Math.atan2(linvel.x, linvel.z)
-  //   // CAMERA FOLLOW
-  //   const characterWorldPosition = character.current.getWorldPosition(new Vector3())
-  //   const targetCameraPosition = new Vector3(
-  //     characterWorldPosition.x + directionOffset.current.x,
-  //     characterWorldPosition.y + 2.5,
-  //     characterWorldPosition.z + directionOffset.current.z,
-  //   )
-  //   if (changeRotation) {
-  //     console.info(
-  //       'characterWorldPosition \n',
-  //       JSON.stringify([
-  //         Number(characterWorldPosition.x).toFixed(1),
-  //         Number(characterWorldPosition.y).toFixed(1),
-  //         Number(characterWorldPosition.z).toFixed(1),
-  //       ]),
-  //     )
-
-  //     // gently rotate the character towards the direction of movement
-  //     character.current.rotation.y = character.current.rotation.y * 0.8 + angle * 0.2
-  //   }
-
-  //   state.camera.position.lerp(targetCameraPosition, delta * 2)
-
-  //   const targetLookAt = new Vector3(
-  //     characterWorldPosition.x,
-  //     characterWorldPosition.y + 2,
-  //     characterWorldPosition.z,
-  //   )
-
-  //   const direction = new Vector3()
-  //   state.camera.getWorldDirection(direction)
-
-  //   const position = new Vector3()
-  //   state.camera.getWorldPosition(position)
-
-  //   const currentLookAt = position.clone().add(direction)
-  //   const lerpedLookAt = new Vector3()
-
-  //   lerpedLookAt.lerpVectors(currentLookAt, targetLookAt, delta * 2)
-  //   state.camera.lookAt(lerpedLookAt)
-  // })
 
   return (
     <>
