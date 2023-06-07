@@ -19,7 +19,7 @@ import Target from './Target'
 import Pound from './Pound'
 import Ocean from './Ocean'
 import Windmill from './Windmill'
-import Lighttower from './Lighttower'
+import Lighthouse from './Lighthouse'
 import WindTurbine from './WindTurbine'
 import BigTree from './BigTree'
 import Antenna from './Antenna'
@@ -65,6 +65,8 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
           { keys: ['KeyA', 'ArrowLeft'], name: 'moveLeft' },
           { keys: ['KeyD', 'ArrowRight'], name: 'moveRight' },
           { keys: ['Space', 'KeyJ'], name: 'jump' },
+          // shift: 'sprint',
+          { keys: ['ShiftLeft', 'ShiftRight'], name: 'sprint' },
         ]}
       >
         <Canvas camera={CloseCamera} shadows dpr={1}>
@@ -169,15 +171,19 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               <Forest positions={SmallTrees.positions} scales={SmallTrees.scales}>
                 <SmallTree />
               </Forest>
-              {/* add one target per chap^ter in the desired position */}
-              {Chapters.map((d) => (
-                <Target key={d.id} chapter={d} position={d.position} />
-              ))}
+
               <Target chapter={Chapters[0]} position={[-60, 27, -58]}>
                 <Windmill scale={0.3} rotation={[0, 1, 0]} />
               </Target>
-              <Target chapter={Chapters[0]} position={[54, 20.4, -85]}>
-                <Lighttower scale={5} />
+              <Target
+                radius={4}
+                height={0.5}
+                offset={[0, 1, 0]}
+                chapter={Chapters[15]}
+                position={[54, 20.4, -85]}
+                placeHolderOffsetPosition={[-2.8, 3, 3.7]}
+              >
+                <Lighthouse scale={5} />
               </Target>
               <TheDispatcher quest={Quests[0]} position={[-5, -0.5, 7]}>
                 <Lumberjack />
