@@ -21,10 +21,23 @@ export const useAnimationStore = create((set, get) => ({
     })
   },
 }))
-
+export const useWorldStore = create((set, get) => ({
+  playerPosition: [0, 0, 0],
+  setPlayerPosition: (playerPosition) => {
+    const simplifiedPlayerPosition = [
+      Math.round(playerPosition.x * 100) / 100,
+      Math.round(playerPosition.y * 100) / 100,
+      Math.round(playerPosition.z * 100) / 100,
+    ]
+    // change only if position is different
+    const previousPlayerPosition = get().playerPosition
+    if (simplifiedPlayerPosition.join(',') === previousPlayerPosition.join(',')) return
+    console.debug('[store] setPlayerPosition:', simplifiedPlayerPosition)
+    return set({ playerPosition: simplifiedPlayerPosition })
+  },
+}))
 export const NumberOfChapters = 17
 export const NumberOfQuests = 10
-
 export const usePlayerStore = create(
   persist(
     (set, get) => ({
