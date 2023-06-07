@@ -10,8 +10,24 @@ const Map = () => {
         <Link to="/">back</Link>
       </h2>
       <h1>Map</h1>
-      <Canvas camera={{ position: [20.8923846860428, 20.97427986352267, 20.68959842565253] }}>
-        <ambientLight />
+      <Canvas
+        shadows
+        camera={{ position: [20.8923846860428, 20.97427986352267, 20.68959842565253] }}
+      >
+        <ambientLight intensity={0.25} />
+        <directionalLight
+          position={[20, 40, 20]}
+          intensity={1}
+          castShadow
+          shadow-mapSize={[2048, 2048]}
+          shadow-camera-near={20}
+          shadow-camera-far={100}
+          shadow-camera-top={100}
+          shadow-camera-right={100}
+          shadow-camera-bottom={-100}
+          shadow-camera-left={-100}
+          shadow-bias={-0.01}
+        />
         <group dispose={null}>
           <mesh
             castShadow
@@ -20,14 +36,7 @@ const Map = () => {
             material={materials.Land}
             position={[0, 0.05, 0]}
           />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Ocean.geometry}
-            material={materials.Material}
-            position={[0, 0.04, 0]}
-            scale={23.34}
-          />
+
           <mesh
             castShadow
             receiveShadow
@@ -41,9 +50,14 @@ const Map = () => {
             receiveShadow
             geometry={nodes.Bridge.geometry}
             material={materials['Bridge.002']}
+            position={[6.23, 1.06, -0.87]}
             scale={-0.35}
           />
         </group>
+        <mesh receiveShadow position={[0, -0.2, 0]}>
+          <cylinderBufferGeometry args={[20, 20, 0.5, 32]} />
+          <meshStandardMaterial color="blue" />
+        </mesh>
         <OrbitControls
           minAzimuthAngle={0}
           maxAzimuthAngle={Math.PI / 2}

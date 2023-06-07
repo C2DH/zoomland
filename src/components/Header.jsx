@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { usePlayerStore, NumberOfChapters } from '../store'
 import './Header.css'
+import Timer from './Timer'
 
 const Header = ({ children }) => {
   const [progress, collectedChapters] = usePlayerStore((state) => [
@@ -29,7 +30,7 @@ const Header = ({ children }) => {
           <Col className="text-end">
             elapsed time:
             <br />
-            00:00:00
+            <Timer />
           </Col>
         </Row>
       </Container>
