@@ -11,7 +11,7 @@ const ChapterListItem = ({ chapter, isFound = false }) => {
           {chapter.title}
         </Card.Title>
         <Card.Text>{chapter.excerpt}</Card.Text>
-        <h6>authors</h6>
+        <b>authors</b>
         <Card.Text>
           {chapter.authors.map((a, i) => {
             return (
@@ -24,7 +24,7 @@ const ChapterListItem = ({ chapter, isFound = false }) => {
         </Card.Text>
         {Array.isArray(chapter.keywords) && (
           <Card.Text>
-            <h6>keywords</h6>
+            <b>keywords</b>
             {chapter.keywords.join(', ')}
           </Card.Text>
         )}

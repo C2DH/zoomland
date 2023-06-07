@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { usePlayerStore, NumberOfChapters } from '../store'
+import { usePlayerStore, NumberOfChapters, useWorldStore } from '../store'
 import './Header.css'
 import Timer from './Timer'
 
@@ -9,6 +9,9 @@ const Header = ({ children }) => {
     state.progress,
     state.collectedChapters,
   ])
+  const saveInitialPropsToPlayerStore = useWorldStore(
+    (state) => state.saveInitialPropsToPlayerStore,
+  )
 
   const HumanreadableProgress = Math.round(progress * 100)
   return (
@@ -17,6 +20,9 @@ const Header = ({ children }) => {
         <Row>
           <Col>
             <h1>Zoomland</h1>
+            <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
+              save
+            </button>
             {children}
           </Col>
           <Col className="text-end">

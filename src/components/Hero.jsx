@@ -13,7 +13,6 @@ const Hero = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Hero.gltf')
   const { actions, names } = useAnimations(animations, group)
-  console.log('[Hero]', { nodes, materials, animations, actions, names })
   // remap animation names to current const
   const mappedActions = {
     [AnimationIdle]: actions['idle_Armature'],
@@ -39,11 +38,7 @@ const Hero = (props) => {
 
   useEffect(() => {
     const action = mappedActions[animation]
-
-    console.debug('[Hero] animation changed', animation, action, actions)
-
-    // if previousAction is not the same as current action, stop previous action
-    // and play current action
+    // console.debug('[Hero] animation changed:', animation)
     if (previousAnimation) {
       const previousAction = mappedActions[previousAnimation]
       previousAction.fadeOut(0.5)

@@ -4,10 +4,8 @@ import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
 import Landscape from './Landscape'
 import Lights from './Lights'
-import Placeholder from './Placeholder'
 import Forest from './Forest'
 import SmallTree from './SmallTree'
-// import BigTree from './BigTree'
 import './World.css'
 import Player from './Player'
 import Chapters from '../data/Chapters'
@@ -166,10 +164,10 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
                   src="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/ice-cream-truck/model.gltf"
                 />
               </RigidBody>
-              <Placeholder />
+              {/* <Placeholder /> */}
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
-              <Player debug={debug}></Player>
+              <Player debug={debug} position={[94.88, 0.26, -14.2]}></Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
                 <FirTree />

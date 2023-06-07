@@ -5,6 +5,8 @@ export const AnimationIdle = 'idle'
 export const AnimationWalk = 'walk'
 export const AnimationRun = 'run'
 export const AnimationJump = 'jump'
+export const DefaultPlayerPosition = [94.44, 0.26, -13.71]
+export const DefaultPlayerAngle = Math.PI / 2
 
 export const useAnimationStore = create((set, get) => ({
   animation: AnimationIdle,
@@ -13,16 +15,18 @@ export const useAnimationStore = create((set, get) => ({
     // change only if animation is different
     const previousAnimation = get().animation
     if (animation === previousAnimation) return
-
-    console.debug('[store] setAnimation:', animation)
+    // console.debug('[store] setAnimation:', animation)
     return set({
       animation,
       previousAnimation,
     })
   },
 }))
+
 export const useWorldStore = create((set, get) => ({
-  playerPosition: [0, 0, 0],
+  elapsedTime: 0,
+  playerPosition: DefaultPlayerPosition,
+  playerAngle: Math.PI / 2,
   setPlayerPosition: (playerPosition) => {
     const simplifiedPlayerPosition = [
       Math.round(playerPosition.x * 100) / 100,
@@ -32,8 +36,28 @@ export const useWorldStore = create((set, get) => ({
     // change only if position is different
     const previousPlayerPosition = get().playerPosition
     if (simplifiedPlayerPosition.join(',') === previousPlayerPosition.join(',')) return
-    console.debug('[store] setPlayerPosition:', simplifiedPlayerPosition)
+    // console.debug('[store] setPlayerPosition:', simplifiedPlayerPosition)
     return set({ playerPosition: simplifiedPlayerPosition })
+  },
+  setPlayerAngle: (playerAngle) => {
+    // change only if angle is different
+    const previousPlayerAngle = get().playerAngle
+    if (playerAngle === previousPlayerAngle) return
+    // console.debug('[store] setPlayerAngle:', playerAngle)
+    return set({ playerAngle })
+  },
+  saveInitialPropsToPlayerStore: () => {
+    const { playerPosition, playerAngle, elapsedTime } = get()
+    console.debug('[store] saveInitialPropsToPlayerStore!', {
+      playerPosition,
+      playerAngle,
+      elapsedTime,
+    })
+    usePlayerStore.getState().setInitialProps({
+      initialPlayerPosition: playerPosition,
+      initialPlayerAngle: playerAngle,
+      initialElapsedTime: elapsedTime,
+    })
   },
 }))
 export const NumberOfChapters = 17
@@ -44,6 +68,17 @@ export const usePlayerStore = create(
       progress: 0,
       isCollectingQuest: false,
       collectedQuests: [],
+      initialElapsedTime: 0,
+      initialPlayerPosition: DefaultPlayerPosition,
+      initialPlayerAngle: Math.PI / 2,
+      setInitialProps: ({ initialPlayerPosition, initialPlayerAngle, initialElapsedTime }) => {
+        console.debug('[store] setInitialPlayerProps:', initialPlayerPosition, initialPlayerAngle)
+        return set({
+          initialPlayerPosition,
+          initialPlayerAngle,
+          initialElapsedTime,
+        })
+      },
       collectQuest: (quest) => {
         console.debug('[store] collectQuest:', quest.id)
         const collectedQuests = get().collectedQuests
