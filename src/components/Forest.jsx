@@ -1,20 +1,14 @@
 import React from 'react'
 import { RigidBody } from '@react-three/rapier'
 
-const Forest = ({ positions = [], scales = {}, children }) => {
+const Forest = ({ positions = [], maxScale = 2, scales = {}, children }) => {
   // generate random scales and rotations for each element in position index
   //
-  const randomScale = () => {
-    return Math.random() * 2 + 0.2
-  }
-  const randomRotation = () => {
-    return Math.random() * Math.PI * 2
-  }
 
   return (
     <>
       {positions.map((position, index) => {
-        const scale = Math.random() * 2 + 0.2
+        const scale = Math.random() * maxScale + 0.2
         const rotation = Math.random() * Math.PI * 2
         return (
           <React.Fragment key={index}>

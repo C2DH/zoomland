@@ -13,6 +13,9 @@ import Player from './Player'
 import Chapters from '../data/Chapters'
 import Quests from '../data/Quests.json'
 import { default as SmallTrees } from '../data/SmallTrees'
+import { default as BigTrees } from '../data/SmallTrees'
+import FirTree from './FirTree'
+import FirTreeSmall from './FirTreeSmall'
 import Clouds from './Clouds'
 import { Airship } from './Airship'
 import Target from './Target'
@@ -168,8 +171,11 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
               <Player debug={debug}></Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
-              <Forest positions={SmallTrees.positions} scales={SmallTrees.scales}>
-                <SmallTree />
+              <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
+                <FirTree />
+              </Forest>
+              <Forest positions={SmallTrees.positions} scales={SmallTrees.scales} maxScale={1.5}>
+                <FirTreeSmall />
               </Forest>
 
               <Target chapter={Chapters[0]} position={[-60, 27, -58]}>

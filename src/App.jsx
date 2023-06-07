@@ -67,7 +67,7 @@ function App() {
             </Suspense>
           }
         />
-        <Route path="*" element={<>Hey</>} />
+        <Route path="*" element={<></>} />
       </AppRoutes>
     </QueryClientProvider>
   )
