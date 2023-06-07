@@ -70,7 +70,7 @@ export const usePlayerStore = create(
       collectedQuests: [],
       initialElapsedTime: 0,
       initialPlayerPosition: DefaultPlayerPosition,
-      initialPlayerAngle: Math.PI / 2,
+      initialPlayerAngle: DefaultPlayerAngle,
       setInitialProps: ({ initialPlayerPosition, initialPlayerAngle, initialElapsedTime }) => {
         console.debug('[store] setInitialPlayerProps:', initialPlayerPosition, initialPlayerAngle)
         return set({
