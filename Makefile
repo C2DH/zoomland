@@ -23,4 +23,4 @@ run-build-netlify:
 	netlify deploy --alias=${BUILD_TAG} --dir=dist
 
 run-deploy-netlify:
-	netlify deploy --prod --dir=dist
+	netlify deploy --dir=dist --prod 

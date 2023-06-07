@@ -6,7 +6,7 @@ export const AnimationWalk = 'walk'
 export const AnimationRun = 'run'
 export const AnimationJump = 'jump'
 export const DefaultPlayerPosition = [94.44, 0.26, -13.71]
-export const DefaultPlayerAngle = Math.PI / 2
+export const DefaultPlayerAngle = -Math.PI / 2
 
 export const useAnimationStore = create((set, get) => ({
   animation: AnimationIdle,
@@ -26,7 +26,7 @@ export const useAnimationStore = create((set, get) => ({
 export const useWorldStore = create((set, get) => ({
   elapsedTime: 0,
   playerPosition: DefaultPlayerPosition,
-  playerAngle: Math.PI / 2,
+  playerAngle: DefaultPlayerAngle,
   setPlayerPosition: (playerPosition) => {
     const simplifiedPlayerPosition = [
       Math.round(playerPosition.x * 100) / 100,
