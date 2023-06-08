@@ -1,5 +1,5 @@
 import Hero from './Hero'
-import { Suspense, useRef, useState } from 'react'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { RigidBody, CapsuleCollider } from '@react-three/rapier'
 import { OrbitControls, useKeyboardControls } from '@react-three/drei'
@@ -36,7 +36,7 @@ const updateCamera = (camera, { radius = 2.5, target, delta, angle }) => {
   camera.lookAt(new Vector3(target.x, target.y + 1.5, target.z))
 }
 
-const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
+const Player = ({ scale = 0.6 }) => {
   const rigidbody = useRef()
   const isOnFloor = useRef(true)
   const character = useRef()
@@ -52,8 +52,29 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
     state.doneCollectingQuest,
     state.doneCollectingChapter,
   ])
-  const setPlayerPosition = useWorldStore((state) => state.setPlayerPosition)
+  const [initialPlayerPosition, initialPlayerAngle] = usePlayerStore((state) => [
+    state.initialPlayerPosition,
+    state.initialPlayerAngle,
+  ])
+
+  const [setPlayerPosition, setPlayerAngle] = useWorldStore((state) => [
+    state.setPlayerPosition,
+    state.setPlayerAngle,
+  ])
   const [smoothedCameraTarget] = useState(() => new Vector3())
+
+  useEffect(() => {
+    // set initial position
+    console.debug(
+      '[Player] @useEffect',
+      '\n - initialPlayerAngle:',
+      initialPlayerAngle,
+      '\n - initialPlayerPosition:',
+      initialPlayerPosition,
+    )
+
+    angle.current = initialPlayerAngle
+  }, [])
 
   useFrame((state, delta) => {
     const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = getKeys()
@@ -112,6 +133,8 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
       clearTimeout(internalDebounceTimer)
       internalDebounceTimer = setTimeout(() => {
         setPlayerPosition(characterWorldPosition)
+        setPlayerAngle(angle.current)
+        console.debug('[Player] @useFrame - setPlayerPosition', characterWorldPosition)
       }, 1000)
     }
     // setPlayerPosition(characterWorldPosition)
@@ -129,10 +152,10 @@ const Player = ({ scale = 0.6, position = [2, 4, 2] }) => {
         name="player"
         colliders={false}
         enabledRotations={[false, false, false]}
+        position={initialPlayerPosition}
         onCollisionEnter={() => {
           isOnFloor.current = true
         }}
-        position={position}
         scale={[scale, scale, scale]}
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.01, 0]} />

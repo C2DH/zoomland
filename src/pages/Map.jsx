@@ -1,15 +1,18 @@
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Link } from 'react-router-dom'
+import { useWorldStore } from '../store'
 
 const Map = () => {
   const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
+  const playerPosition = useWorldStore((state) => state.playerPosition)
   return (
     <div className="page">
       <h2>
         <Link to="/">back</Link>
       </h2>
       <h1>Map</h1>
+      {JSON.stringify(playerPosition)}
       <Canvas
         shadows
         camera={{ position: [20.8923846860428, 20.97427986352267, 20.68959842565253] }}
@@ -28,6 +31,13 @@ const Map = () => {
           shadow-camera-left={-100}
           shadow-bias={-0.01}
         />
+        <mesh
+          position={[playerPosition[0] / 10, playerPosition[1] / 10 + 0.2, playerPosition[2] / 10]}
+          scale={0.5}
+        >
+          <coneGeometry args={[1, 2, 8]} />
+          <meshStandardMaterial color="red" />
+        </mesh>
         <group dispose={null}>
           <mesh
             castShadow
@@ -55,7 +65,7 @@ const Map = () => {
           />
         </group>
         <mesh receiveShadow position={[0, -0.2, 0]}>
-          <cylinderBufferGeometry args={[20, 20, 0.5, 32]} />
+          <cylinderGeometry args={[20, 20, 0.5, 32]} />
           <meshStandardMaterial color="blue" />
         </mesh>
         <OrbitControls

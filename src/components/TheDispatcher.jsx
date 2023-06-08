@@ -49,18 +49,18 @@ const TheDispatcher = ({ quest, position, children }) => {
         onCollisionExit={collisionExitHandler}
       >
         <mesh>
-          <cylinderBufferGeometry args={[1, 1, 5, 32]} />
+          <cylinderGeometry args={[1, 1, 5, 32]} />
           <meshStandardMaterial color={'blue'} transparent={true} opacity={0} />
         </mesh>
       </RigidBody>
       {children}
       <mesh>
-        <cylinderBufferGeometry args={[0.75, 0.75, 0.2, 32]} />
+        <cylinderGeometry args={[0.75, 0.75, 0.2, 32]} />
         <meshStandardMaterial color={'red'} />
       </mesh>
       <group ref={price} scale={0.5} position={pricePosition}>
         <mesh castShadow receiveShadow>
-          <boxBufferGeometry />
+          <boxGeometry />
           <meshStandardMaterial color={'pink'} />
         </mesh>
       </group>

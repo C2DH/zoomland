@@ -11,7 +11,7 @@ const interpolator = (v) => {
   return `radial-gradient(ellipse at center, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 1) 100%)`
 }
 
-const Vignette = ({ children, visible = true }) => {
+const Vignette = ({ children, visible = true, debug = false }) => {
   const [currentCollectedChapter, isCollectingChapter, collectedChapters] = usePlayerStore(
     (state) => [state.currentCollectedChapter, state.isCollectingChapter, state.collectedChapters],
   )
@@ -80,20 +80,22 @@ const Vignette = ({ children, visible = true }) => {
   return (
     <>
       <animated.div className="Vignette" style={{ background: props.qty.to(interpolator) }}>
-        <div className="btn-group" role="group">
-          <button onClick={handleToggle} type="button" className="btn btn-primary">
-            random chapter
-          </button>
-          <button onClick={handleReset} type="button" className="btn btn-primary">
-            reset chapters
-          </button>
-          <button onClick={handleTestQuests} type="button" className="btn btn-primary">
-            pick random quests
-          </button>
-          <button onClick={handleResetQuests} type="button" className="btn btn-primary">
-            reset quests
-          </button>
-        </div>
+        {debug && (
+          <div className="btn-group" role="group">
+            <button onClick={handleToggle} type="button" className="btn btn-primary">
+              random chapter
+            </button>
+            <button onClick={handleReset} type="button" className="btn btn-primary">
+              reset chapters
+            </button>
+            <button onClick={handleTestQuests} type="button" className="btn btn-primary">
+              pick random quests
+            </button>
+            <button onClick={handleResetQuests} type="button" className="btn btn-primary">
+              reset quests
+            </button>
+          </div>
+        )}
 
         {isCollectingChapter && (
           <div className="Vignette_subs">

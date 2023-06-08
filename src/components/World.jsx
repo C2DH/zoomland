@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
 import Landscape from './Landscape'
 import Lights from './Lights'
-import Placeholder from './Placeholder'
 import Forest from './Forest'
 import SmallTree from './SmallTree'
 import './World.css'
@@ -177,10 +176,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             />
             <IcescreamTruck rotation={[0, 1.3, 0]} position={[-8.7, 0.1, 33.23]} scale={1.5} />
             <Physics debug={debugPhysics}>
-              <Placeholder />
-              {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
-              {/* <BigTree position={[-18, -1.1, -4]} scale={2}></BigTree> */}
-              <Player debug={debug}></Player>
+              <Player debug={debug} position={[94.88, 0.26, -14.2]}></Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
                 <FirTree />

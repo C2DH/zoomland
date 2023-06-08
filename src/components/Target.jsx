@@ -19,12 +19,8 @@ const Target = ({
   const price = useRef()
   const [props, api] = useSpring(() => ({
     scale: 0.5,
-
-    // bounce
     config: config.wobbly,
-    // },
     onChange: ({ value }) => {
-      console.log('props', value.scale)
       price.current.scale.set(value.scale, value.scale, value.scale)
     },
   }))
@@ -83,7 +79,7 @@ const Target = ({
         position={offset}
       >
         <mesh>
-          <cylinderBufferGeometry args={[radius + 0.5, radius + 0.5, height, 16]} />
+          <cylinderGeometry args={[radius + 0.5, radius + 0.5, height, 16]} />
           <meshStandardMaterial
             color="green"
             transparent={transparent}
@@ -93,12 +89,12 @@ const Target = ({
       </RigidBody>
       {children}
       <mesh>
-        <cylinderBufferGeometry args={[radius, radius, height + 0.5, 32]} />
+        <cylinderGeometry args={[radius, radius, height + 0.5, 32]} />
         <meshStandardMaterial color={'red'} />
       </mesh>
       <group ref={price} scale={0.5} position={placeHolderOffsetPosition}>
         <mesh castShadow receiveShadow>
-          <icosahedronBufferGeometry args={[0.5, 0]} />
+          <icosahedronGeometry args={[0.5, 0]} />
 
           <meshStandardMaterial color={'hotpink'} />
         </mesh>
