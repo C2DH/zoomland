@@ -5,12 +5,12 @@ import { useFrame } from '@react-three/fiber'
 const Megaphone = (props) => {
   const megaphoneRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/Megaphone.glb')
-  const seed = Math.random() + 0.8
+  const seed = 0.8
   // Animate the tree
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime()
-    const positionFactor = Math.sin(time * seed) * 0.1 + 0.4
-    megaphoneRef.current.position.y = positionFactor * 1.2
+    const positionFactor = Math.sin(time * seed) * 0.1
+    megaphoneRef.current.position.y = 8.4 + positionFactor
     megaphoneRef.current.rotation.y += 0.005
   })
   return (

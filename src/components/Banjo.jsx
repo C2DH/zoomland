@@ -5,12 +5,12 @@ import { useFrame } from '@react-three/fiber'
 const Banjo = (props) => {
   const banjoRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/Banjo.glb')
-  const seed = Math.random() + 0.8
+  const seed = 0.8
   // Animate the tree
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime()
-    const positionFactor = Math.sin(time * seed) * 0.1 + 0.4
-    banjoRef.current.position.y = positionFactor * 1.2
+    const positionFactor = Math.sin(time * seed) * 0.1
+    banjoRef.current.position.y = 11.9 + positionFactor
     banjoRef.current.rotation.y += 0.005
   })
   return (
