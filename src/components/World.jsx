@@ -266,7 +266,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               >
                 <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} />
               </Target>
-              <TheDispatcher quest={Quests[0]} position={[-2.02, 0.27, 22.59]}>
+              <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
             </Physics>
