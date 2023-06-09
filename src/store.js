@@ -36,7 +36,7 @@ export const useWorldStore = create((set, get) => ({
     // change only if position is different
     const previousPlayerPosition = get().playerPosition
     if (simplifiedPlayerPosition.join(',') === previousPlayerPosition.join(',')) return
-    // console.debug('[store] setPlayerPosition:', simplifiedPlayerPosition)
+    console.debug('[store] setPlayerPosition:', simplifiedPlayerPosition)
     return set({ playerPosition: simplifiedPlayerPosition })
   },
   setPlayerAngle: (playerAngle) => {

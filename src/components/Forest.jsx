@@ -8,7 +8,10 @@ const Forest = ({ positions = [], maxScale = 2, scales = {}, children }) => {
   return (
     <>
       {positions.map((position, index) => {
-        const scale = Math.random() * maxScale + 0.2
+        const scale =
+          position.length > 3 && typeof position[3] === 'object'
+            ? position[3].scale
+            : Math.random() * maxScale + 0.2
         const rotation = Math.random() * Math.PI * 2
         return (
           <React.Fragment key={index}>

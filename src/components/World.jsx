@@ -43,6 +43,7 @@ import Flag from './Flag'
 import TheDispatcher from './TheDispatcher'
 import Lumberjack from './Lumberjack'
 import IcescreamTruck from './IcescreamTruck'
+import Windsock from './Windsock'
 
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
@@ -96,7 +97,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
             <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.1, 47.6]} />
             <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} position={[-54.4, -0.1, -19.6]} />
-            <Arch rotation={[0, 0.3, 0]} scale={[2.2, 2.2, 2.2]} position={[-1.2, 13.5, -65.7]} />
+            <Arch rotation={[0, 0.3, 0]} scale={[2.4, 2.4, 2.4]} position={[-1.2, 13.5, -65.7]} />
             <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -0.8, -10.2]} />
             <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
             <StoneBig rotation={[0, 1, 0]} scale={[1.5, 1.5, 1.5]} position={[0.4, 14.2, -72.6]} />
@@ -105,12 +106,18 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <StoneBig rotation={[1, 1.5, 1]} scale={[2.5, 1.5, 2]} position={[11.2, 12.5, -70.1]} />
             <StoneBig rotation={[1, 1.5, 1]} scale={[2.5, 1.5, 2]} position={[-33.3, 0.8, 33.56]} />
             <StoneBig rotation={[-0.5, 1.5, 1]} scale={[2.5, 2.5, 2]} position={[85, 7.5, 6]} />
+            <StoneBig
+              rotation={[-0.7, 1.9, 1.3]}
+              scale={[2.5, 2.5, 2]}
+              position={[16.45, 9.8, -50.67]}
+            />
             <Cinema rotation={[0, 0.2, 0]} scale={[3, 3, 3]} position={[-20, -0.7, 6]} />
             <Transmitter scale={[0.2, 0.2, 0.2]} position={[-71.9, 9.45, 65.5]} />
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.21, 0.21]} position={[16.1, 10.2, 75.2]} />
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.21, 0.21]} position={[-75.3, 10.0, 2.2]} />
             <Flag rotation={[0, 0, 0]} scale={[0.21, 0.21, 0.21]} position={[39.7, 13.1, -52.5]} />
             <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-31.3, -0.3, 59.1]} />
+            <Windsock rotation={[0, 0, 0]} scale={0.4} position={[5.1, 8.8, 66]} />
             <Umbrella
               rotation={[-0.2, 0, 0.2]}
               scale={[1.5, 1.5, 1.5]}
@@ -190,10 +197,10 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               </Target>
               <Target
                 radius={4}
-                height={0.5}
+                height={1.5}
                 offset={[0, 1, 0]}
                 chapter={Chapters[15]}
-                position={[54, 20.4, -85]}
+                position={Chapters[15].position}
                 placeHolderOffsetPosition={[-2.8, 3, 3.7]}
               >
                 <Lighthouse scale={5} />
