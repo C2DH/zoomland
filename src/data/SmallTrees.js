@@ -13,14 +13,17 @@ export default {
     [21.19, 10.2, 77.41],
     [25.39, 10.2, 77.39],
     //Horse hill - close to the town
+    //Horse hill - house
+    [41.3, 12.6, 51.3, { scale: 0.7 }],
+    [41.3, 12.6, 56.3, { scale: 0.6 }],
     //Close to the ocean
     [69.48, 12.2, 71.27],
     [67.21, 12.2, 74.38],
     [79.63, 10.65, 57.1],
     [77.55, 11.0, 60.77],
     [77.92, 10.7, 58.19],
-    [92.18, 6.9, 17.26],
-    [90.3, 7, 13.6],
+    [92.18, 6.9, 17.26, { scale: 0.5 }],
+    [80.67, 7.2, 9.59, { scale: 0.6 }],
 
     //Close to the harbor
     [89.16, 7, 11.67],
@@ -39,7 +42,7 @@ export default {
     //Close to radar
     //Beach
     //Passage - road
-    //Below the hill with the hotse
+    //Below the hill with the horse
     [34.49, 0.3, 20.99],
     [21.81, 0.2, 24.1],
     [16.65, 0.1, 30.79],

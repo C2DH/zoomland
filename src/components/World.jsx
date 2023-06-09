@@ -86,7 +86,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <Banjo
               rotation={[0, 0, -0.1]}
               scale={[0.2, 0.2, 0.2]}
-              position={[56.95, 11.66, 71.55]}
+              position={[17.83, 10.68, 79.68]}
             />
             <Megaphone
               rotation={[0, 0, 0.3]}
@@ -105,7 +105,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <StoneBig rotation={[0, 0, 0]} scale={[2, 1.5, 2]} position={[4.8, 12.6, -58.4]} />
             <StoneBig rotation={[1, 1.5, 1]} scale={[2.5, 1.5, 2]} position={[11.2, 12.5, -70.1]} />
             <StoneBig rotation={[1, 1.5, 1]} scale={[2.5, 1.5, 2]} position={[-33.3, 0.8, 33.56]} />
-            <StoneBig rotation={[-0.5, 1.5, 1]} scale={[2.5, 2.5, 2]} position={[85, 7.5, 6]} />
+            <StoneBig rotation={[-0.5, 1.8, 1]} scale={[2.7, 2.9, 2.3]} position={[85, 7.2, 6]} />
             <StoneBig
               rotation={[-0.7, 1.9, 1.3]}
               scale={[2.5, 2.5, 2]}
@@ -113,8 +113,8 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             />
             <Cinema rotation={[0, 0.2, 0]} scale={[3, 3, 3]} position={[-20, -0.7, 6]} />
             <Transmitter scale={[0.2, 0.2, 0.2]} position={[-71.9, 9.45, 65.5]} />
-            <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.21, 0.21]} position={[16.1, 10.2, 75.2]} />
-            <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.21, 0.21]} position={[-75.3, 10.0, 2.2]} />
+            <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[60.04, 11.7, 72.7]} />
+            <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[-75.3, 10.0, 2.2]} />
             <Flag rotation={[0, 0, 0]} scale={[0.21, 0.21, 0.21]} position={[39.7, 13.1, -52.5]} />
             <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-31.3, -0.3, 59.1]} />
             <Windsock rotation={[0, 0, 0]} scale={0.4} position={[5.1, 8.8, 66]} />
