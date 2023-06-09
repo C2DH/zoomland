@@ -192,7 +192,18 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
                 <FirTreeSmall />
               </Forest>
 
-              <Target chapter={Chapters[0]} position={[-60, 27, -58]}>
+              <Target
+                chapter={Chapters[0]}
+                position={[-60, 27, -58]}
+                geometry="cylinder"
+                geometryArgs={[3.2, 3.2, 5, 8]}
+                additionalGeometry="box"
+                additionalGeometryArgs={[5.5, 6, 2]}
+                additionalGeometryRotation={[0, 1, 0]}
+                additionalGeometryOffsetPosition={[2.5, 0, 2.5]}
+                priceOffsetPosition={[0, 0, 5.22]}
+                transparent
+              >
                 <Windmill scale={0.3} rotation={[0, 1, 0]} />
               </Target>
               <Target
