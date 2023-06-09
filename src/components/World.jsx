@@ -44,6 +44,9 @@ import TheDispatcher from './TheDispatcher'
 import Lumberjack from './Lumberjack'
 import IcescreamTruck from './IcescreamTruck'
 import Windsock from './Windsock'
+import GroundViewSign from './GroundViewSign'
+import BirdEyeViewSign from './BirdEyeViewSign'
+import OverheadViewSign from './OverheadViewSign'
 
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
@@ -124,6 +127,24 @@ const World = ({
             <Flag rotation={[0, 0, 0]} scale={[0.21, 0.21, 0.21]} position={[39.7, 13.1, -52.5]} />
             <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-31.3, -0.3, 59.1]} />
             <Windsock rotation={[0, 0, 0]} scale={0.4} position={[5.1, 8.8, 66]} />
+            <GroundViewSign
+              rotation={[0, 0, 0]}
+              scale={1}
+              position={[7.74, 0.36, 17.45]}
+              color={'#A25FFF'}
+            />
+            <BirdEyeViewSign
+              rotation={[0, 0, 0]}
+              scale={1}
+              position={[7.74, 0.36, 15.45]}
+              color={'#A25FFF'}
+            />
+            <OverheadViewSign
+              rotation={[0, 0, 0]}
+              scale={1}
+              position={[7.74, 0.36, 13.45]}
+              color={'#A25FFF'}
+            />
             <Umbrella
               rotation={[-0.2, 0, 0.2]}
               scale={[1.5, 1.5, 1.5]}
@@ -259,7 +280,7 @@ const World = ({
               <Target chapter={Chapters[14]} position={Chapters[14].position}>
                 <Ufo scale={[0.4, 0.4, 0.4]} />
               </Target>
-              <TheDispatcher quest={Quests[0]} position={[-2.02, 0.27, 22.59]}>
+              <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
             </Physics>
