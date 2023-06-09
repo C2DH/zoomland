@@ -91,16 +91,11 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               scale={[0.2, 0.2, 0.2]}
               position={[17.83, 10.68, 79.68]}
             />
-            <Megaphone
-              rotation={[0, 0, 0.3]}
-              scale={[0.3, 0.3, 0.3]}
-              position={[51.73, 8.05, -37.96]}
-            />
+
             <Ufo rotation={[0, 0, 0]} scale={[0.4, 0.4, 0.4]} position={[-76.9, 9.6, 22.5]} />
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
             <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.1, 47.6]} />
-            <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} position={[-54.4, -0.1, -19.6]} />
-            <Arch rotation={[0, 0.3, 0]} scale={[2.4, 2.4, 2.4]} position={[-1.2, 13.5, -65.7]} />
+
             <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -0.8, -10.2]} />
             <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
             <StoneBig rotation={[0, 1, 0]} scale={[1.5, 1.5, 1.5]} position={[0.4, 14.2, -72.6]} />
@@ -213,18 +208,63 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
                 <FirTreeSmall />
               </Forest>
 
-              <Target chapter={Chapters[0]} position={[-60, 27, -58]}>
+              <Target
+                chapter={Chapters[0]}
+                position={[-60, 27, -58]}
+                geometry="cylinder"
+                geometryArgs={[3.2, 3.2, 5, 8]}
+                additionalGeometry="box"
+                additionalGeometryArgs={[5.5, 6, 2]}
+                additionalGeometryRotation={[0, 1, 0]}
+                additionalGeometryOffsetPosition={[2.5, 0, 2.5]}
+                priceOffsetPosition={[0, 0, 5.22]}
+                transparent
+              >
                 <Windmill scale={0.3} rotation={[0, 1, 0]} />
               </Target>
               <Target
-                radius={4}
+                chapter={Chapters[9]}
+                position={Chapters[9].position}
+                transparent
+                childrenIsRigidBody
+                height={1}
+                priceOffsetPosition={[2, -1, 2]}
+              >
+                <Arch rotation={[0, 0.3, 0]} scale={[2.4, 2.4, 2.4]} />
+              </Target>
+              <Target
                 height={1.5}
                 offset={[0, 1, 0]}
                 chapter={Chapters[15]}
                 position={Chapters[15].position}
-                placeHolderOffsetPosition={[-2.8, 3, 3.7]}
+                geometry="cylinder"
+                geometryArgs={[3.2, 3.2, 5, 8]}
+                transparent
+                priceOffsetPosition={[-2.8, 0, 3.7]}
               >
                 <Lighthouse scale={5} />
+              </Target>
+              <Target
+                chapter={Chapters[12]}
+                position={Chapters[12].position}
+                geometryArgs={[0.5, 0.5, 1, 8]}
+                transparent
+                height={2.5}
+                priceOffsetPosition={[0.5, -1.25, 0]}
+                priceElevation={1}
+              />
+              <Megaphone
+                rotation={[0, 0, 0.3]}
+                scale={[0.2, 0.2, 0.2]}
+                position={Chapters[12].position}
+              />
+              <Target
+                chapter={Chapters[11]}
+                position={Chapters[11].position}
+                geometryArgs={[2, 2, 3, 8]}
+                transparent
+              >
+                <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} />
               </Target>
               <TheDispatcher quest={Quests[0]} position={[-2.02, 0.27, 22.59]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />

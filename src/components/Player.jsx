@@ -119,7 +119,9 @@ const Player = ({ scale = 0.6 }) => {
         impulse.z -= Math.cos(angle.current) * Speed * 0.5
         rigidbody.current.applyImpulse(impulse, true)
       }
-      if (moveForward && sprint) {
+      if (quadLinvel < 0.5) {
+        setAnimation(AnimationIdle)
+      } else if (moveForward && sprint) {
         setAnimation(AnimationRun)
       } else {
         setAnimation(AnimationWalk)
