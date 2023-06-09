@@ -92,7 +92,6 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             <Ufo rotation={[0, 0, 0]} scale={[0.4, 0.4, 0.4]} position={[-76.9, 9.6, 22.5]} />
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
             <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.1, 47.6]} />
-            <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} position={[-54.4, -0.1, -19.6]} />
 
             <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -0.8, -10.2]} />
             <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
@@ -238,6 +237,14 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
                 scale={[0.2, 0.2, 0.2]}
                 position={Chapters[12].position}
               />
+              <Target
+                chapter={Chapters[11]}
+                position={Chapters[11].position}
+                geometryArgs={[2, 2, 3, 8]}
+                transparent
+              >
+                <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} />
+              </Target>
               <TheDispatcher quest={Quests[0]} position={[-2.02, 0.27, 22.59]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
