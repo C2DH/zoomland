@@ -1,0 +1,6 @@
+.Joystick {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: var(--z-index-joystick);
+}

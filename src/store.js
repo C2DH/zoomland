@@ -27,6 +27,8 @@ export const useWorldStore = create((set, get) => ({
   elapsedTime: 0,
   playerPosition: DefaultPlayerPosition,
   playerAngle: DefaultPlayerAngle,
+  joystick: [DefaultPlayerAngle, 0],
+  // change only if angle is different
   setPlayerPosition: (playerPosition) => {
     const simplifiedPlayerPosition = [
       Math.round(playerPosition.x * 100) / 100,
@@ -39,6 +41,17 @@ export const useWorldStore = create((set, get) => ({
     console.debug('[store] setPlayerPosition:', simplifiedPlayerPosition)
     return set({ playerPosition: simplifiedPlayerPosition })
   },
+  setJoystick: (angle, speed) => {
+    if (isNaN(angle)) {
+      const previousPlayerAngle = get().playerAngle
+      return set({ joystick: [previousPlayerAngle, 0] })
+    }
+    return set({
+      playerAngle: angle,
+      joystick: [angle, speed],
+    })
+  },
+  // change only if angle is different
   setPlayerAngle: (playerAngle) => {
     // change only if angle is different
     const previousPlayerAngle = get().playerAngle

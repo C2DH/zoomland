@@ -45,6 +45,7 @@ import Lumberjack from './Lumberjack'
 import IcescreamTruck from './IcescreamTruck'
 import Windsock from './Windsock'
 
+const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 
 const FarAwayCamera = {
@@ -55,12 +56,23 @@ const CloseCamera = {
   position: [10, 13, 10],
 }
 
-const World = ({ width = 500, height = 800, debug = false, debugPhysics = false }) => {
+const World = ({
+  isMobile = false,
+  width = 500,
+  height = 800,
+  debug = false,
+  debugPhysics = false,
+}) => {
   return (
     <div
       className="World"
       style={{ width, height, marginLeft: -width / 2, marginTop: -height / 2 }}
     >
+      {isMobile && (
+        <Suspense fallback={null}>
+          <Joystick />
+        </Suspense>
+      )}
       <KeyboardControls
         map={[
           { keys: ['KeyW', 'ArrowUp'], name: 'moveForward' },
@@ -75,7 +87,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
         <Canvas camera={CloseCamera} shadows dpr={1}>
           {debug && <WorldDashboard />}
 
-          <Suspense>
+          <Suspense fallback={null}>
             <Lights />
             <Clouds />
             <Airship position={[6, 16, 0]} />
@@ -89,7 +101,6 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
               position={[17.83, 10.68, 79.68]}
             />
 
-            <Ufo rotation={[0, 0, 0]} scale={[0.4, 0.4, 0.4]} position={[-76.9, 9.6, 22.5]} />
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
             <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.1, 47.6]} />
 
@@ -178,7 +189,7 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
             />
             <IcescreamTruck rotation={[0, 1.3, 0]} position={[-8.7, 0.1, 33.23]} scale={1.5} />
             <Physics debug={debugPhysics}>
-              <Player debug={debug} position={[94.88, 0.26, -14.2]}></Player>
+              <Player isMobile={isMobile} debug={debug} position={[94.88, 0.26, -14.2]}></Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
                 <FirTree />
@@ -244,6 +255,9 @@ const World = ({ width = 500, height = 800, debug = false, debugPhysics = false 
                 transparent
               >
                 <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} />
+              </Target>
+              <Target chapter={Chapters[14]} position={Chapters[14].position}>
+                <Ufo scale={[0.4, 0.4, 0.4]} />
               </Target>
               <TheDispatcher quest={Quests[0]} position={[-2.02, 0.27, 22.59]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />

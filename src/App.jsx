@@ -9,6 +9,7 @@ import React, { Suspense, useCallback, useEffect } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useWindowStore } from './store'
 import { debounce } from './utils/common'
+import { isMobile } from 'react-device-detect'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
@@ -31,24 +32,27 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Header>
-        <Nav>
-          <Nav.Item className="me-2">
-            <Link to="/">Play</Link>
-          </Nav.Item>
-          <Nav.Item className="me-2">
-            <Link to="/about">About</Link>
-          </Nav.Item>
-          <Nav.Item className="me-2">
-            <Link to="/map">map</Link>
-          </Nav.Item>
-          <Nav.Item className="me-2">
-            <Link to="/chapters">chapters</Link>
-          </Nav.Item>
-        </Nav>
-      </Header>
+      {!isMobile && (
+        <Header>
+          <Nav>
+            <Nav.Item className="me-2">
+              <Link to="/">Play</Link>
+            </Nav.Item>
+            <Nav.Item className="me-2">
+              <Link to="/about">About</Link>
+            </Nav.Item>
+            <Nav.Item className="me-2">
+              <Link to="/map">map</Link>
+            </Nav.Item>
+            <Nav.Item className="me-2">
+              <Link to="/chapters">chapters</Link>
+            </Nav.Item>
+          </Nav>
+        </Header>
+      )}
       <Vignette></Vignette>
-      <World width={window.innerWidth} height={window.innerHeight} />
+
+      <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>
         <Route path="/about" element={<About />} />
         <Route

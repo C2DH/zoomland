@@ -13,6 +13,7 @@ import {
   usePlayerStore,
   useWorldStore,
 } from '../store'
+import { isMobile } from 'react-device-detect'
 
 const JumpForce = 0.5
 const Speed = 0.4
@@ -36,10 +37,13 @@ const updateCamera = (camera, { radius = 2.5, target, delta, angle }) => {
   camera.lookAt(new Vector3(target.x, target.y + 1.5, target.z))
 }
 
-const Player = ({ scale = 0.6 }) => {
+const Player = ({ isMobile = false, scale = 0.6 }) => {
   const rigidbody = useRef()
   const isOnFloor = useRef(true)
   const character = useRef()
+  // joystick
+  // Fetch initial state
+  const joystickRef = useRef(useWorldStore.getState().joystick)
   // current caracter rotation
   const angle = useRef(0)
   const [, getKeys] = useKeyboardControls()
@@ -56,15 +60,12 @@ const Player = ({ scale = 0.6 }) => {
     state.initialPlayerPosition,
     state.initialPlayerAngle,
   ])
-
   const [setPlayerPosition, setPlayerAngle] = useWorldStore((state) => [
     state.setPlayerPosition,
     state.setPlayerAngle,
   ])
-  const [smoothedCameraTarget] = useState(() => new Vector3())
 
   useEffect(() => {
-    // set initial position
     console.debug(
       '[Player] @useEffect',
       '\n - initialPlayerAngle:',
@@ -72,13 +73,34 @@ const Player = ({ scale = 0.6 }) => {
       '\n - initialPlayerPosition:',
       initialPlayerPosition,
     )
-
     angle.current = initialPlayerAngle
   }, [])
 
+  // Connect to the store on mount, disconnect on unmount, catch state-changes in a reference
+  useEffect(() => {
+    if (isMobile) {
+      useWorldStore.subscribe((state) => (joystickRef.current = state.joystick))
+    }
+  }, [])
+
+  const movePlayerWithJoystick = (state, delta, shouldStayStill) => {
+    const [joystickAngle, speed] = joystickRef.current
+    if (shouldStayStill || speed === 0) {
+      setAnimation(AnimationIdle)
+    }
+    character.current.rotation.y = (joystickAngle - character.current.rotation.y) * 0.75
+    const characterWorldPosition = character.current.getWorldPosition(new Vector3())
+    updateCamera(state.camera, { target: characterWorldPosition, delta, angle: joystickAngle })
+  }
+
   useFrame((state, delta) => {
-    const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = getKeys()
     const shouldStayStill = isCollectingQuest || isCollectingChapter
+    if (isMobile) {
+      movePlayerWithJoystick(state, delta, shouldStayStill)
+      return
+    }
+    const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = getKeys()
+
     const isMoving = moveForward || moveBackward || moveLeft || moveRight
     // if press space and shouldStaystill, then done collecting stuff
     if (jump && shouldStayStill) {
@@ -92,7 +114,7 @@ const Player = ({ scale = 0.6 }) => {
 
     const impulse = { x: 0, y: 0, z: 0 }
     // animation
-    if (shouldStayStill || (!moveForward && !moveBackward && !moveLeft && !moveRight && !jump)) {
+    if (shouldStayStill || (!isMoving && !jump)) {
       setAnimation(AnimationIdle)
     } else if (jump && isOnFloor.current) {
       impulse.y += JumpForce
