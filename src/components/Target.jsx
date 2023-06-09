@@ -15,11 +15,13 @@ const Target = ({
   radius = 0.5,
   height = 2,
   priceOffsetPosition = [2, 0, 2],
+  priceElevation = 1,
   offset = [0, 0, 0],
   position,
   children,
-  transparent = true,
+  transparent = false,
   seed = Math.random() + 0.8,
+  childrenIsRigidBody = false,
 }) => {
   // if vignette should be visible
   const price = useRef()
@@ -34,7 +36,7 @@ const Target = ({
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
     const positionFactor = Math.sin(time * seed) * 0.2 + 1
-    price.current.position.y = priceOffsetPosition[1] + positionFactor
+    price.current.position.y = priceElevation + priceOffsetPosition[1] + positionFactor
     price.current.rotation.y += 0.025
   })
 
@@ -77,30 +79,37 @@ const Target = ({
   }
   return (
     <group position={position}>
-      {children}
+      {!childrenIsRigidBody && children}
       {/* the first RigidBody is around the model given as childre and it makes use of the geometry props */}
       <RigidBody colliders={'hull'} type={'fixed'}>
-        <group>
-          <mesh>
-            {geometry === 'cylinder' && <cylinderGeometry args={geometryArgs} />}
-            {geometry === 'box' && <boxGeometry args={geometryArgs} />}
-            <meshStandardMaterial
-              color="green"
-              transparent={transparent}
-              opacity={transparent ? 0 : 0.7}
-            />
-          </mesh>
-          {additionalGeometry ? (
-            <mesh rotation={additionalGeometryRotation} position={additionalGeometryOffsetPosition}>
-              {additionalGeometry === 'box' && <boxGeometry args={additionalGeometryArgs} />}
+        {childrenIsRigidBody ? (
+          children
+        ) : (
+          <group>
+            <mesh>
+              {geometry === 'cylinder' && <cylinderGeometry args={geometryArgs} />}
+              {geometry === 'box' && <boxGeometry args={geometryArgs} />}
               <meshStandardMaterial
                 color="green"
                 transparent={transparent}
                 opacity={transparent ? 0 : 0.7}
               />
             </mesh>
-          ) : null}
-        </group>
+            {additionalGeometry ? (
+              <mesh
+                rotation={additionalGeometryRotation}
+                position={additionalGeometryOffsetPosition}
+              >
+                {additionalGeometry === 'box' && <boxGeometry args={additionalGeometryArgs} />}
+                <meshStandardMaterial
+                  color="green"
+                  transparent={transparent}
+                  opacity={transparent ? 0 : 0.7}
+                />
+              </mesh>
+            ) : null}
+          </group>
+        )}
       </RigidBody>
       {/* the second RigidBody is to show off the price itself */}
       <RigidBody
@@ -110,13 +119,9 @@ const Target = ({
         onCollisionEnter={collisionEnterHandler}
         onCollisionExit={collisionExitHandler}
       >
-        <mesh>
-          <cylinderGeometry args={[radius, radius, height, 8]} />
-          <meshStandardMaterial
-            color={'red'}
-            transparent={transparent}
-            opacity={transparent ? 0 : 0.7}
-          />
+        <mesh castShadow receiveShadow>
+          <cylinderGeometry args={[radius, radius, height, 12]} />
+          <meshStandardMaterial color={'red'} />
         </mesh>
       </RigidBody>
       {/* then the price as floating unreachable, hotpink icosaedron */}

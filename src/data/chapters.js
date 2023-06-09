@@ -11,10 +11,13 @@ export default [
   { id: '6-zooming-in-on-shot-scales', position: [0, 0.5, 0] },
   { id: '7-adapting-the-optics', position: [0, 0.5, 0] },
   { id: '8-scale-exercises', position: [0, 0.5, 0] },
-  { id: '9-complexity-and-analytical-creative-approaches-at-scale', position: [0, 0.5, 0] },
+  {
+    id: '9-complexity-and-analytical-creative-approaches-at-scale',
+    position: [1.5486526489257812, 13.522760391235352, -65.97655487060547],
+  },
   { id: '10-the-scales-of-computational-literary-studies', position: [0, 0.5, 0] },
   { id: '11-text-fractal-dust-and-informational-granularity', position: [0, 0.5, 0] },
-  { id: '12-scale-and-narrative', position: [0, 0.5, 0] },
+  { id: '12-scale-and-narrative', position: [51.73, 8.05, -37.96] },
   { id: '13-meaningful-aesthetics', position: [0, 0.5, 0] },
   {
     id: '14-defining-level-and-scale-as-socio-technical-operators-for-mining-digital-traces',
