@@ -1,4 +1,4 @@
-const OverheadView = (color = 'var(--pale-yellow)', width = 200) => {
+const OverheadView = ({ color = 'var(--pale-yellow)', width = 40 }) => {
   const ratio = 301 / 302
   const height = width / ratio
   return (

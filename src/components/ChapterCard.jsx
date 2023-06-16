@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { a, useSpring } from '@react-spring/web'
 import './ChapterCard.css'
+import OverheadView from './Svg/OverheadView'
 const ChapterCard = ({ chapter }) => {
   const [flipped, set] = useState(false)
   const { transform, opacity } = useSpring({
@@ -10,8 +11,15 @@ const ChapterCard = ({ chapter }) => {
   })
   return (
     <div className="ChapterCard" onClick={() => set((state) => !state)}>
-      <a.div className="ChapterCard_front" style={{ opacity: opacity.to((o) => 1 - o), transform }}>
-        STICAZZI {chapter.title}
+      <a.div
+        className="ChapterCard_front"
+        style={{
+          opacity: opacity.to((o) => 1 - o),
+          transform,
+        }}
+      >
+        {chapter.title}
+        <OverheadView />
       </a.div>
       <a.div
         className="ChapterCard_back"
