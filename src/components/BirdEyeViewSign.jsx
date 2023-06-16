@@ -15,7 +15,7 @@ const BirdEyeViewSign = ({ color, ...props }) => {
     signRef.current.rotation.y += 0.005
   })
 
-  //Pick color - Media #A25FFF, History, Hermeneutics, Digital landscapes
+  //Pick color - Media #fa953b, History - #325e9b, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #7c7c7c
   console.log('COLOR_SIGNM', color)
   const signColor = new MeshStandardMaterial({
     ...materials.Media,
@@ -23,28 +23,31 @@ const BirdEyeViewSign = ({ color, ...props }) => {
   })
 
   return (
-    <group {...props} dispose={null} ref={signRef}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Circle.geometry}
-        material={materials.Metal}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={0.32}
-      />
-      <group rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BirdsEyeViewSign_1.geometry}
-          material={materials.Metal}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BirdsEyeViewSign_2.geometry}
-          material={signColor}
-        />
+    <group ref={signRef} {...props} dispose={null}>
+      <group name="Scene">
+        <group name="Circle003">
+          <mesh
+            name="Circle003_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle003_1.geometry}
+            material={materials['1_WHITE']}
+          />
+          <mesh
+            name="Circle003_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle003_2.geometry}
+            material={signColor}
+          />
+          <mesh
+            name="Circle003_3"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle003_3.geometry}
+            material={signColor}
+          />
+        </group>
       </group>
     </group>
   )

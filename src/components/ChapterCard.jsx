@@ -5,6 +5,8 @@ import OverheadView from './Svg/OverheadView'
 import { useWindowStore } from '../store'
 
 const CardAspectRatio = 1.7777
+import BirdEyeView from './Svg/BirdEyeView'
+import GroundView from './Svg/GroundView'
 const ChapterCard = ({ chapter }) => {
   const ref = useRef(null)
   const isFlipped = useRef(false)
@@ -60,6 +62,8 @@ const ChapterCard = ({ chapter }) => {
           <img srcSet={chapter.card.srcset} alt={chapter.card.alt} className="ChapterCard_cover" />
         )}
         <OverheadView />
+        <BirdEyeView />
+        <GroundView />
       </a.div>
       <a.div
         className="ChapterCard_back"
