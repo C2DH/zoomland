@@ -9,6 +9,7 @@ import {
   AnimationJump,
   AnimationRun,
   AnimationWalk,
+  DefaultPlayerAngle,
   useAnimationStore,
   usePlayerStore,
   useWorldStore,
@@ -73,7 +74,11 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
       '\n - initialPlayerPosition:',
       initialPlayerPosition,
     )
-    angle.current = initialPlayerAngle
+    if (isMobile) {
+      angle.current = DefaultPlayerAngle
+    } else {
+      angle.current = initialPlayerAngle
+    }
   }, [])
 
   // Connect to the store on mount, disconnect on unmount, catch state-changes in a reference
@@ -84,13 +89,43 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   }, [])
 
   const movePlayerWithJoystick = (state, delta, shouldStayStill) => {
-    const [joystickAngle, speed] = joystickRef.current
+    const [steeringAngle, speed] = joystickRef.current
     if (shouldStayStill || speed === 0) {
       setAnimation(AnimationIdle)
+    } else if (speed < 0.5) {
+      setAnimation(AnimationWalk)
+    } else {
+      setAnimation(AnimationRun)
     }
-    character.current.rotation.y = (joystickAngle - character.current.rotation.y) * 0.75
+    if (!shouldStayStill && speed !== 0) {
+      const linvel = rigidbody.current.linvel()
+      const quadLinvel = linvel.z * linvel.z + linvel.x * linvel.x
+      const maxQuadVel = MaxVel * MaxVel
+      const impulse = { x: 0, y: 0, z: 0 }
+
+      if (speed > 0) {
+        const maxForwardVel = speed < 0.5 ? MaxVel : MaxSprintVel
+        if (speed && quadLinvel < maxForwardVel) {
+          // add current angle to the impulse
+          impulse.x += Math.sin(angle.current) * Speed
+          impulse.z += Math.cos(angle.current) * Speed
+          rigidbody.current.applyImpulse(impulse, true)
+        }
+      } else {
+        // move backward
+        if (quadLinvel < maxQuadVel) {
+          impulse.x -= Math.sin(angle.current) * Speed * 0.35
+          impulse.z -= Math.cos(angle.current) * Speed * 0.35
+          rigidbody.current.applyImpulse(impulse, true)
+        }
+      }
+    }
+
+    angle.current += speed > 0 ? -steeringAngle * delta : 0
+    // console.debug(angle.current)
+    character.current.rotation.y += (angle.current - character.current.rotation.y) * 0.75
     const characterWorldPosition = character.current.getWorldPosition(new Vector3())
-    updateCamera(state.camera, { target: characterWorldPosition, delta, angle: joystickAngle })
+    updateCamera(state.camera, { target: characterWorldPosition, delta, angle: angle.current })
   }
 
   useFrame((state, delta) => {

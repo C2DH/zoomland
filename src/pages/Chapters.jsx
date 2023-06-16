@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Page from './Page'
 import axios from 'axios'
 import ChapterListItem from '../components/ChapterListItem'
+import ChapterCard from '../components/ChapterCard'
 import { usePlayerStore } from '../store'
 
 const Chapters = () => {
@@ -29,7 +30,8 @@ const Chapters = () => {
         <Row>
           {data?.map((chapter) => (
             <Col key={chapter.id} xs={12} md={6} lg={6} xl={4} className="mb-4">
-              <ChapterListItem chapter={chapter} />
+              <ChapterCard chapter={chapter} />
+              {/* <ChapterListItem chapter={chapter} /> */}
             </Col>
           ))}
         </Row>

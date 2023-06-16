@@ -8,10 +8,12 @@ const Joystick = ({ size = 100 }) => {
 
   // e = type: "move", x: 0.9098190482930891, y: 0.4150051799231635, direction: "RIGHT", distance: 100
   const handleMove = (e) => {
-    // calculate angle given x and Y position. Origin is the center
-    const angle = Math.atan2(e.y, e.x)
-    console.log('[Joystick]', angle, e.distance)
-    setJoystick(angle, e.distance / 100)
+    // const theta = Math.atan2(e.y, e.x) - Math.PI / 2 // range (-PI, PI]
+    // // calculate angle given x and Y position. Origin is the center
+    // const steeringAngle = e.x === 0 ? 0 : e.x < 0 ? 1 - Math.cos(e.x) : Math.cos(e.x) - 1
+    // const speed = e.y > 0 ? e.distance / 100 : -e.distance / 100
+    // console.log('[Joystick]', e.x, speed)
+    setJoystick(e.x, e.y)
   }
   const handleStop = (e, data) => {
     setJoystick(undefined, 0)
