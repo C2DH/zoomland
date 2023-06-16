@@ -22,6 +22,7 @@ export default [
   {
     id: '14-defining-level-and-scale-as-socio-technical-operators-for-mining-digital-traces',
     position: [-76.9, 9.6, 22.5],
+    perspective: 'ground',
   },
   { id: '15-zooming-is-not-just-scaling', position: [54, 20.4, -85] },
   { id: '16-weather-map', position: [0, 0.5, 0] },

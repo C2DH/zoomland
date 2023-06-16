@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { a, useSpring } from '@react-spring/web'
 import './ChapterCard.css'
 import OverheadView from './Svg/OverheadView'
+import BirdEyeView from './Svg/BirdEyeView'
+import GroundView from './Svg/GroundView'
 const ChapterCard = ({ chapter }) => {
   const [flipped, set] = useState(false)
   const { transform, opacity } = useSpring({
@@ -20,6 +22,8 @@ const ChapterCard = ({ chapter }) => {
       >
         {chapter.title}
         <OverheadView />
+        <BirdEyeView />
+        <GroundView />
       </a.div>
       <a.div
         className="ChapterCard_back"
