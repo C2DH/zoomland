@@ -129,7 +129,7 @@ const World = ({
             <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-31.3, -0.3, 59.1]} />
             <Windsock rotation={[0, 0, 0]} scale={0.4} position={[5.1, 8.8, 66]} />
 
-            {/* //Pick color - Media #fa953b, History - #325e9b, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #7c7c7c */}
+            {/* //Pick color - Media #fa953b, History - #306fc5, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #7c7c7c */}
             <GroundViewSign
               rotation={[0, 0, 0]}
               scale={1}
@@ -140,7 +140,7 @@ const World = ({
               rotation={[0, 0, 0]}
               scale={1}
               position={[7.74, 0.36, 15.45]}
-              color={'#325e9b'}
+              color={'#306fc5'}
             />
             <OverheadViewSign
               rotation={[0, 0, 0]}
