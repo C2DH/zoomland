@@ -7,6 +7,7 @@ import Lights from './Lights'
 import Forest from './Forest'
 import SmallTree from './SmallTree'
 import './World.css'
+import '../index.css'
 import Player from './Player'
 import Chapters from '../data/Chapters'
 import Quests from '../data/Quests.json'
@@ -127,23 +128,25 @@ const World = ({
             <Flag rotation={[0, 0, 0]} scale={[0.21, 0.21, 0.21]} position={[39.7, 13.1, -52.5]} />
             <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-31.3, -0.3, 59.1]} />
             <Windsock rotation={[0, 0, 0]} scale={0.4} position={[5.1, 8.8, 66]} />
+
+            {/* //Pick color - Media #fa953b, History - #325e9b, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #7c7c7c */}
             <GroundViewSign
               rotation={[0, 0, 0]}
               scale={1}
               position={[7.74, 0.36, 17.45]}
-              color={'#A25FFF'}
+              color={'#fa953b'}
             />
             <BirdEyeViewSign
               rotation={[0, 0, 0]}
               scale={1}
               position={[7.74, 0.36, 15.45]}
-              color={'#A25FFF'}
+              color={'#325e9b'}
             />
             <OverheadViewSign
               rotation={[0, 0, 0]}
               scale={1}
               position={[7.74, 0.36, 13.45]}
-              color={'#A25FFF'}
+              color={'#9e43c8'}
             />
             <Umbrella
               rotation={[-0.2, 0, 0.2]}

@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { MeshStandardMaterial } from 'three'
 
-const GroundViewSign = ({ color, ...props }) => {
+const GroundViewSign = ({ color = 'var(--media-category-color)', ...props }) => {
   const signRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/GroundViewSign.glb')
   const seed = 0.8
@@ -15,7 +15,7 @@ const GroundViewSign = ({ color, ...props }) => {
     signRef.current.rotation.y += 0.005
   })
 
-  //Pick color - Media #A25FFF, History, Hermeneutics, Digital landscapes
+  //Pick color - Media #fa953b, History - #325e9b, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #7c7c7c
   console.log('COLOR_SIGNM', color)
   const signColor = new MeshStandardMaterial({
     ...materials.Media,
@@ -23,25 +23,32 @@ const GroundViewSign = ({ color, ...props }) => {
   })
 
   return (
-    <group {...props} dispose={null} ref={signRef}>
-      <group rotation={[Math.PI / 2, 0, 0]}>
-        <mesh castShadow receiveShadow geometry={nodes.GroundView.geometry} material={signColor} />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.GroundView_1.geometry}
-          material={materials.Metal}
-        />
+    <group ref={signRef} {...props} dispose={null}>
+      <group name="Scene">
+        <group name="GroundView002">
+          <mesh
+            name="GroundView002_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.GroundView002_1.geometry}
+            material={signColor}
+          />
+          <mesh
+            name="GroundView002_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.GroundView002_2.geometry}
+            material={signColor}
+          />
+          <mesh
+            name="GroundView002_3"
+            castShadow
+            receiveShadow
+            geometry={nodes.GroundView002_3.geometry}
+            material={materials['1_WHITE']}
+          />
+        </group>
       </group>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Circle.geometry}
-        material={materials.Metal}
-        position={[0, 0.34, 0]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={0.32}
-      />
     </group>
   )
 }
