@@ -7,6 +7,13 @@ import { useWindowStore } from '../store'
 const CardAspectRatio = 1.7777
 import BirdEyeView from './Svg/BirdEyeView'
 import GroundView from './Svg/GroundView'
+import Author from './Author'
+
+const ViewTypes = {
+  birdEye: BirdEyeView,
+  ground: GroundView,
+}
+
 const ChapterCard = ({ chapter }) => {
   const ref = useRef(null)
   const isFlipped = useRef(false)
@@ -28,6 +35,7 @@ const ChapterCard = ({ chapter }) => {
     },
   }))
   const hasCover = chapter.card?.srcset !== undefined
+  const ViewTypeComponent = ViewTypes[chapter.viewType] ? ViewTypes[chapter.viewType] : OverheadView
   const clickHandler = () => {
     // get ref box
     console.log(isFlipped.current, ref.current.getBoundingClientRect())
@@ -64,18 +72,35 @@ const ChapterCard = ({ chapter }) => {
         {hasCover && (
           <img srcSet={chapter.card.srcset} alt={chapter.card.alt} className="ChapterCard_cover" />
         )}
-        <OverheadView />
-        <BirdEyeView />
-        <GroundView />
       </a.div>
       <a.div
         className="ChapterCard_back"
         style={{
           opacity,
           transform,
-          rotateX: '180deg',
+          rotateY: '180deg',
         }}
-      />
+      >
+        <div className="ChapterCard_outer h-100 w-100 d-flex flex-column justify-content-between p-2">
+          <div className="ChapterCard_viewType">
+            <ViewTypeComponent color={'rgba(32, 28, 60)'} width={35}></ViewTypeComponent>
+          </div>
+          <div className="ChapterCard_chapterLabel">
+            chapter <span>#{Number(chapter.n).toString().padStart(2, '0')}</span>
+          </div>
+          <h2>{chapter.title}</h2>
+          <div className="ChapterCard_authors">
+            {chapter.authors.map((a, i) => {
+              return (
+                <div className="d-inline-block me-1" key={i}>
+                  <Author className="d-inline" name={a} />
+                  {i < chapter.authors.length - 1 && <span>,</span>}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </a.div>
     </div>
   )
 }
