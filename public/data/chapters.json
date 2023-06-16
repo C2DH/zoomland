@@ -12,6 +12,10 @@
     "title": "Adventure in Zoomland",
     "n": 1,
     "viewType": "birdEye",
+    "card": {
+      "srcset": "/assets/cards/3-menocchio-mapped-1080w.jpg",
+      "src": "/assets/cards/3-menocchio-mapped-1080w.jpg"
+    },
     "authors": ["Alex Butterworth"],
     "category": "history",
     "keywords": [

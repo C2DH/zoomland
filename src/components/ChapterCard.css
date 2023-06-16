@@ -1,6 +1,7 @@
 .ChapterCard {
   position: relative;
-  height: 400px;
+  /* use padding to keep aspect ratio */
+  padding-bottom: 177.77%;
 }
 .ChapterCard_back,
 .ChapterCard_front {
@@ -9,7 +10,6 @@
   width: 100%;
   cursor: pointer;
   will-change: transform, opacity;
-  background-size: cover;
 }
 
 .ChapterCard_back {
@@ -18,4 +18,12 @@
 
 .ChapterCard_front {
   background-color: orange;
+}
+
+.ChapterCard_cover {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
