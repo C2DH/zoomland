@@ -35,7 +35,7 @@ import StoneBig from './StoneBig'
 import FishNet from './FishNet'
 import Boat from './Boat'
 import House from './House'
-import Cinema from './Cinema'
+import Theater from './Theater'
 import Umbrella from './Umbrella'
 import ObservationTower from './ObservationTower'
 import Transmitter from './Transmitter'
@@ -120,7 +120,7 @@ const World = ({
               scale={[2.5, 2.5, 2]}
               position={[16.45, 9.8, -50.67]}
             />
-            <Cinema rotation={[0, 0.2, 0]} scale={[3, 3, 3]} position={[-20, -0.7, 6]} />
+            <Theater rotation={[0, 0.2, 0]} scale={[3, 3, 3]} position={[-20, -0.7, 6]} />
             <Transmitter scale={[0.2, 0.2, 0.2]} position={[-71.9, 9.45, 65.5]} />
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[60.04, 11.7, 72.7]} />
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[-75.3, 10.0, 2.2]} />
