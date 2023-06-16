@@ -38,11 +38,14 @@ const ChapterCard = ({ chapter }) => {
         Math.min(width / ref.current.offsetWidth, height / ref.current.offsetHeight) * 0.9
       animate.start({
         opacity: 1,
-        transform: `perspective(1000px) rotateY(${180}deg) scale(${maxScale}) `,
+        // transform without scale
+        // transform: `perspective(1000px) rotateY(${180}deg) `,
+        transform: `perspective(1000px) rotateY(${180}deg) scale(${1}) `,
       })
     } else {
       animate.start({
         opacity: 0,
+        // transform: `perspective(1000px) rotateY(0deg) `,
         transform: `perspective(1000px) rotateY(${0}deg) scale(${1}) `,
       })
     }
@@ -70,7 +73,6 @@ const ChapterCard = ({ chapter }) => {
         style={{
           opacity,
           transform,
-
           rotateX: '180deg',
         }}
       />
