@@ -121,7 +121,7 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
       }
     }
 
-    angle.current += speed > 0 ? -steeringAngle * 0.01 : 0
+    angle.current += speed > 0 ? -steeringAngle * delta : 0
     // console.debug(angle.current)
     character.current.rotation.y += (angle.current - character.current.rotation.y) * 0.75
     const characterWorldPosition = character.current.getWorldPosition(new Vector3())

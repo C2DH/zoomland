@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'RocknRoll One', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -35,8 +35,8 @@
   --font-size-7: 1.75rem;
   --font-size-8: 2rem;
 
-  --bs-font-sans-serif: 'Fira Sans', sans-serif;
-  --bs-font-hand-written: 'Permanent Marker', cursive;
+  --bs-font-sans-serif: 'RocknRoll One', sans-serif;
+  --bs-font-hand-written: 'RocknRoll One', sans-serif;
 }
 
 a {

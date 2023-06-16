@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { usePlayerStore, NumberOfChapters, useWorldStore } from '../store'
 import './Header.css'
 import Timer from './Timer'
+import LogoZoomland from './LogoZoomland'
 
 const Header = ({ children }) => {
   const [progress, collectedChapters] = usePlayerStore((state) => [
@@ -19,6 +20,7 @@ const Header = ({ children }) => {
       <Container>
         <Row>
           <Col>
+            <LogoZoomland />
             <h1>Zoomland</h1>
             <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
               save
