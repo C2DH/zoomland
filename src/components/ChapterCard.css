@@ -2,6 +2,15 @@
   position: relative;
   /* use padding to keep aspect ratio */
   padding-bottom: 177.77%;
+  border-radius: 8px;
+}
+.ChapterCard h2 {
+  font-size: var(--font-size-6);
+}
+.ChapterCard h3 {
+  font-size: var(--font-size-2);
+  color: var(--light-rose);
+  text-transform: uppercase;
 }
 .ChapterCard_back,
 .ChapterCard_front {
@@ -10,13 +19,17 @@
   width: 100%;
   cursor: pointer;
   will-change: transform, opacity;
+  /* gentle shadow */
+  box-shadow: 0 0 0 1px rgba(32, 28, 60, 0.1), 0 2px 4px 0 rgba(32, 28, 60, 0.1);
 }
 
 .ChapterCard_back {
+  border-radius: 8px;
   background-color: rgb(255, 248, 202);
 }
 
 .ChapterCard_front {
+  border-radius: 8px;
   background-color: orange;
 }
 
@@ -26,15 +39,24 @@
   top: 0;
   left: 0;
   z-index: -1;
+  border-radius: 8px;
 }
 
 .ChapterCard_viewType {
   position: absolute;
-  top: 7px;
-  right: 7px;
+  top: 17px;
+  right: 17px;
 }
 
 .ChapterCard_outer {
   /* solid inset shadow , four corners */
   box-shadow: inset 0 0 0 5px rgba(32, 28, 60);
+  border-radius: 8px;
+}
+.ChapterCard_footer {
+  height: 50px;
+  padding-top: var(--spacer-half);
+  border-top: 4px solid;
+  text-align: center;
+  width: 100%;
 }

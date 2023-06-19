@@ -8,6 +8,7 @@ const CardAspectRatio = 1.7777
 import BirdEyeView from './Svg/BirdEyeView'
 import GroundView from './Svg/GroundView'
 import Author from './Author'
+import LogoZoomland from './LogoZoomland'
 
 const ViewTypes = {
   birdEye: BirdEyeView,
@@ -68,7 +69,6 @@ const ChapterCard = ({ chapter }) => {
           perspective: '600px',
         }}
       >
-        {chapter.title}
         {hasCover && (
           <img srcSet={chapter.card.srcset} alt={chapter.card.alt} className="ChapterCard_cover" />
         )}
@@ -81,7 +81,7 @@ const ChapterCard = ({ chapter }) => {
           rotateY: '180deg',
         }}
       >
-        <div className="ChapterCard_outer h-100 w-100 d-flex flex-column justify-content-between p-2">
+        <div className="ChapterCard_outer h-100 w-100 d-flex flex-column justify-content-between p-4">
           <div className="ChapterCard_viewType">
             <ViewTypeComponent color={'rgba(32, 28, 60)'} width={35}></ViewTypeComponent>
           </div>
@@ -90,6 +90,7 @@ const ChapterCard = ({ chapter }) => {
           </div>
           <h2>{chapter.title}</h2>
           <div className="ChapterCard_authors">
+            <h3>authors</h3>
             {chapter.authors.map((a, i) => {
               return (
                 <div className="d-inline-block me-1" key={i}>
@@ -98,6 +99,9 @@ const ChapterCard = ({ chapter }) => {
                 </div>
               )
             })}
+          </div>
+          <div className="ChapterCard_footer">
+            <LogoZoomland color="var(--dark-blue)"></LogoZoomland>
           </div>
         </div>
       </a.div>

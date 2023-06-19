@@ -36,7 +36,8 @@
   --font-size-8: 2rem;
 
   --pale-yellow: #fef9cb;
-
+  --dark-blue: rgb(32, 28, 60);
+  --light-rose: rgb(241, 103, 161);
   --bs-font-sans-serif: 'RocknRoll One', sans-serif;
   --bs-font-hand-written: 'RocknRoll One', sans-serif;
 }

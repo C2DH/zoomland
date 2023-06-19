@@ -29,7 +29,7 @@ const Chapters = () => {
       <Container>
         <Row>
           {data?.map((chapter) => (
-            <Col key={chapter.id} xs={4} md={6} lg={6} xl={4} className="mb-4">
+            <Col key={chapter.id} xs={12} md={6} lg={6} xl={3} className="mb-4">
               <ChapterCard chapter={chapter} />
               {/* <ChapterListItem chapter={chapter} /> */}
             </Col>
