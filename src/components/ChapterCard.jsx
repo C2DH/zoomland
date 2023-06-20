@@ -10,6 +10,13 @@ import './ChapterCard.css'
 
 const CardAspectRatio = 1060 / 720
 const CardAspectRatioPercent = `${CardAspectRatio * 100}%`
+const ColorCategory = {
+  introduction: 'red',
+  history: 'var(--history)',
+  media: 'green',
+  hermeneutics: 'red',
+  ['digital landscapes']: 'black',
+}
 
 const ViewTypes = {
   birdEye: BirdEyeView,
@@ -37,12 +44,12 @@ const ChapterCard = ({ chapter }) => {
       }
     },
   }))
+
   const hasCover = chapter.card?.srcset !== undefined
   const ViewTypeComponent = ViewTypes[chapter.viewType] ? ViewTypes[chapter.viewType] : OverheadView
+  const chapterNumber = Number(chapter.n).toString().padStart(2, '0')
+
   const clickHandler = () => {
-    // get ref box
-    console.log(isFlipped.current, ref.current.getBoundingClientRect())
-    // animate.start()
     isFlipped.current = !isFlipped.current
     if (isFlipped.current === true) {
       const maxScale =
@@ -61,11 +68,42 @@ const ChapterCard = ({ chapter }) => {
       })
     }
   }
+
+  const onMouseEnterHandler = () => {
+    if (isFlipped.current === true) {
+      animate.start({
+        transform: `perspective(1000px) rotateY(${180}deg) scale(${1.05}) `,
+        opacity: 1,
+      })
+    } else {
+      animate.start({
+        opacity: 0,
+        transform: `perspective(1000px) rotateY(${0}deg) scale(${1.05}) `,
+      })
+    }
+  }
+
+  const onMouseLeaveHandler = () => {
+    if (isFlipped.current === true) {
+      animate.start({
+        transform: `perspective(1000px) rotateY(${180}deg) scale(${1}) `,
+        opacity: 1,
+      })
+    } else {
+      animate.start({
+        opacity: 0,
+        transform: `perspective(1000px) rotateY(${0}deg) scale(${1}) `,
+      })
+    }
+  }
+
   return (
     <div
       ref={ref}
       className="ChapterCard"
       onClick={clickHandler}
+      onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
       style={{ paddingBottom: CardAspectRatioPercent }}
     >
       <a.div
@@ -79,15 +117,20 @@ const ChapterCard = ({ chapter }) => {
         {hasCover && (
           <img srcSet={chapter.card.srcset} alt={chapter.card.alt} className="ChapterCard_cover" />
         )}
-        {typeof chapter.category === 'string' && (
-          <div className="ChapterCard_category">{chapter.category}</div>
-        )}
+        <div className="ChapterCard_category">{chapter.category}</div>
         <div className="ChapterCard_viewType">
           <ViewTypeComponent
-            color={'rgba(32, 28, 60)'}
-            backgroundColor={'white'}
-            width={35}
+            color={ColorCategory[chapter.category]}
+            backgroundColor={'var(--pale-yellow)'}
+            width={45}
           ></ViewTypeComponent>
+        </div>
+        <div className="ChapterCard_logo">
+          <LogoZoomland size={100} color="var(--pale-yellow)"></LogoZoomland>
+        </div>
+        <div className="ChapterCard_chapterLabel">
+          <div className="ChapterCard_number">#{chapterNumber}</div>
+          {chapter.incipit}
         </div>
       </a.div>
       <a.div
@@ -103,7 +146,7 @@ const ChapterCard = ({ chapter }) => {
             <ViewTypeComponent color={'rgba(32, 28, 60)'} width={35}></ViewTypeComponent>
           </div>
           <div className="ChapterCard_chapterLabel">
-            chapter <span>#{Number(chapter.n).toString().padStart(2, '0')}</span>
+            Chapter <span className="ChapterCard_number">#{chapterNumber}</span>
           </div>
           <h2>{chapter.title}</h2>
           <div className="ChapterCard_authors">
@@ -117,7 +160,7 @@ const ChapterCard = ({ chapter }) => {
               )
             })}
           </div>
-          <div className="ChapterCard_footer">
+          <div className="ChapterCard_logo">
             <LogoZoomland color="var(--dark-blue)"></LogoZoomland>
           </div>
         </div>
