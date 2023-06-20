@@ -13,6 +13,7 @@ import LogoZoomland from './LogoZoomland'
 const ViewTypes = {
   birdEye: BirdEyeView,
   ground: GroundView,
+  overhead: OverheadView,
 }
 
 const ChapterCard = ({ chapter }) => {
