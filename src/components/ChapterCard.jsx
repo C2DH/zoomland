@@ -1,14 +1,15 @@
 import { useRef, useState } from 'react'
 import { a, useSpring } from '@react-spring/web'
-import './ChapterCard.css'
-import OverheadView from './Svg/OverheadView'
 import { useWindowStore } from '../store'
-
-const CardAspectRatio = 1.7777
 import BirdEyeView from './Svg/BirdEyeView'
 import GroundView from './Svg/GroundView'
+import OverheadView from './Svg/OverheadView'
 import Author from './Author'
 import LogoZoomland from './LogoZoomland'
+import './ChapterCard.css'
+
+const CardAspectRatio = 1060 / 720
+const CardAspectRatioPercent = `${CardAspectRatio * 100}%`
 
 const ViewTypes = {
   birdEye: BirdEyeView,
@@ -60,7 +61,12 @@ const ChapterCard = ({ chapter }) => {
     }
   }
   return (
-    <div ref={ref} className="ChapterCard" onClick={clickHandler}>
+    <div
+      ref={ref}
+      className="ChapterCard"
+      onClick={clickHandler}
+      style={{ paddingBottom: CardAspectRatioPercent }}
+    >
       <a.div
         className="ChapterCard_front"
         style={{
@@ -72,6 +78,16 @@ const ChapterCard = ({ chapter }) => {
         {hasCover && (
           <img srcSet={chapter.card.srcset} alt={chapter.card.alt} className="ChapterCard_cover" />
         )}
+        {typeof chapter.category === 'string' && (
+          <div className="ChapterCard_category">{chapter.category}</div>
+        )}
+        <div className="ChapterCard_viewType">
+          <ViewTypeComponent
+            color={'rgba(32, 28, 60)'}
+            backgroundColor={'white'}
+            width={35}
+          ></ViewTypeComponent>
+        </div>
       </a.div>
       <a.div
         className="ChapterCard_back"

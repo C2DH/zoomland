@@ -4,6 +4,22 @@
   padding-bottom: 177.77%;
   border-radius: 8px;
 }
+.ChapterCard_category {
+  /* vertical text centered in the parent ChapterCard relative container */
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  transform: translate(-0%, -50%) rotate(-90deg);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--pale-yellow);
+  font-size: 20px;
+  line-height: 1em;
+  height: 20px;
+  width: 100%;
+  margin-right: 25px;
+  text-align: center;
+}
 .ChapterCard h2 {
   font-size: var(--font-size-6);
 }

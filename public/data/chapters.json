@@ -5,7 +5,11 @@
     "n": 0,
     "viewType": "birdEye",
     "authors": ["Andreas Fickers", "Florentina Armaselu"],
-    "incipit": ""
+    "incipit": "",
+    "card": {
+      "srcset": "/assets/cards/0-introduction-720w.jpg",
+      "src": "/assets/cards/0-introduction-720w.jpg"
+    }
   },
   {
     "id": "1-adventure-in-zoomland",
@@ -13,8 +17,8 @@
     "n": 1,
     "viewType": "birdEye",
     "card": {
-      "srcset": "/assets/cards/3-menocchio-mapped-1080w.jpg",
-      "src": "/assets/cards/3-menocchio-mapped-1080w.jpg"
+      "srcset": "/assets/cards/1-adventure-in-zoomland-720w.jpg",
+      "src": "/assets/cards/1-adventure-in-zoomland-720w.jpg"
     },
     "authors": ["Alex Butterworth"],
     "category": "history",
@@ -50,7 +54,11 @@
     "viewType": "overhead",
     "category": "History",
     "authors": ["Amanda Madden"],
-    "keywords": ["microhistory", "digital history", "spatial history", "GIS"]
+    "keywords": ["microhistory", "digital history", "spatial history", "GIS"],
+    "card": {
+      "srcset": "/assets/cards/3-menocchio-mapped-720w.jpg",
+      "src": "/assets/cards/3-menocchio-mapped-720w.jpg"
+    }
   },
   {
     "id": "4-scaling-digital-history-and-documenting-the-self-emancipated",
