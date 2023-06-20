@@ -14,6 +14,7 @@ const CardAspectRatioPercent = `${CardAspectRatio * 100}%`
 const ViewTypes = {
   birdEye: BirdEyeView,
   ground: GroundView,
+  overhead: OverheadView,
 }
 
 const ChapterCard = ({ chapter }) => {
