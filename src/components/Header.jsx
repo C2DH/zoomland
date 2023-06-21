@@ -16,12 +16,11 @@ const Header = ({ children }) => {
 
   const HumanreadableProgress = Math.round(progress * 100)
   return (
-    <div className="Header m-5">
+    <div className="Header">
       <Container>
         <Row>
           <Col>
             <LogoZoomland />
-            <h1>Zoomland</h1>
             <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
               save
             </button>
