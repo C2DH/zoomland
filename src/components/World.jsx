@@ -48,6 +48,7 @@ import Windsock from './Windsock'
 import GroundViewSign from './GroundViewSign'
 import BirdEyeViewSign from './BirdEyeViewSign'
 import OverheadViewSign from './OverheadViewSign'
+import Boundaries from './Boundaries'
 
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
@@ -221,9 +222,16 @@ const World = ({
               <Forest positions={SmallTrees.positions} scales={SmallTrees.scales} maxScale={0.7}>
                 <FirTreeSmall />
               </Forest>
-
               <Target
                 chapter={Chapters[0]}
+                position={Chapters[0].position}
+                geometryArgs={[2, 2, 0, 8]}
+                priceOffsetPosition={[0, 0, 0]}
+                priceElevation={0.5}
+                transparent
+              ></Target>
+              <Target
+                chapter={Chapters[3]}
                 position={[-60, 27, -58]}
                 geometry="cylinder"
                 geometryArgs={[3.2, 3.2, 5, 8]}
@@ -286,6 +294,7 @@ const World = ({
               <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
+              <Boundaries />
             </Physics>
           </Suspense>
         </Canvas>

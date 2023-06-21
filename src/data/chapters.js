@@ -1,5 +1,5 @@
 export default [
-  { id: '0-introduction', position: [-3, 0.5, 1] },
+  { id: '0-introduction', position: [87.25, 0.26, -15.3] },
   { id: '1-adventure-in-zoomland', position: [-3, 0.5, -4] },
   { id: '2-capturing-discourse-through-the-digital-lens', position: [0, 0.5, 0] },
   { id: '3-menocchio-mapped', position: [-4, 0.5, -4] },

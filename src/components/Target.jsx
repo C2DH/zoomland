@@ -121,7 +121,11 @@ const Target = ({
       >
         <mesh castShadow receiveShadow>
           <cylinderGeometry args={[radius, radius, height, 12]} />
-          <meshStandardMaterial color={'red'} />
+          <meshStandardMaterial
+            color={'var(--dark-blue)'}
+            transparent={transparent}
+            opacity={transparent ? 0 : 1}
+          />
         </mesh>
       </RigidBody>
       {/* then the price as floating unreachable, hotpink icosaedron */}

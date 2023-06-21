@@ -9,15 +9,24 @@ Title: Lumberjack Low Poly Character
 
 import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { usePlayerStore } from '../store'
 
 const Lumberjack = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Lumberjack.glb')
   const { actions } = useAnimations(animations, group)
-
+  const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
+  console.debug('[Lumberjack] isCollectingQuest', isCollectingQuest, actions)
   useEffect(() => {
-    actions['Idle'].play()
-  }, [])
+    if (isCollectingQuest) {
+      actions['Idle'].fadeOut(0.5)
+      actions['Talking'].reset().fadeIn(0.5).play()
+    } else {
+      actions['Talking'].fadeOut(0.5)
+      actions['Idle'].reset().fadeIn(0.5).play()
+    }
+  }, [isCollectingQuest])
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
