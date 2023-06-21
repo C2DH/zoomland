@@ -47,6 +47,10 @@
       "Weimar Republic",
       "democracy"
     ],
+    "card": {
+      "srcset": "/assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg",
+      "src": "/assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg"
+    },
     "excerpt": "",
     "incipit": "Capturing Discourse through the Digital Lens"
   },
@@ -93,7 +97,11 @@
     "category": "media",
     "authors": ["Fred Pailler", "Valérie Schafer"],
     "keywords": ["memes", "virality", "Harlem Shake", "scalable reading", "medium reading"],
-    "incipit": "Keep calm and stay focused"
+    "incipit": "Keep calm and stay focused",
+    "card": {
+      "srcset": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg",
+      "src": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg"
+    }
   },
   {
     "id": "6-zooming-in-on-shot-scales",
@@ -110,7 +118,11 @@
       "cross-cultural comparison"
     ],
     "excerpt": "",
-    "incipit": "Zooming in on Shot Scales"
+    "incipit": "Zooming in on Shot Scales",
+    "card": {
+      "srcset": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg",
+      "src": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg"
+    }
   },
   {
     "id": "7-adapting-the-optics",
@@ -127,7 +139,11 @@
       "authenticity"
     ],
     "excerpt": "",
-    "incipit": "Adapting the optics"
+    "incipit": "Adapting the optics",
+    "card": {
+      "srcset": "/assets/cards/7-adapting-the-optics-720w.jpg",
+      "src": "/assets/cards/7-adapting-the-optics-720w.jpg"
+    }
   },
   {
     "id": "8-scale-exercises",
@@ -144,7 +160,11 @@
       "media studies"
     ],
     "excerpt": "",
-    "incipit": "Scale Exercises"
+    "incipit": "Scale Exercises",
+    "card": {
+      "srcset": "/assets/cards/8-scale-exercises-720w.jpg",
+      "src": "/assets/cards/8-scale-exercises-720w.jpg"
+    }
   },
   {
     "id": "9-complexity-and-analytical-creative-approaches-at-scale",
@@ -161,7 +181,11 @@
       "network analysis"
     ],
     "excerpt": "",
-    "incipit": "Complexity and Analytical-creative ..."
+    "incipit": "Complexity and Analytical-creative ...",
+    "card": {
+      "srcset": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg",
+      "src": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg"
+    }
   },
   {
     "id": "10-the-scales-of-computational-literary-studies",
@@ -178,7 +202,11 @@
       "network analysis"
     ],
     "excerpt": "",
-    "incipit": "The scales of (computational) literary studies"
+    "incipit": "The scales of (computational) literary studies",
+    "card": {
+      "srcset": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg",
+      "src": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg"
+    }
   },
   {
     "id": "11-text-fractal-dust-and-informational-granularity",
@@ -195,7 +223,11 @@
       "digital hermeneutics"
     ],
     "excerpt": "",
-    "incipit": "Text, Fractal Dust and Informational Granularity"
+    "incipit": "Text, Fractal Dust and Informational Granularity",
+    "card": {
+      "srcset": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg",
+      "src": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg"
+    }
   },
   {
     "id": "12-scale-and-narrative",
@@ -206,7 +238,11 @@
     "authors": ["Stephen Robertson"],
     "keywords": ["digital history", "microhistory", "narrative", "argument", "data"],
     "excerpt": "",
-    "incipit": "Scale and Narrative"
+    "incipit": "Scale and Narrative",
+    "card": {
+      "srcset": "/assets/cards/12-scale-and-narrative-720w.jpg",
+      "src": "/assets/cards/12-scale-and-narrative-720w.jpg"
+    }
   },
   {
     "id": "13-meaningful-aesthetics",
@@ -217,7 +253,11 @@
     "authors": ["Natalie M. Houston"],
     "keywords": ["network analysis", "data visualization", "aesthetics"],
     "excerpt": "",
-    "incipit": "Meaningful Aesthetics"
+    "incipit": "Meaningful Aesthetics",
+    "card": {
+      "srcset": "/assets/cards/13-meaningful-aesthetics-720w.jpg",
+      "src": "/assets/cards/13-meaningful-aesthetics-720w.jpg"
+    }
   },
   {
     "id": "14-defining-level-and-scale-as-socio-technical-operators-for-mining-digital-traces",
@@ -228,7 +268,11 @@
     "authors": ["Quentin Lobbé", "David Chavalarias", "Alexandre Delanoë"],
     "keywords": ["level", "scale", "phylomemy", "semantic map", "macroscope"],
     "excerpt": "",
-    "incipit": "Defining Level and Scale as Socio-technical ..."
+    "incipit": "Defining Level and Scale as Socio-technical ...",
+    "card": {
+      "srcset": "/assets/cards/14-defining-level-and-scale-720w.jpg",
+      "src": "/assets/cards/14-defining-level-and-scale-720w.jpg"
+    }
   },
   {
     "id": "15-zooming-is-not-just-scaling",
@@ -245,7 +289,11 @@
       "map interpretation"
     ],
     "excerpt": "",
-    "incipit": "Zooming is (not just) scaling"
+    "incipit": "Zooming is (not just) scaling",
+    "card": {
+      "srcset": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg",
+      "src": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg"
+    }
   },
   {
     "id": "16-weather-map",
@@ -262,6 +310,10 @@
       "weather maps"
     ],
     "excerpt": "",
-    "incipit": "Weather Map: A Diachronic Visual ..."
+    "incipit": "Weather Map: A Diachronic Visual ...",
+    "card": {
+      "srcset": "/assets/cards/16-weather-map-720w.jpg",
+      "src": "/assets/cards/16-weather-map-720w.jpg"
+    }
   }
 ]
