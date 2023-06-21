@@ -7,15 +7,29 @@ import OverheadView from './Svg/OverheadView'
 import Author from './Author'
 import LogoZoomland from './LogoZoomland'
 import './ChapterCard.css'
+import { ArrowsClockwise } from '@phosphor-icons/react'
 
 const CardAspectRatio = 1060 / 720
 const CardAspectRatioPercent = `${CardAspectRatio * 100}%`
-const ColorCategory = {
-  introduction: 'red',
-  history: 'var(--history)',
-  media: 'green',
-  hermeneutics: 'red',
-  ['digital landscapes']: 'black',
+
+export const CategoryIntroduction = 'introduction'
+export const CategoryHistory = 'history'
+export const CategoryMedia = 'media'
+export const CategoryHermeneutics = 'hermeneutics'
+export const CategoryDigitalLandscapes = 'digital landscapes'
+
+export const ColorIntroduction = 'red'
+export const ColorHistory = 'var(--history)'
+export const ColorMedia = 'var(--orange)'
+export const ColorHermeneutics = 'var(--purple)'
+export const ColorDigitalLandscapes = 'var(--rose)'
+
+export const ColorCategory = {
+  [CategoryIntroduction]: ColorIntroduction,
+  [CategoryHistory]: ColorHistory,
+  [CategoryMedia]: ColorMedia,
+  [CategoryHermeneutics]: ColorHermeneutics,
+  [CategoryDigitalLandscapes]: ColorDigitalLandscapes,
 }
 
 const ViewTypes = {
@@ -24,7 +38,7 @@ const ViewTypes = {
   overhead: OverheadView,
 }
 
-const ChapterCard = ({ chapter }) => {
+const ChapterCard = ({ chapter, notFound = false }) => {
   const ref = useRef(null)
   const isFlipped = useRef(false)
   const [width, height] = useWindowStore((state) => [state.width, state.height])
@@ -50,6 +64,9 @@ const ChapterCard = ({ chapter }) => {
   const chapterNumber = Number(chapter.n).toString().padStart(2, '0')
 
   const clickHandler = () => {
+    if (notFound) {
+      return
+    }
     isFlipped.current = !isFlipped.current
     if (isFlipped.current === true) {
       const maxScale =
@@ -70,6 +87,13 @@ const ChapterCard = ({ chapter }) => {
   }
 
   const onMouseEnterHandler = () => {
+    if (notFound) {
+      animate.start({
+        opacity: 0,
+        transform: `perspective(1000px) rotateY(${0}deg) scale(${0.95}) `,
+      })
+      return
+    }
     if (isFlipped.current === true) {
       animate.start({
         transform: `perspective(1000px) rotateY(${180}deg) scale(${1.05}) `,
@@ -100,7 +124,7 @@ const ChapterCard = ({ chapter }) => {
   return (
     <div
       ref={ref}
-      className="ChapterCard"
+      className={'ChapterCard' + (notFound ? ' not-found' : '')}
       onClick={clickHandler}
       onMouseEnter={onMouseEnterHandler}
       onMouseLeave={onMouseLeaveHandler}
@@ -114,7 +138,8 @@ const ChapterCard = ({ chapter }) => {
           perspective: '600px',
         }}
       >
-        {hasCover && (
+        {notFound && <img src="/assets/cards/not-found-720w.jpg" className="ChapterCard_cover" />}
+        {hasCover && !notFound && (
           <img srcSet={chapter.card.srcset} alt={chapter.card.alt} className="ChapterCard_cover" />
         )}
         <div className="ChapterCard_category">{chapter.category}</div>
@@ -132,6 +157,11 @@ const ChapterCard = ({ chapter }) => {
           <div className="ChapterCard_number">#{chapterNumber}</div>
           {chapter.incipit}
         </div>
+        {!notFound && (
+          <div className="ChapterCard_flip">
+            <ArrowsClockwise size={22} weight="bold" />
+          </div>
+        )}
       </a.div>
       <a.div
         className="ChapterCard_back"

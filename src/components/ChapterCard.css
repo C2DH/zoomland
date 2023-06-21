@@ -42,12 +42,13 @@
 
 .ChapterCard_back {
   border-radius: 8px;
-  background-color: rgb(255, 248, 202);
+  background-color: var(--pale-yellow);
+  color: var(--dark-blue);
 }
 
 .ChapterCard_front {
   border-radius: 8px;
-  background-color: orange;
+  background-color: var(--pale-dark-blue);
 }
 
 .ChapterCard_cover {
@@ -99,7 +100,23 @@
   text-align: left;
   color: var(--pale-yellow);
   right: 60px;
+  text-shadow: 3px 4px 5px var(--dark-blue);
 }
 .ChapterCard_front .ChapterCard_number {
   font-size: 2em;
+}
+
+/* not found */
+.ChapterCard.not-found .ChapterCard_front .ChapterCard_chapterLabel,
+.ChapterCard.not-found .ChapterCard_front .ChapterCard_viewType,
+.ChapterCard.not-found .ChapterCard_front .ChapterCard_logo,
+.ChapterCard.not-found .ChapterCard_front .ChapterCard_category {
+  display: none;
+}
+
+.ChapterCard_flip {
+  color: var(--pale-yellow);
+  position: absolute;
+  bottom: 18px;
+  right: 15px;
 }
