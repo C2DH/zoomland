@@ -1,4 +1,5 @@
-.Page .scrollable {
+.Page .scrollable,
+.Page.scrollable {
   overflow: scroll;
 }
 
@@ -9,4 +10,20 @@
 
 .Page h6 {
   font-variant: small-caps;
+}
+
+.Page_close {
+  position: absolute;
+  top: var(--spacer-half);
+  right: var(--spacer-half);
+  padding: var(--spacer-half);
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--pale-yellow);
+  border-width: 0px;
+  /* // quint bezier easing */
+  transition: color 0.2s cubic-bezier(0.5, 0, 0.5, 1);
+}
+.Page_close:hover {
+  color: var(--light-rose);
 }
