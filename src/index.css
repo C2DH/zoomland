@@ -17,6 +17,8 @@
   --z-index-vignette: 2;
   --z-index-collected-chapters: 3;
   --z-index-joystick: 4;
+  --z-index-approutes: 6;
+  --z-index-header: 5;
   --spacer: 1.5em;
   --spacer-half: 0.75em;
   --spacer-double: 3em;
@@ -37,8 +39,14 @@
 
   --history: #306fc5;
   --pale-yellow: #fef9cb;
+  --pale-dark-blue: rgb(72, 68, 98);
   --dark-blue: rgb(32, 28, 60);
   --light-rose: rgb(241, 103, 161);
+  --rose: rgb(237, 64, 125);
+  --pale-orange: rgb(255, 164, 0);
+  --purple: rgb(158, 66, 199);
+  --orange: rgb(250, 149, 59);
+
   --bs-font-sans-serif: 'RocknRoll One', sans-serif;
   --bs-font-hand-written: 'RocknRoll One', sans-serif;
 }
