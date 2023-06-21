@@ -12,6 +12,8 @@ const Chapters = () => {
     state.progress,
     state.collectedChapters,
   ])
+
+  console.debug('[Chapters] collectedChapters', collectedChapters)
   // load chapter using useQuery
   const { status, error, data } = useQuery({
     queryKey: ['chapters'],
@@ -25,12 +27,21 @@ const Chapters = () => {
   })
 
   return (
-    <Page status={status} error={error} PageHeader={() => <h1> Chapters</h1>}>
+    <Page
+      fullscreen
+      className="p-5"
+      status={status}
+      error={error}
+      PageHeader={() => <h1> Chapters</h1>}
+    >
       <Container>
         <Row>
           {data?.map((chapter) => (
             <Col key={chapter.id} xs={12} md={6} lg={4} xl={3} xxl={3} className="mb-4">
-              <ChapterCard chapter={chapter} />
+              <ChapterCard
+                chapter={chapter}
+                legacynotFound={!collectedChapters.some((d) => d.id === chapter.id)}
+              />
               {/* <ChapterListItem chapter={chapter} /> */}
             </Col>
           ))}
