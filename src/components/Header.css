@@ -5,13 +5,16 @@
   right: 0;
   height: 50px;
   color: white;
-  z-index: var(--z-index-collected-chapters);
+  z-index: var(--z-index-header);
   font-family: var(--bs-font-hand-written);
   font-size: var(--font-size-6);
   /* anice pixel around the text */
   text-shadow: 0 0 4px black;
+  pointer-events: none;
 }
-
+.Header .row {
+  pointer-events: auto;
+}
 .Header h1 {
   font-size: var(--font-size-8);
   color: white;
