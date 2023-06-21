@@ -5,13 +5,14 @@
   width: 100%;
   pointer-events: none;
 
-  z-index: 10;
+  z-index: var(--z-index-approutes);
 }
 .AppRoutes .page {
   pointer-events: all;
   height: 100%;
   width: 100%;
-  background-color: lightcoral;
+  background-color: var(--dark-blue);
+  color: var(--pale-yellow);
 }
 
 .AppRoutes.fadeIn {
