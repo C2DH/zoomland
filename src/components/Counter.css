@@ -1,0 +1,61 @@
+.counter {
+  align-items: flex-start;
+  background-color: #15151680;
+  border-radius: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 24px;
+  position: relative;
+  width: fit-content;
+}
+
+.counter .counter-blocks {
+  align-items: center;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+}
+
+.counter-col {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-size: var(--font-size-3);
+  color: var(--pale-yellow);
+}
+
+.counter-col span {
+  font-size: var(--font-size-2);
+}
+.counter-col .Timer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.counter-col .Timer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -18px;
+  background-color: var(--rose);
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

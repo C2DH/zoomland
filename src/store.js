@@ -174,3 +174,8 @@ export const useWindowStore = create((set) => ({
     return set({ width, height, memo })
   },
 }))
+
+export const isMenuVisibleStore = create((set) => ({
+  isMenuVisible: false,
+  toggleMenu: () => set((state) => ({ isMenuVisible: !state.isMenuVisible })),
+}))

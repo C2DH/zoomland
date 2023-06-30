@@ -1,0 +1,23 @@
+.RoundButton {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pale-yellow);
+  padding: 0;
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.RoundButton:hover {
+  background-color: var(--rose) !important;
+}
+
+.RoundButton:hover path {
+  stroke: var(--pale-yellow);
+}

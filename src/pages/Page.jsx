@@ -14,6 +14,7 @@ const Page = ({
   if (fullscreen) {
     return (
       <div className={`${className} Page scrollable page`} style={{ width, height }}>
+        <div className="background-pattern" style={{ width: '100vw', zIndex: '0' }}></div>
         {children}
         <button
           className="Page_close"
@@ -40,6 +41,7 @@ const Page = ({
         {status}
         {children}
       </div>
+      <div className="background-pattern" style={{ width: '100vw', zIndex: '0' }}></div>
     </div>
   )
 }

@@ -1,16 +1,20 @@
 .Header {
   position: fixed;
-  top: 0;
+  top: 2rem;
   left: 0;
   right: 0;
-  height: 50px;
+  margin: 0 2rem;
+  width: calc(100% - 4rem);
+  display: flex;
   color: white;
+  align-items: center;
+  justify-content: center;
   z-index: var(--z-index-header);
   font-family: var(--bs-font-hand-written);
   font-size: var(--font-size-6);
   /* anice pixel around the text */
-  text-shadow: 0 0 4px black;
-  pointer-events: none;
+  /* text-shadow: 0 0 4px black; */
+  /* pointer-events: none; */
 }
 .Header .row {
   pointer-events: auto;

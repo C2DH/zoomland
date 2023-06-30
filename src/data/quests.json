@@ -11,9 +11,9 @@
       ],
       "secondMeetingWithoutChapter": ["You should check next to our boat"],
       "runIntoWithoutChapter": ["Have you double check next to our boat?"],
-      "firstMeetingWithChapter": ["Hey there, I see you got it. One less to go!"],
-      "secondMeetingWithChapter": ["Hey there, I see you got it. One less to go!"],
-      "runIntoWithChapter": ["Hey there, I see you got it. One less to go!"]
+      "firstMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok bye!"],
+      "secondMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok ok ok!"],
+      "runIntoWithChapter": ["Hey there, I see you got it. One less to go!", "Bye Andreas"]
     }
   },
   {

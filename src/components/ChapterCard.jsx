@@ -5,7 +5,7 @@ import BirdEyeView from './Svg/BirdEyeView'
 import GroundView from './Svg/GroundView'
 import OverheadView from './Svg/OverheadView'
 import Author from './Author'
-import LogoZoomland from './LogoZoomland'
+import LogoZoomland from './Svg/LogoZoomland'
 import './ChapterCard.css'
 import { ArrowsClockwise } from '@phosphor-icons/react'
 

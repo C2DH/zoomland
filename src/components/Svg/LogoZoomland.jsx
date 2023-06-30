@@ -1,7 +1,8 @@
-const LogoZoomland = ({ color = 'white', size = 200 }) => {
+const LogoZoomland = ({ color = 'var(--pale-yellow)', size = 160 }) => {
   const ratio = 406 / 69
   return (
     <svg
+      className="LogoZoomland"
       width={size}
       height={size / ratio}
       viewBox="0 0 406 69"

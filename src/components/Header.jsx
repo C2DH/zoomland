@@ -1,46 +1,43 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import { usePlayerStore, NumberOfChapters, useWorldStore } from '../store'
+import { isMenuVisibleStore } from '../store'
 import './Header.css'
-import Timer from './Timer'
-import LogoZoomland from './LogoZoomland'
+import LogoZoomland from './Svg/LogoZoomland'
+import Counter from './Counter'
+import MenuIcon from './Svg/MenuIcon'
+import RoundButton from './RoundButton'
+import { useWorldStore } from '../store'
+import LogoZoomlandSmall from './Svg/LogoZoomlandSmall'
 
-const Header = ({ children }) => {
-  const [progress, collectedChapters] = usePlayerStore((state) => [
-    state.progress,
-    state.collectedChapters,
-  ])
-  const saveInitialPropsToPlayerStore = useWorldStore(
-    (state) => state.saveInitialPropsToPlayerStore,
-  )
+const Header = ({ isMobile = true }) => {
+  const { isMenuVisible, toggleMenu } = isMenuVisibleStore()
+  // const saveInitialPropsToPlayerStore = useWorldStore(
+  //   (state) => state.saveInitialPropsToPlayerStore,
+  // )
+  const isMobileStyle = {
+    top: isMobile ? '1rem' : '2rem',
+    margin: isMobile ? '0 1rem' : '0 2rem',
+    width: isMobile ? 'calc(100% - 2rem)' : 'calc(100% - 4rem)',
+    justifyContent: isMobile ? 'flex-start' : 'center',
+  }
 
-  const HumanreadableProgress = Math.round(progress * 100)
+  const logoPosition = {
+    position: 'absolute',
+    left: '0',
+  }
+  console.log('Toggle', isMenuVisible)
   return (
-    <div className="Header">
-      <Container>
-        <Row>
-          <Col>
-            <LogoZoomland />
-            <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
-              save
-            </button>
-            {children}
-          </Col>
-          <Col className="text-end">
-            goal <br />
-            {HumanreadableProgress} %
-          </Col>
-          <Col className="text-end">
-            chapters <br />
-            {collectedChapters.length} / {NumberOfChapters}
-          </Col>
-          <Col className="text-end">
-            elapsed time:
-            <br />
-            <Timer />
-          </Col>
-        </Row>
-      </Container>
+    <div className="Header" style={isMobileStyle}>
+      {isMobile ? null : (
+        <div style={logoPosition}>
+          <LogoZoomland />
+        </div>
+      )}
+      {/* <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
+            save
+          </button>
+          {children} */}
+      <Counter />
+      <RoundButton Icon={MenuIcon} onClick={toggleMenu} />
     </div>
   )
 }

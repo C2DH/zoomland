@@ -1,0 +1,82 @@
+.SideMenu {
+  position: absolute;
+  padding: 2rem;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  z-index: var(--z-index-side-menu);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 1rem);
+  width: 320px;
+  overflow: hidden;
+  background-color: var(--dark-blue);
+  border-radius: var(--big-border-radius) 0 var(--big-border-radius) 0;
+}
+
+.menu-body .nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-body .nav .nav-item {
+  margin: 0.15rem 0;
+}
+
+.menu-body .nav a {
+  position: relative;
+  font-size: var(--font-size-4);
+  color: var(--pale-yellow);
+  margin: 0.5rem 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.menu-body .nav a::before {
+  left: -40px;
+  opacity: 0;
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: 8px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid var(--rose);
+  transform: rotate(90deg);
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-body .nav a:hover::before {
+  left: -18px;
+  opacity: 1;
+}
+
+.menu-body .nav a:hover {
+  color: var(--rose);
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer-logos {
+  display: flex;
+  align-items: center;
+}
+
+.menu-footer span {
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: var(--font-size-1);
+  color: var(--pale-yellow);
+}
+
+.menu-footer svg {
+  margin: 0rem 0.7rem;
+}
