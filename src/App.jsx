@@ -10,13 +10,15 @@ import { useWindowStore } from './store'
 import { debounce } from './utils/common'
 import { isMobile } from 'react-device-detect'
 import SideMenu from './components/SideMenu'
-import { isMenuVisibleStore } from './store'
+import { MenuOpen, MenuClosed, useMenuStore } from './store'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
 const queryClient = new QueryClient()
 
 function App() {
+  const menuStatus = useMenuStore((state) => state.menuStatus)
+  const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
   const updateDimensions = useWindowStore((state) => state.updateDimensions)
   const change = () => {
     console.debug('[app] change')
@@ -31,10 +33,9 @@ function App() {
     }
   }, [])
 
-  // console.log('MENUTOGGLE', isMenuVisible)
   return (
     <QueryClientProvider client={queryClient}>
-      {!isMenuVisibleStore ? <SideMenu /> : null}
+      <SideMenu />
       <Header isMobile={isMobile}></Header>
 
       <Vignette></Vignette>

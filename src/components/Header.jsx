@@ -1,18 +1,19 @@
 import React from 'react'
-import { isMenuVisibleStore } from '../store'
 import './Header.css'
 import LogoZoomland from './Svg/LogoZoomland'
 import Counter from './Counter'
 import MenuIcon from './Svg/MenuIcon'
 import RoundButton from './RoundButton'
-import { useWorldStore } from '../store'
+import { MenuOpen, MenuClosed, useMenuStore } from '../store'
 import LogoZoomlandSmall from './Svg/LogoZoomlandSmall'
 
 const Header = ({ isMobile = true }) => {
-  const { isMenuVisible, toggleMenu } = isMenuVisibleStore()
   // const saveInitialPropsToPlayerStore = useWorldStore(
   //   (state) => state.saveInitialPropsToPlayerStore,
   // )
+  const menuStatus = useMenuStore((state) => state.menuStatus)
+  const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
+
   const isMobileStyle = {
     top: isMobile ? '1rem' : '2rem',
     margin: isMobile ? '0 1rem' : '0 2rem',
@@ -24,7 +25,12 @@ const Header = ({ isMobile = true }) => {
     position: 'absolute',
     left: '0',
   }
-  console.log('Toggle', isMenuVisible)
+
+  const menuClickEvent = () => {
+    setMenuStatus(MenuOpen)
+  }
+
+  console.log('Toggle', menuStatus)
   return (
     <div className="Header" style={isMobileStyle}>
       {isMobile ? null : (
@@ -37,7 +43,7 @@ const Header = ({ isMobile = true }) => {
           </button>
           {children} */}
       <Counter />
-      <RoundButton Icon={MenuIcon} onClick={toggleMenu} />
+      <RoundButton Icon={MenuIcon} onClick={menuClickEvent} />
     </div>
   )
 }

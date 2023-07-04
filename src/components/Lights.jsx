@@ -16,7 +16,7 @@ const Lights = ({ color = Dawn }) => {
         intensity={1}
         castShadow
         color={color}
-        position={[0, 80, 0]}
+        position={[0, 80, 80]}
         shadow-mapSize={[2048, 2048]}
         shadow-camera-near={20}
         shadow-camera-far={100}
@@ -27,7 +27,7 @@ const Lights = ({ color = Dawn }) => {
         shadow-bias={-0.01}
       />
 
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.1} />
     </>
   )
 }

@@ -175,7 +175,10 @@ export const useWindowStore = create((set) => ({
   },
 }))
 
-export const isMenuVisibleStore = create((set) => ({
-  isMenuVisible: false,
-  toggleMenu: () => set((state) => ({ isMenuVisible: !state.isMenuVisible })),
+export const MenuClosed = 'closed'
+export const MenuOpen = 'open'
+
+export const useMenuStore = create((set) => ({
+  menuStatus: MenuClosed,
+  setMenuStatus: (menuStatus) => set({ menuStatus }),
 }))

@@ -11,7 +11,7 @@
   pointer-events: all;
   height: 100%;
   width: 100%;
-  background-color: var(--dark-blue);
+  /* background-color: var(--dark-blue); */
   color: var(--pale-yellow);
 }
 

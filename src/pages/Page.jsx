@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useWindowStore } from '../store'
-import { X } from '@phosphor-icons/react'
 import './Page.css'
+import RoundButton from '../components/RoundButton'
+import CloseIcon from '../components/Svg/CloseIcon'
 
 const Page = ({
   status = 'idle',
@@ -14,16 +15,28 @@ const Page = ({
   if (fullscreen) {
     return (
       <div className={`${className} Page scrollable page`} style={{ width, height }}>
-        <div className="background-pattern" style={{ width: '100vw', zIndex: '0' }}></div>
         {children}
-        <button
+        {/* <button
           className="Page_close"
           onClick={() => {
             window.history.back()
           }}
         >
           <X weight="regular" size={50} />
-        </button>
+        </button> */}
+        <div style={{ marginRight: '0.7rem', position: 'absolute', right: 0, top: '1rem' }}>
+          <RoundButton
+            Icon={CloseIcon}
+            Color={'var(--dark-blue)'}
+            onClick={() => {
+              window.history.back()
+            }}
+          />
+        </div>
+        <div
+          className="background-pattern-reverce"
+          style={{ width: '100vw', zIndex: '-1', top: '0' }}
+        ></div>
       </div>
     )
   }
@@ -40,8 +53,11 @@ const Page = ({
       <div className="flex-grow-1 scrollable">
         {status}
         {children}
+        <div
+          className="background-pattern-reverce"
+          style={{ width: '100vw', zIndex: '-1', top: '-17px' }}
+        ></div>
       </div>
-      <div className="background-pattern" style={{ width: '100vw', zIndex: '0' }}></div>
     </div>
   )
 }

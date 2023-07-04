@@ -1,5 +1,5 @@
-import { useSpring } from '@react-spring/web'
-import { Link } from 'react-router-dom'
+import RoundButton from '../components/Svg/CloseIcon'
+import CloseIcon from '../components/Svg/CloseIcon'
 
 const About = () => {
   // const {} useSpring()
@@ -11,9 +11,15 @@ const About = () => {
 
   return (
     <div className="page">
-      <h2>
-        <Link to="/">back</Link>
-      </h2>
+      <div style={{ marginRight: '0.7rem', position: 'absolute', right: 0, top: '1rem' }}>
+        <RoundButton
+          Icon={CloseIcon}
+          Color={'var(--dark-blue)'}
+          onClick={() => {
+            window.history.back()
+          }}
+        />
+      </div>
       <h1>About</h1>
       <p>"Zoomland. Exploring Scale in Digital History and Humanities"</p>
       <p>
@@ -23,6 +29,10 @@ const About = () => {
         landscapes) and assign a symbol to each chapter according to the 3 perspectives (bird's eye,
         overhead and ground view)."
       </p>
+      <div
+        className="background-pattern-reverce"
+        style={{ width: '100vw', zIndex: '-1', top: '0' }}
+      ></div>
     </div>
   )
 }

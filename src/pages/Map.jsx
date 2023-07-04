@@ -2,15 +2,26 @@ import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Link } from 'react-router-dom'
 import { useWorldStore } from '../store'
+import RoundButton from '../components/RoundButton'
+import CloseIcon from '../components/Svg/CloseIcon'
 
 const Map = () => {
   const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
   const playerPosition = useWorldStore((state) => state.playerPosition)
   return (
     <div className="page">
-      <h2>
+      <div style={{ marginRight: '0.7rem', position: 'absolute', right: 0, top: '1rem' }}>
+        <RoundButton
+          Icon={CloseIcon}
+          Color={'var(--dark-blue)'}
+          onClick={() => {
+            window.history.back()
+          }}
+        />
+      </div>
+      {/* <h2>
         <Link to="/">back</Link>
-      </h2>
+      </h2> */}
       <h1>Map</h1>
       {JSON.stringify(playerPosition)}
       <Canvas
@@ -77,6 +88,10 @@ const Map = () => {
           maxDistance={30}
         />
       </Canvas>
+      <div
+        className="background-pattern-reverce"
+        style={{ width: '100vw', zIndex: '-1', top: '0' }}
+      ></div>
     </div>
   )
 }

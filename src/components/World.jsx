@@ -1,5 +1,5 @@
 import { Suspense, lazy, useRef, useEffect } from 'react'
-import { Box, KeyboardControls, Gltf, OrbitControls } from '@react-three/drei'
+import { Box, KeyboardControls, Gltf, OrbitControls, Environment } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
 import Landscape from './Landscape'
@@ -90,8 +90,16 @@ const World = ({
         ]}
       >
         <Canvas camera={CloseCamera} shadows dpr={1}>
+          <Environment
+            files="../../public/evening_road_01_puresky_1k.hdr"
+            near={1}
+            far={1000}
+            // background
+            blur={0.08}
+          />
+          x
+          <fog attach="fog" color="#E0DCCF" near={20} far={250} />
           {debug && <WorldDashboard />}
-
           <Suspense fallback={null}>
             <Lights />
             <Clouds />

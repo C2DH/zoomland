@@ -11,12 +11,12 @@ const CloseIcon = ({ color = 'var(--pale-yellow)', width = 24 }) => {
       <path
         d="M4.04297 18L8.49622 18L12.0594 13L15.6555 17.9993L20.043 17.9993"
         stroke="#FEF9CB"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M20.043 6L15.5897 6L12.0265 11L8.43041 6.00067L4.04297 6.00067"
         stroke="#FEF9CB"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </svg>
   )

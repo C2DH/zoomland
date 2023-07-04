@@ -25,7 +25,7 @@ const HarbourWallEast = {
   size: [1.0, 7, 20],
 }
 const HarbourWallWest = {
-  position: [85, 0, -21.8],
+  position: [85, 0, -22.8],
   size: [0.1, 7, 10],
 }
 /**
