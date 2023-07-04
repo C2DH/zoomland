@@ -49,6 +49,7 @@ import GroundViewSign from './GroundViewSign'
 import BirdEyeViewSign from './BirdEyeViewSign'
 import OverheadViewSign from './OverheadViewSign'
 import Boundaries from './Boundaries'
+import Rig from './Rig'
 
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
@@ -90,6 +91,7 @@ const World = ({
         ]}
       >
         <Canvas camera={CloseCamera} shadows dpr={1}>
+          <Rig />
           <Environment
             files="../../public/evening_road_01_puresky_1k.hdr"
             near={1}

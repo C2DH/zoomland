@@ -17,11 +17,6 @@ const SideMenu = () => {
 
   const [{ x }, api] = useSpring(() => ({
     x: menuStatus === MenuClosed ? 500 : 0,
-    config: {
-      tension: 400, // How much tension is on the spring
-      mass: 2, // The mass of the spring
-      velocity: 5, // The initial speed of the movement
-    },
   }))
 
   useEffect(() => {
@@ -58,6 +53,11 @@ const SideMenu = () => {
             <Nav.Item>
               <Link to="/">New Game</Link>
             </Nav.Item>
+            {/* add space */}
+            <Nav.Item className="mb-3">
+              <Link to="/intro">introduction</Link>
+            </Nav.Item>
+
             <Nav.Item>
               <Link to="/map">Map</Link>
             </Nav.Item>

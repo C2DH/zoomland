@@ -27,6 +27,10 @@ export const useWorldStore = create((set, get) => ({
   elapsedTime: 0,
   playerPosition: DefaultPlayerPosition,
   playerAngle: DefaultPlayerAngle,
+  cameraOffset: {
+    radius: 2.5,
+    elevation: 1.5,
+  },
   joystick: [DefaultPlayerAngle, 0],
   // change only if angle is different
   setPlayerPosition: (playerPosition) => {
@@ -51,6 +55,7 @@ export const useWorldStore = create((set, get) => ({
       joystick: [angle, speed],
     })
   },
+  setCameraOffset: ({ radius, elevation }) => set({ cameraOffset: { radius, elevation } }),
   // change only if angle is different
   setPlayerAngle: (playerAngle) => {
     // change only if angle is different
