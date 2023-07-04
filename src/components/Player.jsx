@@ -24,13 +24,13 @@ const RunVel = 1.6
 
 let internalDebounceTimer = null
 
-const updateCamera = (camera, { radius = 2.5, target, delta, angle }) => {
+const updateCamera = (camera, { radius = 2.5, elevation = 1.5, target, delta, angle }) => {
   // the position should take into account the angle
   const phi = -1 * (angle + Math.PI / 2)
   camera.position.lerp(
     new Vector3(
       target.x + radius * Math.cos(phi),
-      target.y + 1.5,
+      target.y + elevation,
       target.z + radius * Math.sin(phi),
     ),
     delta * 2,
@@ -45,6 +45,7 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   // joystick
   // Fetch initial state
   const joystickRef = useRef(useWorldStore.getState().joystick)
+  const cameraOffsetRef = useRef(useWorldStore.getState().cameraOffset)
   // current caracter rotation
   const angle = useRef(0)
   const [, getKeys] = useKeyboardControls()
@@ -86,6 +87,8 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
     if (isMobile) {
       useWorldStore.subscribe((state) => (joystickRef.current = state.joystick))
     }
+    // link radius
+    useWorldStore.subscribe((state) => (cameraOffsetRef.current = state.cameraOffset))
   }, [])
 
   const movePlayerWithJoystick = (state, delta, shouldStayStill) => {
@@ -201,7 +204,13 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
     // smooth rotation angle
     // character.current.rotation.y += angle.current * 0.1
     character.current.rotation.y += (angle.current - character.current.rotation.y) * 0.75
-    updateCamera(state.camera, { target: characterWorldPosition, delta, angle: angle.current })
+    updateCamera(state.camera, {
+      target: characterWorldPosition,
+      delta,
+      angle: angle.current,
+      radius: cameraOffsetRef.current.radius,
+      elevation: cameraOffsetRef.current.elevation,
+    })
   })
 
   return (
