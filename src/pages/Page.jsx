@@ -16,23 +16,15 @@ const Page = ({
     return (
       <div className={`${className} Page scrollable page`} style={{ width, height }}>
         {children}
-        {/* <button
-          className="Page_close"
+
+        <RoundButton
+          className="Page_close position-absolute"
+          Icon={CloseIcon}
+          Color={'var(--dark-blue)'}
           onClick={() => {
             window.history.back()
           }}
-        >
-          <X weight="regular" size={50} />
-        </button> */}
-        <div style={{ marginRight: '0.7rem', position: 'absolute', right: 0, top: '1rem' }}>
-          <RoundButton
-            Icon={CloseIcon}
-            Color={'var(--dark-blue)'}
-            onClick={() => {
-              window.history.back()
-            }}
-          />
-        </div>
+        />
         <div
           className="background-pattern-reverce"
           style={{ width: '100vw', zIndex: '-1', top: '0' }}

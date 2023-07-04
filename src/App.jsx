@@ -10,15 +10,12 @@ import { useWindowStore } from './store'
 import { debounce } from './utils/common'
 import { isMobile } from 'react-device-detect'
 import SideMenu from './components/SideMenu'
-import { MenuOpen, MenuClosed, useMenuStore } from './store'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
 const queryClient = new QueryClient()
 
 function App() {
-  const menuStatus = useMenuStore((state) => state.menuStatus)
-  const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
   const updateDimensions = useWindowStore((state) => state.updateDimensions)
   const change = () => {
     console.debug('[app] change')
@@ -54,7 +51,7 @@ function App() {
         <Route
           path="/chapters"
           element={
-            <Suspense>
+            <Suspense fallback={null}>
               <Chapters />
             </Suspense>
           }

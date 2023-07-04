@@ -1,10 +1,20 @@
 .SideMenu {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  z-index: var(--z-index-side-menu);
+  overflow: hidden;
+  width: 320px;
+  bottom: 0;
+  margin: 0.5rem;
+}
+.SideMenu_slide {
+  pointer-events: all;
   position: absolute;
   padding: 2rem;
   top: 0;
   right: 0;
-  margin: 0.5rem;
-  z-index: var(--z-index-side-menu);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,6 +24,7 @@
   overflow: hidden;
   background-color: var(--dark-blue);
   border-radius: var(--big-border-radius) 0 var(--big-border-radius) 0;
+  will-change: transform;
 }
 
 .menu-body .nav {

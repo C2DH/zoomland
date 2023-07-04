@@ -1,9 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { Col, Container, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import Page from './Page'
 import axios from 'axios'
-import ChapterListItem from '../components/ChapterListItem'
 import ChapterCard from '../components/ChapterCard'
 import { usePlayerStore } from '../store'
 
