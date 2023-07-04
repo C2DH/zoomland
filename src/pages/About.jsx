@@ -1,6 +1,4 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import RoundButton from '../components/Svg/CloseIcon'
-import CloseIcon from '../components/Svg/CloseIcon'
 import Page from './Page'
 
 const About = () => {

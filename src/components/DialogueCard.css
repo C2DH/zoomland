@@ -1,0 +1,47 @@
+.DialogueCard {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.DialogueCard .DialogueCard-wrapper {
+  pointer-events: all;
+  padding: 2rem 3rem 2rem 6rem;
+  position: relative;
+  width: 500px;
+  background-color: var(--dark-blue);
+  border-radius: 0 var(--small-border-radius) 0 var(--small-border-radius);
+  margin-left: 2.5rem;
+  color: var(--pale-yellow);
+}
+
+.DialogueCard .DialogueCard-wrapper h4 {
+  color: var(--orange);
+}
+
+.DialogueCard .avatar {
+  position: absolute;
+  top: -1.5rem;
+  left: -2.5rem;
+  width: 115px;
+  height: 115px;
+  background-color: var(--dark-blue);
+  border-radius: 100%;
+  border: 3px solid var(--orange);
+}
+
+.DialogueCard-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.DialogueCard-footer a {
+  font-size: var(--font-size-4);
+  margin-left: 2rem;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './Quest.css'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import DialogueCard from './DialogueCard'
 
 const to = (i) => ({
   x: 0,
@@ -82,33 +83,19 @@ const Quest = ({ quest, withChapter = false, onComplete }) => {
               transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
             }}
           >
-            <Container>
-              <Row>
-                <Col md={{ offset: isPlayer ? 5 : 1, span: 6 }}>
-                  {isPlayer ? 'You' : quest.characterName || quest.id}
-                  <h3>{sentences[i]}</h3>
-                </Col>
-              </Row>
-            </Container>
+            <DialogueCard
+              avatar={isPlayer ? undefined : quest.avatar}
+              sentence={sentences[i]}
+              characterName={isPlayer ? 'You' : quest.characterName || quest.id}
+              onClickNext={gotoNextSentence}
+              onClickPrevious={gotoPreviousSentence}
+              disableNext={sentenceIndex === sentences.length - 1}
+              disablePrevious={sentenceIndex < 1}
+              onClose={onComplete}
+            />
           </animated.div>
         )
       })}
-      <div className="Quest_buttons px-5 btn-group">
-        <Button
-          className="btn btn-secondary"
-          disabled={sentenceIndex < 1}
-          onClick={gotoPreviousSentence}
-        >
-          (back)
-        </Button>
-        <Button
-          size="lg"
-          variant={sentenceIndex === sentences.length - 1 ? 'primary' : 'secondary'}
-          onClick={gotoNextSentence}
-        >
-          {sentenceIndex === sentences.length - 1 ? "Let's go!" : 'Next'}
-        </Button>
-      </div>
     </div>
   )
 }
