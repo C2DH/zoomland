@@ -15,7 +15,7 @@
   padding: 2rem 3rem 2rem 6rem;
   position: relative;
   width: 500px;
-  background-color: var(--dark-blue);
+  background-color: var(--dark-blue-alpha);
   border-radius: 0 var(--small-border-radius) 0 var(--small-border-radius);
   margin-left: 2.5rem;
   color: var(--pale-yellow);

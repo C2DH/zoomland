@@ -3,18 +3,17 @@ import { usePlayerStore } from '../store'
 import { useSpring, config } from '@react-spring/web'
 import { useRef } from 'react'
 
-const TheDispatcher = ({ quest, position, children }) => {
-  // if vignette should be visible
-  const price = useRef()
-  const [props, api] = useSpring(() => ({
-    scale: 0.5,
-    // bounce
-    config: config.wobbly,
-    // },
-    onChange: ({ value }) => {
-      price.current.scale.set(value.scale, value.scale, value.scale)
-    },
-  }))
+const TheDispatcher = ({ quest, position, children, debug = false }) => {
+  const dispatcherRef = useRef()
+  // const [props, api] = useSpring(() => ({
+  //   scale: 0.5,
+  //   // bounce
+  //   config: config.wobbly,
+  //   // },
+  //   onChange: ({ value }) => {
+  //     price.current.scale.set(value.scale, value.scale, value.scale)
+  //   },
+  // }))
 
   const [collectQuest, doneCollectingQuest] = usePlayerStore((state) => [
     state.collectQuest,
@@ -25,23 +24,31 @@ const TheDispatcher = ({ quest, position, children }) => {
     if (e.rigidBodyObject.name === 'player') {
       console.log('[Dispatcher] collisionEnterHandler', e.rigidBodyObject.name)
       collectQuest(quest)
-      api.start({
-        scale: 1.5,
-      })
+      // rotate towards player
+      // const target = e.rigidBodyObject.position
+      // const dispatcher = dispatcherRef.current
+      // const dispatcherPosition = dispatcher.position
+      // const dx = target.x - dispatcherPosition.x
+      // const dz = target.z - dispatcherPosition.z
+      // const angle = Math.atan2(dz, dx)
+      // dispatcher.rotation.y = angle
+      // api.start({
+      //   scale: 1.5,
+      // })
     }
   }
   const collisionExitHandler = (e) => {
     if (e.rigidBodyObject.name === 'player') {
       console.log('[Dispatcher] collisionExitHandler', e.rigidBodyObject.name)
       doneCollectingQuest(quest)
-      api.start({
-        scale: 0.5,
-      })
+      // api.start({
+      //   scale: 0.5,
+      // })
     }
   }
   const pricePosition = [position[0], position[1], position[2]]
   return (
-    <group position={position}>
+    <group ref={dispatcherRef} position={position}>
       <RigidBody
         colliders="cuboid"
         type={'fixed'}
@@ -54,16 +61,12 @@ const TheDispatcher = ({ quest, position, children }) => {
         </mesh>
       </RigidBody>
       {children}
-      <mesh>
-        <cylinderGeometry args={[0.75, 0.75, 0.2, 32]} />
-        <meshStandardMaterial color={'red'} />
-      </mesh>
-      <group ref={price} scale={0.5} position={pricePosition}>
-        <mesh castShadow receiveShadow>
-          <boxGeometry />
-          <meshStandardMaterial color={'pink'} />
+      {debug && (
+        <mesh>
+          <cylinderGeometry args={[0.75, 0.75, 0.2, 32]} />
+          <meshStandardMaterial color={'red'} />
         </mesh>
-      </group>
+      )}
     </group>
   )
 }

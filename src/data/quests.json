@@ -6,12 +6,23 @@
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Hey there, Editor Extraordinaire!",
-        "Ehm, hello Andreas!",
-        "How's my chapter editor extraordinaire doing? Making my words shine like gold, I hope?"
+        "Hey there, dear publisher!",
+        "Hello Andreas!",
+        "How's the book doing? Making my words shine like gold, I hope?",
+        "Well... I would need a copy of it. For the archives, you know...",
+        "Oh, I see. Well, I'm sure you'll find it somewhere around here.",
+        "Oh where exactly?",
+        "I'm sure I left it somewhere around here..."
       ],
-      "secondMeetingWithoutChapter": ["You should check next to our boat"],
-      "runIntoWithoutChapter": ["Have you double check next to our boat?"],
+      "secondMeetingWithoutChapter": [
+        "You haven't find our introduction?",
+        "Not yet, can you help me?",
+        "Uhm... You should check next to our boat"
+      ],
+      "runIntoWithoutChapter": [
+        "Have you double check next to our boat?",
+        "Not yet, let me check again!"
+      ],
       "firstMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok bye!"],
       "secondMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok ok ok!"],
       "runIntoWithChapter": ["Hey there, I see you got it. One less to go!", "Bye Andreas"]

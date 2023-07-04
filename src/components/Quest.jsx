@@ -16,6 +16,27 @@ const Quest = ({ quest, withChapter = false, onComplete }) => {
   const [sentences, setSentences] = useState([])
 
   useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        if (sentenceIndex < sentences.length - 1) {
+          setSentenceIndex(sentenceIndex + 1)
+        } else {
+          onComplete()
+        }
+      }
+      if (event.key === 'Escape') {
+        onComplete()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [sentences, sentenceIndex])
+
+  useEffect(() => {
     let s = []
 
     console.debug('quest', quest)

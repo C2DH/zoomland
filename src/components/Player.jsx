@@ -141,14 +141,14 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
 
     const isMoving = moveForward || moveBackward || moveLeft || moveRight
     // if press space and shouldStaystill, then done collecting stuff
-    if (jump && shouldStayStill) {
-      if (isCollectingQuest) {
-        doneCollectingQuest()
-      } else if (isCollectingChapter) {
-        doneCollectingChapter()
-      }
-      return
-    }
+    // if (jump && shouldStayStill) {
+    //   if (isCollectingQuest) {
+    //     doneCollectingQuest()
+    //   } else if (isCollectingChapter) {
+    //     doneCollectingChapter()
+    //   }
+    //   return
+    // }
 
     const impulse = { x: 0, y: 0, z: 0 }
     // animation

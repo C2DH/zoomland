@@ -15,13 +15,15 @@ const Target = ({
   radius = 0.5,
   height = 2,
   priceOffsetPosition = [2, 0, 2],
-  priceElevation = 1,
+  priceElevation = 0.5,
   offset = [0, 0, 0],
   position,
   children,
   transparent = false,
   seed = Math.random() + 0.8,
   childrenIsRigidBody = false,
+  PriceComponent = null,
+  color = 'gold',
 }) => {
   // if vignette should be visible
   const price = useRef()
@@ -130,10 +132,14 @@ const Target = ({
       </RigidBody>
       {/* then the price as floating unreachable, hotpink icosaedron */}
       <group ref={price} scale={0.5} position={priceOffsetPosition}>
-        <mesh castShadow receiveShadow>
-          <icosahedronGeometry args={[0.5, 0]} />
-          <meshStandardMaterial color={'white'} />
-        </mesh>
+        {PriceComponent !== null ? (
+          <PriceComponent color={color} />
+        ) : (
+          <mesh castShadow receiveShadow>
+            <icosahedronGeometry args={[0.5, 0]} />
+            <meshStandardMaterial color={color} />
+          </mesh>
+        )}
       </group>
     </group>
   )

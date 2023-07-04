@@ -235,9 +235,11 @@ const World = ({
               <Target
                 chapter={Chapters[0]}
                 position={Chapters[0].position}
+                color={Chapters[0].color}
                 geometryArgs={[2, 2, 0, 8]}
-                priceOffsetPosition={[0, 0, 0]}
-                priceElevation={0.5}
+                priceOffsetPosition={[0, -0.5, 0]}
+                priceElevation={0.35}
+                PriceComponent={GroundViewSign}
                 transparent
               ></Target>
               <Target
