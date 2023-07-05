@@ -49,6 +49,7 @@
   --pale-orange: rgb(255, 164, 0);
   --purple: rgb(158, 66, 199);
   --orange: rgb(250, 149, 59);
+  --transparent: rgba(0, 0, 0, 0)
 
   --bs-font-sans-serif: 'RocknRoll One', sans-serif;
   --bs-font-hand-written: 'RocknRoll One', sans-serif;

@@ -16,12 +16,12 @@ const SideMenu = () => {
   const [menuStatus, set] = useMenuStore((state) => [state.menuStatus, state.setMenuStatus])
 
   const [{ x }, api] = useSpring(() => ({
-    x: menuStatus === MenuClosed ? 500 : 0,
+    x: menuStatus === MenuClosed ? 800 : 0,
   }))
 
   useEffect(() => {
     api.start({
-      x: menuStatus === MenuClosed ? 500 : 0,
+      x: menuStatus === MenuClosed ? 800 : 0,
     })
   }, [menuStatus])
 
@@ -39,7 +39,12 @@ const SideMenu = () => {
     <div className="SideMenu">
       <a.div className="SideMenu_slide" style={{ x }}>
         <div style={{ marginRight: '0.7rem', position: 'absolute', right: 0 }}>
-          <RoundButton Icon={CloseIcon} Color={'var(--dark-blue)'} onClick={onClickHandler} />
+          <RoundButton
+            Icon={CloseIcon}
+            color={'var(--pale-yellow)'}
+            backgroundColor={'var(--transparent)'}
+            onClick={onClickHandler}
+          />
         </div>
         <div style={{ marginTop: '0.6rem' }}>
           <LogoZoomland />
@@ -76,7 +81,7 @@ const SideMenu = () => {
             <LogoGruyter />
           </div>
         </div>
-        <div className="background-pattern" style={{ width: '320px', zIndex: '-1' }}></div>
+        <div className="background-pattern" style={{ width: '100vw', zIndex: '-1' }}></div>
       </a.div>
     </div>
   )

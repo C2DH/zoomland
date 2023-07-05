@@ -18,11 +18,18 @@ const DialogueCard = ({
         <div
           style={{
             position: 'absolute',
-            right: '0.5rem',
-            top: '0.5rem',
+            right: '0.7rem',
+            top: '3.1rem',
+            transformOrigin: 'center center',
+            transform: 'scale(0.8) rotate(90deg)',
           }}
         >
-          <RoundButton Icon={CloseIcon} Color={'var(--dark-blue)'} onClick={onClose} />
+          <RoundButton
+            Icon={CloseIcon}
+            color={'var(--pale-yellow)'}
+            backgroundColor="var(--transparent)"
+            onClick={onClose}
+          />
         </div>
         <div className="avatar" style={{ backgroundImage: `url(${avatar})` }}></div>
         <div className="DialogueCard-body">
@@ -30,7 +37,11 @@ const DialogueCard = ({
           <p>{sentence}</p>
         </div>
         <div className="DialogueCard-footer">
-          <button className="btn btn-link" disabled={disablePrevious} onClick={onClickPrevious}>
+          <button
+            className="btn btn-link btn-md"
+            disabled={disablePrevious}
+            onClick={onClickPrevious}
+          >
             Prev
           </button>
           <button className="btn btn-link btn-lg" onClick={onClickNext}>

@@ -12,7 +12,7 @@
 
 .DialogueCard .DialogueCard-wrapper {
   pointer-events: all;
-  padding: 2rem 3rem 2rem 6rem;
+  padding: 1.5rem 3rem 1.5rem 6rem;
   position: relative;
   width: 500px;
   background-color: var(--dark-blue-alpha);
@@ -41,7 +41,15 @@
   justify-content: flex-end;
 }
 
-.DialogueCard-footer a {
+.DialogueCard-footer button {
+  border: 0 none;
+  color: var(--pale-yellow);
+}
+
+.DialogueCard-footer button:hover {
+  color: var(--rose);
+}
+
+.DialogueCard-footer button.btn-md {
   font-size: var(--font-size-4);
-  margin-left: 2rem;
 }

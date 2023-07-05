@@ -1,17 +1,23 @@
 import React from 'react'
 import './RoundButton.css'
 
-const RoundButton = ({ Icon, color = 'red', onClick, className = '' }) => {
+const RoundButton = ({
+  Icon,
+  backgroundColor = 'var(--dark-blue)',
+  color = 'var(--pale-yellow)',
+  onClick,
+  className = '',
+}) => {
   return (
     <button
       onClick={onClick}
       type="button"
       className={`RoundButton ${className}`}
       style={{
-        backgroundColor: color,
+        backgroundColor: backgroundColor,
       }}
     >
-      <Icon />
+      <Icon color={color} />
     </button>
   )
 }
