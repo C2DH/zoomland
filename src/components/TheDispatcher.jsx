@@ -5,15 +5,6 @@ import { useRef } from 'react'
 
 const TheDispatcher = ({ quest, position, children, debug = false }) => {
   const dispatcherRef = useRef()
-  // const [props, api] = useSpring(() => ({
-  //   scale: 0.5,
-  //   // bounce
-  //   config: config.wobbly,
-  //   // },
-  //   onChange: ({ value }) => {
-  //     price.current.scale.set(value.scale, value.scale, value.scale)
-  //   },
-  // }))
 
   const [collectQuest, doneCollectingQuest] = usePlayerStore((state) => [
     state.collectQuest,
@@ -22,7 +13,7 @@ const TheDispatcher = ({ quest, position, children, debug = false }) => {
   const collisionEnterHandler = (e) => {
     console.debug('[Dispatcher] @collisionEnterHandler', e.rigidBodyObject.name)
     if (e.rigidBodyObject.name === 'player') {
-      console.log('[Dispatcher] collisionEnterHandler', e.rigidBodyObject.name)
+      console.log('[Dispatcher] collisionEnterHandler', e.rigidBodyObject.name, quest.id)
       collectQuest(quest)
       // rotate towards player
       // const target = e.rigidBodyObject.position

@@ -11,7 +11,7 @@ const PlatformWallNorth = {
 }
 
 const PlatformWallEast = {
-  position: [95, -0.05, -11.5],
+  position: [97, -0.05, -11.5],
   size: [20.0, 7, 0.1],
 }
 
@@ -21,11 +21,12 @@ const PlatformWallWest = {
 }
 
 const HarbourWallEast = {
-  position: [85, 0, -1.7],
+  position: [86.5, 0, -1.55],
   size: [1.0, 7, 20],
 }
 const HarbourWallWest = {
-  position: [85, 0, -22.8],
+  position: [85.4, 0, -22.7],
+  rotation: [0, -0.1, 0],
   size: [0.1, 7, 10],
 }
 /**
@@ -41,10 +42,21 @@ const Boundaries = ({ debug = false }) => {
     HarbourWallEast,
     HarbourWallWest,
   ].map((b, i) => (
-    <RigidBody key={i} position={b.position} colliders={'cuboid'} type={'fixed'}>
+    <RigidBody
+      key={i}
+      position={b.position}
+      rotation={b.rotation}
+      colliders={'cuboid'}
+      type={'fixed'}
+    >
       <mesh>
         <boxGeometry args={b.size} />
-        <meshStandardMaterial transparent={!debug} opacity={debug ? 1 : 0} color={'red'} />
+        <meshStandardMaterial
+          depthWrite={false}
+          transparent={!debug}
+          opacity={debug ? 1 : 0}
+          color={'red'}
+        />
       </mesh>
     </RigidBody>
   ))

@@ -50,6 +50,13 @@ import BirdEyeViewSign from './BirdEyeViewSign'
 import OverheadViewSign from './OverheadViewSign'
 import Boundaries from './Boundaries'
 import Rig from './Rig'
+import Grass from './Grass'
+import Waves from './Waves'
+import Editor from './Editor'
+import Daniele from './Daniele'
+import Kirill from './Kirill'
+import Character from './Character'
+// import { AnimationStoreLoader } from '../store/animations'
 
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
@@ -79,6 +86,7 @@ const World = ({
           <Joystick />
         </Suspense>
       )}
+      {/* <AnimationStoreLoader /> */}
       <KeyboardControls
         map={[
           { keys: ['KeyW', 'ArrowUp'], name: 'moveForward' },
@@ -105,9 +113,11 @@ const World = ({
           <Suspense fallback={null}>
             <Lights />
             <Clouds />
+            {/* <Grass position={[0, -2.3, 0]} scale={10} /> */}
+            <Waves position={[0, -2, 0]} scale={10} />
             <Airship position={[6, 16, 0]} />
             <Pound />
-            <Ocean scale={[12, 12, 12]} position={[0, -1.6, 0]} />
+            <Ocean scale={[12, 12, 12]} position={[0, -2.2, 0]} />
             <Antenna rotation={[0, 0, 0]} scale={[2, 2, 2]} position={[-24.2, -1, -6.8]} />
             <SwedishHorse rotation={[0, -2, 0]} scale={2.2} position={[69.81, 12.3, 45.32]} />
             <Banjo
@@ -117,9 +127,9 @@ const World = ({
             />
 
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
-            <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.1, 47.6]} />
+            <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.3, 47.6]} />
 
-            <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -0.8, -10.2]} />
+            <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -1.6, -10.2]} />
             <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
             <StoneBig rotation={[0, 1, 0]} scale={[1.5, 1.5, 1.5]} position={[0.4, 14.2, -72.6]} />
             <StoneBig rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-34.0, 0.3, 31.8]} />
@@ -303,9 +313,27 @@ const World = ({
               <Target chapter={Chapters[14]} position={Chapters[14].position}>
                 <Ufo scale={[0.4, 0.4, 0.4]} />
               </Target>
+
+              <TheDispatcher quest={Quests[1]} position={[29.33, 0.73, -8.92]}>
+                <Character scale={0.1} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
+
+              <TheDispatcher quest={Quests[1]} position={[29.66, 0.73, -5.06]}>
+                <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
+
+              <TheDispatcher quest={Quests[1]} position={[33.92, 0.83, -2.65]}>
+                <Daniele scale={0.1} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
+
+              <TheDispatcher quest={Quests[1]} position={[34.49, 0.83, 1.44]}>
+                <Editor scale={0.1} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
+
               <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
+
               <Boundaries />
             </Physics>
           </Suspense>

@@ -39,7 +39,6 @@ const Quest = ({ quest, withChapter = false, onComplete }) => {
   useEffect(() => {
     let s = []
 
-    console.debug('quest', quest)
     if (!Array.isArray(quest.meetings)) {
       // first time. use only initial sentences
       s = withChapter
@@ -54,6 +53,8 @@ const Quest = ({ quest, withChapter = false, onComplete }) => {
       // third time. use only third sentences
       s = withChapter ? quest.dialogues.runIntoWithChapter : quest.dialogues.runIntoWithoutChapter
     }
+    console.debug('[Quest] sentences:', s, quest)
+
     setSentences(s)
     setSentenceIndex(0)
   }, [quest, withChapter])

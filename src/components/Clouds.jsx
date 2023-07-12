@@ -9,7 +9,8 @@ const Clouds = ({ count = 30 }) => {
   const items = useRef()
 
   const cloudMaterial = new MeshStandardMaterial({
-    transparent: true,
+    // transparent: true,
+    depthWrite: false,
     opacity: 0.7,
   })
 
