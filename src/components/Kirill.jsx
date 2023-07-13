@@ -31,6 +31,8 @@ const Kirill = (props) => {
             geometry={nodes.Kirill.geometry}
             material={materials.Material}
             skeleton={nodes.Kirill.skeleton}
+            castShadow
+            receiveShadow
           />
           <primitive object={nodes.mixamorigHips} />
           <primitive object={nodes.Ctrl_Master} />

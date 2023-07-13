@@ -31,6 +31,8 @@ const Daniele = (props) => {
             geometry={nodes.Daniele.geometry}
             material={materials.Material}
             skeleton={nodes.Daniele.skeleton}
+            castShadow
+            receiveShadow
           />
           <primitive object={nodes.mixamorigHips} />
           <primitive object={nodes.Ctrl_Master} />

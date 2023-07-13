@@ -84,6 +84,7 @@ export const usePlayerStore = create(
   persist(
     (set, get) => ({
       progress: 0,
+      isObservingLandscape: false,
       isCollectingQuest: false,
       collectedQuests: [],
       initialElapsedTime: 0,
@@ -97,6 +98,10 @@ export const usePlayerStore = create(
           initialElapsedTime,
         })
       },
+      observeLandscape: (isObservingLandscape) =>
+        set({
+          isObservingLandscape,
+        }),
       collectQuest: (quest) => {
         console.debug('[store] collectQuest:', quest.id)
         const collectedQuests = get().collectedQuests

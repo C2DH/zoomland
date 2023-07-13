@@ -127,7 +127,6 @@ const World = ({
             />
 
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
-            <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.3, 47.6]} />
 
             <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -1.6, -10.2]} />
             <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
@@ -242,6 +241,7 @@ const World = ({
               <Forest positions={SmallTrees.positions} scales={SmallTrees.scales} maxScale={0.7}>
                 <FirTreeSmall />
               </Forest>
+              <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.3, 47.6]} />
               <Target
                 chapter={Chapters[0]}
                 position={Chapters[0].position}

@@ -16,7 +16,7 @@ import {
 } from '../store'
 import { isMobile } from 'react-device-detect'
 
-const JumpForce = 0.5
+const JumpForce = 0.7
 const Speed = 0.4
 const MaxVel = 3.5
 const MaxSprintVel = 5
@@ -221,6 +221,7 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
         colliders={false}
         enabledRotations={[false, false, false]}
         position={initialPlayerPosition}
+        restitution={0}
         onCollisionEnter={() => {
           isOnFloor.current = true
         }}

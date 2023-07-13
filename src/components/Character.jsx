@@ -32,6 +32,8 @@ const Character = (props) => {
             geometry={nodes.Character.geometry}
             material={materials.Material}
             skeleton={nodes.Character.skeleton}
+            castShadow
+            receiveShadow
           />
           <primitive object={nodes.mixamorigHips} />
           <primitive object={nodes.Ctrl_Master} />
