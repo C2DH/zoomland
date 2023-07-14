@@ -10,6 +10,7 @@ import { useWindowStore } from './store'
 import { debounce } from './utils/common'
 import { isMobile } from 'react-device-detect'
 import SideMenu from './components/SideMenu'
+import ZoomlandIntro from './components/ZoomlandIntro'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      {/* <ZoomlandIntro /> */}
       <SideMenu />
       <Header isMobile={isMobile}></Header>
 
