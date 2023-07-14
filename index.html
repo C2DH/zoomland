@@ -17,10 +17,119 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <style>
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 9;
+        background-color: var(--dark-blue);
+        color: #fef9cb;
+        font-family: 'RocknRoll One', system-ui, Avenir, Helvetica, Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-delay: 1000ms;
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition-duration: 2s;
+        pointer-events: none;
+        opacity: 1;
+      }
+      #loading.hide {
+        opacity: 0;
+      }
+      .background-pattern::before {
+        position: absolute !important;
+        width: 100vw !important;
+      }
+      h1,
+      .uni-logo,
+      .gruyter-logo {
+        position: absolute;
+        z-index: 10;
+      }
+      .uni-logo {
+        width: 280px;
+        height: 90px;
+        background-image: url('./public/assets/svg/logo_uni.svg');
+        background-repeat: no-repeat;
+        opacity: 0;
+        animation: uni-logo 2s ease-in 0.5s;
+        /* 2s infinite alternate */
+      }
+      .gruyter-logo {
+        width: 90px;
+        height: 140px;
+        background-image: url('./public/assets/svg/gruyter-logo.svg');
+        background-repeat: no-repeat;
+        animation: gruyter-logo 2s ease-in 2.5s;
+        opacity: 0;
+      }
+      h1 {
+        opacity: 0;
+        animation: h1 1s ease-in 4s forwards;
+        font-size: 2em !important;
+      }
+      @keyframes uni-logo {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        20% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        90% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.4);
+          opacity: 0;
+        }
+      }
+      @keyframes gruyter-logo {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        20% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        90% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.4);
+          opacity: 0;
+        }
+      }
+      @keyframes h1 {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
 
     <title>Zoooooooomland</title>
   </head>
   <body>
+    <div id="loading" class="background-pattern">
+      <div class="uni-logo"></div>
+      <div class="gruyter-logo"></div>
+      <h1>PRESENTS</h1>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

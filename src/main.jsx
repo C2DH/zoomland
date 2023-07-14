@@ -4,6 +4,10 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 
+const setIntroTimeout = () => {
+  document.getElementById('loading').classList.add('hide')
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -11,3 +15,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>,
 )
+
+setTimeout(setIntroTimeout, 6000)

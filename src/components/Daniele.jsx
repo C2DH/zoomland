@@ -19,7 +19,7 @@ const Daniele = (props) => {
       actions['Talking'].reset().fadeIn(0.5).play()
     } else {
       actions['Talking'].fadeOut(0.5)
-      actions['Idle'].reset().fadeIn(0.5).play()
+      // actions['Idle'].reset().fadeIn(0.5).play()
     }
   }, [isCollectingQuest])
   return (
