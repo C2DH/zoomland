@@ -204,12 +204,12 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
     <>
       <RigidBody
         ref={rigidbody}
+        restitution={0}
         name="player"
         colliders={false}
-        mass={0.2}
+        mass={2.2}
         enabledRotations={[false, false, false]}
         position={initialPlayerPosition}
-        restitution={0}
         onCollisionEnter={() => {
           isOnFloor.current = true
         }}

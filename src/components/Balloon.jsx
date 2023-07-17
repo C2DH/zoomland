@@ -4,6 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import { RigidBody } from '@react-three/rapier'
 import { usePlayerStore } from '../store'
 import { useSpring, easings } from '@react-spring/web'
+import Sensor from './Sensor'
 
 const UpWithPlayer = 'up-with-player'
 const DownWithPlayer = 'down-with-player'
@@ -17,6 +18,7 @@ const MovingDownNoPlayer = 'moving-down-no-player'
 const Balloon = (props) => {
   const collisionTimerRef = useRef()
   const collisionStatusRef = useRef(false)
+  const intersectionStatusRef = useRef(false)
 
   const baloonStatusRef = useRef(DownNoPlayer)
 
@@ -42,11 +44,14 @@ const Balloon = (props) => {
     },
     onRest: ({ value }) => {
       console.log('[Baloon] arrived. onRest: ', value.n)
-      if (value.n === 15) {
-        baloonStatusRef.current = UpNoPlayer
-      } else if (value.n === 0) {
-        baloonStatusRef.current = DownNoPlayer
+      if (baloonStatusRef.current === UpWithPlayer) {
+        landing()
       }
+      // if (value.n === 15) {
+      //   baloonStatusRef.current = UpNoPlayer
+      // } else if (value.n === 0) {
+      //   baloonStatusRef.current = DownNoPlayer
+      // }
     },
     // onRest: ({ value }) => {
     //   console.log('[Baloon] arrived. onRest: ', value.n)
@@ -85,11 +90,12 @@ const Balloon = (props) => {
   useEffect(() => {
     console.log('[Balloon] useEffect')
     // check every 3 seconds if the balloon is still in the air
-    baloonTimerRef.current = setInterval(checkBaloonStatus, 5000)
-    return () => clearInterval(baloonTimerRef.current)
+    // baloonTimerRef.current = setInterval(checkBaloonStatus, 10000)
+    return () => {
+      clearTimeout(baloonTimerRef.current)
+      clearTimeout(collisionTimerRef.current)
+    }
   }, [])
-
-  const observeLandscape = usePlayerStore((state) => state.observeLandscape)
 
   // useFrame((state, delta) => {
   // const time = state.clock.getElapsedTime() / 10
@@ -103,58 +109,124 @@ const Balloon = (props) => {
   // balloonRef.current.rotation.y += 0.001
   // })
 
-  const debounceCollisionExit = () => {
-    collisionStatusRef.current = false
+  // const debounceCollisionExit = () => {
+  //   collisionStatusRef.current = false
+  //   clearTimeout(collisionTimerRef.current)
+  //   console.debug('[Balloon] collisionExitHandler')
+  //   observeLandscape(false)
+  // }
+
+  const debounceCollisionEnter = () => {
     clearTimeout(collisionTimerRef.current)
-    console.debug('[Balloon] collisionExitHandler')
-    observeLandscape(false)
+    collisionTimerRef.current = setTimeout(() => {
+      if (!collisionStatusRef.current) {
+        collisionStatusRef.current = true
+        checkIn()
+      }
+    }, 2000)
+  }
+  const debounceCollisionExit = () => {
+    clearTimeout(collisionTimerRef.current)
+    collisionTimerRef.current = setTimeout(() => {
+      if (collisionStatusRef.current) {
+        collisionStatusRef.current = false
+        checkOut()
+      }
+    }, 2000)
   }
 
-  const collisionEnterHandler = (e) => {
-    if (e.rigidBodyObject.name === 'player') {
-      if (collisionStatusRef.current === false) {
-        baloonStatusRef.current = MovingUpWithPlayer
-        console.log('[Balloon] collisionEnterHandler', e.rigidBodyObject.name)
-        observeLandscape(true)
-        clearTimeout(collisionTimerRef.current)
-      }
-      collisionStatusRef.current = true
+  // const collisionEnterHandler = (e) => {
+  //   if (e.rigidBodyObject.name === 'player') {
+  //     if (collisionStatusRef.current === false) {
+  //       baloonStatusRef.current = MovingUpWithPlayer
+  //       console.log('[Balloon] collisionEnterHandler', e.rigidBodyObject.name)
+  //       observeLandscape(true)
+  //       clearTimeout(collisionTimerRef.current)
+  //     }
+  //     collisionStatusRef.current = true
+  //   }
+  // }
+
+  // const collisionExitHandler = (e) => {
+  //   if (e.rigidBodyObject.name === 'player') {
+  //     clearTimeout(collisionTimerRef.current)
+  //     collisionTimerRef.current = setTimeout(debounceCollisionExit, 2000)
+  //   }
+  // }
+  const checkIn = () => {
+    console.debug(
+      '[Balloon] checkIn',
+      '\n - instersectionStatusRef.current:',
+      intersectionStatusRef.current,
+      '\n - collisionStatusRef.current:',
+      collisionStatusRef.current,
+    )
+
+    if (intersectionStatusRef.current == true && collisionStatusRef.current == true) {
+      baloonStatusRef.current = UpWithPlayer
+      takeOff()
     }
   }
 
-  const collisionExitHandler = (e) => {
-    if (e.rigidBodyObject.name === 'player') {
-      clearTimeout(collisionTimerRef.current)
-      collisionTimerRef.current = setTimeout(debounceCollisionExit, 2000)
+  const takeOff = () => {
+    console.debug('[Balloon] takeOff!')
+    // start the balloon
+    clearTimeout(baloonTimerRef.current)
+
+    baloonTimerRef.current = setTimeout(() => {
+      console.debug('[Balloon] fly!')
+      api.start({
+        n: 15,
+      })
+    }, 3000)
+  }
+
+  const landing = () => {
+    console.debug('[Balloon] landing...')
+    // start the balloon
+    clearTimeout(baloonTimerRef.current)
+
+    baloonTimerRef.current = setTimeout(() => {
+      console.debug('[Balloon] land!!')
+      api.start({
+        n: 0,
+      })
+    }, 3000)
+  }
+
+  const checkOut = () => {
+    console.debug('[Balloon] checkOut...')
+    // baloondemo
+    if (!intersectionStatusRef.current) {
+      // demomode
+      baloonStatusRef.current = DownNoPlayer
     }
   }
 
   return (
     <>
-      <group {...props} dispose={null}>
-        <RigidBody colliders="cuboid" position={[0, -0.5, 0]} type={'fixed'}>
-          <mesh>
-            <boxGeometry args={[0.9, 0.8, 0.9]} />
-            <meshStandardMaterial color={'red'} />
-          </mesh>
-        </RigidBody>
-      </group>
-      <group {...props} dispose={null}>
-        <mesh>
-          <boxGeometry args={[1, 0.01, 1]} receiveShadow />
-          <meshStandardMaterial color={'blue'} />
-        </mesh>
-      </group>
+      <Sensor
+        height={50}
+        position={props.position}
+        onIntersectionEnter={() => {
+          intersectionStatusRef.current = true
+          checkIn()
+        }}
+        onIntersectionExit={() => {
+          intersectionStatusRef.current = false
+          checkOut()
+        }}
+      />
       <RigidBody
         position={props.position}
         ref={bodyRef}
         rotation={[0, 0, 0]}
         colliders={'hull'}
         type={'kinematicPosition'}
-        friction={2}
+        friction={5}
         restitution={0}
-        onCollisionExit={collisionExitHandler}
-        onCollisionEnter={collisionEnterHandler}
+        onCollisionExit={debounceCollisionExit}
+        onCollisionEnter={debounceCollisionEnter}
       >
         <mesh>
           <boxGeometry args={[1.5, 0, 1.5]} />

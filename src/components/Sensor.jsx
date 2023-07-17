@@ -1,8 +1,30 @@
 import { CuboidCollider, RigidBody } from '@react-three/rapier'
 import { usePlayerStore } from '../store'
 
-const Sensor = ({ width = 2, height = 2, depth = 2, debug = false, ...props }) => {
+const Sensor = ({
+  width = 2,
+  height = 2,
+  depth = 2,
+  debug = false,
+  onIntersectionEnter,
+  onIntersectionExit,
+  ...props
+}) => {
   const observeLandscape = usePlayerStore((state) => state.observeLandscape)
+
+  const handleIntersectionEnter = (e) => {
+    console.log('[Sensor] handleIntersectionEnter')
+    observeLandscape(true)
+    if (typeof onIntersectionEnter === 'function') {
+      onIntersectionEnter(e)
+    }
+  }
+
+  const handleIntersectionExit = () => {
+    console.log('[Sensor] handleIntersectionExit')
+    observeLandscape(false)
+    onIntersectionExit && onIntersectionExit()
+  }
   return (
     <group {...props} dispose={null}>
       {debug && (
@@ -20,8 +42,8 @@ const Sensor = ({ width = 2, height = 2, depth = 2, debug = false, ...props }) =
           sensor
           position={[0, 0, 0]}
           args={[width, height, depth]}
-          onIntersectionExit={() => observeLandscape(false)}
-          onIntersectionEnter={() => observeLandscape(true)}
+          onIntersectionExit={handleIntersectionExit}
+          onIntersectionEnter={handleIntersectionEnter}
         ></CuboidCollider>
       </RigidBody>
     </group>

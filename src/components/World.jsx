@@ -1,7 +1,7 @@
-import { Suspense, lazy, useRef, useEffect } from 'react'
-import { Box, KeyboardControls, Gltf, OrbitControls, Environment } from '@react-three/drei'
+import { Suspense, lazy } from 'react'
+import { KeyboardControls, Environment, Stats } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { Physics, RigidBody } from '@react-three/rapier'
+import { Physics } from '@react-three/rapier'
 import Landscape from './Landscape'
 import Lights from './Lights'
 import Forest from './Forest'
@@ -241,7 +241,7 @@ const World = ({
             <Forest positions={SmallTrees.positions} scales={SmallTrees.scales} maxScale={0.7}>
               <FirTreeSmall />
             </Forest>
-            <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.3, 47.6]} />
+            <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.03, 47.6]} />
             <Target
               chapter={Chapters[0]}
               position={Chapters[0].position}
