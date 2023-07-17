@@ -1,9 +1,9 @@
 import Hero from './Hero'
-import { Suspense, useEffect, useRef, useState } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useEffect, useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
 import { RigidBody, CapsuleCollider } from '@react-three/rapier'
-import { OrbitControls, useKeyboardControls } from '@react-three/drei'
-import { Quaternion, Vector3 } from 'three'
+import { useKeyboardControls } from '@react-three/drei'
+import { Vector3 } from 'three'
 import {
   AnimationIdle,
   AnimationJump,
@@ -14,7 +14,7 @@ import {
   usePlayerStore,
   useWorldStore,
 } from '../store'
-import { isMobile } from 'react-device-detect'
+import { updateCamera } from '../utils/camera'
 
 const JumpForce = 0.7
 const Speed = 0.4
@@ -23,20 +23,6 @@ const MaxSprintVel = 5
 const RunVel = 1.6
 
 let internalDebounceTimer = null
-
-const updateCamera = (camera, { radius = 2.5, elevation = 1.5, target, delta, angle }) => {
-  // the position should take into account the angle
-  const phi = -1 * (angle + Math.PI / 2)
-  camera.position.lerp(
-    new Vector3(
-      target.x + radius * Math.cos(phi),
-      target.y + elevation,
-      target.z + radius * Math.sin(phi),
-    ),
-    delta * 2,
-  )
-  camera.lookAt(new Vector3(target.x, target.y + 1.5, target.z))
-}
 
 const Player = ({ isMobile = false, scale = 0.6 }) => {
   const rigidbody = useRef()
@@ -210,6 +196,7 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
       angle: angle.current,
       radius: cameraOffsetRef.current.radius,
       elevation: cameraOffsetRef.current.elevation,
+      disable: !cameraOffsetRef.current.followPlayer,
     })
   })
 
@@ -219,6 +206,7 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
         ref={rigidbody}
         name="player"
         colliders={false}
+        mass={0.2}
         enabledRotations={[false, false, false]}
         position={initialPlayerPosition}
         restitution={0}
