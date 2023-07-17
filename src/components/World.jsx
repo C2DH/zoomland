@@ -76,6 +76,7 @@ const World = ({
   debug = false,
   debugPhysics = false,
 }) => {
+  console.debug('[World] render')
   return (
     <div
       className="World"
@@ -101,7 +102,7 @@ const World = ({
         <Canvas camera={CloseCamera} shadows dpr={1}>
           <Rig />
           <Environment
-            files="../../public/evening_road_01_puresky_1k.hdr"
+            files="/evening_road_01_puresky_1k.hdr"
             near={1}
             far={1000}
             // background
@@ -127,8 +128,6 @@ const World = ({
             />
 
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
-
-            <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -1.6, -10.2]} />
             <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
             <StoneBig rotation={[0, 1, 0]} scale={[1.5, 1.5, 1.5]} position={[0.4, 14.2, -72.6]} />
             <StoneBig rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-34.0, 0.3, 31.8]} />
@@ -233,6 +232,14 @@ const World = ({
             />
             <IcescreamTruck rotation={[0, 1.3, 0]} position={[-8.7, 0.1, 33.23]} scale={1.5} />
             <Physics debug={debugPhysics}>
+              <Boat
+                rotation={[0, 0, 0]}
+                scale={[2.5, 2.5, 2.5]}
+                positions={[
+                  [123.6, -1.6, -10.2],
+                  [91.6, -1.6, -10.2],
+                ]}
+              />
               <Player isMobile={isMobile} debug={debug} position={[94.88, 0.26, -14.2]}></Player>
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
@@ -296,6 +303,8 @@ const World = ({
                 height={2.5}
                 priceOffsetPosition={[0.5, -1.25, 0]}
                 priceElevation={1}
+                PriceComponent={GroundViewSign}
+                color="blue"
               />
               <Megaphone
                 rotation={[0, 0, 0.3]}
