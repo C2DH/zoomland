@@ -30,6 +30,7 @@ export const useWorldStore = create((set, get) => ({
   cameraOffset: {
     radius: 2.5,
     elevation: 1.5,
+    followPlayer: false,
   },
   joystick: [DefaultPlayerAngle, 0],
   // change only if angle is different
@@ -55,7 +56,8 @@ export const useWorldStore = create((set, get) => ({
       joystick: [angle, speed],
     })
   },
-  setCameraOffset: ({ radius, elevation }) => set({ cameraOffset: { radius, elevation } }),
+  setCameraOffset: ({ radius, elevation, followPlayer }) =>
+    set({ cameraOffset: { radius, elevation, followPlayer } }),
   // change only if angle is different
   setPlayerAngle: (playerAngle) => {
     // change only if angle is different
@@ -80,10 +82,17 @@ export const useWorldStore = create((set, get) => ({
 }))
 export const NumberOfChapters = 17
 export const NumberOfQuests = 10
+
+export const Gameplay = 'gameplay'
+export const OpenSea = 'opensea'
+export const Start = 'start'
+export const Baloon = 'baloon'
 export const usePlayerStore = create(
   persist(
     (set, get) => ({
       progress: 0,
+      scene: OpenSea,
+      setScene: (scene) => set({ scene }),
       isObservingLandscape: false,
       isCollectingQuest: false,
       collectedQuests: [],
