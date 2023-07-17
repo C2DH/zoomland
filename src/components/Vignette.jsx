@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { usePlayerStore } from '../store'
+import { OpenSea, usePlayerStore } from '../store'
 import Chapters from '../data/chapters'
 import Quests from '../data/quests'
 import './Vignette.css' // Import CSS styles
@@ -12,6 +12,7 @@ const interpolator = (v) => {
 }
 
 const Vignette = ({ children, visible = true, debug = false }) => {
+  const [scene] = usePlayerStore((state) => [state.scene])
   const [currentCollectedChapter, isCollectingChapter, collectedChapters] = usePlayerStore(
     (state) => [state.currentCollectedChapter, state.isCollectingChapter, state.collectedChapters],
   )
@@ -39,7 +40,7 @@ const Vignette = ({ children, visible = true, debug = false }) => {
   }))
 
   useEffect(() => {
-    if (isCollectingChapter || isCollectingQuest) {
+    if (isCollectingChapter || isCollectingQuest || scene === OpenSea) {
       api.start({
         qty: 50,
       })
