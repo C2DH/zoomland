@@ -53,6 +53,7 @@ const Clouds = ({ count = 30 }) => {
 
   return (
     <instancedMesh
+      frustumCulled={false}
       ref={items}
       args={[nodes.Icosphere001.geometry, cloudMaterial, count]}
     ></instancedMesh>

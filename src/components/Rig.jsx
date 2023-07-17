@@ -12,12 +12,18 @@ const Rig = () => {
   const setCameraOffset = useWorldStore((state) => state.setCameraOffset)
   const scene = usePlayerStore((state) => state.scene)
   const menuStatus = useMenuStore((state) => state.menuStatus)
-  const isObservingLandscape = usePlayerStore((state) => state.isObservingLandscape)
+  const [isCollectingQuest, isObservingLandscape] = usePlayerStore((state) => [
+    state.isCollectingQuest,
+    state.isObservingLandscape,
+  ])
   useEffect(() => {
     let radius = 2.5
     let elevation = 1.5
     let followPlayer = scene === Gameplay
-    if (isObservingLandscape) {
+    if (isCollectingQuest) {
+      radius = 1.3
+      elevation = 1.8
+    } else if (isObservingLandscape) {
       radius = 5
       elevation = 3
     } else if (pathname === '/intro') {
@@ -30,8 +36,7 @@ const Rig = () => {
       elevation = 3
     }
     setCameraOffset({ radius, elevation, followPlayer })
-  }, [scene, menuStatus, pathname, isObservingLandscape])
-  // return <CameraControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
+  }, [scene, menuStatus, pathname, isCollectingQuest, isObservingLandscape])
   return null
 }
 
