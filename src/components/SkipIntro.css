@@ -1,0 +1,7 @@
+.SkipIntro {
+  z-index: var(--z-index-skip-intro);
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}

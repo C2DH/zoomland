@@ -11,6 +11,7 @@ import { debounce } from './utils/common'
 import { isMobile } from 'react-device-detect'
 import SideMenu from './components/SideMenu'
 import ZoomlandIntro from './components/ZoomlandIntro'
+import SkipIntro from './components/SkipIntro'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
@@ -30,7 +31,7 @@ function App() {
       window.removeEventListener('resize', debouncedHandleResize)
     }
   }, [])
-
+  console.debug('[app] render')
   return (
     <QueryClientProvider client={queryClient}>
       {/* <ZoomlandIntro /> */}
@@ -38,7 +39,7 @@ function App() {
       <Header isMobile={isMobile}></Header>
 
       <Vignette></Vignette>
-
+      <SkipIntro />
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>
         <Route path="/about" element={<About />} />
