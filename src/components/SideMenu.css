@@ -27,6 +27,15 @@
   will-change: transform;
 }
 
+.SideMenu .btn.btn-link {
+  color: var(--pale-yellow);
+  font-size: var(--font-size-4);
+  margin: 0.5rem 0;
+  text-decoration: none;
+  position: relative !important;
+  padding: 0;
+}
+
 .menu-body .nav {
   display: flex;
   flex-direction: column;
@@ -45,7 +54,8 @@
   transition: color 0.2s ease-in-out;
 }
 
-.menu-body .nav a::before {
+.menu-body .nav a::before,
+.SideMenu .btn.btn-link::before {
   left: -40px;
   opacity: 0;
   content: '';
@@ -60,13 +70,17 @@
   transform: rotate(90deg);
   transition: all 0.2s ease-in-out;
 }
-
-.menu-body .nav a:hover::before {
+.SideMenu .btn.btn-link:hover {
+  border-color: transparent;
+}
+.menu-body .nav a:hover::before,
+.SideMenu .btn.btn-link:hover::before {
   left: -18px;
   opacity: 1;
 }
 
-.menu-body .nav a:hover {
+.menu-body .nav a:hover,
+.SideMenu .btn.btn-link:hover {
   color: var(--rose);
   transition: all 0.2s ease-in-out;
 }
