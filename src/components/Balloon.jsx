@@ -86,10 +86,10 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
   }
 
   const checkIn = () => {
-    if (baloonStatusRef.current !== GroundNoPlayer) {
-      // no checkin if the balloon is not on the ground
-      return
-    }
+    // if (baloonStatusRef.current !== GroundNoPlayer) {
+    // no checkin if the balloon is not on the ground
+    //   return
+    // }
     console.debug(
       '[Balloon] checkIn',
       '\n - instersectionStatusRef.current:',

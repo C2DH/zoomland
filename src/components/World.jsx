@@ -243,7 +243,12 @@ const World = ({
             <Forest positions={SmallTrees.positions} scales={SmallTrees.scales} maxScale={0.7}>
               <FirTreeSmall />
             </Forest>
-            <Balloon rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-24.3, 0.03, 47.6]} />
+            <Balloon
+              yMax={30}
+              rotation={[0, 0, 0]}
+              scale={[3, 3, 3]}
+              position={[-24.3, 0.03, 47.6]}
+            />
             <Target
               chapter={Chapters[0]}
               position={Chapters[0].position}
