@@ -4,14 +4,14 @@ import { RigidBody } from '@react-three/rapier'
 import { useSpring, easings } from '@react-spring/web'
 import Sensor from './Sensor'
 
-const GoingUpWithPlayer = 'up-with-player'
+const BeforeFlyingUp = 'before-flying-up'
+const BeforeFlyingDown = 'before-flying-down'
+const FlyingUp = 'flying-up'
+const FlyingDown = 'flying-down'
 const GroundWithPlayer = 'down-with-player'
-const MovingGoingUpWithPlayer = 'moving-with-player'
-
 const GroundNoPlayer = 'down-no-player'
-const MovingUpNoPlayer = 'moving-no-player'
 const UpNoPlayer = 'up-no-player'
-const MovingGroundNoPlayer = 'moving-down-no-player'
+const UpWithPlayer = 'up-with-player'
 
 const CheckInText = 'Ready?'
 const CheckOutText = 'Free ride!'
@@ -34,7 +34,7 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
   const [, api] = useSpring(() => ({
     n: 0,
     config: {
-      duration: 20000,
+      duration: 2000 * (yMax - yMin),
       easing: easings.easeInOutSine,
     },
     onChange: ({ value }) => {
@@ -50,17 +50,17 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
       console.log(
         '[Balloon] arrived. Altitude:',
         value.n,
-        value.n > yMin ? 'up' : 'down',
+        // value.n > yMin ? 'up' : 'down',
         baloonStatusRef.current,
       )
-      if (value.n === yMax) {
-        baloonStatusRef.current =
-          intersectionStatusRef.current && collisionStatusRef.current ? UpWithPlayer : UpNoPlayer
+      if (baloonStatusRef.current == FlyingUp) {
+        // baloonStatusRef.current =
+        //   intersectionStatusRef.current && collisionStatusRef.current ? UpWithPlayer : UpNoPlayer
         textRef.current.text = 'Max altitude reached.'
         console.log('[Balloon] should go down now...')
         landing()
-      } else if (value.n === yMin) {
-        baloonStatusRef.current = intersectionStatusRef.current ? GroundWithPlayer : GroundNoPlayer
+      } else if (baloonStatusRef.current == FlyingDown) {
+        // baloonStatusRef.current = intersectionStatusRef.current ? GroundWithPlayer : GroundNoPlayer
         takeOff()
       }
     },
@@ -90,17 +90,18 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
     // no checkin if the balloon is not on the ground
     //   return
     // }
-    console.debug(
-      '[Balloon] checkIn',
-      '\n - instersectionStatusRef.current:',
-      intersectionStatusRef.current,
-      '\n - collisionStatusRef.current:',
-      collisionStatusRef.current,
-    )
+    // console.debug(
+    //   '[Balloon] checkIn',
+    //   '\n - instersectionStatusRef.current:',
+    //   intersectionStatusRef.current,
+    //   '\n - collisionStatusRef.current:',
+    //   collisionStatusRef.current,
+    // )
     textRef.current.text = CheckInText
 
     if (intersectionStatusRef.current == true && collisionStatusRef.current == true) {
-      baloonStatusRef.current = GoingUpWithPlayer
+      console.debug('[Balloon] checkIn: go up!')
+      // baloonStatusRef.current = GoingUpWithPlayer
       takeOff()
     }
   }
@@ -111,26 +112,30 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
     if (!intersectionStatusRef.current) {
       textRef.current.text = CheckOutText
       // demomode
-      baloonStatusRef.current = GroundNoPlayer
+      // baloonStatusRef.current = GroundNoPlayer
     }
   }
 
   const takeOff = () => {
-    if (
-      baloonStatusRef.current !== GroundNoPlayer &&
-      baloonStatusRef.current !== GroundWithPlayer
-    ) {
-      console.warn('[Balloon] takeOff: not on the ground?')
-      landing()
+    if (baloonStatusRef.current === FlyingUp || baloonStatusRef.current === BeforeFlyingUp) {
+      console.warn('[Balloon] takeOff: already flying up?')
       return
     }
-    console.debug('[Balloon] takeOff in 3s!')
-    countdown()
+    // if (
+    //   baloonStatusRef.current !== GroundNoPlayer &&
+    //   baloonStatusRef.current !== GroundWithPlayer
+    // ) {
+    //   console.warn('[Balloon] takeOff: not on the ground?')
+    //   return
+    // }
+    // console.debug('[Balloon] takeOff in 3s!')
+    // countdown()
     // start the balloon
     clearTimeout(baloonTimerRef.current)
-
+    baloonStatusRef.current = BeforeFlyingUp
     baloonTimerRef.current = setTimeout(() => {
       console.debug('[Balloon] fly!')
+      baloonStatusRef.current = FlyingUp
       api.start({
         n: yMax,
       })
@@ -138,12 +143,18 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
   }
 
   const landing = () => {
+    if (baloonStatusRef.current === FlyingDown || baloonStatusRef.current === BeforeFlyingDown) {
+      console.warn('[Balloon] landing: already flying down?')
+      return
+    }
     console.debug('[Balloon] landing...')
     // start the balloon
     clearTimeout(baloonTimerRef.current)
     textRef.current.text = 'beware,  baloon is landing...'
+    baloonStatusRef.current = BeforeFlyingDown
     baloonTimerRef.current = setTimeout(() => {
       console.debug('[Balloon] land!!')
+      baloonStatusRef.current = FlyingDown
       api.start({
         n: yMin,
       })
@@ -168,8 +179,15 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
   }
 
   useEffect(() => {
-    console.log('[Balloon] useEffect')
-    takeOff()
+    console.log('[Balloon] useEffect, status:', baloonStatusRef.current)
+    if (baloonStatusRef.current === FlyingUp || baloonStatusRef.current === BeforeFlyingUp) {
+      landing()
+    } else if (
+      baloonStatusRef.current === FlyingDown ||
+      baloonStatusRef.current === BeforeFlyingDown
+    ) {
+      takeOff()
+    }
     // check every 3 seconds if the balloon is still in the air
     // baloonTimerRef.current = setInterval(checkBaloonStatus, 10000)
     return () => {
