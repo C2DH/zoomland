@@ -2,12 +2,14 @@ import { useEffect, useState, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import instances from '../data/lawn'
 import { Object3D } from 'three'
+import { useFrame } from '@react-three/fiber'
 
 const Grass = (props) => {
   const count = instances.length
   const { nodes, materials } = useGLTF('../assets/models/Grass.glb')
   const [o3d] = useState(() => new Object3D())
   const items = useRef()
+  const grassRef = useRef()
   // const instances = nodes
   //   ? {
   //       Grass: nodes.Grass1001,
@@ -15,6 +17,13 @@ const Grass = (props) => {
   //       Grass2: nodes.Grass3001,
   //     }
   //   : null
+
+  // useFrame((state, delta) => {
+  //   const time = state.clock.getElapsedTime()
+  //   const bendFactor = Math.sin(time * seed) * 0.2 + 0.2
+  //   grassRef.current.rotation.z = bendFactor * 0.06
+  //   grassRef.current.rotation.y = bendFactor * 0.06
+  // })
 
   useEffect(() => {
     if (!items.current) return
@@ -35,7 +44,7 @@ const Grass = (props) => {
       <instancedMesh
         frustumCulled={false}
         ref={items}
-        args={[nodes.Grass1001.geometry, materials['Grass_light.003'], count]}
+        args={[nodes.Grass.geometry, materials['Grass_light'], count]}
       ></instancedMesh>
     </group>
   )

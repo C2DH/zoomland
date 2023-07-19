@@ -57,6 +57,7 @@ import Daniele from './Daniele'
 import Kirill from './Kirill'
 import Character from './Character'
 import Sensor from './Sensor'
+import Mushrooms from './Mushroom'
 // import { AnimationStoreLoader } from '../store/animations'
 
 const Joystick = lazy(() => import('./Joystick'))
@@ -113,7 +114,8 @@ const World = ({
           {debug && <WorldDashboard />}
           <Lights />
           <Clouds />
-          <Grass position={[0, -2.3, 0]} scale={10} />
+          <Mushrooms position={[0, -2, 0]} scale={10} />
+          <Grass position={[0, -2.1, 0]} scale={10} />
           <Waves position={[0, -2, 0]} scale={10} />
           <Airship position={[6, 16, 0]} />
           <Pound />
