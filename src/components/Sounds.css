@@ -1,0 +1,4 @@
+.Sounds {
+  position: fixed;
+  z-index: var(--z-index-toggle-sounds);
+}

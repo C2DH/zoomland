@@ -62,7 +62,7 @@ import Mushrooms from './Mushroom'
 
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
-
+const Sounds = lazy(() => import('./Sounds'))
 const FarAwayCamera = {
   position: [111.8923846860428, 132.97427986352267, 100.68959842565253],
 }
@@ -77,6 +77,7 @@ const World = ({
   height = 800,
   debug = false,
   debugPhysics = false,
+  enableSounds = true,
 }) => {
   console.debug('[World] render')
   return (
@@ -84,6 +85,11 @@ const World = ({
       className="World"
       style={{ width, height, marginLeft: -width / 2, marginTop: -height / 2 }}
     >
+      {enableSounds && (
+        <Suspense fallback={null}>
+          <Sounds />
+        </Suspense>
+      )}
       {isMobile && (
         <Suspense fallback={null}>
           <Joystick />
