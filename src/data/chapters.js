@@ -1,6 +1,17 @@
 export default [
-  { id: '0-introduction', position: [87.25, 0.26, -15.3], color: 'red' },
-  { id: '1-adventure-in-zoomland', position: [-3, 0.5, -4] },
+  {
+    id: '0-introduction',
+    position: [87.25, 0.26, -15.3],
+    color: 'red',
+    category: 'introduction',
+    viewType: 'birdEye',
+  },
+  {
+    id: '1-adventure-in-zoomland',
+    position: [40, 13, -51],
+    category: 'history',
+    viewType: 'birdEye',
+  },
   { id: '2-capturing-discourse-through-the-digital-lens', position: [0, 0.5, 0] },
   { id: '3-menocchio-mapped', position: [-4, 0.5, -4] },
   {
