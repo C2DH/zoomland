@@ -2,6 +2,7 @@
   {
     "id": "0-introduction",
     "title": "Introduction",
+    "position": [87.25, 0.26, -15.3],
     "n": 0,
     "viewType": "birdEye",
     "authors": ["Andreas Fickers", "Florentina Armaselu"],
@@ -14,6 +15,7 @@
   },
   {
     "id": "1-adventure-in-zoomland",
+    "position": [40, 13, -51],
     "title": "Adventure in Zoomland",
     "n": 1,
     "viewType": "birdEye",
