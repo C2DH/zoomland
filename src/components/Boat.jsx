@@ -53,6 +53,12 @@ const Boat = ({
   // })
 
   useEffect(() => {
+    if (sceneRef.current === Gameplay) {
+      api.set({
+        x: positions[1][0],
+        y: positions[1][1],
+      })
+    }
     return usePlayerStore.subscribe((state) => {
       console.info('[Boat] scene changed', state.scene)
       if (state.scene === OpenSea) {

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import './Sounds.css'
 import { useAnimationStore, AnimationRun, AnimationJump, AnimationWalk } from '../store'
 
-const SoundEffects = () => {
+const SoundEffects = ({ isPlaying }) => {
   const animation = useAnimationStore((state) => state.animation)
   const [play, { stop }] = useSound(soundEffects, {
     sprite: {
@@ -19,13 +19,18 @@ const SoundEffects = () => {
   })
 
   useEffect(() => {
-    console.debug('[SoundEffects] @useEffect', animation)
+    console.debug(
+      '[SoundEffects] @useEffect \n - animation:',
+      animation,
+      '\n - isPlaying:',
+      isPlaying,
+    )
     stop()
-    if ([AnimationWalk, AnimationJump, AnimationRun].includes(animation)) {
+    if (isPlaying && [AnimationWalk, AnimationJump, AnimationRun].includes(animation)) {
       console.debug('[SoundEffects] - play', animation)
       play({ id: animation })
     }
-  }, [animation])
+  }, [animation, isPlaying])
 
   return null
 }
@@ -59,7 +64,7 @@ const Sounds = () => {
         </button>
       </div>
       <SoundTheme isPlaying={isPlaying} />
-      <SoundEffects />
+      <SoundEffects isPlaying={isPlaying} />
     </>
   )
 }

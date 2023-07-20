@@ -77,7 +77,7 @@ const Vignette = ({ children, visible = true, debug = false }) => {
         qty: 100,
       })
     }
-  }, [isCollectingChapter, isCollectingQuest])
+  }, [isCollectingChapter, scene, isCollectingQuest])
 
   // add keys to the collected chapters
   useEffect(() => {

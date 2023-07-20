@@ -35,7 +35,7 @@ const Price = ({
     y: yMin,
     config: config.wobbly,
     onChange: ({ value }) => {
-      console.log('[Price] onChange', value)
+      // console.log('[Price] onChange', value)
       priceRef.current.scale.set(value.scale, value.scale, value.scale)
       priceRef.current.position.y = position[1] + value.y
     },

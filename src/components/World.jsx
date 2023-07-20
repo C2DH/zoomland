@@ -284,18 +284,10 @@ const World = ({
             >
               <Arch rotation={[0, 0.3, 0]} scale={[2.4, 2.4, 2.4]} />
             </Target>
-            <Target
-              height={1.5}
-              offset={[0, 1, 0]}
-              chapter={Chapters[15]}
-              position={Chapters[15].position}
-              geometry="cylinder"
-              geometryArgs={[3.2, 3.2, 5, 8]}
-              transparent
-              priceOffsetPosition={[-2.8, 0, 3.7]}
-            >
-              <Lighthouse scale={5} />
-            </Target>
+            {/* chapter 15 */}
+            <Lighthouse scale={5} position={[54, 20.4, -85]} />
+            <Price {...Chapters[15]} />
+            {/* end of chqpter 15 */}
             <Target
               chapter={Chapters[12]}
               position={Chapters[12].position}
