@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Zooomland
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Zoomland is a web game developed on react with Vite.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Add a Price in the game
 
-### `npm test`
+In the array of chapters in `src/data/chapters.json`, add the chapter metadata to which the price refers to, with the following properties:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `viewType`: the type of the price (see `src/constants` for the list of available types)
+- `category`: the category of the price (see `src/constants` for the list of available categories)
+- `position`: the position of the price in the world
+- `id`: the id of the chapter, usually its position in the list of chapters followed by a suffix, for example `0-introduction` for the introduction chapter and `1-adventure-in-zoomland` for the first chapter.
 
-### `npm run build`
+This way, we refer to the right chapter in the `<Price>` component.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then add a related `<Price>` component inside the `<Physics>` tag in `src/components/World.jsx`:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+import Chapters from '../data/chapters'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+return (
+  // ... a lot of other stuff here
+  <Price
+    viewType={Chapters[1].viewType}
+    category={Chapters[1].category}
+    position={Chapters[1].position}
+    id={Chapters[1].id}
+  />
+  // ... a lot of other stuff here
+)
+```
 
-### `npm run eject`
+or, shortly
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+<Price {...Chapters[1]} />
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+that's it!
