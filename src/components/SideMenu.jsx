@@ -62,8 +62,8 @@ const SideMenu = () => {
               </button>
             </Nav.Item>
             {/* add space */}
-            <Nav.Item className="mb-3">
-              <button className="btn btn-link" onClick={() => setScene(OpenSea)}>
+            <Nav.Item className="mb-5">
+              <button className="introduction btn btn-link" onClick={() => setScene(OpenSea)}>
                 introduction
               </button>
             </Nav.Item>
@@ -73,6 +73,9 @@ const SideMenu = () => {
             </Nav.Item>
             <Nav.Item>
               <Link to="/chapters">Chapters</Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link to="/game_controls">Game Controls</Link>
             </Nav.Item>
             <Nav.Item>
               <Link to="/about">About</Link>

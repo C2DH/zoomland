@@ -329,20 +329,20 @@ const World = ({
               <Ufo scale={[0.4, 0.4, 0.4]} />
             </Target>
 
-            <TheDispatcher quest={Quests[1]} position={[29.33, 0.73, -8.92]}>
-              <Character scale={0.1} rotation={[0, 1.8, 0]} />
+            <TheDispatcher quest={Quests[1]} position={[46.87, 21.06, -81.69]}>
+              <Character scale={0.1} rotation={[0, 0, 0]} />
             </TheDispatcher>
 
-            <TheDispatcher quest={Quests[1]} position={[29.66, 0.73, -5.06]}>
+            <TheDispatcher quest={Quests[1]} position={[6.95, 8.97, 60.91]}>
               <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
             </TheDispatcher>
 
-            <TheDispatcher quest={Quests[1]} position={[33.92, 0.83, -2.65]}>
+            <TheDispatcher quest={Quests[0]} position={[61.1, 11.02, -16.51]}>
               <Daniele scale={0.1} rotation={[0, 1.8, 0]} />
             </TheDispatcher>
 
-            <TheDispatcher quest={Quests[1]} position={[34.49, 0.83, 1.44]}>
-              <Editor scale={0.1} rotation={[0, 1.8, 0]} />
+            <TheDispatcher quest={Quests[1]} position={[-51.48, 27.01, -51.3]}>
+              <Editor scale={0.1} rotation={[0, 3, 0]} />
             </TheDispatcher>
 
             <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
