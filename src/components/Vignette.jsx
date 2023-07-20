@@ -39,18 +39,6 @@ const Vignette = ({ children, visible = true, debug = false }) => {
     qty: 100,
   }))
 
-  useEffect(() => {
-    if (isCollectingChapter || isCollectingQuest || scene === OpenSea) {
-      api.start({
-        qty: 50,
-      })
-    } else {
-      api.start({
-        qty: 100,
-      })
-    }
-  }, [isCollectingChapter, isCollectingQuest])
-
   const handleToggle = () => {
     console.debug('toggle vignette')
     if (isCollectingChapter) {
@@ -78,6 +66,38 @@ const Vignette = ({ children, visible = true, debug = false }) => {
     console.debug('[Vignette] reset quests!')
     resetCollectedQuests()
   }
+
+  useEffect(() => {
+    if (isCollectingChapter || isCollectingQuest || scene === OpenSea) {
+      api.start({
+        qty: 50,
+      })
+    } else {
+      api.start({
+        qty: 100,
+      })
+    }
+  }, [isCollectingChapter, isCollectingQuest])
+
+  // add keys to the collected chapters
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter' || event.key === ' ' || event.key === 'Escape') {
+        if (isCollectingChapter) {
+          doneCollectingChapter()
+        } else if (isCollectingQuest) {
+          doneCollectingQuest()
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isCollectingChapter, isCollectingQuest])
+
   return (
     <>
       <animated.div className="Vignette" style={{ background: props.qty.to(interpolator) }}>
