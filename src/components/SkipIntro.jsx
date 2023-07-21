@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap'
 import './SkipIntro.css'
-import { Gameplay, OpenSea, usePlayerStore } from '../store'
+import { Gameplay, OpenSea, Start, usePlayerStore } from '../store'
 import { useEffect } from 'react'
 import { useSpring, a } from '@react-spring/web'
 const SkipIntro = () => {
@@ -10,7 +10,7 @@ const SkipIntro = () => {
   }))
 
   useEffect(() => {
-    if (scene !== OpenSea) {
+    if (scene !== OpenSea && scene !== Start) {
       api.start({
         opacity: 0,
       })
@@ -23,8 +23,15 @@ const SkipIntro = () => {
 
   return (
     <a.div style={style} className="SkipIntro">
-      <Button variant="primary" size="lg" block onClick={() => setScene(Gameplay)}>
-        Skip intro{' '}
+      <Button
+        variant="primary"
+        size="lg"
+        block
+        onClick={() => setScene(scene === Start ? OpenSea : Gameplay)}
+      >
+        {scene === Start && <span>Let's get to the harbour!</span>}
+        {scene === OpenSea && <span>Let's get to the island!</span>}
+        {scene}
       </Button>
     </a.div>
   )

@@ -9,7 +9,15 @@ import { Link, useLocation } from 'react-router-dom'
 import RoundButton from './RoundButton'
 import CloseIcon from './Svg/CloseIcon'
 import { a, config, useSpring } from '@react-spring/web'
-import { MenuClosed, useMenuStore, MenuOpen, usePlayerStore, OpenSea, Gameplay } from '../store'
+import {
+  MenuClosed,
+  useMenuStore,
+  MenuOpen,
+  usePlayerStore,
+  OpenSea,
+  Gameplay,
+  Start,
+} from '../store'
 
 const SideMenu = () => {
   const { pathname } = useLocation()
@@ -62,7 +70,12 @@ const SideMenu = () => {
               </button>
             </Nav.Item>
             {/* add space */}
-            <Nav.Item className="mb-5">
+            <Nav.Item className="mb-3">
+              <button className="btn btn-link" onClick={() => setScene(Start)}>
+                start
+              </button>
+            </Nav.Item>
+            <Nav.Item className="mb-3">
               <button className="introduction btn btn-link" onClick={() => setScene(OpenSea)}>
                 introduction
               </button>

@@ -9,7 +9,7 @@ import SmallTree from './SmallTree'
 import './World.css'
 import '../index.css'
 import Player from './Player'
-import Chapters from '../data/Chapters'
+import Chapters from '../data/chapters.json'
 import Quests from '../data/Quests.json'
 import { default as SmallTrees } from '../data/SmallTrees'
 import { default as BigTrees } from '../data/BigTrees'
@@ -58,6 +58,7 @@ import Kirill from './Kirill'
 import Character from './Character'
 import Sensor from './Sensor'
 import Mushrooms from './Mushroom'
+import Price from './Price'
 // import { AnimationStoreLoader } from '../store/animations'
 
 const Joystick = lazy(() => import('./Joystick'))
@@ -132,7 +133,6 @@ const World = ({
 
           <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
 
-          <Boat rotation={[0, 0, 0]} scale={[2.5, 2.5, 2.5]} position={[91.6, -1.6, -10.2]} />
           <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} position={[2.2, -2.8, -30]} />
           <StoneBig rotation={[0, 1, 0]} scale={[1.5, 1.5, 1.5]} position={[0.4, 14.2, -72.6]} />
           <StoneBig rotation={[0, 0, 0]} scale={[3, 3, 3]} position={[-34.0, 0.3, 31.8]} />
@@ -231,8 +231,9 @@ const World = ({
             rotation={[0, -0.9, 0]}
             rotationSpeed={0.3}
           />
-          <IcescreamTruck rotation={[0, 1.3, 0]} position={[-8.7, 0.1, 33.23]} scale={1.5} />
           <Physics debug={debugPhysics}>
+            <IcescreamTruck rotation={[0, 1.3, 0]} position={[-8.7, 0.1, 33.23]} scale={1.5} />
+
             <Boat
               rotation={[0, 0, 0]}
               scale={[2.5, 2.5, 2.5]}
@@ -241,6 +242,7 @@ const World = ({
                 [91.6, -1.6, -10.2],
               ]}
             />
+
             <Player isMobile={isMobile} debug={debug} position={[94.88, 0.26, -14.2]}></Player>
             <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
             <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
@@ -255,16 +257,9 @@ const World = ({
               scale={[3, 3, 3]}
               position={[-24.3, 0.03, 47.6]}
             />
-            <Target
-              chapter={Chapters[0]}
-              position={Chapters[0].position}
-              color={Chapters[0].color}
-              geometryArgs={[2, 2, 0, 8]}
-              priceOffsetPosition={[0, -0.5, 0]}
-              priceElevation={0.35}
-              PriceComponent={GroundViewSign}
-              transparent
-            ></Target>
+            <Price {...Chapters[0]} />
+            <Price {...Chapters[1]} />
+
             <Target
               chapter={Chapters[3]}
               position={[-60, 27, -58]}
@@ -289,18 +284,10 @@ const World = ({
             >
               <Arch rotation={[0, 0.3, 0]} scale={[2.4, 2.4, 2.4]} />
             </Target>
-            <Target
-              height={1.5}
-              offset={[0, 1, 0]}
-              chapter={Chapters[15]}
-              position={Chapters[15].position}
-              geometry="cylinder"
-              geometryArgs={[3.2, 3.2, 5, 8]}
-              transparent
-              priceOffsetPosition={[-2.8, 0, 3.7]}
-            >
-              <Lighthouse scale={5} />
-            </Target>
+            {/* chapter 15 */}
+            <Lighthouse scale={5} position={[54, 20.4, -85]} />
+            <Price {...Chapters[15]} />
+            {/* end of chqpter 15 */}
             <Target
               chapter={Chapters[12]}
               position={Chapters[12].position}

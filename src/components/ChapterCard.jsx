@@ -12,25 +12,7 @@ import { ArrowsClockwise } from '@phosphor-icons/react'
 const CardAspectRatio = 1060 / 720
 const CardAspectRatioPercent = `${CardAspectRatio * 100}%`
 
-export const CategoryIntroduction = 'introduction'
-export const CategoryHistory = 'history'
-export const CategoryMedia = 'media'
-export const CategoryHermeneutics = 'hermeneutics'
-export const CategoryDigitalLandscapes = 'digital landscapes'
-
-export const ColorIntroduction = 'red'
-export const ColorHistory = 'var(--history)'
-export const ColorMedia = 'var(--orange)'
-export const ColorHermeneutics = 'var(--purple)'
-export const ColorDigitalLandscapes = 'var(--rose)'
-
-export const ColorCategory = {
-  [CategoryIntroduction]: ColorIntroduction,
-  [CategoryHistory]: ColorHistory,
-  [CategoryMedia]: ColorMedia,
-  [CategoryHermeneutics]: ColorHermeneutics,
-  [CategoryDigitalLandscapes]: ColorDigitalLandscapes,
-}
+import { ColorByCategory } from '../constants'
 
 const ViewTypes = {
   birdEye: BirdEyeView,
@@ -145,7 +127,7 @@ const ChapterCard = ({ chapter, notFound = false }) => {
         <div className="ChapterCard_category">{chapter.category}</div>
         <div className="ChapterCard_viewType">
           <ViewTypeComponent
-            color={ColorCategory[chapter.category]}
+            color={ColorByCategory[chapter.category]}
             backgroundColor={'var(--pale-yellow)'}
             width={45}
           ></ViewTypeComponent>
