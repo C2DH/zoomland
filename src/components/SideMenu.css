@@ -8,6 +8,7 @@
   overflow: hidden;
   width: 320px;
   margin: 0.5rem;
+  font-family: 'RocknRoll One', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 .SideMenu_slide {
   pointer-events: all;
@@ -34,6 +35,9 @@
   text-decoration: none;
   position: relative !important;
   padding: 0;
+}
+.SideMenu .btn.btn-link:focus {
+  box-shadow: none;
 }
 
 .SideMenu .introduction::after {
