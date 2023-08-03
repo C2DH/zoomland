@@ -19,9 +19,9 @@
   --z-index-joystick: 4;
   --z-index-header: 5;
   --z-index-approutes: 6;
-  --z-index-side-menu: 7;
-  --z-index-skip-intro: 8;
-  --z-index-toggle-sounds: 9;
+  --z-index-toggle-sounds: 7;
+  --z-index-side-menu: 8;
+  --z-index-skip-intro: 9;
   --spacer: 1.5em;
   --spacer-half: 0.75em;
   --spacer-double: 3em;
@@ -43,7 +43,7 @@
   --history: #306fc5;
   --dark-blue-rgb: 25, 48, 128;
   --dark-blue: rgb(var(--dark-blue-rgb));
-  --dark-blue-alpha: rgba(25, 48, 128, 0.8);
+  --dark-blue-alpha: #193080cc;
   --pale-yellow: #fef9cb;
   --pale-dark-blue: rgb(72, 68, 98);
   --light-rose: rgb(241, 103, 161);
