@@ -10,12 +10,12 @@ const Megaphone = (props) => {
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime()
     const positionFactor = Math.sin(time * seed) * 0.1
-    megaphoneRef.current.position.y = 8.4 + positionFactor
+    megaphoneRef.current.position.y = 0.7 + positionFactor
     megaphoneRef.current.rotation.y += 0.005
   })
   return (
     <group {...props} dispose={null} ref={megaphoneRef}>
-      <group position={[0.01, 1.46, 0.29]}>
+      <group>
         <mesh
           castShadow
           receiveShadow
