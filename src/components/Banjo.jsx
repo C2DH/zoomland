@@ -10,7 +10,7 @@ const Banjo = (props) => {
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime()
     const positionFactor = Math.sin(time * seed) * 0.1
-    banjoRef.current.position.y = 10.6 + positionFactor
+    banjoRef.current.position.y = 12.6 + positionFactor
     banjoRef.current.rotation.y += 0.005
   })
   return (
