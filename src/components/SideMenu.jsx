@@ -70,18 +70,18 @@ const SideMenu = () => {
               </button>
             </Nav.Item>
             {/* add space */}
-            <Nav.Item className="mb-3">
+            <Nav.Item>
               <button className="btn btn-link" onClick={() => setScene(Start)}>
-                start
+                Start
               </button>
             </Nav.Item>
-            <Nav.Item className="mb-3">
+            <Nav.Item className="mb-4">
               <button className="introduction btn btn-link" onClick={() => setScene(OpenSea)}>
                 introduction
               </button>
             </Nav.Item>
 
-            <Nav.Item>
+            <Nav.Item className="mt-4">
               <Link to="/map">Map</Link>
             </Nav.Item>
             <Nav.Item>
