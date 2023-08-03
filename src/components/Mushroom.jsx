@@ -21,6 +21,8 @@ const Mushrooms = (props) => {
       mesh.setMatrixAt(i, o3d.matrix)
     }
     mesh.instanceMatrix.needsUpdate = true
+    mesh.castShadow = true
+    mesh.receiveShadow = true
   }, [])
 
   return (
