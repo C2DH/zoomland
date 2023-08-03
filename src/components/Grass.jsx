@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, MeshDistortMaterial } from '@react-three/drei'
 import instances from '../data/lawn'
-import { Object3D } from 'three'
+import { Object3D, Vector3, DoubleSide } from 'three'
 import { useFrame } from '@react-three/fiber'
 
 const Grass = (props) => {
@@ -9,7 +9,7 @@ const Grass = (props) => {
   const { nodes, materials } = useGLTF('../assets/models/Grass.glb')
   const [o3d] = useState(() => new Object3D())
   const items = useRef()
-  const grassRef = useRef()
+
   // const instances = nodes
   //   ? {
   //       Grass: nodes.Grass1001,
@@ -25,7 +25,8 @@ const Grass = (props) => {
   //   grassRef.current.rotation.y = bendFactor * 0.06
   // })
 
-  useEffect(() => {
+  const seed = Math.random() + 0.8
+  useFrame((state) => {
     if (!items.current) return
     const mesh = items.current
 
@@ -37,15 +38,22 @@ const Grass = (props) => {
       mesh.setMatrixAt(i, o3d.matrix)
     }
     mesh.instanceMatrix.needsUpdate = true
-  }, [])
+
+    mesh.castShadow = true
+    mesh.receiveShadow = true
+  })
 
   return (
     <group {...props} dispose={null}>
-      <instancedMesh
-        frustumCulled={false}
-        ref={items}
-        args={[nodes.Grass.geometry, materials['Grass_light'], count]}
-      ></instancedMesh>
+      <instancedMesh frustumCulled={false} ref={items} args={[nodes.Grass.geometry, null, count]}>
+        <MeshDistortMaterial
+          side={DoubleSide}
+          color="green"
+          distort={0.5}
+          speed={1}
+          factor={10}
+        ></MeshDistortMaterial>
+      </instancedMesh>
     </group>
   )
 }
