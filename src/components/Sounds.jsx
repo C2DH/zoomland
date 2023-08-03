@@ -63,7 +63,7 @@ const Sounds = () => {
     <>
       <div
         className="Sounds fill position-fixed bottom-0 end-0"
-        style={{ margin: '2rem', zIndex: 'var(--z-index-header)' }}
+        style={{ margin: '2rem', zIndex: 'var(--z-index-toggle-sounds)' }}
       >
         <RoundButton
           onClick={() => setIsPlaying(!isPlaying)}
