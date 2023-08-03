@@ -8,7 +8,7 @@ const Ocean = (props) => {
         castShadow
         receiveShadow
         geometry={nodes.Ocean.geometry}
-        material={materials.Ocean}
+        material={materials.Material}
         position={[0, 0.04, 0]}
       />
     </group>
