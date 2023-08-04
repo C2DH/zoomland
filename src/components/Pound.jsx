@@ -9,7 +9,7 @@ const Pound = () => {
   return (
     <Plane
       ref={mesh}
-      args={[10, 10]}
+      args={[10, 10, 32, 32]}
       rotation={[-Math.PI / 2, 0, 0]}
       position={[10, -2.5, -32]}
       scale={[3.4, 2, 3]}
