@@ -46,7 +46,7 @@ export default {
     [34.49, 0.3, 20.99],
     [21.81, 0.2, 24.1],
     [16.65, 0.1, 30.79],
-    [15.62, 1.1, 37.87],
+    [15.62, 1.8, 37.87],
   ],
   // only items that need to scale up are present in this dictionary. Otherwise scale is random
   scales: {

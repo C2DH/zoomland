@@ -164,7 +164,7 @@ const Map = () => {
         <OverheadViewSign
           animation={false}
           scale={s}
-          position={[-20.07 / d, -0.66 / d + 0.25, 6.83 / d]}
+          position={[-12.07 / d, -0.66 / d + 0.25, 6.83 / d]}
           rotation={[0, 0.4, 0]}
           color={'#9e43c8'}
         />
