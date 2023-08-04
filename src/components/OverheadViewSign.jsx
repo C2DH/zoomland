@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { MeshStandardMaterial } from 'three'
 
-const OverheadViewSign = ({ animation = true, color, ...props }) => {
+const OverheadViewSign = ({ animation = true, color = '#306fc5', ...props }) => {
   const signRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/OverheadViewSign.glb')
   const seed = 0.8
@@ -18,7 +18,6 @@ const OverheadViewSign = ({ animation = true, color, ...props }) => {
   })
 
   //Pick color - Media #fa953b, History - #306fc5, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #7c7c7c
-  console.log('COLOR_SIGNM', color)
   const signColor = new MeshStandardMaterial({
     ...materials.Media,
     color: color,
