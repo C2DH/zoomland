@@ -26,6 +26,7 @@ const Target = ({
   seed = Math.random() + 0.8,
   childrenIsRigidBody = false,
   PriceComponent = null,
+  priceComponentColor = '#9e43c8',
   color = 'gold',
 }) => {
   // if vignette should be visible
@@ -124,7 +125,7 @@ const Target = ({
         onCollisionEnter={collisionEnterHandler}
         onCollisionExit={collisionExitHandler}
       >
-        <mesh castShadow receiveShadow>
+        <mesh>
           <cylinderGeometry args={[radius, radius, height, 12]} />
           <meshStandardMaterial
             color={'var(--dark-blue)'}
@@ -136,9 +137,9 @@ const Target = ({
       {/* then the price as floating unreachable, hotpink icosaedron */}
       <group ref={price} scale={0.5} position={priceOffsetPosition}>
         {PriceComponent !== null ? (
-          <PriceComponent color={color} />
+          <PriceComponent color={priceComponentColor} />
         ) : (
-          <mesh castShadow receiveShadow>
+          <mesh>
             <icosahedronGeometry args={[0.5, 0]} />
             <meshStandardMaterial color={color} />
           </mesh>
