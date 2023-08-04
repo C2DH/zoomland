@@ -28,6 +28,8 @@ const Price = ({
   scaleMin = 0.5,
   scaleMax = 1.5,
   transparent = true,
+  priceColor = '#7c7c7c',
+  priceOffsetPosition = [0, 0, 0],
 }) => {
   const priceRef = useRef(null)
   const [, api] = useSpring(() => ({
@@ -94,7 +96,7 @@ const Price = ({
   }
 
   return (
-    <>
+    <group position={priceOffsetPosition}>
       <RigidBody
         colliders={'hull'}
         type={'fixed'}
@@ -112,9 +114,9 @@ const Price = ({
         </mesh>
       </RigidBody>
       <group ref={priceRef} scale={0.5} position={position}>
-        <ViewTypeComponent color={color} />
+        <ViewTypeComponent color={priceColor} />
       </group>
-    </>
+    </group>
   )
 }
 
