@@ -6,8 +6,11 @@ import { useFrame } from '@react-three/fiber'
 
 const Target = ({
   chapter,
+  collidersType = 'hull',
   geometry = 'cylinder',
   geometryArgs = [1, 1, 1, 16],
+  geometryPosition = [0, 0, 0],
+  geometryRotation = [0, 0, 0],
   additionalGeometry = null,
   additionalGeometryArgs = [1, 1, 1],
   additionalGeometryOffsetPosition = [0, 0, 0],
@@ -23,6 +26,7 @@ const Target = ({
   seed = Math.random() + 0.8,
   childrenIsRigidBody = false,
   PriceComponent = null,
+  priceComponentColor = '#9e43c8',
   color = 'gold',
 }) => {
   // if vignette should be visible
@@ -83,12 +87,12 @@ const Target = ({
     <group position={position}>
       {!childrenIsRigidBody && children}
       {/* the first RigidBody is around the model given as childre and it makes use of the geometry props */}
-      <RigidBody colliders={'hull'} type={'fixed'}>
+      <RigidBody colliders={collidersType} type={'fixed'}>
         {childrenIsRigidBody ? (
           children
         ) : (
           <group>
-            <mesh>
+            <mesh position={geometryPosition} rotation={geometryRotation}>
               {geometry === 'cylinder' && <cylinderGeometry args={geometryArgs} />}
               {geometry === 'box' && <boxGeometry args={geometryArgs} />}
               <meshStandardMaterial
@@ -121,7 +125,7 @@ const Target = ({
         onCollisionEnter={collisionEnterHandler}
         onCollisionExit={collisionExitHandler}
       >
-        <mesh castShadow receiveShadow>
+        <mesh>
           <cylinderGeometry args={[radius, radius, height, 12]} />
           <meshStandardMaterial
             color={'var(--dark-blue)'}
@@ -133,9 +137,9 @@ const Target = ({
       {/* then the price as floating unreachable, hotpink icosaedron */}
       <group ref={price} scale={0.5} position={priceOffsetPosition}>
         {PriceComponent !== null ? (
-          <PriceComponent color={color} />
+          <PriceComponent color={priceComponentColor} />
         ) : (
-          <mesh castShadow receiveShadow>
+          <mesh>
             <icosahedronGeometry args={[0.5, 0]} />
             <meshStandardMaterial color={color} />
           </mesh>

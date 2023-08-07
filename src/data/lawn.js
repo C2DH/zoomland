@@ -1,13 +1,13 @@
 export default [
   {
     position: [1.392, 1.241, -6.662],
-    rotation: [0.099, 0.13, -0.062],
-    scale: 0.11,
+    rotation: [0.099, 0.1, -0.062],
+    scale: 0.06,
   },
   {
     position: [7.01, 1.456, 4.69],
     rotation: [0.093, 1.439, -0.265],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-4.654, 2.887, -6.776],
@@ -17,32 +17,32 @@ export default [
   {
     position: [-7.724, 1.148, 1.868],
     rotation: [0.009, 0.034, -0.078],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-7.528, 1.148, 1.667],
     rotation: [2.097, -1.417, 2.065],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [7.175, 1.413, 4.173],
     rotation: [0.07, 0.47, -0.157],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [6.435, 0.795, -4.598],
     rotation: [0.468, -1.181, 0.297],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [6.184, 1.297, 2.162],
     rotation: [3.05, 0.538, 3.107],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [1.495, 1.132, 6.415],
     rotation: [1.285, 1.431, -1.482],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.988, 1.376, 4.419],
@@ -62,7 +62,7 @@ export default [
   {
     position: [-7.584, 2.633, -4.199],
     rotation: [0.069, 0.368, -0.074],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [5.978, 1.31, 2.269],
@@ -82,32 +82,32 @@ export default [
   {
     position: [-5.096, 0.192, 3.349],
     rotation: [0.134, -0.334, -0.096],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [8.83, 1.084, 3.846],
     rotation: [2.927, 0.51, -3.077],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [1.887, 0.239, 0.567],
     rotation: [0.082, 0.333, -0.203],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [1.644, 0.239, -0.331],
     rotation: [3.06, 0.352, 3],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-0.441, 1.82, -5.845],
     rotation: [0.007, 0.846, -0.138],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.553, 0.206, -1.909],
     rotation: [0.223, 1.491, -0.41],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [3.845, 1.49, -4.953],
@@ -122,7 +122,7 @@ export default [
   {
     position: [-0.361, 1.623, -7.768],
     rotation: [0.268, 1.1, -0.288],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.411, 0.235, -1.505],
@@ -147,7 +147,7 @@ export default [
   {
     position: [5.744, 1.348, 7.235],
     rotation: [3.094, -0.895, 2.947],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [1.456, 0.198, -2.01],
@@ -157,11 +157,11 @@ export default [
   {
     position: [1.533, 0.18, -2.116],
     rotation: [1.732, -1.486, 1.603],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-0.713, 0.01, -4.013],
-    rotation: [0.165, 0.626, -0.13],
+    rotation: [0.165, 0.626, -0.1],
     scale: 0.1,
   },
   {
@@ -172,7 +172,7 @@ export default [
   {
     position: [6.128, 1.443, 7.847],
     rotation: [3.116, -0.635, 3.113],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [1.902, 0.227, 3.066],
@@ -182,17 +182,17 @@ export default [
   {
     position: [6.129, 1.106, -3.038],
     rotation: [2.967, -0.109, 3.121],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [6.204, 1.02, -3.407],
     rotation: [0.1, 0.127, -0.129],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.187, 0.865, -4.308],
     rotation: [0.157, -0.62, 0.058],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [1.878, 1.201, -5.532],
@@ -202,12 +202,12 @@ export default [
   {
     position: [6.195, 0.792, -4.997],
     rotation: [2.924, -0.48, 2.855],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-0.159, 0.211, 3.032],
     rotation: [0.196, 0.817, -0.209],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [4.728, 1.348, 7.052],
@@ -227,7 +227,7 @@ export default [
   {
     position: [-4.033, 0.194, 3.098],
     rotation: [0.001, 0.513, -0.172],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-4.095, 0.195, 2.396],
@@ -242,7 +242,7 @@ export default [
   {
     position: [-3.906, 0.196, 1.76],
     rotation: [0.08, -1.013, 0.012],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.649, 1.231, 7.709],
@@ -252,12 +252,12 @@ export default [
   {
     position: [-2.53, 0.199, 3.239],
     rotation: [0.119, -0.074, -0.18],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-7.451, 2.638, -4.226],
     rotation: [2.99, -0.817, 2.886],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-2.605, 0.199, 3.057],
@@ -272,12 +272,12 @@ export default [
   {
     position: [-4.056, 0.196, -3.685],
     rotation: [3.04, 0.255, -3.121],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.058, 0.234, 3.078],
     rotation: [0.04, 0.481, -0.212],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-4.936, 0.194, -3.031],
@@ -292,22 +292,22 @@ export default [
   {
     position: [6.72, 1.317, 2.577],
     rotation: [1.546, 1.427, -1.646],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.37, 1.472, 5.683],
     rotation: [0.231, 0.795, -0.307],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-3.908, 2.582, -7.273],
     rotation: [0.001, 0.587, -0.141],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [7.618, 1.313, 5.388],
     rotation: [0.294, -0.882, 0.055],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.244, 0.979, -0.349],
@@ -322,17 +322,17 @@ export default [
   {
     position: [6.429, 1.141, -2.646],
     rotation: [2.725, -1.371, 2.633],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-3.802, 0.207, 4.158],
     rotation: [0.104, 1.357, -0.235],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.331, 1.03, 1.361],
     rotation: [3.124, 0.821, 2.958],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-3.75, 0.195, 3.377],
@@ -347,12 +347,12 @@ export default [
   {
     position: [1.942, 1.252, -6.834],
     rotation: [0.059, 0.035, -0.051],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.954, 1.23, -7.392],
     rotation: [0.029, 0.297, -0.166],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.961, 0.705, -4.19],
@@ -362,21 +362,21 @@ export default [
   {
     position: [-5.012, 2.915, -6.7],
     rotation: [3.094, 0.468, -3.126],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [1.929, 1.245, 7.779],
     rotation: [3.061, 0.136, 3.071],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [2.024, 1.142, 6.235],
     rotation: [0.205, 0.746, -0.177],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2, 1.134, 6.138],
-    rotation: [0.117, -0.559, -0.13],
+    rotation: [0.117, -0.559, -0.1],
     scale: 0.08,
   },
   {
@@ -392,7 +392,7 @@ export default [
   {
     position: [-3.536, 0.201, 4.332],
     rotation: [2.956, -0.654, 2.9],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-3.557, 0.197, 1.794],
@@ -417,7 +417,7 @@ export default [
   {
     position: [2.088, 0.23, 2.666],
     rotation: [2.962, 0.171, 3.136],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-4.709, 0.207, 3.793],
@@ -427,7 +427,7 @@ export default [
   {
     position: [1.981, 0.236, 1.322],
     rotation: [2.853, -1.224, 2.684],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [6.162, 1.4, 7.601],
@@ -437,22 +437,22 @@ export default [
   {
     position: [-2.561, 2.314, -6.661],
     rotation: [0.153, -0.291, -0.148],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.2, 0.245, 0.249],
     rotation: [2.944, -0.853, 2.805],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [6.54, 1.476, 4.911],
     rotation: [2.952, -0.483, 2.942],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.258, 0.232, -1.713],
     rotation: [0.663, 1.287, -0.815],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [1.602, 1.184, 7.055],
@@ -462,12 +462,12 @@ export default [
   {
     position: [6.89, 1.288, 2.399],
     rotation: [2.955, 0.547, -3.046],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [6.918, 1.228, 1.964],
     rotation: [0.263, -1.252, 0.131],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-3.669, 0.196, 2.317],
@@ -482,12 +482,12 @@ export default [
   {
     position: [2.102, 1.273, -6.348],
     rotation: [2.753, -1.378, 2.755],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.141, 1.284, -6.736],
     rotation: [0.004, 0.126, -0.191],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.074, 1.229, -7.393],
@@ -497,12 +497,12 @@ export default [
   {
     position: [-3.403, 2.515, -6.727],
     rotation: [0.019, 0.869, -0.164],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.796, 0.972, 0.331],
     rotation: [2.379, 1.404, -2.388],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [7.901, 1.34, 4.126],
@@ -517,12 +517,12 @@ export default [
   {
     position: [-6.961, 1.147, 6.227],
     rotation: [0.032, -0.309, -0.053],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.231, 1.172, 6.565],
     rotation: [2.683, 1.321, -2.788],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-7.338, 1.147, 5.96],
@@ -532,12 +532,12 @@ export default [
   {
     position: [6.686, 1.044, -3.185],
     rotation: [0.056, -1.02, -0.111],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-3.213, 0.198, -4.531],
     rotation: [2.661, -1.34, 2.579],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-7.029, 1.147, 6.177],
@@ -552,12 +552,12 @@ export default [
   {
     position: [-7.245, 1.147, 5.659],
     rotation: [0.771, 1.287, -0.886],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-3.164, 2.398, -7.074],
     rotation: [3.127, -0.063, 3.094],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [3.132, 1.354, 4.003],
@@ -567,7 +567,7 @@ export default [
   {
     position: [-7.393, 1.147, 5.765],
     rotation: [0.304, -1.086, 0.179],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-7.287, 1.147, 4.923],
@@ -577,12 +577,12 @@ export default [
   {
     position: [1.695, 0.32, 3.435],
     rotation: [3.074, -0.309, 3.037],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [1.764, 0.228, 2.593],
     rotation: [3.008, 0.351, -3.137],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.309, 1.302, -6.925],
@@ -602,12 +602,12 @@ export default [
   {
     position: [-3.162, 0.199, 4.415],
     rotation: [1.971, 1.398, -2.016],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-3.152, 0.198, 4.092],
     rotation: [0.212, -0.571, -0.084],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-7.171, 1.148, 2.169],
@@ -627,7 +627,7 @@ export default [
   {
     position: [-2.9, 0.197, 3.329],
     rotation: [0.132, 0.897, -0.178],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [6.289, 1.428, 7.689],
@@ -642,12 +642,12 @@ export default [
   {
     position: [6.284, 1.4, 7.541],
     rotation: [0.153, -0.401, -0.07],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [6.433, 1.418, 5.988],
     rotation: [2.819, -0.929, 2.771],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [1.531, 0.23, 1.672],
@@ -662,7 +662,7 @@ export default [
   {
     position: [2.446, 0.249, 0.075],
     rotation: [0.048, -0.31, 0.007],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.513, 0.242, -1.63],
@@ -677,7 +677,7 @@ export default [
   {
     position: [-4.773, 0.194, 1.61],
     rotation: [2.4, -1.322, 2.356],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-5.154, 0.193, 1.296],
@@ -687,12 +687,12 @@ export default [
   {
     position: [5.032, 0.969, -3.111],
     rotation: [0.127, 0.852, -0.144],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [6.881, 0.943, -3.762],
     rotation: [0.006, 1.275, -0.086],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [1.589, 0.213, -1.844],
@@ -702,32 +702,32 @@ export default [
   {
     position: [1.976, 1.206, 7.181],
     rotation: [3.052, 0.209, 3.064],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.019, 1.206, 7.165],
     rotation: [3.051, 0.51, -3.119],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.171, 1.183, 6.748],
     rotation: [2.98, -0.894, 2.869],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.094, 1.012, -3.87],
     rotation: [2.983, -0.334, 3.085],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.737, 1.345, 4.448],
     rotation: [3.124, -0.44, 3.052],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.332, 0.959, -7.364],
     rotation: [2.968, -0.616, 3.024],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [8.241, 1.223, 3.257],
@@ -737,7 +737,7 @@ export default [
   {
     position: [-2.274, 2.304, -6.369],
     rotation: [2.467, 1.426, -2.525],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [7.232, 0.898, -3.384],
@@ -747,12 +747,12 @@ export default [
   {
     position: [2.681, 0.137, -2.634],
     rotation: [1.662, 1.402, -1.681],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
-    position: [2.678, 0.14, -2.952],
+    position: [2.678, 0.08, -2.952],
     rotation: [3.119, 0.19, 3.039],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-2.133, 0.2, 3.702],
@@ -767,7 +767,7 @@ export default [
   {
     position: [-2.25, 0.2, 2.842],
     rotation: [0.975, -1.382, 0.882],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.633, 1.234, -4.936],
@@ -777,22 +777,22 @@ export default [
   {
     position: [-2.43, 0.197, 4.888],
     rotation: [3.098, 0.181, 3.104],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.633, 1.367, -7.462],
     rotation: [0.2, 0.575, -0.242],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [6.638, 1.35, 6.287],
     rotation: [0.238, -0.772, 0.107],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.856, 1.339, 4.151],
     rotation: [0.25, -0.714, -0.013],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [3.033, 1.258, 3.223],
@@ -802,7 +802,7 @@ export default [
   {
     position: [-2.307, 0.2, 2.968],
     rotation: [3.125, -0.254, 3.009],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.859, 0.256, 0.133],
@@ -812,7 +812,7 @@ export default [
   {
     position: [2.843, 0.18, -2.506],
     rotation: [0.338, -1.241, 0.149],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.842, 0.189, -2.67],
@@ -822,12 +822,12 @@ export default [
   {
     position: [2.873, 1.305, -5.349],
     rotation: [0.094, 0.706, -0.223],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-7.922, 1.187, 7.39],
     rotation: [2.913, -0.63, 2.928],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [6.985, 1.434, 4.281],
@@ -842,17 +842,17 @@ export default [
   {
     position: [6.829, 0.883, -4.093],
     rotation: [0.193, -0.758, 0.005],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.892, 1.256, 7.45],
     rotation: [0.026, -0.694, -0.069],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.014, 1.466, -4.812],
     rotation: [0.172, -0.005, -0.181],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.438, 1.152, 1.957],
@@ -862,7 +862,7 @@ export default [
   {
     position: [-2.445, 0.201, -4.71],
     rotation: [2.998, 0.194, 3.1],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [4.949, 1.407, 6.868],
@@ -882,12 +882,12 @@ export default [
   {
     position: [7.405, 0.633, -5.515],
     rotation: [0.188, -1.256, 0.081],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [3.119, 0.265, -0.57],
     rotation: [3.009, -0.248, 2.965],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-2.174, 0.197, 5.247],
@@ -897,27 +897,27 @@ export default [
   {
     position: [6.98, 0.738, -5.123],
     rotation: [3.121, 0.317, 2.972],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-2.242, 0.198, 4.823],
     rotation: [2.866, 1.115, -3.093],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-4.313, 0.195, 1.632],
     rotation: [2.146, 1.366, -2.285],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [3.033, 0.225, -2.344],
     rotation: [2.792, 1.319, -2.98],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-7.03, 2.419, -3.58],
     rotation: [2.721, -1.279, 2.645],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.988, 1.352, -6.134],
@@ -927,7 +927,7 @@ export default [
   {
     position: [-7.777, 1.273, 7.742],
     rotation: [0.08, 1.204, -0.121],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-2.366, 0.202, -4.646],
@@ -937,17 +937,17 @@ export default [
   {
     position: [-7.841, 1.309, -0.505],
     rotation: [2.84, -0.919, 2.775],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [3.053, 1.424, -7.026],
     rotation: [2.961, 0.721, -3.112],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.911, 1.428, -7.529],
     rotation: [3.115, -0.717, 3.095],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [1.807, 0.239, 0.299],
@@ -957,32 +957,32 @@ export default [
   {
     position: [-6.994, 2.864, -4.852],
     rotation: [0.348, -1.269, 0.322],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [3.16, 1.233, 6.933],
     rotation: [0.243, 1.168, -0.261],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-2.136, 0.201, 2.571],
     rotation: [0.049, 0.764, -0.042],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [7.535, 0.55, -5.831],
     rotation: [0.763, -1.445, 0.674],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-4.615, 0.143, -1.707],
     rotation: [0.219, -0.88, 0.048],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [0.094, 0.215, 2.002],
     rotation: [0.056, 0.535, -0.139],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.246, 1.329, 2.498],
@@ -992,7 +992,7 @@ export default [
   {
     position: [6.968, 1.455, 5.122],
     rotation: [0.649, -1.385, 0.52],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [7.386, 1.378, 3.837],
@@ -1007,7 +1007,7 @@ export default [
   {
     position: [3.199, 1.375, -6.276],
     rotation: [3.056, 0.873, 3.139],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-7.609, 1.147, 6.217],
@@ -1027,22 +1027,22 @@ export default [
   {
     position: [7.402, 1.361, 3.625],
     rotation: [0.245, 0.712, -0.222],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [1.894, 0.218, -1.787],
     rotation: [0.131, 0.606, -0.16],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [3.232, 1.418, 5.01],
     rotation: [0.177, -0.472, -0.092],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-4.577, 2.875, -6.462],
     rotation: [2.901, 0.702, -3.035],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-4.595, 2.875, -6.707],
@@ -1052,7 +1052,7 @@ export default [
   {
     position: [-6.995, 2.458, -3.695],
     rotation: [0.155, 0.28, -0.165],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [3.455, 1.438, 4.989],
@@ -1062,7 +1062,7 @@ export default [
   {
     position: [3.443, 1.379, 4.034],
     rotation: [0.05, -0.227, -0.177],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [3.514, 1.273, 2.969],
@@ -1077,7 +1077,7 @@ export default [
   {
     position: [-6.784, 2.878, -4.861],
     rotation: [0.069, 0.77, -0.132],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [3.296, 1.411, 4.571],
@@ -1097,12 +1097,12 @@ export default [
   {
     position: [3.302, 0.269, -0.484],
     rotation: [2.873, -1.165, 2.876],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [3.362, 1.407, 4.439],
     rotation: [3.131, 0.625, 3.012],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-2.006, 0.198, 4.842],
@@ -1127,17 +1127,17 @@ export default [
   {
     position: [-7.472, 1.154, 7.45],
     rotation: [2.426, -1.351, 2.358],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-7.408, 1.203, 4.218],
     rotation: [3.052, 0.303, 3.089],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [3.372, 1.312, 3.338],
     rotation: [2.988, -0.968, 2.952],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-7.455, 1.151, 1.396],
@@ -1147,12 +1147,12 @@ export default [
   {
     position: [-7.499, 1.154, 0.741],
     rotation: [2.892, -1.096, 2.911],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-7.45, 1.158, 0.57],
     rotation: [2.747, 1.288, -2.769],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-7.355, 1.247, -0.46],
@@ -1161,8 +1161,8 @@ export default [
   },
   {
     position: [6.635, 0.823, -7.25],
-    rotation: [0.03, 0.707, -0.13],
-    scale: 0.13,
+    rotation: [0.03, 0.707, -0.1],
+    scale: 0.1,
   },
   {
     position: [-1.726, 1.965, -7.664],
@@ -1172,12 +1172,12 @@ export default [
   {
     position: [3.285, 1.526, -7.292],
     rotation: [0.191, 0.177, -0.157],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-4.513, 0.194, 1.549],
     rotation: [0.107, 1.454, -0.173],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.171, 1.371, 5.507],
@@ -1192,12 +1192,12 @@ export default [
   {
     position: [7.847, 1.188, 2.625],
     rotation: [3.086, -0.059, 2.998],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.571, 0.902, 0.307],
     rotation: [3.079, 0.262, 3.124],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.057, 1.055, -3.234],
@@ -1217,12 +1217,12 @@ export default [
   {
     position: [-1.98, 2.203, -6.538],
     rotation: [3.095, 0.624, 3.03],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.252, 0.973, -3.576],
     rotation: [2.936, 0.7, -3.125],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-1.932, 0.2, 3.804],
@@ -1237,7 +1237,7 @@ export default [
   {
     position: [4.201, 0.28, 0.577],
     rotation: [3.103, -0.276, 3.013],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-7.318, 1.147, 7.042],
@@ -1252,27 +1252,27 @@ export default [
   {
     position: [-6.654, 2.854, -4.674],
     rotation: [2.365, 1.532, -2.53],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-7.058, 1.147, 7.055],
     rotation: [0.122, -0.579, 0.021],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-6.761, 2.917, -5.265],
     rotation: [0.146, 0.642, -0.117],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.633, 1.24, 7.85],
     rotation: [0.169, 1.492, -0.357],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [1.724, 1.236, 7.747],
     rotation: [0.179, 0.036, -0.154],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.307, 1.317, 5.83],
@@ -1297,7 +1297,7 @@ export default [
   {
     position: [7.672, 1.377, 4.385],
     rotation: [3.005, -0.029, 3.015],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [7.951, 0.95, 1.011],
@@ -1307,17 +1307,17 @@ export default [
   {
     position: [-7.325, 2.646, -4.255],
     rotation: [2.638, -1.204, 2.604],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-7.228, 2.668, -4.313],
     rotation: [3.068, 1.281, -3.119],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.295, 0.982, -3.723],
     rotation: [0.171, -0.126, -0.126],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.531, 1.353, 6.493],
@@ -1327,7 +1327,7 @@ export default [
   {
     position: [6.682, 1.463, 5.408],
     rotation: [2.964, -0.848, 3.004],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [6.014, 0.847, -4.785],
@@ -1337,12 +1337,12 @@ export default [
   {
     position: [-7.102, 1.148, 4.678],
     rotation: [2.862, 0.798, -2.979],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-6.503, 1.148, 5.552],
     rotation: [2.739, 1.056, -2.985],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [3.811, 1.526, -6.292],
@@ -1352,17 +1352,17 @@ export default [
   {
     position: [7.24, 0.289, -7.57],
     rotation: [3.028, 0.443, 3.085],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-1.293, 1.868, -7.638],
     rotation: [3.135, 0.537, 2.993],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-7.029, 1.147, 5.642],
     rotation: [3.039, -0.233, 3.091],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-6.7, 1.147, 6.537],
@@ -1371,7 +1371,7 @@ export default [
   },
   {
     position: [5.972, 0.877, -6.138],
-    rotation: [0.13, 0.879, -0.203],
+    rotation: [0.1, 0.879, -0.203],
     scale: 0.09,
   },
   {
@@ -1387,12 +1387,12 @@ export default [
   {
     position: [-4.211, 0.131, 0.176],
     rotation: [0.091, -0.132, -0.116],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.733, 0.216, -7.201],
     rotation: [0.24, 1.294, -0.288],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-1.459, 0.203, 3.271],
@@ -1402,7 +1402,7 @@ export default [
   {
     position: [4.279, 1.373, 6.916],
     rotation: [3.128, -1.183, 3.119],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [4.096, 0.264, 1.532],
@@ -1412,12 +1412,12 @@ export default [
   {
     position: [5.003, 2.272, -8.041],
     rotation: [3.012, -0.771, 2.927],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-7.109, 2.501, -3.81],
     rotation: [0.109, -0.76, -0.022],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [5.76, 2.174, -7.982],
@@ -1447,7 +1447,7 @@ export default [
   {
     position: [0.222, 0.209, 4.555],
     rotation: [3.091, 0.081, 3.032],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [8.202, 1.209, 3.139],
@@ -1456,13 +1456,13 @@ export default [
   },
   {
     position: [8.312, 1.107, 2.747],
-    rotation: [0.023, 0.208, -0.11],
+    rotation: [0.023, 0.208, -0.06],
     scale: 0.1,
   },
   {
     position: [8.295, 0.979, 1.843],
     rotation: [3.027, 0.446, -3.112],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [7.989, 0.846, 0.374],
@@ -1477,17 +1477,17 @@ export default [
   {
     position: [5.205, 1.448, 6.629],
     rotation: [0.327, -0.95, 0.165],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-4.246, 2.814, -6.47],
     rotation: [2.145, -1.34, 2.062],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.309, 1.298, 2.691],
     rotation: [3.097, 0.269, 3.054],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-4.171, 2.767, -6.725],
@@ -1507,7 +1507,7 @@ export default [
   {
     position: [2.12, 1.13, 5.889],
     rotation: [0.353, -1.114, 0.231],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.27, 0.286, -7.639],
@@ -1517,7 +1517,7 @@ export default [
   {
     position: [2.162, 0.232, 2.528],
     rotation: [3.023, -1.137, 2.94],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.082, 0.235, 1.764],
@@ -1527,7 +1527,7 @@ export default [
   {
     position: [-6.982, 2.51, -3.826],
     rotation: [3.045, -0.495, 3.089],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-7.01, 2.625, -4.156],
@@ -1547,12 +1547,12 @@ export default [
   {
     position: [7.758, 1.304, 5.209],
     rotation: [0.118, -0.653, -0.069],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.143, 0.999, -3.527],
     rotation: [2.99, -0.633, 2.909],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.211, 1.429, -4.693],
@@ -1567,12 +1567,12 @@ export default [
   {
     position: [-6.652, 1.148, 6.119],
     rotation: [0.192, 0.248, -0.102],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.083, 1.542, -5.97],
     rotation: [3.004, 0.966, 3.057],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-6.392, 2.886, -4.939],
@@ -1582,7 +1582,7 @@ export default [
   {
     position: [8.262, 0.788, 0.367],
     rotation: [0.689, -1.318, 0.591],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-6.353, 2.895, -5.602],
@@ -1597,12 +1597,12 @@ export default [
   {
     position: [-1.438, 0.199, 5.3],
     rotation: [0.115, -0.877, -0.03],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-1.838, 0.201, 3.639],
     rotation: [2.958, -1.043, 2.867],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-4.038, 0.154, 0.96],
@@ -1632,7 +1632,7 @@ export default [
   {
     position: [-0.716, 0.206, 3.785],
     rotation: [2.054, 1.38, -2.178],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.557, 1.407, 3.729],
@@ -1652,12 +1652,12 @@ export default [
   {
     position: [-6.598, 1.139, 7.31],
     rotation: [2.853, -0.981, 2.789],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-6.673, 1.148, 5.547],
     rotation: [0.112, 0.011, -0.112],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-6.464, 1.148, 6.017],
@@ -1667,22 +1667,22 @@ export default [
   {
     position: [-6.553, 1.148, 6.161],
     rotation: [0.529, -1.208, 0.397],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-6.523, 1.148, 5.768],
     rotation: [0.184, -0.31, -0.088],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-6.37, 1.148, 6.106],
     rotation: [0.882, -1.335, 0.768],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [0.968, 1.125, 6.528],
     rotation: [0.354, -1.447, 0.28],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [5.649, 1.34, 2.609],
@@ -1697,7 +1697,7 @@ export default [
   {
     position: [-0.69, 1.7, -7.671],
     rotation: [3.029, -1.068, 2.974],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [6.953, 0.962, -3.466],
@@ -1717,7 +1717,7 @@ export default [
   {
     position: [2.128, 1.209, -5.314],
     rotation: [1.969, 1.368, -1.977],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [8.687, 1.075, 3.155],
@@ -1732,32 +1732,32 @@ export default [
   {
     position: [8.747, 0.919, 1.403],
     rotation: [3.06, -0.424, 3.027],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-6.474, 2.872, -4.689],
     rotation: [2.991, 0.031, 2.966],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-6.518, 2.877, -4.759],
     rotation: [3.019, -1.549, 2.982],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-6.535, 2.887, -4.937],
     rotation: [0.079, 1.143, -0.082],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [2.238, 1.298, -6.741],
     rotation: [2.976, -0.457, 2.95],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [4.418, 1.034, -3.634],
     rotation: [0.267, -0.775, 0.102],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.661, 1.388, 3.604],
@@ -1767,12 +1767,12 @@ export default [
   {
     position: [4.8, 1.211, 1.882],
     rotation: [2.834, 1.185, -3.042],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-3.684, 0.196, 2.485],
     rotation: [2.973, -0.149, 3.057],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [8.155, 0.344, -2.487],
@@ -1787,37 +1787,37 @@ export default [
   {
     position: [-4.01, 0.195, 2.083],
     rotation: [0.155, 0.317, -0.135],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [8.516, 0.534, -4.343],
     rotation: [0.291, 1.154, -0.417],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-3.783, 0.196, 2.055],
     rotation: [0.057, -0.683, 0.006],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [0.56, 0.211, -1.814],
     rotation: [3.019, 0.575, 3.008],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [4.512, 0.899, -3.171],
     rotation: [3.002, -0.197, 2.984],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-0.398, 0.122, -4.413],
     rotation: [2.994, -0.584, 2.984],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.838, 0.848, -4.245],
     rotation: [3.082, -0.549, 2.995],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-1.487, 1.898, -7.788],
@@ -1827,7 +1827,7 @@ export default [
   {
     position: [-0.401, 1.803, -5.861],
     rotation: [0.298, -1.201, 0.231],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-0.375, 1.722, -6.336],
@@ -1837,7 +1837,7 @@ export default [
   {
     position: [7.403, 0.231, -8.289],
     rotation: [0.02, 0.109, -0.094],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-3.823, 0.197, -3.137],
@@ -1847,17 +1847,17 @@ export default [
   {
     position: [0.61, 1.409, -6.205],
     rotation: [0.088, 0.965, -0.149],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.564, 1.374, 6.962],
     rotation: [0.542, 1.275, -0.557],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [0.583, 1.415, -6.417],
     rotation: [2.842, 1.325, -3.024],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [6.552, 0.879, -6.886],
@@ -1867,17 +1867,17 @@ export default [
   {
     position: [7.933, 1.325, 3.844],
     rotation: [2.874, 1.309, -2.892],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [4.91, 1.332, 2.733],
     rotation: [3.115, -0.944, 3.031],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-6.195, 1.148, 6.716],
     rotation: [3.065, -0.301, 3.091],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-6.36, 1.148, 5.616],
@@ -1887,17 +1887,17 @@ export default [
   {
     position: [-6.302, 1.144, 5.385],
     rotation: [2.986, -1.115, 2.997],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [4.809, 0.281, 1.229],
     rotation: [0.186, -0.569, 0.055],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [5.445, 0.972, -3.95],
     rotation: [2.789, 1.017, -2.938],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-0.196, 0.161, -2.286],
@@ -1912,7 +1912,7 @@ export default [
   {
     position: [6.301, 1.126, -2.895],
     rotation: [3.057, 0.411, -3.119],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [6.242, 1.046, -3.277],
@@ -1927,7 +1927,7 @@ export default [
   {
     position: [2.368, 1.286, -6.164],
     rotation: [2.797, -1.235, 2.667],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.353, 1.309, -6.665],
@@ -1937,7 +1937,7 @@ export default [
   {
     position: [4.74, 0.973, -3.449],
     rotation: [0.157, 1.429, -0.258],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [4.701, 1.121, -4.012],
@@ -1947,7 +1947,7 @@ export default [
   {
     position: [4.723, 1.217, -4.376],
     rotation: [0.335, -0.944, 0.08],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-0.2, 0.204, 5.429],
@@ -1957,17 +1957,17 @@ export default [
   {
     position: [-6.16, 2.889, -5.394],
     rotation: [3.108, 1.42, 3.104],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-0.427, 0.204, 5.216],
     rotation: [0.2, 0.177, -0.187],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-0.249, 0.207, 4.263],
     rotation: [2.978, -0.891, 2.853],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-3.718, 0.202, 1.565],
@@ -1987,22 +1987,22 @@ export default [
   {
     position: [4.746, 1.263, 2.24],
     rotation: [3.084, -0.469, 3.011],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [3.657, 1.381, 3.895],
     rotation: [0.027, 0.456, -0.181],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [4.728, 1.361, 7.01],
     rotation: [0.013, 0.875, -0.1],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [5.28, 2.251, -8.201],
     rotation: [0.105, 0.834, -0.109],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [6.325, 1.012, -3.482],
@@ -2012,17 +2012,17 @@ export default [
   {
     position: [5.024, 1.425, 4.053],
     rotation: [3.135, 0.403, 2.988],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-0.003, 1.558, -7.76],
     rotation: [0.134, -0.005, -0.095],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-6.077, 2.897, -6.323],
     rotation: [3.139, 0.171, 3.069],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [6.469, 0.887, -7.531],
@@ -2032,12 +2032,12 @@ export default [
   {
     position: [5.192, 1.309, 2.356],
     rotation: [3.036, -0.735, 3.038],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [5.2, 1.29, 2.19],
     rotation: [3.028, 0.587, -3.081],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-1.142, 0.144, -3.9],
@@ -2047,7 +2047,7 @@ export default [
   {
     position: [3.862, 0.26, 1.606],
     rotation: [2.931, 0.52, 3.087],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [4.986, 0.433, 0.038],
@@ -2062,17 +2062,17 @@ export default [
   {
     position: [-5.988, 1.141, 5.834],
     rotation: [2.984, -0.95, 2.82],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [2.478, 0.214, -1.9],
-    rotation: [0.12, -0.02, -0.14],
+    rotation: [0.09, -0.02, -0.08],
     scale: 0.1,
   },
   {
     position: [2.588, 0.186, -2.096],
     rotation: [3.141, -0.778, 2.99],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [7.582, 1.341, 3.554],
@@ -2087,7 +2087,7 @@ export default [
   {
     position: [5.025, 1.003, -2.631],
     rotation: [2.914, 0.707, -3.135],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.017, 1.055, -4.027],
@@ -2097,12 +2097,12 @@ export default [
   {
     position: [4.923, 1.1, -4.133],
     rotation: [2.944, 0.753, -3.13],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-3.627, 0.195, 3.118],
     rotation: [3.043, -0.382, 3.069],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-6.012, 1.148, 6.177],
@@ -2112,17 +2112,17 @@ export default [
   {
     position: [7.516, 1.337, 3.463],
     rotation: [2.302, -1.404, 2.128],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-6.005, 1.148, 6.212],
     rotation: [2.9, -1.04, 2.88],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.413, 0.011, -3.696],
     rotation: [3.063, -0.016, 3.103],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-5.636, 1.143, 6.097],
@@ -2137,7 +2137,7 @@ export default [
   {
     position: [8.588, 1.029, 2.694],
     rotation: [0.493, 1.153, -0.531],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-5.888, 2.889, -5.356],
@@ -2147,7 +2147,7 @@ export default [
   {
     position: [-5.803, 2.896, -6.365],
     rotation: [3.09, -0.695, 3.029],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-1.126, 0.206, 2.763],
@@ -2157,12 +2157,12 @@ export default [
   {
     position: [0.294, 1.54, -5.6],
     rotation: [3.061, 0.212, 3.025],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [0.285, 1.527, -5.696],
     rotation: [3.098, 0.34, 3.119],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-8.056, 1.148, 6.94],
@@ -2172,7 +2172,7 @@ export default [
   {
     position: [-0.675, 0.208, 2.695],
     rotation: [3.077, 0.624, 3.012],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [8.72, 0.941, 2.037],
@@ -2187,7 +2187,7 @@ export default [
   {
     position: [7.674, 0.966, 1.078],
     rotation: [3.139, -0.526, 3.094],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.936, 1.362, 7.431],
@@ -2197,7 +2197,7 @@ export default [
   {
     position: [-5.701, 2.894, -6.386],
     rotation: [0.132, 0.449, -0.109],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [5.356, 1.356, 2.921],
@@ -2207,12 +2207,12 @@ export default [
   {
     position: [5.391, 1.344, 2.723],
     rotation: [2.915, -0.666, 2.888],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [5.367, 1.294, 2.178],
     rotation: [0.106, -0.819, 0.026],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [2.554, 1.316, -6.405],
@@ -2221,23 +2221,23 @@ export default [
   },
   {
     position: [0.995, 0.21, -1.895],
-    rotation: [0.14, -0.645, 0.038],
-    scale: 0.11,
+    rotation: [0.08, -0.645, 0.038],
+    scale: 0.06,
   },
   {
     position: [8.344, 0.359, -2.98],
     rotation: [0.431, -1.138, 0.288],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [0.995, 1.325, -6.703],
     rotation: [2.878, 0.97, -3.069],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [6.56, 1.389, 3.567],
     rotation: [0.091, 0.029, -0.069],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-3.285, 0.197, 3.907],
@@ -2247,12 +2247,12 @@ export default [
   {
     position: [-5.375, 0.192, 3.189],
     rotation: [2.975, -1.011, 2.814],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [7.885, 0.589, -5.31],
     rotation: [0.079, 0.835, -0.181],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [3.716, 1.336, -4.318],
@@ -2262,12 +2262,12 @@ export default [
   {
     position: [6.777, 1.268, 2.163],
     rotation: [2.957, 0.719, -3.076],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-3.574, 0.196, 2.887],
     rotation: [0.215, -0.488, 0.093],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [1.146, 1.098, 6.08],
@@ -2292,12 +2292,12 @@ export default [
   {
     position: [-5.468, 2.89, -5.731],
     rotation: [0.18, -0.684, 0.042],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [2.404, 1.202, 6.915],
     rotation: [2.965, -0.247, 3.005],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [3.695, 1.482, -6.098],
@@ -2307,12 +2307,12 @@ export default [
   {
     position: [4.806, 0.942, -3.046],
     rotation: [3.1, 0.191, -3.135],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.617, 1.318, 2.355],
     rotation: [2.958, 0.617, -3.118],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.576, 1.253, 1.872],
@@ -2327,12 +2327,12 @@ export default [
   {
     position: [-7.961, 1.147, 6.869],
     rotation: [2.133, -1.444, 1.944],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [4.824, 0.952, -3.288],
     rotation: [2.637, -1.169, 2.555],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-7.91, 1.147, 5.57],
@@ -2362,17 +2362,17 @@ export default [
   {
     position: [-5.597, 2.89, -5.734],
     rotation: [2.783, 1.23, -2.83],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.826, 1.282, 3.709],
     rotation: [0.127, -0.001, -0.162],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [8.465, 0.372, -0.347],
     rotation: [0.169, -0.44, -0.002],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [0.685, 0.196, -2.014],
@@ -2392,7 +2392,7 @@ export default [
   {
     position: [1.142, 1.323, -6.915],
     rotation: [2.844, 1.079, -2.878],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.247, 2.208, -7.871],
@@ -2402,7 +2402,7 @@ export default [
   {
     position: [-5.172, 0.193, -2.482],
     rotation: [2.825, -1.015, 2.799],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.175, 1.34, -7.151],
@@ -2412,32 +2412,32 @@ export default [
   {
     position: [0.788, 1.144, 6.881],
     rotation: [2.931, -0.49, 2.915],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [0.968, 1.145, 6.811],
-    rotation: [2.941, 0.11, -3.121],
+    rotation: [2.941, 0.06, -3.121],
     scale: 0.1,
   },
   {
     position: [3.007, 0.242, 2.329],
     rotation: [0.612, 1.547, -0.737],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-0.686, 0.204, 4.593],
     rotation: [2.905, 1.102, -2.95],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-5.205, 2.889, -4.978],
     rotation: [0.203, 0.546, -0.182],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-5.132, 2.89, -5.488],
     rotation: [0.381, -1.117, 0.281],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-0.616, 0.204, 4.921],
@@ -2452,7 +2452,7 @@ export default [
   {
     position: [-0.818, 0.206, 3.457],
     rotation: [0.28, -1.306, 0.155],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-2.53, 0.196, 5.342],
@@ -2462,7 +2462,7 @@ export default [
   {
     position: [5.465, 0.711, -0.385],
     rotation: [2.832, -1.042, 2.734],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-0.396, 0.206, 4.217],
@@ -2472,7 +2472,7 @@ export default [
   {
     position: [-0.718, 0.207, 3.195],
     rotation: [0.775, 1.307, -0.798],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [-3.029, 0.198, 2.14],
@@ -2487,7 +2487,7 @@ export default [
   {
     position: [1.384, 0.227, 1.981],
     rotation: [3.141, 0.014, 2.951],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-5.19, 0.193, -2.887],
@@ -2497,17 +2497,17 @@ export default [
   {
     position: [5.565, 0.959, -4.116],
     rotation: [0.236, -0.741, 0.09],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [1.013, 0.195, -2.046],
     rotation: [3.064, -0.115, 2.981],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [1.049, 0.192, -2.102],
     rotation: [2.572, 1.211, -2.718],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [5.557, 1.011, -4.879],
@@ -2522,22 +2522,22 @@ export default [
   {
     position: [-0.835, 0.206, 3.164],
     rotation: [3.06, 0.15, 3.083],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [2.837, 0.244, 1.826],
     rotation: [2.984, -0.196, 3.04],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.482, 1.025, -5.41],
     rotation: [3.126, 0.7, 3.079],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.502, 1.013, -5.499],
     rotation: [0.248, 0.869, -0.207],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [5.533, 1.016, -5.752],
@@ -2547,7 +2547,7 @@ export default [
   {
     position: [-4.772, 0.254, 4.084],
     rotation: [3.043, 0.627, 3.126],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-5.234, 0.192, 2.881],
@@ -2562,7 +2562,7 @@ export default [
   {
     position: [1.093, 0.227, 1.225],
     rotation: [0.366, 1.012, -0.37],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [1.19, 0.223, -1.884],
@@ -2572,17 +2572,17 @@ export default [
   {
     position: [1.335, 1.218, 7.685],
     rotation: [2.998, -1.067, 2.964],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [0.968, 1.167, 7.123],
     rotation: [0.343, 0.968, -0.434],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-7.796, 1.247, -0.235],
     rotation: [0.222, -0.633, 0.095],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.019, 1.154, 6.908],
@@ -2592,12 +2592,12 @@ export default [
   {
     position: [-5.22, 0.193, 1.562],
     rotation: [2.899, 0.688, -3.046],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [2.734, 0.256, -1.428],
     rotation: [2.998, 0.099, 2.964],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-5.205, 1.127, 6.062],
@@ -2617,12 +2617,12 @@ export default [
   {
     position: [1.174, 1.185, 7.284],
     rotation: [0.58, 1.243, -0.594],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [1.375, 0.252, 3.471],
     rotation: [0.293, 0.977, -0.29],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [1.411, 0.229, 1.462],
@@ -2637,12 +2637,12 @@ export default [
   {
     position: [-4.858, 2.913, -6.736],
     rotation: [3.062, 0.87, 3.114],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [-4.896, 2.937, -6.879],
     rotation: [0.013, 0.783, -0.038],
-    scale: 0.11,
+    scale: 0.06,
   },
   {
     position: [1.412, 0.234, -1.536],
@@ -2652,12 +2652,12 @@ export default [
   {
     position: [3.956, 1.344, 3.289],
     rotation: [0.069, 0.047, -0.195],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [-2.87, 2.33, -7.037],
     rotation: [3.132, -0.694, 2.993],
-    scale: 0.13,
+    scale: 0.1,
   },
   {
     position: [2.764, 0.223, -3.029],
@@ -2677,7 +2677,7 @@ export default [
   {
     position: [-4.611, 0.247, 4.066],
     rotation: [3.141, 0.458, 3.126],
-    scale: 0.14,
+    scale: 0.08,
   },
   {
     position: [-4.54, 0.197, 3.694],
@@ -2687,11 +2687,11 @@ export default [
   {
     position: [3.827, 0.258, 1.797],
     rotation: [0.118, 0.68, -0.136],
-    scale: 0.12,
+    scale: 0.09,
   },
   {
     position: [3.879, 0.263, 1.373],
     rotation: [0.403, 1.382, -0.521],
-    scale: 0.14,
+    scale: 0.08,
   },
 ]

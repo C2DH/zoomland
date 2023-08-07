@@ -20,7 +20,7 @@ const DialogueCard = ({
           style={{
             position: 'absolute',
             right: '0.7rem',
-            top: '3.1rem',
+            top: '0.7rem',
             transformOrigin: 'center center',
             transform: 'scale(0.8) rotate(90deg)',
           }}

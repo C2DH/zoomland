@@ -96,45 +96,48 @@
       "firstMeetingWithoutChapter": [
         "Ahoy, Captain Editor! How's the good ship of editing sailing? Have you navigated through my chapter's treacherous waters yet?"
       ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
+      "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
+      "runIntoWithoutChapter ": ["Brrrrrrr... Brrrrrr"],
+      "firstMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
+      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
+      "runIntoWithChapter": ["Brrrrrrr... Brrrrrr"]
     }
   },
   {
     "characterName": "Christian Wachter",
+    "avatar": "/assets/avatars/Kirill.jpg",
     "id": "ChristianWachter",
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
         "Hey, Editing Dynamo! How's the battle against typos and grammatical foes going? Any victories to report in my chapter's editing crusade?"
       ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
+      "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
+      "runIntoWithoutChapter": ["Brrrrrrr... Brrrrrr"],
+      "firstMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
+      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
+      "runIntoWithChapter": ["Brrrrrrr... Brrrrrr"]
     }
   },
   {
     "characterName": "Amanda Madden",
+    "avatar": "/assets/avatars/Editor.jpg",
     "id": "AmandaMadden",
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
         "Hello, Editor Extraordinaire! How's the secret art of transforming my words into literary gems? Any progress in the alchemical process?"
       ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
+      "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
+      "runIntoWithoutChapter": ["Brrrrrrr... Brrrrrr"],
+      "firstMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
+      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
+      "runIntoWithChapter": ["Brrrrrrr... Brrrrrr"]
     }
   },
   {
     "characterName": "Khanh Vo",
+    "avatar": "/assets/avatars/Character.jpg",
     "id": "KhanhVo",
     "chapter": "0-introduction",
     "dialogues": {

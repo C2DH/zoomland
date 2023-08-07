@@ -4,6 +4,9 @@ import soundEffects from '../../public/assets/sounds/effects.mp3'
 import { useEffect, useState } from 'react'
 import './Sounds.css'
 import { useAnimationStore, AnimationRun, AnimationJump, AnimationWalk } from '../store'
+import RoundButton from './RoundButton'
+import SpeakersOff from './Svg/SpeakersOff'
+import SpeakersOn from './Svg/SpeakersOn'
 
 const SoundEffects = ({ isPlaying }) => {
   const animation = useAnimationStore((state) => state.animation)
@@ -58,11 +61,16 @@ const Sounds = () => {
   }, [])
   return (
     <>
-      <div className="Sounds position-fixed bottom-0 end-0">
-        <button className="btn btn-primary" onClick={() => setIsPlaying(!isPlaying)}>
-          {isPlaying ? 'Stop' : 'Play'}
-        </button>
+      <div
+        className="Sounds fill position-fixed bottom-0 end-0"
+        style={{ margin: '2rem', zIndex: 'var(--z-index-toggle-sounds)' }}
+      >
+        <RoundButton
+          onClick={() => setIsPlaying(!isPlaying)}
+          Icon={isPlaying ? SpeakersOn : SpeakersOff}
+        ></RoundButton>
       </div>
+
       <SoundTheme isPlaying={isPlaying} />
       <SoundEffects isPlaying={isPlaying} />
     </>

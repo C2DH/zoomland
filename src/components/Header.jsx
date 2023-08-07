@@ -36,7 +36,9 @@ const Header = ({ isMobile = true }) => {
       )}
 
       <Counter />
-      <RoundButton Icon={MenuIcon} onClick={menuClickEvent} />
+      <div style={{ position: 'absolute', right: 0 }}>
+        <RoundButton Icon={MenuIcon} onClick={menuClickEvent} />
+      </div>
     </div>
   )
 }
