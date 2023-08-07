@@ -10,7 +10,7 @@ import './World.css'
 import '../index.css'
 import Player from './Player'
 import Chapters from '../data/chapters.json'
-import Quests from '../data/Quests.json'
+import Quests from '../data/quests.json'
 import { default as SmallTrees } from '../data/SmallTrees'
 import { default as BigTrees } from '../data/BigTrees'
 import FirTree from './FirTree'
@@ -60,6 +60,11 @@ import Sensor from './Sensor'
 import Mushrooms from './Mushroom'
 import Price from './Price'
 // import { AnimationStoreLoader } from '../store/animations'
+
+const QuestsById = Quests.reduce((acc, quest) => {
+  acc[quest.id] = quest
+  return acc
+}, {})
 
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
@@ -257,23 +262,15 @@ const World = ({
               scale={[3, 3, 3]}
               position={[-24.3, 0.03, 47.6]}
             />
+            {/* introduction, harbour */}
             <Price {...Chapters[0]} />
+            {/* chapter 1, the zeppelin. put price a bit everywhere. */}
             <Price {...Chapters[1]} />
+            <Price {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
+            {/* chapter 3 */}
+            <Windmill scale={0.3} rotation={[0, 1, 0]} position={[-60, 27, -58]} />
+            <Price {...Chapters[3]} />
 
-            <Target
-              chapter={Chapters[3]}
-              position={[-60, 27, -58]}
-              geometry="cylinder"
-              geometryArgs={[3.2, 3.2, 5, 8]}
-              additionalGeometry="box"
-              additionalGeometryArgs={[5.5, 6, 2]}
-              additionalGeometryRotation={[0, 1, 0]}
-              additionalGeometryOffsetPosition={[2.5, 0, 2.5]}
-              priceOffsetPosition={[0, 0, 5.22]}
-              transparent
-            >
-              <Windmill scale={0.3} rotation={[0, 1, 0]} />
-            </Target>
             <Target
               chapter={Chapters[9]}
               position={Chapters[9].position}
@@ -324,16 +321,16 @@ const World = ({
               <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
             </TheDispatcher>
 
-            <TheDispatcher quest={Quests[0]} position={[61.1, 11.02, -16.51]}>
-              <Daniele scale={0.1} rotation={[0, 1.8, 0]} />
+            <TheDispatcher quest={QuestsById.Daniele} position={[61.1, 11.02, -16.51]}>
+              <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
             </TheDispatcher>
 
-            <TheDispatcher quest={Quests[1]} position={[-51.48, 27.01, -51.3]}>
+            <TheDispatcher quest={QuestsById.FlorentinaArmaselu} position={[-51.48, 27.01, -51.3]}>
               <Editor scale={0.1} rotation={[0, 3, 0]} />
             </TheDispatcher>
 
-            <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
-              <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
+            <TheDispatcher quest={QuestsById.AndreasFickers} position={[78.1, 1.26, -14.51]}>
+              <Lumberjack scale={0.45} rotation={[0, 1.8, 0]} />
             </TheDispatcher>
 
             <Boundaries />
