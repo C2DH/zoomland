@@ -136,9 +136,7 @@ const World = ({
             <Airship position={[6, 16, 0]} />
             <Pound />
             <Ocean scale={[12, 12, 12]} position={[0, -2.2, 0]} />
-
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
-
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[60.04, 11.7, 72.7]} />
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[-75.3, 10.0, 2.2]} />
             <Flag rotation={[0, 0, 0]} scale={[0.21, 0.21, 0.21]} position={[39.7, 13.1, -52.5]} />
@@ -158,40 +156,7 @@ const World = ({
               position={[-13.1, -1, 64.4]}
               color={'#E7DF29'}
             />
-            {/* introduction, harbour */}
-            <Price {...Chapters[0]} />
-            {/* chapter 1, the zeppelin. put price a bit everywhere. */}
-            <Price {...Chapters[1]} />
-            <Price {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
-            {/* chapter 3 */}
-            <Windmill scale={0.3} rotation={[0, 1, 0]} position={[-60, 27, -58]} />
-            <Price {...Chapters[3]} />
 
-            <Target
-              chapter={Chapters[9]}
-              position={Chapters[9].position}
-              transparent
-              childrenIsRigidBody
-              height={1}
-              priceOffsetPosition={[2, -1, 2]}
-            >
-              <Arch rotation={[0, 0.3, 0]} scale={[2.4, 2.4, 2.4]} />
-            </Target>
-            {/* chapter 15 */}
-            <Lighthouse scale={5} position={[54, 20.4, -85]} />
-            <Price {...Chapters[15]} />
-            {/* end of chqpter 15 */}
-            <Target
-              chapter={Chapters[12]}
-              position={Chapters[12].position}
-              geometryArgs={[0.5, 0.5, 1, 8]}
-              transparent
-              height={2.5}
-              priceOffsetPosition={[0.5, -1.25, 0]}
-              priceElevation={1}
-              PriceComponent={GroundViewSign}
-              color="blue"
-            />
             <WindTurbine
               scale={[0.25, 0.25, 0.25]}
               position={[-89, 13.3, 5]}
@@ -229,6 +194,7 @@ const World = ({
 
               {/* Zepplin */}
               <Price {...Chapters[1]} />
+              <Price {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
 
               <TheDispatcher quest={QuestsById.Daniele} position={[61.1, 11.02, -16.51]}>
                 <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
@@ -252,7 +218,11 @@ const World = ({
                 position={Chapters[2].position}
               />
 
-              <Target
+              {/* chapter 3 */}
+              <Windmill scale={0.3} rotation={[0, 1, 0]} position={[-60, 27, -58]} />
+              <Price {...Chapters[3]} />
+
+              {/* <Target
                 chapter={Chapters[3]}
                 position={Chapters[3].position}
                 priceOffsetPosition={[4, 0, 3]}
@@ -267,7 +237,7 @@ const World = ({
                 transparent
               >
                 <Windmill scale={0.3} rotation={[0, 1, 0]} />
-              </Target>
+              </Target> */}
 
               <Target
                 chapter={Chapters[4]}
@@ -455,6 +425,11 @@ const World = ({
               >
                 <Lighthouse scale={5} />
               </Target>
+
+              {/* chapter 15 */}
+              {/* <Lighthouse scale={5} position={[54, 20.4, -85]} />
+                <Price {...Chapters[15]} /> */}
+              {/* end of chqpter 15 */}
 
               <Target
                 chapter={Chapters[16]}
