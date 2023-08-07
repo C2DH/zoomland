@@ -11,7 +11,7 @@ const to = (i) => ({
 })
 const from = (i) => ({ x: 0, y: i * -200, opacity: 0 })
 
-const Quest = ({ quest, withChapter = false, onComplete }) => {
+const Quest = ({ quest, withChapter = false, onComplete, onCompleteLabel = 'Done' }) => {
   const [sentenceIndex, setSentenceIndex] = useState(-1)
   const [sentences, setSentences] = useState([])
 
@@ -39,22 +39,24 @@ const Quest = ({ quest, withChapter = false, onComplete }) => {
   useEffect(() => {
     let s = []
 
-    if (!Array.isArray(quest.meetings)) {
+    if (Array.isArray(quest.sentences)) {
+      s = quest.sentences
+    } else if (!Array.isArray(quest.meetings)) {
       // first time. use only initial sentences
       s = withChapter
         ? quest.dialogues.firstMeetingWithChapter
         : quest.dialogues.firstMeetingWithoutChapter
-    } else if (quest.meetings.length === 1) {
-      // second time. use only second sentences
-      s = withChapter
-        ? quest.dialogues.secondMeetingWithChapter
-        : quest.dialogues.secondMeetingWithoutChapter
+      // reduce the possibility, but increases our chance to get the same sentence
+      // } else if (quest.meetings.length === 1) {
+      //   // second time. use only second sentences
+      //   s = withChapter
+      //     ? quest.dialogues.secondMeetingWithChapter
+      //     : quest.dialogues.secondMeetingWithoutChapter
     } else {
       // third time. use only third sentences
       s = withChapter ? quest.dialogues.runIntoWithChapter : quest.dialogues.runIntoWithoutChapter
     }
     console.debug('[Quest] sentences:', s, quest)
-
     setSentences(s)
     setSentenceIndex(0)
   }, [quest, withChapter])
@@ -114,6 +116,7 @@ const Quest = ({ quest, withChapter = false, onComplete }) => {
               disableNext={sentenceIndex === sentences.length - 1}
               disablePrevious={sentenceIndex < 1}
               onClose={onComplete}
+              onCompleteLabel={onCompleteLabel}
             />
           </animated.div>
         )
