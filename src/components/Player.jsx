@@ -1,5 +1,5 @@
 import Hero from './Hero'
-import { useEffect, useRef } from 'react'
+import { Suspense, useEffect, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { RigidBody, CapsuleCollider } from '@react-three/rapier'
 import { useKeyboardControls } from '@react-three/drei'
@@ -10,6 +10,7 @@ import {
   AnimationRun,
   AnimationWalk,
   DefaultPlayerAngle,
+  Gameplay,
   useAnimationStore,
   usePlayerStore,
   useWorldStore,
@@ -53,6 +54,8 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
     state.setPlayerAngle,
   ])
 
+  const scene = usePlayerStore((state) => state.scene)
+
   useEffect(() => {
     console.debug(
       '[Player] @useEffect',
@@ -67,6 +70,12 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
       angle.current = initialPlayerAngle
     }
   }, [])
+
+  useEffect(() => {
+    if (scene === 'gameplay') {
+      console.debug('[Player] @useEffect - reset player position')
+    }
+  }, [scene])
 
   // Connect to the store on mount, disconnect on unmount, catch state-changes in a reference
   useEffect(() => {
@@ -118,7 +127,23 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   }
 
   useFrame((state, delta) => {
+    if (!rigidbody.current) return
     const shouldStayStill = isCollectingQuest || isCollectingChapter
+    // check velocity
+    const linvel = rigidbody.current.linvel()
+
+    if (linvel.y < -100 || linvel.y > 100) {
+      // reset position
+      rigidbody.current.resetForces(true)
+      rigidbody.current.setGravityScale(linvel.y > 0 ? 0.5 : -1)
+      console.log(
+        'linvel still oooo FALLLING again and again',
+        linvel,
+        rigidbody.current.isKinematic(),
+      )
+      rigidbody.current.setTranslation(new Vector3(100, 0, 0), true)
+      return
+    }
     if (isMobile) {
       movePlayerWithJoystick(state, delta, shouldStayStill)
       return
@@ -186,7 +211,6 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
       }, 1000)
     }
     // setPlayerPosition(characterWorldPosition)
-
     // smooth rotation angle
     // character.current.rotation.y += angle.current * 0.1
     character.current.rotation.y += (angle.current - character.current.rotation.y) * 0.75
@@ -208,6 +232,7 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
         name="player"
         colliders={false}
         mass={2.2}
+        enabledTranslations={[true, true, true]}
         enabledRotations={[false, false, false]}
         position={initialPlayerPosition}
         onCollisionEnter={() => {
@@ -217,7 +242,9 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.01, 0]} />
         <group ref={character}>
-          <Hero position={[0, -0.25, 0]} />
+          <Suspense>
+            <Hero position={[0, -0.25, 0]} />
+          </Suspense>
         </group>
       </RigidBody>
     </>
