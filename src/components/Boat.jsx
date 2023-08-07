@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React, { Suspense, useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { Gameplay, OpenSea, Start, usePlayerStore } from '../store'
 import { Vector3 } from 'three'
 import { updateCamera } from '../utils/camera'
 import { easings, useSpring } from '@react-spring/web'
+import Hero from './Hero'
 
 const Boat = ({
   positions = [
@@ -14,6 +15,7 @@ const Boat = ({
   ...props
 }) => {
   const boatRef = useRef()
+  const setScene = usePlayerStore((state) => state.setScene)
   const sceneRef = useRef(usePlayerStore.getState().scene)
   const { nodes, materials } = useGLTF('../assets/models/Boat.glb')
   const seed = Math.random() + 0.8
@@ -66,6 +68,9 @@ const Boat = ({
         api.start({
           x: positions[1][0],
           y: positions[1][1],
+          onRest: () => {
+            setScene(Gameplay)
+          },
         })
       } else if (state.scene === Start) {
         // do a transition to the harbour
@@ -108,6 +113,9 @@ const Boat = ({
           material={materials.Wood}
         />
       </group>
+      {/* <Suspense fallback={null}>
+        <Hero position={[0, -0.15, 0]} scale={0.25} />
+      </Suspense> */}
     </group>
   )
 }
