@@ -10,6 +10,7 @@ const DialogueCard = ({
   disablePrevious = false,
   disableNext = false,
   avatar = '/assets/avatars/Florentina.jpg',
+  onCompleteLabel = 'Done',
   onClose,
 }) => {
   return (
@@ -45,7 +46,7 @@ const DialogueCard = ({
             Prev
           </button>
           <button className="btn btn-link btn-lg" onClick={onClickNext}>
-            {disableNext ? 'Ciao' : 'Continue'}
+            {disableNext ? onCompleteLabel : 'Continue'}
           </button>
         </div>
       </div>
