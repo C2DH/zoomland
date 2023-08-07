@@ -4,4 +4,14 @@
   bottom: 20px;
   text-align: center;
   width: 100%;
+  overflow: hidden;
+  height: 100%;
+  pointer-events: none;
+}
+
+.SkipIntro > .btn {
+  margin: auto;
+  pointer-events: auto;
+  position: absolute;
+  bottom: 10px;
 }
