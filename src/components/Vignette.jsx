@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { OpenSea, usePlayerStore } from '../store'
+import { OpenSea, Start, usePlayerStore } from '../store'
 import Chapters from '../data/chapters'
 import Quests from '../data/quests'
 import './Vignette.css' // Import CSS styles
@@ -7,8 +7,9 @@ import { animated, useSpring } from '@react-spring/web'
 import Quest from './Quest'
 import Chapter from './Chapter'
 
+const VignetteColor = 'rgba(25, 48, 128, 0.8)'
 const interpolator = (v) => {
-  return `radial-gradient(ellipse at center, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 1) 100%)`
+  return `radial-gradient(ellipse at center, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 0) ${v}%, ${VignetteColor} 95%, ${VignetteColor} 100%)`
 }
 
 const Vignette = ({ children, visible = true, debug = false }) => {
@@ -16,9 +17,9 @@ const Vignette = ({ children, visible = true, debug = false }) => {
   const [currentCollectedChapter, isCollectingChapter, collectedChapters] = usePlayerStore(
     (state) => [state.currentCollectedChapter, state.isCollectingChapter, state.collectedChapters],
   )
-  const [isCollectingQuest, collectedQuests] = usePlayerStore((state) => [
+  const [isCollectingQuest, latestCollectedQuest] = usePlayerStore((state) => [
     state.isCollectingQuest,
-    state.collectedQuests,
+    state.latestCollectedQuest,
   ])
 
   const [collectChapter, doneCollectingChapter, resetCollectedChapters] = usePlayerStore(
@@ -31,9 +32,6 @@ const Vignette = ({ children, visible = true, debug = false }) => {
     state.resetCollectedQuests,
   ])
 
-  const lastCollectedQuest = collectedQuests.length
-    ? collectedQuests[collectedQuests.length - 1]
-    : null
   // if vignette should be visible
   const [props, api] = useSpring(() => ({
     qty: 100,
@@ -68,7 +66,7 @@ const Vignette = ({ children, visible = true, debug = false }) => {
   }
 
   useEffect(() => {
-    if (isCollectingChapter || isCollectingQuest || scene === OpenSea) {
+    if (isCollectingChapter || isCollectingQuest || scene === OpenSea || scene === Start) {
       api.start({
         qty: 50,
       })
@@ -82,12 +80,13 @@ const Vignette = ({ children, visible = true, debug = false }) => {
   // add keys to the collected chapters
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'Enter' || event.key === ' ' || event.key === 'Escape') {
-        if (isCollectingChapter) {
-          doneCollectingChapter()
-        } else if (isCollectingQuest) {
-          doneCollectingQuest()
-        }
+      if (event.key === 'Escape' && isCollectingQuest) {
+        doneCollectingQuest()
+      } else if (
+        isCollectingChapter &&
+        (event.key === 'Enter' || event.key === ' ' || event.key === 'Escape')
+      ) {
+        doneCollectingChapter()
       }
     }
 
@@ -123,11 +122,11 @@ const Vignette = ({ children, visible = true, debug = false }) => {
             <Chapter chapter={currentCollectedChapter}> </Chapter>
           </div>
         )}
-        {isCollectingQuest && (
+        {isCollectingQuest && latestCollectedQuest && (
           <Quest
-            quest={lastCollectedQuest}
+            quest={latestCollectedQuest}
             onComplete={doneCollectingQuest}
-            withChapter={collectedChapters.some((d) => lastCollectedQuest.chapter === d.id)}
+            withChapter={collectedChapters.some((d) => latestCollectedQuest.chapter === d.id)}
           />
         )}
       </animated.div>
