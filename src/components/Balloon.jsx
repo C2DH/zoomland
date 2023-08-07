@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useRef } from 'react'
-import { Text, useGLTF } from '@react-three/drei'
+import { GradientTexture, Text, useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 import { useSpring, easings } from '@react-spring/web'
 import Sensor from './Sensor'
@@ -24,7 +24,7 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
   const textRef = useRef()
   const textTimerRef = useRef()
   // balloon status, threejs reference and timer to go up and down
-  const baloonStatusRef = useRef(GroundNoPlayer)
+  const baloonStatusRef = useRef(FlyingDown)
   const balloonRef = useRef()
   const baloonTimerRef = useRef()
   // rigidbody reference
@@ -56,15 +56,22 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
       if (baloonStatusRef.current == FlyingUp) {
         // baloonStatusRef.current =
         //   intersectionStatusRef.current && collisionStatusRef.current ? UpWithPlayer : UpNoPlayer
-        textRef.current.text = 'Max altitude reached.'
+        writeText('Max altitude reached.')
         console.log('[Balloon] should go down now...')
         landing()
       } else if (baloonStatusRef.current == FlyingDown) {
+        writeText('Up...')
         // baloonStatusRef.current = intersectionStatusRef.current ? GroundWithPlayer : GroundNoPlayer
         takeOff()
       }
     },
   }))
+
+  const writeText = (text) => {
+    if (textRef.current) {
+      textRef.current.text = text
+    }
+  }
 
   const debounceCollisionEnter = () => {
     clearTimeout(collisionTimerRef.current)
@@ -150,11 +157,12 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
     console.debug('[Balloon] landing...')
     // start the balloon
     clearTimeout(baloonTimerRef.current)
-    textRef.current.text = 'beware,  baloon is landing...'
+    textRef.current.text = 'Preparing baloon for landing..'
     baloonStatusRef.current = BeforeFlyingDown
     baloonTimerRef.current = setTimeout(() => {
       console.debug('[Balloon] land!!')
       baloonStatusRef.current = FlyingDown
+      textRef.current.text = '..stand back!'
       api.start({
         n: yMin,
       })
@@ -239,6 +247,7 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
           <meshStandardMaterial color={'red'} depthWrite={false} opacity={0} transparent={true} />
         </mesh>
       </RigidBody>
+
       <Suspense fallback={null}>
         <group {...props} dispose={null}>
           <Text
@@ -253,6 +262,21 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
           </Text>
         </group>
       </Suspense>
+      {/* platform  */}
+      {/* <mesh
+        position={[props.position[0], props.position[1] - 0.03, props.position[2]]}
+        receiveShadow
+        castShadow
+      >
+        <cylinderGeometry receiveShadow args={[1.5, 0.5, 0.1, 32]} />
+        <meshBasicMaterial receiveShadow>
+          <GradientTexture
+            stops={[0, 1]} // As many stops as you want
+            colors={['aquamarine', 'hotpink']} // Colors need to match the number of stops
+            size={1024} // Size is optional, default = 1024
+          />
+        </meshBasicMaterial>
+      </mesh> */}
       <group {...props} dispose={null} ref={balloonRef}>
         <mesh
           castShadow

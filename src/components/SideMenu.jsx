@@ -17,11 +17,15 @@ import {
   OpenSea,
   Gameplay,
   Start,
+  useWorldStore,
 } from '../store'
 
 const SideMenu = () => {
   const { pathname } = useLocation()
   const [menuStatus, set] = useMenuStore((state) => [state.menuStatus, state.setMenuStatus])
+  const saveInitialPropsToPlayerStore = useWorldStore(
+    (state) => state.saveInitialPropsToPlayerStore,
+  )
   const [setScene] = usePlayerStore((state) => [state.setScene])
 
   const [{ x }, api] = useSpring(() => ({
@@ -65,23 +69,35 @@ const SideMenu = () => {
         <div className="menu-body">
           <Nav>
             <Nav.Item>
-              <button className="btn btn-link" onClick={() => setScene(Gameplay)}>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  setScene(Gameplay)
+                  set(MenuClosed)
+                }}
+              >
                 New Game
               </button>
             </Nav.Item>
+
             {/* add space */}
             <Nav.Item>
-              <button className="btn btn-link" onClick={() => setScene(Start)}>
-                Start
-              </button>
-            </Nav.Item>
-            <Nav.Item className="mb-4">
-              <button className="introduction btn btn-link" onClick={() => setScene(OpenSea)}>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  setScene(Start)
+                  set(MenuClosed)
+                }}
+              >
                 introduction
               </button>
             </Nav.Item>
-
-            <Nav.Item className="mt-4">
+            <Nav.Item className="mb-3">
+              <button className="btn btn-link" onClick={saveInitialPropsToPlayerStore}>
+                save
+              </button>
+            </Nav.Item>
+            <Nav.Item>
               <Link to="/map">Map</Link>
             </Nav.Item>
             <Nav.Item>

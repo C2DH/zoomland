@@ -10,7 +10,7 @@ import './World.css'
 import '../index.css'
 import Player from './Player'
 import Chapters from '../data/chapters.json'
-import Quests from '../data/Quests.json'
+import Quests from '../data/quests.json'
 import { default as SmallTrees } from '../data/SmallTrees'
 import { default as BigTrees } from '../data/BigTrees'
 import FirTree from './FirTree'
@@ -62,6 +62,11 @@ import Price from './Price'
 import Butterflies from './butterflies'
 import { ViewTypeOverhead } from '../constants'
 // import { AnimationStoreLoader } from '../store/animations'
+
+const QuestsById = Quests.reduce((acc, quest) => {
+  acc[quest.id] = quest
+  return acc
+}, {})
 
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
@@ -131,9 +136,7 @@ const World = ({
             <Airship position={[6, 16, 0]} />
             <Pound />
             <Ocean scale={[12, 12, 12]} position={[0, -2.2, 0]} />
-
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
-
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[60.04, 11.7, 72.7]} />
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[-75.3, 10.0, 2.2]} />
             <Flag rotation={[0, 0, 0]} scale={[0.21, 0.21, 0.21]} position={[39.7, 13.1, -52.5]} />
@@ -191,7 +194,22 @@ const World = ({
 
               {/* Zepplin */}
               <Price {...Chapters[1]} />
+              <Price {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
 
+              <TheDispatcher quest={QuestsById.Daniele} position={[61.1, 11.02, -16.51]}>
+                <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
+
+              <TheDispatcher
+                quest={QuestsById.FlorentinaArmaselu}
+                position={[-51.48, 27.01, -51.3]}
+              >
+                <Editor scale={0.1} rotation={[0, 3, 0]} />
+              </TheDispatcher>
+
+              <TheDispatcher quest={QuestsById.AndreasFickers} position={[78.1, 1.26, -14.51]}>
+                <Lumberjack scale={0.45} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
               <Price priceOffsetPosition={[1.5, 0, 1.5]} {...Chapters[2]} />
               <Balloon
                 yMax={30}
@@ -200,7 +218,11 @@ const World = ({
                 position={Chapters[2].position}
               />
 
-              <Target
+              {/* chapter 3 */}
+              <Windmill scale={0.3} rotation={[0, 1, 0]} position={[-60, 27, -58]} />
+              <Price {...Chapters[3]} />
+
+              {/* <Target
                 chapter={Chapters[3]}
                 position={Chapters[3].position}
                 priceOffsetPosition={[4, 0, 3]}
@@ -215,7 +237,7 @@ const World = ({
                 transparent
               >
                 <Windmill scale={0.3} rotation={[0, 1, 0]} />
-              </Target>
+              </Target> */}
 
               <Target
                 chapter={Chapters[4]}
@@ -403,6 +425,11 @@ const World = ({
               >
                 <Lighthouse scale={5} />
               </Target>
+
+              {/* chapter 15 */}
+              {/* <Lighthouse scale={5} position={[54, 20.4, -85]} />
+                <Price {...Chapters[15]} /> */}
+              {/* end of chqpter 15 */}
 
               <Target
                 chapter={Chapters[16]}

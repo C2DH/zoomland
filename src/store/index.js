@@ -96,6 +96,7 @@ export const usePlayerStore = create(
       isObservingLandscape: false,
       isCollectingQuest: false,
       collectedQuests: [],
+      latestCollectedQuest: null,
       initialElapsedTime: 0,
       initialPlayerPosition: DefaultPlayerPosition,
       initialPlayerAngle: DefaultPlayerAngle,
@@ -118,6 +119,7 @@ export const usePlayerStore = create(
         if (alreadyCollectedQuestIndex > -1) {
           return set({
             isCollectingQuest: true,
+            latestCollectedQuest: quest,
             collectedQuests: collectedQuests.map((q, i) => {
               if (i !== alreadyCollectedQuestIndex) {
                 return q
@@ -131,6 +133,7 @@ export const usePlayerStore = create(
         }
         return set({
           isCollectingQuest: true,
+          latestCollectedQuest: quest,
           collectedQuests: [...collectedQuests, quest],
         })
       },

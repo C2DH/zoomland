@@ -29,6 +29,36 @@
     }
   },
   {
+    "characterName": "Daniele, lead designer",
+    "avatar": "/assets/avatars/Daniele.jpg",
+    "id": "Daniele",
+    "chapter": "0-introduction",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Welcome to our beautiful island!",
+        "Hello, do you have any hints for me?",
+        "I highly recommend experiencing our city from a unique perspective. Have you ever been on a hot air balloon ride?"
+      ],
+      "runIntoWithoutChapter": [
+        "Welcome back! Did you enjoy the hot air balloon ride?",
+        "Yes and no...",
+        "What do you mean?",
+        "I enjoyed the view, but I didn't find my chapter...",
+        "Oh, I'm sorry to hear that. I'm sure you'll find it somewhere around here."
+      ],
+      "firstMeetingWithChapter": [
+        "Welcome to our beautiful island! I see you found  some of our secrets.",
+        "Yes indeed! Do you have any other hints for me?",
+        "I highly recommend experiencing our island from a unique perspective. Have you ever been on a hot air balloon ride?"
+      ],
+      "runIntoWithChapter": [
+        "Welcome back! How can I help you?",
+        "Do you have any hints for me?",
+        "Did you enjoy our special hot air balloon ride?"
+      ]
+    }
+  },
+  {
     "characterName": "Florentina Armaselu",
     "avatar": "/assets/avatars/Andreas.jpg",
     "id": "FlorentinaArmaselu",

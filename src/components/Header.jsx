@@ -4,13 +4,9 @@ import LogoZoomland from './Svg/LogoZoomland'
 import Counter from './Counter'
 import MenuIcon from './Svg/MenuIcon'
 import RoundButton from './RoundButton'
-import { MenuOpen, useWorldStore, useMenuStore } from '../store'
-import LogoZoomlandSmall from './Svg/LogoZoomlandSmall'
+import { MenuOpen, useMenuStore } from '../store'
 
 const Header = ({ isMobile = true }) => {
-  const saveInitialPropsToPlayerStore = useWorldStore(
-    (state) => state.saveInitialPropsToPlayerStore,
-  )
   const menuStatus = useMenuStore((state) => state.menuStatus)
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
 
@@ -38,9 +34,6 @@ const Header = ({ isMobile = true }) => {
           <LogoZoomland />
         </div>
       )}
-      <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
-        save
-      </button>
 
       <Counter />
       <div style={{ position: 'absolute', right: 0 }}>
