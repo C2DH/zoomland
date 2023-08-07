@@ -13,7 +13,7 @@ const TheDispatcher = ({ quest, position, children, debug = false }) => {
   const collisionEnterHandler = (e) => {
     console.debug('[Dispatcher] @collisionEnterHandler', e.rigidBodyObject.name)
     if (e.rigidBodyObject.name === 'player') {
-      console.log('[Dispatcher] collisionEnterHandler', e.rigidBodyObject.name, quest.id)
+      console.log('[Dispatcher] collisionEnterHandler', e.rigidBodyObject.name, quest.id, quest)
       collectQuest(quest)
       // rotate towards player
       // const target = e.rigidBodyObject.position
