@@ -41,7 +41,9 @@ const Hero = (props) => {
     // console.debug('[Hero] animation changed:', animation)
     if (previousAnimation) {
       const previousAction = mappedActions[previousAnimation]
-      previousAction.fadeOut(0.5)
+      if (previousAction) {
+        previousAction.fadeOut(0.5)
+      }
     }
     if (action) {
       action.reset().setEffectiveTimeScale(1).setEffectiveWeight(1).fadeIn(0.5).play()
