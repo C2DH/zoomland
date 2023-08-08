@@ -1,10 +1,17 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { RigidBody } from '@react-three/rapier'
 
-const Lighttower = (props) => {
+const Lighttower = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Lighttower.glb')
   return (
     <group {...props} dispose={null}>
+      <RigidBody type={'fixed'} colliders={'hull'}>
+        <mesh position={[0, 0, 0]} rotation={[0, 0, 0]}>
+          <cylinderGeometry args={[0.3, 0.7, 5, 8]} />
+          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
+        </mesh>
+      </RigidBody>
       <mesh
         castShadow
         receiveShadow

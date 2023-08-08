@@ -1,10 +1,17 @@
 import { useGLTF } from '@react-three/drei'
+import { RigidBody } from '@react-three/rapier'
 
-const Theater = (props) => {
+const Theater = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Theater.glb')
 
   return (
     <group {...props} dispose={null}>
+      <RigidBody type={'fixed'} colliders={'hull'}>
+        <mesh position={[0, 0, 0]} rotation={[0, -0.01, 0]}>
+          <boxGeometry args={[4.65, 3.2, 2.6]} />
+          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
+        </mesh>
+      </RigidBody>
       <group rotation={[0, 0, -Math.PI / 2]}>
         <mesh
           castShadow

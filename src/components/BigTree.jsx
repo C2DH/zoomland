@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { RigidBody } from '@react-three/rapier'
 
-const BigTree = (props) => {
+const BigTree = ({ debug = true, ...props }) => {
   const treeRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/BigTree.glb')
   const seed = Math.random() + 0.8
@@ -15,6 +16,12 @@ const BigTree = (props) => {
   })
   return (
     <group {...props} dispose={null} ref={treeRef}>
+      <RigidBody type={'fixed'} colliders={'hull'}>
+        <mesh position={[0, 0, 0]} rotation={[0, -0.01, 0]}>
+          <boxGeometry args={[0.6, 3.2, 0.6]} />
+          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
+        </mesh>
+      </RigidBody>
       <mesh castShadow receiveShadow geometry={nodes.BigTree.geometry} material={materials.Leafs} />
       <mesh
         castShadow

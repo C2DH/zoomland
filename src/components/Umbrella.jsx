@@ -1,13 +1,12 @@
 import { useGLTF } from '@react-three/drei'
 import { MeshStandardMaterial } from 'three'
 
-const Umbrella = ({ color, ...props }) => {
+const Umbrella = ({ color, debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Umbrella.glb')
   const fabricMaterial = new MeshStandardMaterial({
     ...materials.Fabric,
     color: color,
   })
-
   return (
     <group {...props} dispose={null}>
       <mesh

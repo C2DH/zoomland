@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { KeyboardControls, Environment, Stats, Float } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { Physics } from '@react-three/rapier'
+import { Physics, RigidBody } from '@react-three/rapier'
 import Landscape from './Landscape'
 import Lights from './Lights'
 import Forest from './Forest'
@@ -21,7 +21,7 @@ import Target from './Target'
 import Pound from './Pound'
 import Ocean from './Ocean'
 import Windmill from './Windmill'
-import Lighthouse from './Lighthouse'
+import Lighttower from './Lighttower'
 import WindTurbine from './WindTurbine'
 import BigTree from './BigTree'
 import Antenna from './Antenna'
@@ -189,27 +189,25 @@ const World = ({
               rotationSpeed={0.3}
             />
             <Physics debug={debugPhysics}>
-              {/* Boat or harbor */}
-              <Price {...Chapters[0]} />
-
-              {/* Zepplin */}
-              <Price {...Chapters[1]} />
-              <Price {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
-
               <TheDispatcher quest={QuestsById.Daniele} position={[61.1, 11.02, -16.51]}>
                 <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
-
               <TheDispatcher
                 quest={QuestsById.FlorentinaArmaselu}
                 position={[-51.48, 27.01, -51.3]}
               >
                 <Editor scale={0.1} rotation={[0, 3, 0]} />
               </TheDispatcher>
-
               <TheDispatcher quest={QuestsById.AndreasFickers} position={[78.1, 1.26, -14.51]}>
                 <Lumberjack scale={0.45} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
+
+              {/* Boat or harbor */}
+              <Price {...Chapters[0]} />
+
+              {/* Zepplin */}
+              <Price {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
+
               <Price priceOffsetPosition={[1.5, 0, 1.5]} {...Chapters[2]} />
               <Balloon
                 yMax={30}
@@ -218,238 +216,100 @@ const World = ({
                 position={Chapters[2].position}
               />
 
-              {/* chapter 3 */}
-              <Windmill scale={0.3} rotation={[0, 1, 0]} position={[-60, 27, -58]} />
-              <Price {...Chapters[3]} />
-
-              {/* <Target
-                chapter={Chapters[3]}
+              <Price {...Chapters[3]} priceOffsetPosition={[3, 0.5, 3]} />
+              <Windmill
+                scale={0.3}
+                rotation={[0, 1, 0]}
                 position={Chapters[3].position}
-                priceOffsetPosition={[4, 0, 3]}
-                priceElevation={0}
-                PriceComponent={OverheadViewSign}
-                geometry="cylinder"
-                geometryArgs={[3.2, 3.2, 5, 8]}
-                additionalGeometry="box"
-                additionalGeometryArgs={[3.54, 4, 2]}
-                additionalGeometryRotation={[0, 1, 0]}
-                additionalGeometryOffsetPosition={[2.5, 0, 1.5]}
-                transparent
-              >
-                <Windmill scale={0.3} rotation={[0, 1, 0]} />
-              </Target> */}
+                debug={false}
+              />
 
-              <Target
-                chapter={Chapters[4]}
+              <Price {...Chapters[4]} priceOffsetPosition={[0, 12.5, -1]} />
+              <Banjo
+                scale={0.15}
+                rotation={[0, 1, 0]}
                 position={Chapters[4].position}
-                PriceComponent={GroundViewSign}
-                priceComponentColor="#306fc5"
-                geometryArgs={[0.5, 0.5, 1, 8]}
-                priceOffsetPosition={[-1.2, 10, 0]}
-                height={30}
-                priceElevation={2}
-                transparent
-              >
-                <Banjo scale={0.15} rotation={[0, 1, 0]} />
-              </Target>
-
-              <Target
-                chapter={Chapters[5]}
+                debug={false}
+              />
+              <Price {...Chapters[5]} priceOffsetPosition={[2.5, 0, 0]} />
+              <Umbrella
+                rotation={[-0.1, 0, -0.2]}
+                scale={[1.6, 1.6, 1.6]}
+                color={'#E56C1A'}
                 position={Chapters[5].position}
-                priceOffsetPosition={[1, -1, 0]}
-                priceElevation={0}
-                PriceComponent={OverheadViewSign}
-                priceComponentColor="#fa953b"
-                transparent
-              >
-                <Umbrella rotation={[-0.1, 0, -0.2]} scale={[1.6, 1.6, 1.6]} color={'#E56C1A'} />
-              </Target>
-
-              <Target
-                chapter={Chapters[6]}
+              />
+              <Price {...Chapters[6]} priceOffsetPosition={[0, 0.5, 0]} />
+              <Antenna
+                debug={false}
+                rotation={[0, 0, 0]}
+                scale={[2, 2, 2]}
                 position={Chapters[6].position}
-                priceOffsetPosition={[0, 0, 0]}
-                priceElevation={0}
-                PriceComponent={OverheadViewSign}
-                priceComponentColor="#fa953b"
-                height={3}
-                geometry="box"
-                geometryArgs={[0.5, 6, 0.5]}
-                geometryPosition={[2.1, 0, 2.1]}
-                additionalGeometry="box"
-                additionalGeometryArgs={[0.5, 6, 0.5]}
-                additionalGeometryOffsetPosition={[2.1, 0, -2.1]}
-                transparent
-              >
-                <Antenna rotation={[0, 0, 0]} scale={[2, 2, 2]} />
-              </Target>
+              />
 
-              <Target
-                chapter={Chapters[7]}
-                position={Chapters[7].position}
-                priceOffsetPosition={[1, -0.5, -3]}
-                priceElevation={0}
-                PriceComponent={GroundViewSign}
-                priceComponentColor="#fa953b"
-                height={2}
-                geometryArgs={[0.9, 0.9, 5, 8]}
-                transparent
-              >
-                <Transmitter scale={[0.2, 0.2, 0.2]} />
-              </Target>
+              <Price {...Chapters[7]} priceOffsetPosition={[1, 0.5, -3]} />
+              <Transmitter scale={[0.2, 0.2, 0.2]} position={Chapters[7].position} debug={false} />
 
-              <Target
-                chapter={Chapters[8]}
+              <Price {...Chapters[8]} priceOffsetPosition={[1, 0.5, -2]} />
+              <SwedishHorse
+                rotation={[0, -2, 0]}
+                scale={2.2}
                 position={Chapters[8].position}
-                priceOffsetPosition={[1, -0.5, -3]}
-                priceElevation={0}
-                PriceComponent={GroundViewSign}
-                priceComponentColor="#fa953b"
-                height={1}
-                geometry="box"
-                geometryArgs={[1.4, 6, 0.6]}
-                geometryPosition={[0.4, 0, -1]}
-                geometryRotation={[0, -0.45, 0]}
-                additionalGeometry="box"
-                additionalGeometryArgs={[1.4, 6, 0.8]}
-                additionalGeometryOffsetPosition={[-1.0, 0, 2.1]}
-                additionalGeometryRotation={[0, -0.5, 0]}
-                transparent
-              >
-                <SwedishHorse rotation={[0, -2, 0]} scale={2.2} />
-              </Target>
+                debug={false}
+              />
 
-              <Target
-                chapter={Chapters[9]}
+              <Price {...Chapters[9]} priceOffsetPosition={[3, 0.5, 2]} />
+              <Arch
+                rotation={[0, 0.3, 0]}
+                scale={[2.4, 2.4, 2.4]}
                 position={Chapters[9].position}
-                priceOffsetPosition={[4, -0.5, 1.5]}
-                priceElevation={0}
-                PriceComponent={OverheadViewSign}
-                priceComponentColor="#9e43c8"
-                geometry="box"
-                geometryArgs={[1.8, 6, 1.8]}
-                geometryPosition={[-1, 0, -2.7]}
-                geometryRotation={[0, 0.3, 0]}
-                additionalGeometry="box"
-                additionalGeometryArgs={[2, 6, 2.2]}
-                additionalGeometryRotation={[0, 0.2, 0]}
-                additionalGeometryOffsetPosition={[0.5, 0, 2.2]}
-                transparent
-                height={1}
-              >
-                <Arch rotation={[0, 0.3, 0]} scale={[2.4, 2.4, 2.4]} />
-              </Target>
+                debug={false}
+              />
 
-              <Target
-                chapter={Chapters[10]}
+              <Price {...Chapters[10]} priceOffsetPosition={[8, 0.5, 0 - 2]} />
+              <Theater
+                rotation={[0, 0.2, 0]}
+                scale={[3, 3, 3]}
                 position={Chapters[10].position}
-                priceOffsetPosition={[8, -0.5, -1.6]}
-                priceElevation={0}
-                PriceComponent={OverheadViewSign}
-                priceComponentColor="#9e43c8"
-                geometry="box"
-                geometryArgs={[14, 3.2, 8]}
-                geometryPosition={[0, 0, 0]}
-                geometryRotation={[0, 0.2, 0]}
-                transparent
-              >
-                <Theater rotation={[0, 0.2, 0]} scale={[3, 3, 3]} />
-              </Target>
+                debug={false}
+              />
 
-              <Target
-                chapter={Chapters[11]}
+              <Price {...Chapters[11]} priceOffsetPosition={[3, 0.5, -2]} />
+              <BigTree
+                rotation={[0, -2, 0]}
+                scale={[4, 4, 4]}
                 position={Chapters[11].position}
-                PriceComponent={OverheadViewSign}
-                priceComponentColor="#9e43c8"
-                priceOffsetPosition={[3, -0.5, 0]}
-                priceElevation={0}
-                height={2.5}
-                geometryArgs={[2, 2, 3, 8]}
-                transparent
-              >
-                <BigTree rotation={[0, -2, 0]} scale={[4, 4, 4]} />
-              </Target>
+                debug={false}
+              />
 
-              <Target
-                chapter={Chapters[12]}
+              <Price {...Chapters[12]} priceOffsetPosition={[1, 0.5, 1]} />
+              <Megaphone
+                rotation={[0, 0, 0.3]}
+                scale={[0.2, 0.2, 0.2]}
                 position={Chapters[12].position}
-                PriceComponent={GroundViewSign}
-                priceComponentColor="#9e43c8"
-                priceOffsetPosition={[0.5, -1.25, 0]}
-                priceElevation={1}
-                height={2.5}
-                geometryArgs={[0.5, 0.5, 1, 8]}
-                transparent
-              >
-                <Megaphone rotation={[0, 0, 0.3]} scale={[0.2, 0.2, 0.2]} />
-              </Target>
+                debug={false}
+              />
 
-              <Target
-                chapter={Chapters[13]}
+              <Price {...Chapters[13]} priceOffsetPosition={[1, 1, 5.5]} />
+              <FishNet
+                rotation={[0, -2.2, 0]}
+                scale={[2.5, 2.5, 2.5]}
                 position={Chapters[13].position}
-                height={2.5}
-                priceOffsetPosition={[1, 1, 5.5]}
-                priceElevation={1}
-                PriceComponent={BirdEyeViewSign}
-                priceComponentColor="#ed407d"
-                transparent
-              >
-                <FishNet rotation={[0, -2.2, 0]} scale={[2.5, 2.5, 2.5]} />
-              </Target>
+              />
 
-              <Target
-                chapter={Chapters[14]}
-                position={Chapters[14].position}
-                PriceComponent={BirdEyeViewSign}
-                priceComponentColor="#ed407d"
-                priceOffsetPosition={[3, -2, 0]}
-                priceElevation={1}
-                height={5}
-                geometryArgs={[0.1, 0.1, 0.1, 3]}
-                geometryPosition={[0, -1, 0]}
-                transparent
-              >
-                <Ufo scale={[0.4, 0.4, 0.4]} />
-              </Target>
+              <Price {...Chapters[14]} priceOffsetPosition={[5, 0.5, 0]} />
+              <Ufo scale={[0.4, 0.4, 0.4]} position={Chapters[14].position} debug={false} />
 
-              <Target
-                chapter={Chapters[15]}
-                position={Chapters[15].position}
-                priceOffsetPosition={[0, -0.5, 4]}
-                priceElevation={0}
-                PriceComponent={OverheadViewSign}
-                priceComponentColor="#ed407d"
-                height={2}
-                geometryArgs={[2.6, 2.36, 5, 8]}
-                transparent
-              >
-                <Lighthouse scale={5} />
-              </Target>
+              <Price {...Chapters[15]} priceOffsetPosition={[-3, 0.5, 6]} />
+              <Lighttower scale={5} position={Chapters[15].position} debug={false} />
 
-              {/* chapter 15 */}
-              {/* <Lighthouse scale={5} position={[54, 20.4, -85]} />
-                <Price {...Chapters[15]} /> */}
-              {/* end of chqpter 15 */}
-
-              <Target
-                chapter={Chapters[16]}
+              <Price {...Chapters[16]} priceOffsetPosition={[2, 0.5, 0]} />
+              <Windsock
+                rotation={[0, 0, 0]}
+                scale={0.4}
                 position={Chapters[16].position}
-                priceOffsetPosition={[2, 0, 0]}
-                priceElevation={0}
-                PriceComponent={GroundViewSign}
-                priceComponentColor="#ed407d"
-                height={2}
-                geometry="box"
-                geometryArgs={[0.6, 6, 0.6]}
-                geometryPosition={[0, 0, 0]}
-                geometryRotation={[0, 0, 0]}
-                transparent
-              >
-                <Windsock rotation={[0, 0, 0]} scale={0.4} />
-              </Target>
-
+                debug={false}
+              />
               <IcescreamTruck rotation={[0, 1.3, 0]} scale={1.5} position={[-8.7, 0.03, 33.23]} />
-
               <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-29.01, 0.07, 53.74]} />
               <Boat
                 rotation={[0, 0, 0]}
@@ -459,7 +319,6 @@ const World = ({
                   [91.6, -1.6, -10.2],
                 ]}
               />
-
               <Landscape receiveShadow position={[0, -2, 0]} scale={10} debug={debug} />
               <Forest positions={BigTrees.positions} scales={BigTrees.scales} maxScale={1.5}>
                 <FirTree />
@@ -473,24 +332,20 @@ const World = ({
                 scale={[5.5, 5.5, 5.5]}
                 position={[45.2, 12.8, 56.68]}
               />
-
               {/*House - next to Beach*/}
               <House rotation={[0, -2, 0]} scale={[5.5, 5.5, 5.5]} position={[-10, -0.8, 46]} />
-
               {/*House - next to Theatre*/}
               <House
                 rotation={[0, 0 - 2.2, 0]}
                 scale={[5.5, 5.5, 5.5]}
                 position={[-32, -0.8, -18.4]}
               />
-
               {/*House - next to Theatre*/}
               <House
                 rotation={[0, 0 - 1.5, 0]}
                 scale={[5.5, 5.5, 5.5]}
                 position={[-12.0, -0.8, -24.4]}
               />
-
               <StoneBig
                 rotation={[0, 1, 0]}
                 scale={[1.5, 1.5, 1.5]}
@@ -514,29 +369,22 @@ const World = ({
                 scale={[2.5, 2.5, 2]}
                 position={[16.45, 9.8, -50.67]}
               />
-
               <Player isMobile={isMobile} debug={debug} position={[94.88, 0.26, -14.2]}></Player>
-
               <TheDispatcher quest={Quests[5]} position={[46.87, 20.95, -81.69]}>
                 <Character scale={0.1} rotation={[0, 0, 0]} />
               </TheDispatcher>
-
               <TheDispatcher quest={Quests[3]} position={[6.95, 8.85, 60.91]}>
                 <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
-
               <TheDispatcher quest={Quests[2]} position={[61.1, 10.9, -16.51]}>
                 <Daniele scale={0.1} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
-
               <TheDispatcher quest={Quests[4]} position={[-51.48, 26.89, -51.3]}>
                 <Editor scale={0.1} rotation={[0, 3, 0]} />
               </TheDispatcher>
-
               <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
                 <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
-
               <Boundaries />
               <Sensor position={[-60.51, 26.97, -48.47]} />
             </Physics>

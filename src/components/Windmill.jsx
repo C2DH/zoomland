@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { RigidBody } from '@react-three/rapier'
 
-const Windmill = (props) => {
+const Windmill = ({ debug = true, ...props }) => {
   const fanRotation = useRef()
   const { nodes, materials } = useGLTF('../assets/models/WindMill.glb')
 
@@ -14,6 +15,16 @@ const Windmill = (props) => {
   })
   return (
     <group {...props} dispose={null}>
+      <RigidBody type={'fixed'} colliders={'hull'}>
+        <mesh position={[0, 5, 1]} rotation={[0, 0, 0]}>
+          <cylinderGeometry args={[9, 9, 10, 8]} />
+          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
+        </mesh>
+        <mesh position={[0, 2, 8.6]} rotation={[0, -0.01, 0]}>
+          <boxGeometry args={[12, 10, 5]} />
+          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
+        </mesh>
+      </RigidBody>
       <group position={[-0.01, 36.41, 14.01]} ref={fanRotation}>
         <mesh castShadow receiveShadow geometry={nodes.Fan_1.geometry} material={materials.Wood} />
         <mesh castShadow receiveShadow geometry={nodes.Fan_2.geometry} material={materials.Walls} />

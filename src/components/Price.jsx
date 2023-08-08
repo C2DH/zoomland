@@ -21,14 +21,13 @@ const Price = ({
   category = CategoryIntroduction,
   // base position of the price
   position = [0, 0, 0],
-  radius = 0.5,
+  radius = 0.7,
   height = 1.5,
   yMin = 0,
   yMax = 1,
   scaleMin = 0.5,
   scaleMax = 1.5,
   transparent = true,
-  priceColor = '#7c7c7c',
   priceOffsetPosition = [0, 0, 0],
 }) => {
   const priceRef = useRef(null)
@@ -114,7 +113,7 @@ const Price = ({
         </mesh>
       </RigidBody>
       <group ref={priceRef} scale={0.5} position={position}>
-        <ViewTypeComponent color={priceColor} />
+        <ViewTypeComponent color={color} />
       </group>
     </group>
   )

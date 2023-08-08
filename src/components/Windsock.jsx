@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from 'react'
 import { useAnimations, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { RigidBody } from '@react-three/rapier'
 
-export function Windsock(props) {
+export function Windsock({ debug = true, ...props }) {
   const group = useRef()
   const sockSpin = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Windsock.glb')
@@ -21,6 +22,12 @@ export function Windsock(props) {
   })
   return (
     <group ref={group} {...props} dispose={null}>
+      <RigidBody type={'fixed'} colliders={'hull'}>
+        <mesh position={[1.1, 0, 0]} rotation={[0, 0, 0]}>
+          <boxGeometry args={[0.35, 3, 0.65]} />
+          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
+        </mesh>
+      </RigidBody>
       <group name="Scene">
         <mesh
           name="Plane001"
