@@ -1,0 +1,17 @@
+.GameControls {
+  position: fixed;
+  z-index: var(--z-index-game-controls);
+  background: var(--dark-blue-alpha);
+  border-radius: var(--small-border-radius);
+
+  width: 50%;
+  top: 150px;
+  left: 50%;
+  margin-left: -25%;
+  color: var(--pale-yellow);
+}
+
+.GameControls button {
+  border: 0 none;
+  color: var(--pale-yellow);
+}

@@ -23,6 +23,7 @@ import {
 const SideMenu = () => {
   const { pathname } = useLocation()
   const [menuStatus, set] = useMenuStore((state) => [state.menuStatus, state.setMenuStatus])
+  const setGameControlsStatus = useMenuStore((state) => state.setGameControlsStatus)
   const saveInitialPropsToPlayerStore = useWorldStore(
     (state) => state.saveInitialPropsToPlayerStore,
   )
@@ -94,7 +95,7 @@ const SideMenu = () => {
             </Nav.Item>
             <Nav.Item className="mb-3">
               <button className="btn btn-link" onClick={saveInitialPropsToPlayerStore}>
-                save
+                Save
               </button>
             </Nav.Item>
             <Nav.Item>
@@ -104,7 +105,15 @@ const SideMenu = () => {
               <Link to="/chapters">Chapters</Link>
             </Nav.Item>
             <Nav.Item>
-              <Link to="/game_controls">Game Controls</Link>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  setGameControlsStatus(MenuOpen)
+                  set(MenuClosed)
+                }}
+              >
+                Game Controls
+              </button>
             </Nav.Item>
             <Nav.Item>
               <Link to="/about">About</Link>

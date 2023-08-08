@@ -371,7 +371,7 @@ const World = ({
                 scale={[2.5, 2.5, 2]}
                 position={[16.45, 9.8, -50.67]}
               />
-              <Player isMobile={isMobile} debug={debug} position={[94.88, 0.26, -14.2]}></Player>
+              <Player isMobile={isMobile} debug={debug}></Player>
 
               <Boundaries />
               <Sensor position={[-60.51, 26.97, -48.47]} />

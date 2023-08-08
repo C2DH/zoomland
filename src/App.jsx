@@ -12,6 +12,7 @@ import { isMobile } from 'react-device-detect'
 import SideMenu from './components/SideMenu'
 import ZoomlandIntro from './components/ZoomlandIntro'
 import SkipIntro from './components/SkipIntro'
+import GameControls from './components/GameControls'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
@@ -40,6 +41,7 @@ function App() {
 
       <Vignette></Vignette>
       <SkipIntro />
+      <GameControls />
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>
         <Route path="/about" element={<About />} />

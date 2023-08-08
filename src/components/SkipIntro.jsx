@@ -39,6 +39,7 @@ const SkipIntro = () => {
     <a.div style={style} className="SkipIntro">
       {scene === Start ? (
         <Quest
+          initialDelay={20000}
           quest={IntroQuest}
           onComplete={onIntroQuestComplete}
           onCompleteLabel="Let's get to the harbour!"
