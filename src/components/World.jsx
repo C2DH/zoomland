@@ -197,6 +197,12 @@ const World = ({
               <TheDispatcher quest={QuestsById.AndreasFickers} position={[78.1, 1.26, -14.51]}>
                 <Lumberjack scale={0.45} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
+              <TheDispatcher quest={QuestsById.ChristianWachter} position={[46.87, 20.95, -81.69]}>
+                <Character scale={0.1} rotation={[0, 0, 0]} />
+              </TheDispatcher>
+              <TheDispatcher quest={Quests[3]} position={[6.95, 8.85, 60.91]}>
+                <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
 
               {/* Boat or harbor */}
               <Prize {...Chapters[0]} />
@@ -366,21 +372,7 @@ const World = ({
                 position={[16.45, 9.8, -50.67]}
               />
               <Player isMobile={isMobile} debug={debug} position={[94.88, 0.26, -14.2]}></Player>
-              <TheDispatcher quest={Quests[5]} position={[46.87, 20.95, -81.69]}>
-                <Character scale={0.1} rotation={[0, 0, 0]} />
-              </TheDispatcher>
-              <TheDispatcher quest={Quests[3]} position={[6.95, 8.85, 60.91]}>
-                <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
-              </TheDispatcher>
-              <TheDispatcher quest={Quests[2]} position={[61.1, 10.9, -16.51]}>
-                <Daniele scale={0.1} rotation={[0, 1.8, 0]} />
-              </TheDispatcher>
-              <TheDispatcher quest={Quests[4]} position={[-51.48, 26.89, -51.3]}>
-                <Editor scale={0.1} rotation={[0, 3, 0]} />
-              </TheDispatcher>
-              <TheDispatcher quest={Quests[0]} position={[78.1, 1.26, -14.51]}>
-                <Lumberjack scale={0.6} rotation={[0, 1.8, 0]} />
-              </TheDispatcher>
+
               <Boundaries />
               <Sensor position={[-60.51, 26.97, -48.47]} />
             </Physics>
