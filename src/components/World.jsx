@@ -17,7 +17,6 @@ import FirTree from './FirTree'
 import FirTreeSmall from './FirTreeSmall'
 import Clouds from './Clouds'
 import { Airship } from './Airship'
-import Target from './Target'
 import Pound from './Pound'
 import Ocean from './Ocean'
 import Windmill from './Windmill'
@@ -45,9 +44,6 @@ import TheDispatcher from './TheDispatcher'
 import Lumberjack from './Lumberjack'
 import IcescreamTruck from './IcescreamTruck'
 import Windsock from './Windsock'
-import GroundViewSign from './GroundViewSign'
-import BirdEyeViewSign from './BirdEyeViewSign'
-import OverheadViewSign from './OverheadViewSign'
 import Boundaries from './Boundaries'
 import Rig from './Rig'
 import Grass from './Grass'
@@ -60,8 +56,6 @@ import Sensor from './Sensor'
 import Mushrooms from './Mushroom'
 import Prize from './Prize'
 import Butterflies from './butterflies'
-import { ViewTypeOverhead } from '../constants'
-// import { AnimationStoreLoader } from '../store/animations'
 
 const QuestsById = Quests.reduce((acc, quest) => {
   acc[quest.id] = quest
@@ -190,7 +184,9 @@ const World = ({
             />
             <Physics debug={debugPhysics}>
               <TheDispatcher quest={QuestsById.Daniele} position={[61.1, 11.02, -16.51]}>
-                <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
+                <Suspense fallback={null}>
+                  <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
+                </Suspense>
               </TheDispatcher>
               <TheDispatcher
                 quest={QuestsById.FlorentinaArmaselu}

@@ -12,15 +12,17 @@ const Daniele = (props) => {
   const { nodes, materials, animations } = useGLTF('../assets/models/Daniele.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
-
+  const actionRef = useRef(false)
   useEffect(() => {
-    if (isCollectingQuest) {
-      actions['Idle'].fadeOut(0.5)
-      actions['Talking'].reset().fadeIn(0.5).play()
-    } else {
-      actions['Talking'].fadeOut(0.5)
-      actions['Idle'].reset().fadeIn(0.5).play()
+    if (actionRef.current) {
+      actionRef.current.fadeOut(0.5)
     }
+    if (isCollectingQuest) {
+      actionRef.current = actions['Talking']
+    } else {
+      actionRef.current = actions['Idle']
+    }
+    actionRef.current.reset().fadeIn(0.5).play()
   }, [isCollectingQuest])
   return (
     <group ref={group} {...props} dispose={null}>
