@@ -13,13 +13,13 @@ const ComponentsByName = {
   [ViewTypeBirdEye]: BirdEyeViewSign,
 }
 
-const Price = ({
+const Prize = ({
   id = '0-introduction',
-  // this will set the price component
+  // this will set the prize component
   viewType = ViewTypeGround,
   // this will set the color
   category = CategoryIntroduction,
-  // base position of the price
+  // base position of the prize
   position = [0, 0, 0],
   radius = 0.7,
   height = 1.5,
@@ -28,17 +28,17 @@ const Price = ({
   scaleMin = 0.5,
   scaleMax = 1.5,
   transparent = true,
-  priceOffsetPosition = [0, 0, 0],
+  prizeOffsetPosition = [0, 0, 0],
 }) => {
-  const priceRef = useRef(null)
+  const prizeRef = useRef(null)
   const [, api] = useSpring(() => ({
     scale: scaleMin,
     y: yMin,
     config: config.wobbly,
     onChange: ({ value }) => {
-      // console.log('[Price] onChange', value)
-      priceRef.current.scale.set(value.scale, value.scale, value.scale)
-      priceRef.current.position.y = position[1] + value.y
+      // console.log('[Prize] onChange', value)
+      prizeRef.current.scale.set(value.scale, value.scale, value.scale)
+      prizeRef.current.position.y = position[1] + value.y
     },
   }))
   const [collectChapter, doneCollectingChapter] = usePlayerStore((state) => [
@@ -51,7 +51,7 @@ const Price = ({
   const collisionEnterHandler = (e) => {
     if (e.rigidBodyObject.name === 'player') {
       console.debug(
-        '[Price] @collisionEnterHandler \n - chapter:',
+        '[Prize] @collisionEnterHandler \n - chapter:',
         id,
         '\n - player position:',
         e.rigidBodyObject.position.x,
@@ -75,7 +75,7 @@ const Price = ({
   }
   const collisionExitHandler = (e) => {
     if (e.rigidBodyObject.name === 'player') {
-      console.log('[Price] collisionExitHandler', e.rigidBodyObject.name)
+      console.log('[Prize] collisionExitHandler', e.rigidBodyObject.name)
       // doneCollectingChapter(chapter)
       api.start({
         scale: scaleMin,
@@ -85,17 +85,17 @@ const Price = ({
   }
 
   if (!color) {
-    console.error(`[Price] color ${color} not found ${id}`)
+    console.error(`[Prize] color ${color} not found ${id}`)
     return null
   }
 
   if (!ViewTypeComponent) {
-    console.error(`[Price] viewType ${viewType} not found ${id}`)
+    console.error(`[Prize] viewType ${viewType} not found ${id}`)
     return null
   }
 
   return (
-    <group position={priceOffsetPosition}>
+    <group position={prizeOffsetPosition}>
       <RigidBody
         colliders={'hull'}
         type={'fixed'}
@@ -112,11 +112,11 @@ const Price = ({
           />
         </mesh>
       </RigidBody>
-      <group ref={priceRef} scale={0.5} position={position}>
+      <group ref={prizeRef} scale={0.5} position={position}>
         <ViewTypeComponent color={color} />
       </group>
     </group>
   )
 }
 
-export default Price
+export default Prize

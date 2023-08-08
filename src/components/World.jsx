@@ -58,7 +58,7 @@ import Kirill from './Kirill'
 import Character from './Character'
 import Sensor from './Sensor'
 import Mushrooms from './Mushroom'
-import Price from './Price'
+import Prize from './Prize'
 import Butterflies from './butterflies'
 import { ViewTypeOverhead } from '../constants'
 // import { AnimationStoreLoader } from '../store/animations'
@@ -203,12 +203,12 @@ const World = ({
               </TheDispatcher>
 
               {/* Boat or harbor */}
-              <Price {...Chapters[0]} />
+              <Prize {...Chapters[0]} />
 
               {/* Zepplin */}
-              <Price {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
+              <Prize {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
 
-              <Price priceOffsetPosition={[1.5, 0, 1.5]} {...Chapters[2]} />
+              <Prize prizeOffsetPosition={[1.5, 0, 1.5]} {...Chapters[2]} />
               <Balloon
                 yMax={30}
                 rotation={[0, 0, 0]}
@@ -216,7 +216,7 @@ const World = ({
                 position={Chapters[2].position}
               />
 
-              <Price {...Chapters[3]} priceOffsetPosition={[3, 0.5, 3]} />
+              <Prize {...Chapters[3]} prizeOffsetPosition={[3, 0.5, 3]} />
               <Windmill
                 scale={0.3}
                 rotation={[0, 1, 0]}
@@ -224,21 +224,21 @@ const World = ({
                 debug={false}
               />
 
-              <Price {...Chapters[4]} priceOffsetPosition={[0, 12.5, -1]} />
+              <Prize {...Chapters[4]} prizeOffsetPosition={[0, 12.5, -1]} />
               <Banjo
                 scale={0.15}
                 rotation={[0, 1, 0]}
                 position={Chapters[4].position}
                 debug={false}
               />
-              <Price {...Chapters[5]} priceOffsetPosition={[2.5, 0, 0]} />
+              <Prize {...Chapters[5]} prizeOffsetPosition={[2.5, 0, 0]} />
               <Umbrella
                 rotation={[-0.1, 0, -0.2]}
                 scale={[1.6, 1.6, 1.6]}
                 color={'#E56C1A'}
                 position={Chapters[5].position}
               />
-              <Price {...Chapters[6]} priceOffsetPosition={[0, 0.5, 0]} />
+              <Prize {...Chapters[6]} prizeOffsetPosition={[0, 0.5, 0]} />
               <Antenna
                 debug={false}
                 rotation={[0, 0, 0]}
@@ -246,10 +246,10 @@ const World = ({
                 position={Chapters[6].position}
               />
 
-              <Price {...Chapters[7]} priceOffsetPosition={[1, 0.5, -3]} />
+              <Prize {...Chapters[7]} prizeOffsetPosition={[1, 0.5, -3]} />
               <Transmitter scale={[0.2, 0.2, 0.2]} position={Chapters[7].position} debug={false} />
 
-              <Price {...Chapters[8]} priceOffsetPosition={[1, 0.5, -2]} />
+              <Prize {...Chapters[8]} prizeOffsetPosition={[1, 0.5, -2]} />
               <SwedishHorse
                 rotation={[0, -2, 0]}
                 scale={2.2}
@@ -257,7 +257,7 @@ const World = ({
                 debug={false}
               />
 
-              <Price {...Chapters[9]} priceOffsetPosition={[3, 0.5, 2]} />
+              <Prize {...Chapters[9]} prizeOffsetPosition={[3, 0.5, 2]} />
               <Arch
                 rotation={[0, 0.3, 0]}
                 scale={[2.4, 2.4, 2.4]}
@@ -265,7 +265,7 @@ const World = ({
                 debug={false}
               />
 
-              <Price {...Chapters[10]} priceOffsetPosition={[8, 0.5, 0 - 2]} />
+              <Prize {...Chapters[10]} prizeOffsetPosition={[8, 0.5, 0 - 2]} />
               <Theater
                 rotation={[0, 0.2, 0]}
                 scale={[3, 3, 3]}
@@ -273,7 +273,7 @@ const World = ({
                 debug={false}
               />
 
-              <Price {...Chapters[11]} priceOffsetPosition={[3, 0.5, -2]} />
+              <Prize {...Chapters[11]} prizeOffsetPosition={[3, 0.5, -2]} />
               <BigTree
                 rotation={[0, -2, 0]}
                 scale={[4, 4, 4]}
@@ -281,7 +281,7 @@ const World = ({
                 debug={false}
               />
 
-              <Price {...Chapters[12]} priceOffsetPosition={[1, 0.5, 1]} />
+              <Prize {...Chapters[12]} prizeOffsetPosition={[1, 0.5, 1]} />
               <Megaphone
                 rotation={[0, 0, 0.3]}
                 scale={[0.2, 0.2, 0.2]}
@@ -289,20 +289,20 @@ const World = ({
                 debug={false}
               />
 
-              <Price {...Chapters[13]} priceOffsetPosition={[1, 1, 5.5]} />
+              <Prize {...Chapters[13]} prizeOffsetPosition={[1, 1, 5.5]} />
               <FishNet
                 rotation={[0, -2.2, 0]}
                 scale={[2.5, 2.5, 2.5]}
                 position={Chapters[13].position}
               />
 
-              <Price {...Chapters[14]} priceOffsetPosition={[5, 0.5, 0]} />
+              <Prize {...Chapters[14]} prizeOffsetPosition={[5, 0.5, 0]} />
               <Ufo scale={[0.4, 0.4, 0.4]} position={Chapters[14].position} debug={false} />
 
-              <Price {...Chapters[15]} priceOffsetPosition={[-3, 0.5, 6]} />
+              <Prize {...Chapters[15]} prizeOffsetPosition={[-3, 0.5, 6]} />
               <Lighttower scale={5} position={Chapters[15].position} debug={false} />
 
-              <Price {...Chapters[16]} priceOffsetPosition={[2, 0.5, 0]} />
+              <Prize {...Chapters[16]} prizeOffsetPosition={[2, 0.5, 0]} />
               <Windsock
                 rotation={[0, 0, 0]}
                 scale={0.4}
