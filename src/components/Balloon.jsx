@@ -296,6 +296,12 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
           geometry={nodes.Balloon_2.geometry}
           material={materials.Wood}
         />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Balloon_3.geometry}
+          material={materials.Logo}
+        />
       </group>
     </>
   )
