@@ -36,8 +36,9 @@
   position: absolute;
   top: 0;
   right: 0;
+  bottom: 0;
   display: block;
-  height: 100vh;
+  height: inherit;
   width: 100vw;
   background: var(--dark-blue);
   background: linear-gradient(
