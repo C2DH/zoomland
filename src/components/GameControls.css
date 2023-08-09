@@ -8,10 +8,9 @@
   background: var(--dark-blue-alpha);
   border-radius: var(--small-border-radius) 0 var(--small-border-radius) 0;
 
-  width: 50%;
-  top: 150px;
-  left: 50%;
-  margin-left: -25%;
+  width: 500px;
+  top: calc(50% - 180px);
+  left: calc(50% - 250px);
   color: var(--pale-yellow);
 }
 
@@ -24,11 +23,10 @@
   color: var(--pale-orange);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 400px) {
   .GameControls {
-    width: 80%;
-    top: 150px;
-    left: 10%;
-    margin-left: 0%;
+    width: 320px;
+    top: 5%;
+    left: calc(50% - 160px);
   }
 }
