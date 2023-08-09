@@ -10,6 +10,7 @@ import {
   AnimationRun,
   AnimationWalk,
   DefaultPlayerAngle,
+  DefaultPlayerPosition,
   Gameplay,
   useAnimationStore,
   usePlayerStore,
@@ -22,11 +23,11 @@ const JumpForce = 0.7
 const Speed = 0.4
 const MaxVel = 3.5
 const MaxSprintVel = 5
-const RunVel = 1.6
+const FreeFallLinvel = 30
 
 let internalDebounceTimer = null
 
-const Player = ({ isMobile = false, scale = 0.6 }) => {
+const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPosition }) => {
   const rigidbody = useRef()
   const platformRef = useRef()
   const isOnFloor = useRef(true)
@@ -53,6 +54,9 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   ])
 
   const scene = usePlayerStore((state) => state.scene)
+
+  // Fetch initial state
+  const isLoadingCompleteRef = useRef(useQueueStore.getState().isLoadingComplete)
 
   useEffect(() => {
     console.debug(
@@ -85,12 +89,19 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   }, [])
 
   useEffect(() => {
-    console.debug('[Player] @useEffect - useQueueStore.subscribe')
     return useQueueStore.subscribe((state) => {
       console.debug(
         '[Player] @useEffect - useQueueStore.subscribe',
         state.loaded,
         state.isLoadingComplete,
+      )
+      platformRef.current.setTranslation(
+        new Vector3([
+          initialPlayerPosition[0],
+          initialPlayerPosition[1] + 10,
+          initialPlayerPosition[2],
+        ]),
+        true,
       )
     })
   }, [])
@@ -135,22 +146,24 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
     updateCamera(state.camera, { target: characterWorldPosition, delta, angle: angle.current })
   }
 
+  const resetPosition = () => {
+    console.debug('[Player] @resetPosition')
+    // reset position
+    rigidbody.current.resetForces(true)
+    rigidbody.current.setLinvel(new Vector3(0, 0, 0), true)
+    rigidbody.current.setGravityScale(0)
+    rigidbody.current.setTranslation(new Vector3(...position), true)
+    rigidbody.current.setGravityScale(1)
+  }
+
   useFrame((state, delta) => {
     if (!rigidbody.current) return
     const shouldStayStill = isCollectingQuest || isCollectingChapter
     // check velocity
     const linvel = rigidbody.current.linvel()
 
-    if (linvel.y < -100 || linvel.y > 100) {
-      // reset position
-      rigidbody.current.resetForces(true)
-      rigidbody.current.setGravityScale(linvel.y > 0 ? 0.5 : -1)
-      console.log(
-        'linvel still oooo FALLLING again and again',
-        linvel,
-        rigidbody.current.isKinematic(),
-      )
-      rigidbody.current.setTranslation(new Vector3(100, 0, 0), true)
+    if (linvel.y < -FreeFallLinvel || linvel.y > FreeFallLinvel) {
+      resetPosition()
       return
     }
     if (isMobile) {
@@ -160,16 +173,6 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
     const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = getKeys()
 
     const isMoving = moveForward || moveBackward || moveLeft || moveRight
-    // if press space and shouldStaystill, then done collecting stuff
-    // if (jump && shouldStayStill) {
-    //   if (isCollectingQuest) {
-    //     doneCollectingQuest()
-    //   } else if (isCollectingChapter) {
-    //     doneCollectingChapter()
-    //   }
-    //   return
-    // }
-
     const impulse = { x: 0, y: 0, z: 0 }
     // animation
     if (shouldStayStill || (!isMoving && !jump)) {

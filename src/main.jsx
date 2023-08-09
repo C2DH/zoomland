@@ -11,7 +11,6 @@ const setIntroTimeout = () => {
   } else {
     usePlayerStore.setState({ scene: Gameplay })
   }
-  document.getElementById('loading').classList.add('hide')
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

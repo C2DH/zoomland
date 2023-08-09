@@ -13,8 +13,10 @@ const Landscape = ({ debug = false, ...props }) => {
   const addToLoaded = useQueueStore((state) => state.addToLoaded)
 
   useEffect(() => {
-    console.debug('[Landscape] loaded')
-    addToLoaded('Landscape')
+    let timer = setTimeout(() => {
+      addToLoaded('Landscape')
+    }, 2000)
+    return () => clearTimeout(timer)
   }, [])
 
   return (

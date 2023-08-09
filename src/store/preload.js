@@ -18,6 +18,10 @@ export const useQueueStore = create((set, get) => ({
       'time',
       new Date().getTime(),
     )
+    if (isLoadingComplete) {
+      console.debug('[useQueueStore] addToLoaded: all loaded')
+      document.getElementById('loading').classList.add('hide')
+    }
     return set({
       loaded: [...loaded, key],
       isLoadingComplete: loaded.length + 1 === Expected.length,
