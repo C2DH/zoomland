@@ -87,6 +87,7 @@ export const Gameplay = 'gameplay'
 export const OpenSea = 'opensea'
 export const Start = 'start'
 export const Baloon = 'baloon'
+
 export const usePlayerStore = create(
   persist(
     (set, get) => ({
@@ -203,4 +204,6 @@ export const MenuOpen = 'open'
 export const useMenuStore = create((set) => ({
   menuStatus: MenuClosed,
   setMenuStatus: (menuStatus) => set({ menuStatus }),
+  gameControlsStatus: MenuClosed,
+  setGameControlsStatus: (gameControlsStatus) => set({ gameControlsStatus }),
 }))

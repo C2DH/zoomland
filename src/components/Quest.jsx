@@ -4,14 +4,21 @@ import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import DialogueCard from './DialogueCard'
 
-const to = (i) => ({
+const to = (i, delay = 0) => ({
   x: 0,
   y: i * 200,
   opacity: 0,
+  delay: delay,
 })
 const from = (i) => ({ x: 0, y: i * -200, opacity: 0 })
 
-const Quest = ({ quest, withChapter = false, onComplete, onCompleteLabel = 'Done' }) => {
+const Quest = ({
+  quest,
+  initialDelay = 100,
+  withChapter = false,
+  onComplete,
+  onCompleteLabel = 'Done',
+}) => {
   const [sentenceIndex, setSentenceIndex] = useState(-1)
   const [sentences, setSentences] = useState([])
 
@@ -62,7 +69,7 @@ const Quest = ({ quest, withChapter = false, onComplete, onCompleteLabel = 'Done
   }, [quest, withChapter])
 
   const [props, api] = useSprings(sentences.length, (i) => ({
-    to: to(i),
+    to: to(i, i === 0 ? initialDelay : 0),
     from: from(i),
   }))
 
@@ -71,7 +78,7 @@ const Quest = ({ quest, withChapter = false, onComplete, onCompleteLabel = 'Done
       if (i < sentenceIndex) {
         return from(sentenceIndex - i)
       } else if (i === sentenceIndex) {
-        return { x: 0, y: 0, opacity: 1 }
+        return { x: 0, y: 0, opacity: 1, delay: i === 0 ? initialDelay : 0 }
       } else {
         return to(sentenceIndex + i)
       }

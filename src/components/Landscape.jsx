@@ -5,9 +5,18 @@ Command: npx gltfjsx@6.1.4 public/models/Landscape.gltf
 
 import { useGLTF } from '@react-three/drei'
 import { RigidBody, CuboidCollider } from '@react-three/rapier'
+import { useQueueStore } from '../store/preload'
+import { useEffect } from 'react'
 
 const Landscape = ({ debug = false, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
+  const addToLoaded = useQueueStore((state) => state.addToLoaded)
+
+  useEffect(() => {
+    console.debug('[Landscape] loaded')
+    addToLoaded('Landscape')
+  }, [])
+
   return (
     <>
       {/* {debug && <Debug />*/}

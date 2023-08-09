@@ -16,6 +16,7 @@ import {
   useWorldStore,
 } from '../store'
 import { updateCamera } from '../utils/camera'
+import { useQueueStore } from '../store/preload'
 
 const JumpForce = 0.7
 const Speed = 0.4
@@ -27,6 +28,7 @@ let internalDebounceTimer = null
 
 const Player = ({ isMobile = false, scale = 0.6 }) => {
   const rigidbody = useRef()
+  const platformRef = useRef()
   const isOnFloor = useRef(true)
   const character = useRef()
   // joystick
@@ -40,10 +42,6 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   const [isCollectingQuest, isCollectingChapter] = usePlayerStore((state) => [
     state.isCollectingQuest,
     state.isCollectingChapter,
-  ])
-  const [doneCollectingQuest, doneCollectingChapter] = usePlayerStore((state) => [
-    state.doneCollectingQuest,
-    state.doneCollectingChapter,
   ])
   const [initialPlayerPosition, initialPlayerAngle] = usePlayerStore((state) => [
     state.initialPlayerPosition,
@@ -80,10 +78,21 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   // Connect to the store on mount, disconnect on unmount, catch state-changes in a reference
   useEffect(() => {
     if (isMobile) {
-      useWorldStore.subscribe((state) => (joystickRef.current = state.joystick))
+      return useWorldStore.subscribe((state) => (joystickRef.current = state.joystick))
     }
     // link radius
-    useWorldStore.subscribe((state) => (cameraOffsetRef.current = state.cameraOffset))
+    return useWorldStore.subscribe((state) => (cameraOffsetRef.current = state.cameraOffset))
+  }, [])
+
+  useEffect(() => {
+    console.debug('[Player] @useEffect - useQueueStore.subscribe')
+    return useQueueStore.subscribe((state) => {
+      console.debug(
+        '[Player] @useEffect - useQueueStore.subscribe',
+        state.loaded,
+        state.isLoadingComplete,
+      )
+    })
   }, [])
 
   const movePlayerWithJoystick = (state, delta, shouldStayStill) => {
@@ -227,6 +236,21 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
   return (
     <>
       <RigidBody
+        ref={platformRef}
+        type="fixed"
+        colliders={'cuboid'}
+        position={[
+          initialPlayerPosition[0],
+          initialPlayerPosition[1] + 0.5,
+          initialPlayerPosition[2],
+        ]}
+      >
+        <mesh>
+          <boxGeometry args={[5, 0.5, 5]} />
+          <meshStandardMaterial depthWrite={false} color={'red'} />
+        </mesh>
+      </RigidBody>
+      <RigidBody
         ref={rigidbody}
         restitution={0}
         name="player"
@@ -234,7 +258,11 @@ const Player = ({ isMobile = false, scale = 0.6 }) => {
         mass={2.2}
         enabledTranslations={[true, true, true]}
         enabledRotations={[false, false, false]}
-        position={initialPlayerPosition}
+        position={[
+          initialPlayerPosition[0],
+          initialPlayerPosition[1] + 2,
+          initialPlayerPosition[2],
+        ]}
         onCollisionEnter={() => {
           isOnFloor.current = true
         }}
