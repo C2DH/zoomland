@@ -137,7 +137,7 @@ const ChapterCard = ({ chapter, notFound = false }) => {
         </div>
         <div className="ChapterCard_chapterLabel">
           <div className="ChapterCard_number">#{chapterNumber}</div>
-          {chapter.incipit}
+          <p>{chapter.incipit}</p>
         </div>
         {!notFound && (
           <div className="ChapterCard_flip">

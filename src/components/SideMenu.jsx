@@ -61,7 +61,7 @@ const SideMenu = () => {
           />
         </div>
         <div style={{ marginTop: '0.6rem' }}>
-          <LogoZoomland />
+          <LogoZoomland color={'var(--pale-orange)'} />
         </div>
         {/* <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
             save
