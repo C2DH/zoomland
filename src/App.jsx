@@ -10,7 +10,7 @@ import { useWindowStore } from './store'
 import { debounce } from './utils/common'
 import { isMobile } from 'react-device-detect'
 import SideMenu from './components/SideMenu'
-import ZoomlandIntro from './components/ZoomlandIntro'
+import IntroLogoZoomland from './components/IntroLogoZoomland'
 import SkipIntro from './components/SkipIntro'
 import GameControls from './components/GameControls'
 
@@ -35,7 +35,8 @@ function App() {
   console.debug('[app] render')
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <ZoomlandIntro /> */}
+      <IntroLogoZoomland />
+
       <SideMenu />
       <Header isMobile={isMobile}></Header>
 
