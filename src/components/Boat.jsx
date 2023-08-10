@@ -6,6 +6,7 @@ import { Vector3 } from 'three'
 import { updateCamera } from '../utils/camera'
 import { easings, useSpring } from '@react-spring/web'
 import Hero from './Hero'
+import { RigidBody } from '@react-three/rapier'
 
 const Boat = ({
   positions = [
@@ -15,6 +16,7 @@ const Boat = ({
   ...props
 }) => {
   const boatRef = useRef()
+  const platformRef = useRef()
   const setScene = usePlayerStore((state) => state.setScene)
   const sceneRef = useRef(usePlayerStore.getState().scene)
   const { nodes, materials } = useGLTF('../assets/models/Boat.glb')
@@ -30,6 +32,15 @@ const Boat = ({
       // console.debug('[Boat] onChange', value)
       boatRef.current.position.x = value.x
       boatRef.current.position.y = value.y
+
+      // translate rigidBody
+      platformRef.current.setNextKinematicTranslation({
+        x: value.x,
+        y: positions[0][1] - 0.35,
+        z: boatRef.current.position.z,
+      })
+
+      // platformRef.current.position.y = value.y - 0.35
     },
   }))
 
@@ -92,31 +103,55 @@ const Boat = ({
   console.log('[Boat]', sceneRef.current)
 
   return (
-    <group {...props} position={positions[0]} dispose={null} ref={boatRef}>
-      <group position={[-0.17, 0.12, 0.03]} rotation={[0, 3, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane016.geometry}
-          material={materials.Metal}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane016_1.geometry}
-          material={materials.Sale}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane016_2.geometry}
-          material={materials.Wood}
-        />
-      </group>
-      {/* <Suspense fallback={null}>
+    <>
+      <RigidBody
+        type="kinematicPosition"
+        ref={platformRef}
+        friction={100}
+        restitution={0}
+        position={[positions[0][0], positions[0][1] - 0.35, positions[0][2]]}
+      >
+        <group>
+          <mesh>
+            <boxGeometry args={[5, 0.5, 5]} />
+            <meshBasicMaterial transparent opacity={0} color="blue" />
+          </mesh>
+          <mesh position={[0.5, 0, 0]}>
+            <boxGeometry args={[0.5, 4, 2]} />
+            <meshBasicMaterial transparent opacity={0} color="red" />
+          </mesh>
+          <mesh position={[-1, 0, 0]}>
+            <boxGeometry args={[0.5, 4, 2]} />
+            <meshBasicMaterial transparent opacity={0} color="red" />
+          </mesh>
+        </group>
+      </RigidBody>
+      <group {...props} position={positions[0]} dispose={null} ref={boatRef}>
+        <group position={[-0.17, 0.12, 0.03]} rotation={[0, 3, 0]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane016.geometry}
+            material={materials.Metal}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane016_1.geometry}
+            material={materials.Sale}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane016_2.geometry}
+            material={materials.Wood}
+          />
+        </group>
+        {/* <Suspense fallback={null}>
         <Hero position={[0, -0.15, 0]} scale={0.25} />
       </Suspense> */}
-    </group>
+      </group>
+    </>
   )
 }
 

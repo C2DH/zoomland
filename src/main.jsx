@@ -26,8 +26,10 @@ const scene = usePlayerStore.getState().scene
 // set fresh state to start scene
 usePlayerStore.setState({ isCollectingChapter: false, scene: Start, isCollectingQuest: false })
 
-if (scene !== Gameplay) {
-  setTimeout(setIntroTimeout, 6000)
-} else {
-  setTimeout(setIntroTimeout, 2000)
-}
+setTimeout(setIntroTimeout, 2000)
+
+// if (scene !== Gameplay) {
+//   setTimeout(setIntroTimeout, 6000)
+// } else {
+//   setTimeout(setIntroTimeout, 2000)
+// }

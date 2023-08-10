@@ -1,4 +1,5 @@
 import { Gameplay, OpenSea, Start, usePlayerStore } from '../store'
+import { useQueueStore } from '../store/preload'
 import { useEffect } from 'react'
 import { useSpring, useSprings, a } from '@react-spring/web'
 import Quest from './Quest'
@@ -14,6 +15,7 @@ const IntroQuest = {
 
 const SkipIntro = () => {
   const [scene, setScene] = usePlayerStore((state) => [state.scene, state.setScene])
+  const isLoadingComplete = useQueueStore((state) => state.isLoadingComplete)
   const [style, api] = useSpring(() => ({
     opacity: 1,
   }))
@@ -35,16 +37,20 @@ const SkipIntro = () => {
     }
   }, [scene])
 
+  useEffect(() => {
+    console.debug('[SkipIntro] isLoadingComplete', isLoadingComplete)
+  }, [isLoadingComplete])
+
   return (
     <a.div style={style} className="SkipIntro">
-      {scene === Start ? (
+      {scene === Start && isLoadingComplete ? (
         <Quest
-          initialDelay={20000}
+          initialDelay={100}
           quest={IntroQuest}
           onComplete={onIntroQuestComplete}
           onCompleteLabel="Let's get to the harbour!"
         />
-      ) : (
+      ) : isLoadingComplete ? (
         <button
           className="btn btn-block btn-primary btn-lg"
           onClick={() => setScene(scene === Start ? OpenSea : Gameplay)}
@@ -53,7 +59,7 @@ const SkipIntro = () => {
           {scene === OpenSea && <span>Let's get to the island!</span>}
           {scene}
         </button>
-      )}
+      ) : null}
     </a.div>
   )
 }

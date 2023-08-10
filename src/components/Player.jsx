@@ -12,6 +12,7 @@ import {
   DefaultPlayerAngle,
   DefaultPlayerPosition,
   Gameplay,
+  Start,
   useAnimationStore,
   usePlayerStore,
   useWorldStore,
@@ -55,9 +56,6 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
 
   const scene = usePlayerStore((state) => state.scene)
 
-  // Fetch initial state
-  const isLoadingCompleteRef = useRef(useQueueStore.getState().isLoadingComplete)
-
   useEffect(() => {
     console.debug(
       '[Player] @useEffect',
@@ -76,6 +74,10 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
   useEffect(() => {
     if (scene === 'gameplay') {
       console.debug('[Player] @useEffect - reset player position')
+      translateTo(new Vector3(...initialPlayerPosition))
+    } else if (scene === Start) {
+      translateTo(new Vector3(...[123.6, -1.6, -10.2]))
+      return
     }
   }, [scene])
 
@@ -146,26 +148,27 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
     updateCamera(state.camera, { target: characterWorldPosition, delta, angle: angle.current })
   }
 
-  const resetPosition = () => {
-    console.debug('[Player] @resetPosition')
+  const translateTo = (v) => {
+    console.debug('[Player] @translateTo', v)
     // reset position
     rigidbody.current.resetForces(true)
     rigidbody.current.setLinvel(new Vector3(0, 0, 0), true)
     rigidbody.current.setGravityScale(0)
-    rigidbody.current.setTranslation(new Vector3(...position), true)
+    rigidbody.current.setTranslation(v, true)
     rigidbody.current.setGravityScale(1)
   }
 
   useFrame((state, delta) => {
     if (!rigidbody.current) return
-    const shouldStayStill = isCollectingQuest || isCollectingChapter
+    const shouldStayStill = isCollectingQuest || isCollectingChapter || scene !== Gameplay
     // check velocity
     const linvel = rigidbody.current.linvel()
 
     if (linvel.y < -FreeFallLinvel || linvel.y > FreeFallLinvel) {
-      resetPosition()
+      translateTo(new Vector3(...position))
       return
     }
+
     if (isMobile) {
       movePlayerWithJoystick(state, delta, shouldStayStill)
       return
