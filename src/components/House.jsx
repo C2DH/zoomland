@@ -1,5 +1,6 @@
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
+import { getFrontSideMaterial } from '../utils/common'
 
 const House = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
   const { nodes, materials } = useGLTF('../assets/models/House.glb')
@@ -19,19 +20,19 @@ const House = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
           castShadow
           receiveShadow
           geometry={nodes.House_1.geometry}
-          material={materials.Walls}
+          material={getFrontSideMaterial(materials.Walls)}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.House_2.geometry}
-          material={materials.Roof}
+          material={getFrontSideMaterial(materials.Roof)}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.House_3.geometry}
-          material={materials.Glass}
+          material={getFrontSideMaterial(materials.Glass)}
         />
         <mesh
           castShadow

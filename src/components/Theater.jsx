@@ -1,5 +1,6 @@
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
+import { getFrontSideMaterial } from '../utils/common'
 
 const Theater = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Theater.glb')
@@ -23,7 +24,7 @@ const Theater = ({ debug = true, ...props }) => {
           castShadow
           receiveShadow
           geometry={nodes.THEATER_2.geometry}
-          material={materials.Walls}
+          material={getFrontSideMaterial(materials.Walls)}
         />
         <mesh
           castShadow

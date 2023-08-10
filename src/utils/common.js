@@ -1,3 +1,5 @@
+import { FrontSide } from 'three'
+
 export const debounce = (callback, wait) => {
   let timeoutId = null
   return (...args) => {
@@ -6,4 +8,9 @@ export const debounce = (callback, wait) => {
       callback.apply(null, args)
     }, wait)
   }
+}
+
+export const getFrontSideMaterial = (material) => {
+  material.side = FrontSide
+  return material
 }

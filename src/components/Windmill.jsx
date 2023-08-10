@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { RigidBody } from '@react-three/rapier'
+import { getFrontSideMaterial } from '../utils/common'
 
 const Windmill = ({ debug = true, ...props }) => {
   const fanRotation = useRef()
@@ -30,25 +31,55 @@ const Windmill = ({ debug = true, ...props }) => {
         <mesh castShadow receiveShadow geometry={nodes.Fan_2.geometry} material={materials.Walls} />
         <mesh castShadow receiveShadow geometry={nodes.Fan_3.geometry} material={materials.Metal} />
       </group>
-      <mesh castShadow receiveShadow geometry={nodes.Shad_1.geometry} material={materials.Metal} />
-      <mesh castShadow receiveShadow geometry={nodes.Shad_2.geometry} material={materials.Walls} />
-      <mesh castShadow receiveShadow geometry={nodes.Shad_3.geometry} material={materials.Blue} />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Shad_1.geometry}
+        material={getFrontSideMaterial(materials.Metal)}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Shad_2.geometry}
+        material={getFrontSideMaterial(materials.Walls)}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Shad_3.geometry}
+        material={getFrontSideMaterial(materials.Blue)}
+      />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Shad_4.geometry}
-        material={materials.Material}
+        material={getFrontSideMaterial(materials.Material)}
       />
-      <mesh castShadow receiveShadow geometry={nodes.Shad_5.geometry} material={materials.Wood} />
-      <mesh castShadow receiveShadow geometry={nodes.House_1.geometry} material={materials.Blue} />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Shad_5.geometry}
+        material={getFrontSideMaterial(materials.Wood)}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.House_1.geometry}
+        material={getFrontSideMaterial(materials.Blue)}
+      />
       <mesh castShadow receiveShadow geometry={nodes.House_2.geometry} material={materials.Metal} />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.House_3.geometry}
-        material={materials.Material}
+        material={getFrontSideMaterial(materials.Material)}
       />
-      <mesh castShadow receiveShadow geometry={nodes.House_4.geometry} material={materials.Wood} />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.House_4.geometry}
+        material={getFrontSideMaterial(materials.Wood)}
+      />
     </group>
   )
 }

@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
+import { getFrontSideMaterial } from '../utils/common'
+
 const FirTree = (props) => {
   const treeRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/FirTree.glb')
@@ -13,6 +15,7 @@ const FirTree = (props) => {
     treeRef.current.rotation.z = bendFactor * 0.1
     treeRef.current.rotation.y = bendFactor * 0.15
   })
+
   return (
     <group {...props} dispose={null} ref={treeRef}>
       <mesh
@@ -28,13 +31,13 @@ const FirTree = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Sphere_1.geometry}
-          material={materials.Green}
+          material={getFrontSideMaterial(materials.Green)}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Sphere_2.geometry}
-          material={materials.LightGreen}
+          material={getFrontSideMaterial(materials.LightGreen)}
         />
       </group>
     </group>

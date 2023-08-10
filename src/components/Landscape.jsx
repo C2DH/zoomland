@@ -7,6 +7,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody, CuboidCollider } from '@react-three/rapier'
 import { useQueueStore } from '../store/preload'
 import { useEffect } from 'react'
+import { FrontSide, MeshStandardMaterial } from 'three'
 
 const Landscape = ({ debug = false, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
@@ -18,6 +19,11 @@ const Landscape = ({ debug = false, ...props }) => {
     }, 2000)
     return () => clearTimeout(timer)
   }, [])
+
+  const landMaterial = new MeshStandardMaterial({
+    ...materials.Land,
+    // side: FrontSide,
+  })
 
   return (
     <>
@@ -36,7 +42,7 @@ const Landscape = ({ debug = false, ...props }) => {
             castShadow
             receiveShadow
             geometry={nodes.Map.geometry}
-            material={materials.Land}
+            material={landMaterial}
             position={[0, 0.047, 0]}
           />
           <mesh

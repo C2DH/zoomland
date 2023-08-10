@@ -1,5 +1,6 @@
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
+import { getFrontSideMaterial } from '../utils/common'
 
 const SwedishHorse = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/SwedishHorse.glb')
@@ -20,7 +21,7 @@ const SwedishHorse = ({ debug = true, ...props }) => {
         castShadow
         receiveShadow
         geometry={nodes.horse_LP_phong1_0.geometry}
-        material={materials.HorseBaseColor}
+        material={getFrontSideMaterial(materials.HorseBaseColor)}
         scale={0.09}
       />
     </group>

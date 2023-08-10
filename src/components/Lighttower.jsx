@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
+import { getFrontSideMaterial } from '../utils/common'
 
 const Lighttower = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Lighttower.glb')
@@ -16,13 +16,13 @@ const Lighttower = ({ debug = true, ...props }) => {
         castShadow
         receiveShadow
         geometry={nodes.Lighthouse.geometry}
-        material={materials.Walls}
+        material={getFrontSideMaterial(materials.Walls)}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Lighthouse_1.geometry}
-        material={materials.Red}
+        material={getFrontSideMaterial(materials.Red)}
       />
       <mesh
         castShadow
@@ -34,7 +34,7 @@ const Lighttower = ({ debug = true, ...props }) => {
         castShadow
         receiveShadow
         geometry={nodes.Lighthouse_3.geometry}
-        material={materials.Base}
+        material={getFrontSideMaterial(materials.Base)}
       />
     </group>
   )

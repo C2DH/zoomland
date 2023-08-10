@@ -18,7 +18,7 @@ const BigTree = ({ debug = true, ...props }) => {
     <group {...props} dispose={null} ref={treeRef}>
       <RigidBody type={'fixed'} colliders={'hull'}>
         <mesh position={[0, 0, 0]} rotation={[0, -0.01, 0]}>
-          <boxGeometry args={[0.6, 3.2, 0.6]} />
+          <boxGeometry args={[0, 3.2, 0.6]} />
           <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
         </mesh>
       </RigidBody>

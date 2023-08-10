@@ -1,5 +1,6 @@
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
+import { getFrontSideMaterial } from '../utils/common'
 
 const Arch = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Arch.glb')
@@ -15,7 +16,12 @@ const Arch = ({ debug = true, ...props }) => {
           <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
         </mesh>
       </RigidBody>
-      <mesh castShadow receiveShadow geometry={nodes.Arch.geometry} material={materials.pierre} />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Arch.geometry}
+        material={getFrontSideMaterial(materials.pierre)}
+      />
     </group>
   )
 }
