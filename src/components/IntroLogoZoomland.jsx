@@ -1,12 +1,10 @@
 import React, { useRef, useEffect } from 'react'
-import { MenuClosed, MenuOpen, useMenuStore } from '../store'
-
 import Lottie from 'react-lottie'
 
 const res = await fetch('./assets/json/zoomland-logo.json')
 const animationData = await res.json()
 
-const IntroLogoZoomland = ({ delay = 1000, width, startAnimation = true }) => {
+const IntroLogoZoomland = ({ delay = 500, width, startAnimation = true }) => {
   const lottieRef = useRef()
   const timerRef = useRef()
 

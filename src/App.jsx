@@ -36,18 +36,18 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div
-        className="Lottie-animation"
+        className="Lottie-animation fade-out"
         style={{
           zIndex: '7',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          width: '30vw',
-          marginLeft: '35vw',
+          width: isMobile ? '70vw' : '60vw',
+          marginLeft: isMobile ? '15vw' : '20vw',
           position: 'relative',
         }}
       >
-        <IntroLogoZoomland delay={6000} startAnimation />
+        <IntroLogoZoomland delay={4800} startAnimation />
       </div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>

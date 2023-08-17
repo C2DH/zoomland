@@ -62,7 +62,7 @@ const SideMenu = () => {
           />
         </div>
         <div style={{ marginTop: '0.6rem' }}>
-          <IntroLogoZoomland width={240} startAnimation={menuStatus === MenuOpen} />
+          <IntroLogoZoomland width={220} startAnimation={menuStatus === MenuOpen} />
 
           {/* <LogoZoomland color={'var(--pale-orange)'} /> */}
         </div>

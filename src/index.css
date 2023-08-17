@@ -123,3 +123,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.fade-out {
+  opacity: 1; /* Initial opacity */
+  animation: 2s fadeOutAnimation  ease 8s forwards;
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    display: none !important;
+  }
+}
