@@ -35,8 +35,20 @@ function App() {
   console.debug('[app] render')
   return (
     <QueryClientProvider client={queryClient}>
-      <IntroLogoZoomland />
-
+      <div
+        className="Lottie-animation"
+        style={{
+          zIndex: '7',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '30vw',
+          marginLeft: '35vw',
+          position: 'relative',
+        }}
+      >
+        <IntroLogoZoomland delay={6000} startAnimation />
+      </div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>
 

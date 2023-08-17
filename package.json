@@ -24,6 +24,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-joystick-component": "^6.2.1",
+    "react-lottie": "^1.2.3",
     "react-router-dom": "^6.11.1",
     "three": "^0.152.2",
     "use-sound": "^4.0.1",
