@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@phosphor-icons/react": "^2.0.10",
     "@react-spring/web": "^9.7.2",
     "@react-three/drei": "^9.66.6",
@@ -19,10 +18,8 @@
     "@tanstack/react-query": "^4.29.7",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
-    "lottie-react": "^2.4.0",
     "r3f-perf": "^7.1.2",
     "react": "^18.2.0",
-    "react-bodymovin": "^2.0.0",
     "react-bootstrap": "^2.7.4",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",

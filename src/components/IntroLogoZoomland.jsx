@@ -1,4 +1,3 @@
-// import LogoZoomland from './Svg/LogoZoomland'
 import React, { useRef, useEffect } from 'react'
 import { MenuClosed, MenuOpen, useMenuStore } from '../store'
 
@@ -6,35 +5,33 @@ import Lottie from 'react-lottie'
 
 const res = await fetch('./assets/json/zoomland-logo.json')
 const animationData = await res.json()
-const IntroLogoZoomland = ({ timeOut, width, speed = 0.1 }) => {
+
+const IntroLogoZoomland = ({ delay = 1000, width, startAnimation = true }) => {
   const lottieRef = useRef()
+  const timerRef = useRef()
 
   useEffect(() => {
-    setTimeout(() => {
-      lottieRef.current.play()
-
-      console.log(speed, 'complete')
-    }, timeOut)
-  }, [])
+    clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
+      if (startAnimation) {
+        lottieRef.current.stop()
+        lottieRef.current.play()
+      }
+    }, delay)
+    return () => {
+      clearTimeout(timerRef.current)
+    }
+  }, [startAnimation])
 
   const defaultOptions = {
     loop: false,
     autoplay: false,
-    animationData: JSON.parse(JSON.stringify(animationData)),
+    animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
-      viewBoxOnly: true,
     },
   }
 
-  return (
-    <Lottie
-      width={width}
-      options={defaultOptions}
-      speed={speed}
-      ref={lottieRef}
-      style={{ transformOrigin: 'left' }}
-    />
-  )
+  return <Lottie width={width} options={defaultOptions} ref={lottieRef} />
 }
 export default IntroLogoZoomland

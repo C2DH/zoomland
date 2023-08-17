@@ -62,9 +62,8 @@ const SideMenu = () => {
           />
         </div>
         <div style={{ marginTop: '0.6rem' }}>
-          {menuStatus === MenuOpen ? (
-            <IntroLogoZoomland width={240} timeOut={2} speed={0.1} />
-          ) : null}
+          <IntroLogoZoomland width={240} startAnimation={menuStatus === MenuOpen} />
+
           {/* <LogoZoomland color={'var(--pale-orange)'} /> */}
         </div>
         {/* <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>

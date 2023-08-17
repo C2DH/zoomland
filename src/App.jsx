@@ -47,7 +47,7 @@ function App() {
           position: 'relative',
         }}
       >
-        <IntroLogoZoomland timeOut={8000} speed={0.1} />
+        <IntroLogoZoomland delay={6000} startAnimation />
       </div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>
