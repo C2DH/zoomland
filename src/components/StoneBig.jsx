@@ -6,7 +6,7 @@ const StoneBig = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
   const { nodes, materials } = useGLTF('../assets/models/StoneBig.glb')
   return (
     <>
-      <RigidBody colliders={'hull'} type={'fixed'}>
+      <RigidBody colliders={'hull'} type={'fixed'} castShadow receiveShadow>
         <mesh position={geometryPosition}>
           <cylinderGeometry />
           <meshStandardMaterial
@@ -21,7 +21,7 @@ const StoneBig = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
             castShadow
             receiveShadow
             geometry={nodes.Icosphere012.geometry}
-            material={getFrontSideMaterial(materials.pierre)}
+            material={materials.pierre}
           />
         </group>
       </RigidBody>

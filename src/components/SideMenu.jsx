@@ -19,6 +19,7 @@ import {
   Start,
   useWorldStore,
 } from '../store'
+import IntroLogoZoomland from './IntroLogoZoomland'
 
 const SideMenu = () => {
   const { pathname } = useLocation()
@@ -61,7 +62,10 @@ const SideMenu = () => {
           />
         </div>
         <div style={{ marginTop: '0.6rem' }}>
-          <LogoZoomland color={'var(--pale-orange)'} />
+          {menuStatus === MenuOpen ? (
+            <IntroLogoZoomland width={240} timeOut={2} speed={0.1} />
+          ) : null}
+          {/* <LogoZoomland color={'var(--pale-orange)'} /> */}
         </div>
         {/* <button className="btn btn-primary" onClick={saveInitialPropsToPlayerStore}>
             save

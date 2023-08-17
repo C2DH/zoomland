@@ -16,7 +16,7 @@ const Forest = ({ positions = [], maxScale = 2, scales = {}, children }) => {
         return (
           <React.Fragment key={index}>
             <RigidBody colliders="cuboid" position={position} scale={[1, 20, 1]} type="fixed">
-              <mesh>
+              <mesh castShadow receiveShadow>
                 <boxGeometry args={[0.6, 0.6, 0.6]} />
                 <meshStandardMaterial color="blue" opacity={0} transparent></meshStandardMaterial>
               </mesh>

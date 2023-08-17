@@ -8,7 +8,7 @@ const Theater = ({ debug = true, ...props }) => {
   return (
     <group {...props} dispose={null}>
       <RigidBody type={'fixed'} colliders={'hull'}>
-        <mesh position={[0, 0, 0]} rotation={[0, -0.01, 0]}>
+        <mesh position={[0, 0, 0]} rotation={[0, -0.01, 0]} castShadow receiveShadow>
           <boxGeometry args={[4.65, 3.2, 2.6]} />
           <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
         </mesh>
