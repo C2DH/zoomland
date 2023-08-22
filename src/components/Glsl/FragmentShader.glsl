@@ -2,6 +2,7 @@
 
 varying vec2 vUv;//receive UV from Vertex material
 uniform float uTime;
+uniform float wavesComplecity;
 
 //Random function
 float random (vec2 st) {
@@ -218,11 +219,13 @@ void main ()
 
 
 //sharp Noise substracted 
-float strenght = 1.0 - step(0.1, sin(cnoise(((vUv * 20.0)) * sin(uTime / 40.0))) );
+
+
+float strenght = cos(cnoise(vUv * wavesComplecity) * 5.0);
 strenght = clamp(strenght, 0.0, 1.0); // will not give the color to have blending areas
 
-vec3 waveColor = vec3(0.5, 0.85, 0.95);
-vec3 waterColor = vec3(0.6, 0.95, 0.97);
+vec3 waveColor = vec3(0.3, 0.55, 0.9);
+vec3 waterColor = vec3(0.3, 0.65, 0.9);
 vec3 mixedColor = mix(waveColor, waterColor, strenght);
 
     gl_FragColor = vec4(mixedColor, 1.0); //Color gradient B&W

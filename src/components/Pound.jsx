@@ -9,7 +9,7 @@ console.log(VertexShader, 'VertexShader')
 
 const WaveShaderMaterial = shaderMaterial(
   //Uniform
-  { uTime: 0 },
+  { uTime: 0.0, wavesComplecity: 4.0 },
   //Vertex Shader
   VertexShader,
   //Fragment shader
@@ -21,7 +21,7 @@ const Pound = () => {
   const mesh = useRef()
   const shaderMaterialRef = useRef()
 
-  useFrame(({ clock }) => (shaderMaterialRef.current.uTime = clock.getElapsedTime()))
+  useFrame(({ clock }) => (shaderMaterialRef.current.uTime = clock.getElapsedTime() / 200))
 
   return (
     <Plane
