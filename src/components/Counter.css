@@ -58,6 +58,7 @@
 
 .Counter_stars {
   position: absolute;
+  pointer-events: none;
   left: 50%;
   margin-left: -100px;
   top: -30px;

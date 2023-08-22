@@ -33,7 +33,7 @@ const Chapters = () => {
             <Col key={chapter.id} xs={12} md={6} lg={4} xl={3} xxl={3} className="mb-4">
               <ChapterCard
                 chapter={chapter}
-                legacynotFound={!collectedChapters.some((d) => d.id === chapter.id)}
+                notFound={!collectedChapters.some((d) => d.id === chapter.id)}
               />
               {/* <ChapterListItem chapter={chapter} /> */}
             </Col>

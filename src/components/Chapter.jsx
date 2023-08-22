@@ -49,7 +49,7 @@ const Chapter = ({ chapter }) => {
   if (!data) return 'loading...'
   return (
     <>
-      <animated.div style={props}>YOU FOUND IT!!!!</animated.div>
+      <animated.div style={props}>You've got one chapter!</animated.div>
       {data.n > 0}
       {isCollected ? '✅' : 'NEW!!!'}
       Chapter {data.n}
