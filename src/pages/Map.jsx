@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 import { useWorldStore } from '../store'
 import RoundButton from '../components/RoundButton'
 import CloseIcon from '../components/Svg/CloseIcon'
-import { GradientTexture, shaderMaterial } from '@react-three/drei'
+import OceanWater from '../components/OceanWater'
 import { MeshStandardMaterial } from 'three'
 import GroundViewSign from '../components/GroundViewSign'
 import BirdEyeViewSign from '../components/BirdEyeViewSign'
 import OverheadViewSign from '../components/OverheadViewSign'
 
 const Map = () => {
-  const { nodes, materials } = useGLTF('../assets/models/Map.glb')
+  const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
   const playerPosition = useWorldStore((state) => state.playerPosition)
   const d = 10
   const s = 0.8
@@ -73,164 +73,182 @@ const Map = () => {
         />
         {/* //Pick color - Media #fa953b, History - #306fc5, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #333333 */}
         {/* //Windmill */}
-        <OverheadViewSign
-          animation={false}
-          scale={s}
-          position={[53.68 / d, 20.77 / d + 0.25, -83.85 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#ed407d'}
-        />
-        {/* Megaphone */}
-        <GroundViewSign
-          animation={false}
-          scale={s}
-          position={[64.8 / d, 5.75 / d + 0.25, -49.23 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#9e43c8'}
-        />
-        {/* Zepplin */}
-        <BirdEyeViewSign
-          animation={false}
-          scale={s}
-          position={[40.3 / d, 13.23 / d + 0.25, -51.82 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#306fc5'}
-        />
-        {/* Swidish Horse */}
-        <GroundViewSign
-          animation={false}
-          scale={s}
-          position={[70.29 / d, 12.6 / d + 0.25, 45.45 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#fa953b'}
-        />
-        {/* Banjo */}
-        <GroundViewSign
-          animation={false}
-          scale={s}
-          position={[60.19 / d, 12.66 / d + 0.25, 79.34 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#306fc5'}
-        />
-        {/* Windmill */}
-        <OverheadViewSign
-          animation={false}
-          scale={s}
-          position={[-56.74 / d, 27.03 / d + 0.25, -58.56 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#306fc5'}
-        />
-        {/* Arch */}
-        <OverheadViewSign
-          animation={false}
-          scale={s}
-          position={[3 / d, 13.06 / d + 0.25, -65.63 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#9e43c8'}
-        />
-        {/* Windsoack */}
-        <GroundViewSign
-          animation={false}
-          scale={s}
-          position={[5.7 / d, 9.28 / d + 0.25, 65.96 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#ed407d'}
-        />
-        {/* Umbrella */}
-        <OverheadViewSign
-          animation={false}
-          scale={s}
-          position={[-23.23 / d, -0.55 / d + 0.25, 60.58 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#fa953b'}
-        />
-        {/* Balloon */}
-        <BirdEyeViewSign
-          animation={false}
-          scale={s}
-          position={[-24.24 / d, 0.14 / d + 0.25, 47.57 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#306fc5'}
-        />
-        {/* Fishnet */}
-        <BirdEyeViewSign
-          animation={false}
-          scale={s}
-          position={[1.89 / d, -3.19 / d + 0.45, -29.69 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#ed407d'}
-        />
-        {/* Theatre */}
-        <OverheadViewSign
-          animation={false}
-          scale={s}
-          position={[-12.07 / d, -0.66 / d + 0.25, 6.83 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#9e43c8'}
-        />
-        {/* Tower */}
-        <OverheadViewSign
-          animation={false}
-          scale={s}
-          position={[-24.31 / d, -0.68 / d + 0.25, -6.94 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#fa953b'}
-        />
-        {/* Tree */}
-        <OverheadViewSign
-          animation={false}
-          scale={s}
-          position={[-53.76 / d, 0.23 / d + 0.25, -17.61 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#9e43c8'}
-        />
-        {/* UFO */}
-        <BirdEyeViewSign
-          animation={false}
-          scale={s}
-          position={[-76.46 / d, 9.6 / d + 0.25, 21.35 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#ed407d'}
-        />
-        {/* Radar */}
-        <GroundViewSign
-          animation={false}
-          scale={s}
-          position={[-72.07 / d, 9.58 / d + 0.25, 62.05 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#fa953b'}
-        />
-        {/* Harbor */}
-        <BirdEyeViewSign
-          animation={false}
-          scale={s}
-          position={[89.49 / d, 0.33 + 0.25, -15.27 / d]}
-          rotation={[0, 0.4, 0]}
-          color={'#333333'}
-        />
-
-        <mesh
-          position={[playerPosition[0] / 10, playerPosition[1] / 10 + 0.2, playerPosition[2] / 10]}
-          scale={0.5}
-        >
-          <coneGeometry args={[1, 2, 8]} />
-          <meshStandardMaterial color="red" />
-        </mesh>
-        <group dispose={null}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Text.geometry}
-            material={zoomlandMaterial}
-            position={[-8.516, 6.093, -7.628]}
-            rotation={[Math.PI / 2, 0, -0.918]}
+        <group dispose={null} position={[0, 2, 0]}>
+          <OverheadViewSign
+            animation={false}
+            scale={s}
+            position={[53.68 / d, 20.77 / d + 0.25, -83.85 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#ed407d'}
           />
-          <mesh castShadow receiveShadow geometry={nodes.Map.geometry} material={mapMaterial} />
+          {/* Megaphone */}
+          <GroundViewSign
+            animation={false}
+            scale={s}
+            position={[64.8 / d, 5.75 / d + 0.25, -49.23 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#9e43c8'}
+          />
+          {/* Zepplin */}
+          <BirdEyeViewSign
+            animation={false}
+            scale={s}
+            position={[40.3 / d, 13.23 / d + 0.25, -51.82 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#306fc5'}
+          />
+          {/* Swidish Horse */}
+          <GroundViewSign
+            animation={false}
+            scale={s}
+            position={[70.29 / d, 12.6 / d + 0.25, 45.45 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#fa953b'}
+          />
+          {/* Banjo */}
+          <GroundViewSign
+            animation={false}
+            scale={s}
+            position={[60.19 / d, 12.66 / d + 0.25, 79.34 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#306fc5'}
+          />
+          {/* Windmill */}
+          <OverheadViewSign
+            animation={false}
+            scale={s}
+            position={[-56.74 / d, 27.03 / d + 0.25, -58.56 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#306fc5'}
+          />
+          {/* Arch */}
+          <OverheadViewSign
+            animation={false}
+            scale={s}
+            position={[3 / d, 13.06 / d + 0.25, -65.63 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#9e43c8'}
+          />
+          {/* Windsoack */}
+          <GroundViewSign
+            animation={false}
+            scale={s}
+            position={[5.7 / d, 9.28 / d + 0.25, 65.96 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#ed407d'}
+          />
+          {/* Umbrella */}
+          <OverheadViewSign
+            animation={false}
+            scale={s}
+            position={[-23.23 / d, -0.55 / d + 0.25, 60.58 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#fa953b'}
+          />
+          {/* Balloon */}
+          <BirdEyeViewSign
+            animation={false}
+            scale={s}
+            position={[-24.24 / d, 0.14 / d + 0.25, 47.57 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#306fc5'}
+          />
+          {/* Fishnet */}
+          <BirdEyeViewSign
+            animation={false}
+            scale={s}
+            position={[1.89 / d, -3.19 / d + 0.45, -29.69 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#ed407d'}
+          />
+          {/* Theatre */}
+          <OverheadViewSign
+            animation={false}
+            scale={s}
+            position={[-12.07 / d, -0.66 / d + 0.25, 6.83 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#9e43c8'}
+          />
+          {/* Tower */}
+          <OverheadViewSign
+            animation={false}
+            scale={s}
+            position={[-24.31 / d, -0.68 / d + 0.25, -6.94 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#fa953b'}
+          />
+          {/* Tree */}
+          <OverheadViewSign
+            animation={false}
+            scale={s}
+            position={[-53.76 / d, 0.23 / d + 0.25, -17.61 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#9e43c8'}
+          />
+          {/* UFO */}
+          <BirdEyeViewSign
+            animation={false}
+            scale={s}
+            position={[-76.46 / d, 9.6 / d + 0.25, 21.35 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#ed407d'}
+          />
+          {/* Radar */}
+          <GroundViewSign
+            animation={false}
+            scale={s}
+            position={[-72.07 / d, 9.58 / d + 0.25, 62.05 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#fa953b'}
+          />
+          {/* Harbor */}
+          <BirdEyeViewSign
+            animation={false}
+            scale={s}
+            position={[89.49 / d, 0.33 + 0.25, -15.27 / d]}
+            rotation={[0, 0.4, 0]}
+            color={'#333333'}
+          />
+
+          <mesh
+            position={[
+              playerPosition[0] / 10,
+              playerPosition[1] / 10 + 0.2,
+              playerPosition[2] / 10,
+            ]}
+            scale={0.5}
+          >
+            <coneGeometry args={[1, 2, 8]} />
+            <meshStandardMaterial color="red" />
+          </mesh>
+
+          <group dispose={null}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Harbor.geometry}
+              material={mapMaterial}
+              position={[9.121, 0.12, -1.451]}
+              rotation={[0, 1.565, 0]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Map.geometry}
+              material={mapMaterial}
+              position={[0, 0.047, 0]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Text.geometry}
+              material={zoomlandMaterial}
+              position={[-8.516, 6.093, -7.628]}
+              rotation={[Math.PI / 2, 0, -0.918]}
+            />
+          </group>
+          <OceanWater />
         </group>
-        <mesh position={[-3, 0, -3]}>
-          <cylinderGeometry args={[20, 20, 0.1, 32]} />
-          <meshStandardMaterial roughness={0.3} color={'#31457C'} toneMapped={true} />
-        </mesh>
         <OrbitControls
           minAzimuthAngle={0}
           maxAzimuthAngle={Math.PI / 2.5}
@@ -248,5 +266,5 @@ const Map = () => {
   )
 }
 
-useGLTF.preload('../assets/models/Map.glb')
+useGLTF.preload('../assets/models/Landscape.glb')
 export default Map
