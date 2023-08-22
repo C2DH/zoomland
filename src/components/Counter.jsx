@@ -48,9 +48,9 @@ export const Counter = () => {
           </div>
         </div>
       </div>
-      <div className="position-absolute">
+      <div className="Counter_stars">
         <Lottie
-          width={300}
+          width={200}
           options={{
             loop: true,
             autoplay: false,

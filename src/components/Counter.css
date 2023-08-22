@@ -56,6 +56,12 @@
   animation: blink 1s linear infinite;
 }
 
+.Counter_stars {
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: -30px;
+}
 @keyframes blink {
   0% {
     opacity: 1;
