@@ -53,3 +53,10 @@
 .DialogueCard-footer button.btn-md {
   font-size: var(--font-size-4);
 }
+
+@media screen and (max-width: 768px) {
+  .DialogueCard {
+    width: 96%;
+    margin-left: 2%;
+  }
+}
