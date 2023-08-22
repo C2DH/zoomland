@@ -47,7 +47,7 @@ function App() {
           position: 'relative',
         }}
       >
-        <IntroLogoZoomland delay={4800} startAnimation />
+        <IntroLogoZoomland delay={3000} id="introLogoZoomland" />
       </div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>

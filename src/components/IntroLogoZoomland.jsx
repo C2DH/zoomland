@@ -1,17 +1,27 @@
 import React, { useRef, useEffect } from 'react'
 import Lottie from 'react-lottie'
+import { useQueueStore } from '../store/preload'
 
 const res = await fetch('./assets/json/zoomland-logo.json')
 const animationData = await res.json()
 
-const IntroLogoZoomland = ({ delay = 500, width, startAnimation = true }) => {
+const IntroLogoZoomland = ({ delay = 500, width, startAnimation = true, id }) => {
   const lottieRef = useRef()
   const timerRef = useRef()
+  const isLoadingComplete = useQueueStore((state) => state.isLoadingComplete)
 
   useEffect(() => {
     clearTimeout(timerRef.current)
+    console.debug(
+      `[IntroLogoZoomland #${id}]`,
+      '@useEffect \n - startAnimation',
+      startAnimation,
+      '\n - isLoadingComplete:',
+      isLoadingComplete,
+    )
     timerRef.current = setTimeout(() => {
-      if (startAnimation) {
+      console.debug(`[IntroLogoZoomland #${id}]`, '@useEffect times up.')
+      if (isLoadingComplete && startAnimation) {
         lottieRef.current.stop()
         lottieRef.current.play()
       }
@@ -19,7 +29,7 @@ const IntroLogoZoomland = ({ delay = 500, width, startAnimation = true }) => {
     return () => {
       clearTimeout(timerRef.current)
     }
-  }, [startAnimation])
+  }, [isLoadingComplete, startAnimation])
 
   const defaultOptions = {
     loop: false,
