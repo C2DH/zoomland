@@ -104,7 +104,6 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
     //   '\n - collisionStatusRef.current:',
     //   collisionStatusRef.current,
     // )
-    textRef.current.text = CheckInText
 
     if (intersectionStatusRef.current == true && collisionStatusRef.current == true) {
       console.debug('[Balloon] checkIn: go up!')
@@ -116,11 +115,6 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
   const checkOut = () => {
     console.debug('[Balloon] checkOut...')
     // baloondemo
-    if (!intersectionStatusRef.current) {
-      textRef.current.text = CheckOutText
-      // demomode
-      // baloonStatusRef.current = GroundNoPlayer
-    }
   }
 
   const takeOff = () => {
@@ -165,23 +159,6 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
         n: yMin,
       })
     }, waitingTime)
-  }
-
-  const countdown = () => {
-    if (!textRef.current) {
-      return
-    }
-    console.debug('[Balloon] countdown...')
-    textRef.current.text = String(waitingTime / 1000)
-    clearInterval(textTimerRef.current)
-    textTimerRef.current = setInterval(() => {
-      if (textRef.current.text === '1') {
-        clearInterval(textTimerRef.current)
-        textRef.current.text = 'Fly!'
-        return
-      }
-      textRef.current.text = (parseInt(textRef.current.text) - 1).toString()
-    }, 1000)
   }
 
   useEffect(() => {
