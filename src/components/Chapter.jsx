@@ -3,16 +3,18 @@ import axios from 'axios'
 import { usePlayerStore } from '../store'
 import { animated, useSpring } from '@react-spring/web'
 import { useEffect } from 'react'
-import { Button } from 'react-bootstrap'
+import RoundButton from './RoundButton'
+import { isMobile } from 'react-device-detect'
 
 const Chapter = ({ chapter }) => {
   const [props, api] = useSpring(() => ({
-    transform: `scale(0)`,
-    from: { transform: `scale(0)` },
+    fontSize: isMobile ? `12vw` : `5vw`,
+    from: { fontSize: `0vw` },
+    color: 'var(--pale-orange)',
     config: {
-      tension: 400, // How much tension is on the spring
-      mass: 2, // The mass of the spring
-      velocity: 5, // The initial speed of the movement
+      tension: 600, // How much tension is on the spring
+      mass: 0.5, // The mass of the spring
+      velocity: 1, // The initial speed of the movement
     },
   }))
 
@@ -28,7 +30,7 @@ const Chapter = ({ chapter }) => {
   useEffect(() => {
     if (!isCollected) {
       api.start({
-        transform: `scale(5)`,
+        fontSize: `3.2vw`,
       })
     }
   }, [isCollected])
@@ -47,18 +49,19 @@ const Chapter = ({ chapter }) => {
   if (!data) return 'loading...'
   return (
     <>
-      <animated.div className="position-absolute" style={props}>
-        YOU FOUND IT!!!!
-      </animated.div>
+      <animated.div style={props}>YOU FOUND IT!!!!</animated.div>
       {data.n > 0}
       {isCollected ? '✅' : 'NEW!!!'}
       Chapter {data.n}
       <h3>{data?.title}</h3>
       <p>{data?.abstract}</p>
       <div className="btn-group">
-        <Button size="lg" variant={'primary'} onClick={doneCollectingChapter}>
-          OOOOKKK!
-        </Button>
+        <RoundButton
+          // Icon={CloseIcon}
+          color={'var(--pale-yellow)'}
+          onClick={doneCollectingChapter}
+          text={' OOOOKKK!'}
+        />
       </div>
     </>
   )
