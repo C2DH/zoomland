@@ -7,6 +7,7 @@ const RoundButton = ({
   color = 'var(--pale-yellow)',
   onClick,
   className = '',
+  text = '',
 }) => {
   return (
     <button
@@ -17,7 +18,10 @@ const RoundButton = ({
         backgroundColor: backgroundColor,
       }}
     >
-      <Icon color={color} />
+      <>
+        {text}
+        {Icon ? <Icon color={color} /> : null}
+      </>
     </button>
   )
 }
