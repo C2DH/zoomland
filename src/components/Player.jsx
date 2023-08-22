@@ -19,9 +19,10 @@ import {
 } from '../store'
 import { updateCamera } from '../utils/camera'
 import { useQueueStore } from '../store/preload'
+import { isMobile } from 'react-device-detect'
 
 const JumpForce = 0.7
-const Speed = 0.4
+const Speed = isMobile ? 1.2 : 0.5
 const MaxVel = 3.5
 const MaxSprintVel = 5
 const FreeFallLinvel = 30
