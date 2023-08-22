@@ -39,7 +39,7 @@ const SkipIntro = () => {
 
   useEffect(() => {
     console.debug('[SkipIntro] isLoadingComplete', isLoadingComplete)
-  }, [isLoadingComplete])
+  }, [scene, isLoadingComplete])
 
   return (
     <a.div style={style} className="SkipIntro">
