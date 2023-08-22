@@ -21,7 +21,7 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
   const collisionStatusRef = useRef(false)
   const intersectionStatusRef = useRef(false)
   // text threejs reference and its countdown timer (if any)
-  const textRef = useRef()
+  // const textRef = useRef()
   const textTimerRef = useRef()
   // balloon status, threejs reference and timer to go up and down
   const baloonStatusRef = useRef(FlyingDown)
@@ -56,22 +56,22 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
       if (baloonStatusRef.current == FlyingUp) {
         // baloonStatusRef.current =
         //   intersectionStatusRef.current && collisionStatusRef.current ? UpWithPlayer : UpNoPlayer
-        writeText('Max altitude reached.')
+        // writeText('Max altitude reached.')
         console.log('[Balloon] should go down now...')
         landing()
       } else if (baloonStatusRef.current == FlyingDown) {
-        writeText('Up...')
+        // writeText('Up...')
         // baloonStatusRef.current = intersectionStatusRef.current ? GroundWithPlayer : GroundNoPlayer
         takeOff()
       }
     },
   }))
 
-  const writeText = (text) => {
-    if (textRef.current) {
-      textRef.current.text = text
-    }
-  }
+  // const writeText = (text) => {
+  //   if (textRef.current) {
+  //     textRef.current.text = text
+  //   }
+  // }
 
   const debounceCollisionEnter = () => {
     clearTimeout(collisionTimerRef.current)
@@ -157,12 +157,10 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
     console.debug('[Balloon] landing...')
     // start the balloon
     clearTimeout(baloonTimerRef.current)
-    textRef.current.text = 'Preparing baloon for landing..'
     baloonStatusRef.current = BeforeFlyingDown
     baloonTimerRef.current = setTimeout(() => {
       console.debug('[Balloon] land!!')
       baloonStatusRef.current = FlyingDown
-      textRef.current.text = '..stand back!'
       api.start({
         n: yMin,
       })
@@ -248,7 +246,7 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
         </mesh>
       </RigidBody>
 
-      <Suspense fallback={null}>
+      {/* <Suspense fallback={null}>
         <group {...props} dispose={null}>
           <Text
             position={[1, 0.5, 0]}
@@ -261,7 +259,7 @@ const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
             {CheckOutText}
           </Text>
         </group>
-      </Suspense>
+      </Suspense> */}
       {/* platform  */}
       {/* <mesh
         position={[props.position[0], props.position[1] - 0.03, props.position[2]]}
