@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import Lottie from 'react-lottie'
 import { useQueueStore } from '../store/preload'
-
-const res = await fetch('./assets/json/zoomland-logo.json')
-const animationData = await res.json()
+import animationData from '../assets/json/zoomland-logo.json'
 
 const IntroLogoZoomland = ({ delay = 500, width, startAnimation = true, id }) => {
   const lottieRef = useRef()
