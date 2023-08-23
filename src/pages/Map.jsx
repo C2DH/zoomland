@@ -1,6 +1,5 @@
-import { Circle, OrbitControls, useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { Link } from 'react-router-dom'
 import { useWorldStore } from '../store'
 import RoundButton from '../components/RoundButton'
 import CloseIcon from '../components/Svg/CloseIcon'
@@ -214,13 +213,13 @@ const Map = () => {
           <mesh
             position={[
               playerPosition[0] / 10,
-              playerPosition[1] / 10 + 0.2,
+              playerPosition[1] / 10 + 0.8,
               playerPosition[2] / 10,
             ]}
-            scale={0.5}
+            scale={0.3}
           >
-            <coneGeometry args={[1, 2, 8]} />
-            <meshStandardMaterial color="red" />
+            <coneGeometry args={[1, 2, 6]} />
+            <meshStandardMaterial color="#ee8600" />
           </mesh>
 
           <group dispose={null}>
