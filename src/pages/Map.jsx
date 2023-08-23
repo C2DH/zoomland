@@ -9,6 +9,7 @@ import { MeshStandardMaterial } from 'three'
 import GroundViewSign from '../components/GroundViewSign'
 import BirdEyeViewSign from '../components/BirdEyeViewSign'
 import OverheadViewSign from '../components/OverheadViewSign'
+import { isMobile } from 'react-device-detect'
 
 const Map = () => {
   const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
@@ -34,7 +35,7 @@ const Map = () => {
         style={{
           marginRight: '0.7rem',
           position: 'absolute',
-          right: 0,
+          right: '1rem',
           top: '1rem',
           zIndex: 'var(--z-index-toggle-sounds)',
         }}
@@ -50,8 +51,8 @@ const Map = () => {
       {/* <h2>
         <Link to="/">back</Link>
       </h2> */}
-      <h1>Map</h1>
-      {JSON.stringify(playerPosition)}
+      <h1 className="m-4">Map</h1>
+      {/* {JSON.stringify(playerPosition)} */}
       <Canvas
         shadows
         camera={{ position: [20.8923846860428, 20.97427986352267, 20.68959842565253] }}
@@ -73,7 +74,7 @@ const Map = () => {
         />
         {/* //Pick color - Media #fa953b, History - #306fc5, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #333333 */}
         {/* //Windmill */}
-        <group dispose={null} position={[0, 2, 0]}>
+        <group dispose={null} position={[0, 2, 0]} scale={isMobile ? 0.7 : 1}>
           <OverheadViewSign
             animation={false}
             scale={s}

@@ -126,7 +126,7 @@ button:focus-visible {
 
 .fade-out {
   opacity: 1; /* Initial opacity */
-  animation: 2s fadeOutAnimation  ease 8s forwards;
+  animation: 3s fadeOutAnimation  ease 9s forwards;
   visibility: visible;
 }
 

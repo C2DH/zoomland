@@ -52,7 +52,7 @@ export const Counter = () => {
         <Lottie
           width={200}
           options={{
-            loop: true,
+            loop: false,
             autoplay: false,
             speed: 20,
             animationData,
@@ -61,6 +61,7 @@ export const Counter = () => {
             },
           }}
           ref={lottieRef}
+          style={{ opacity: '1' }}
         />
       </div>
     </div>

@@ -5,12 +5,12 @@ import { animated, useSpring } from '@react-spring/web'
 import { useEffect } from 'react'
 import RoundButton from './RoundButton'
 import { isMobile } from 'react-device-detect'
+import ChapterCard from './ChapterCard'
 
 const Chapter = ({ chapter }) => {
   const [props, api] = useSpring(() => ({
     fontSize: isMobile ? `12vw` : `5vw`,
     from: { fontSize: `0vw` },
-    color: 'var(--pale-orange)',
     config: {
       tension: 600, // How much tension is on the spring
       mass: 0.5, // The mass of the spring
@@ -49,11 +49,22 @@ const Chapter = ({ chapter }) => {
   if (!data) return 'loading...'
   return (
     <>
-      <animated.div style={props}>You've got one chapter!</animated.div>
-      {data.n > 0}
-      {isCollected ? '✅' : 'NEW!!!'}
-      Chapter {data.n}
-      <h3>{data?.title}</h3>
+      <animated.div
+        style={{
+          lineHeight: '10vh',
+          marginBottom: '2rem',
+          color: 'var(--rose)',
+          ...props,
+        }}
+      >
+        You've got one chapter!
+      </animated.div>
+      <span style={{ color: 'var(--pale-yellow)' }}>
+        {data.n > 0}
+        {isCollected ? '' : 'NEW!!!'}
+        Chapter {data.n}
+      </span>
+      <h3 style={{ color: 'var(--pale-yellow)' }}>{data?.title}</h3>
       <p>{data?.abstract}</p>
       <div className="btn-group">
         <RoundButton

@@ -21,7 +21,7 @@
   text-align: center;
 }
 .ChapterCard h2 {
-  font-size: var(--font-size-6);
+  font-size: var(--font-size-5);
 }
 .ChapterCard h3 {
   font-size: var(--font-size-2);
