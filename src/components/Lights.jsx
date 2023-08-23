@@ -8,7 +8,7 @@ const Lights = ({ color = Dawn }) => {
   const light = useRef()
   useFrame((state) => {
     light.current.position.z = state.camera.position.z
-    light.current.position.x = state.camera.position.x + 20
+    light.current.position.x = state.camera.position.x + 40
     light.current.position.y = state.camera.position.y + 60
   })
   return (
