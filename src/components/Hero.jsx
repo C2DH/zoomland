@@ -8,8 +8,10 @@ import {
   useAnimationStore,
 } from '../store'
 import { MeshStandardMaterial } from 'three'
+import { useTexture } from '@react-three/drei'
 
 const Hero = (props) => {
+  const dressTexture = useTexture('../assets/tex/dress.png')
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Hero.glb')
   const { actions, names } = useAnimations(animations, group)
@@ -28,12 +30,17 @@ const Hero = (props) => {
 
   const skirtMaterial = new MeshStandardMaterial({
     ...materials.Skirt,
-    color: '#11B2CC',
+    color: null,
+    map: dressTexture,
+    roughness: 1,
+    metalness: 1,
+    toneMapped: true,
+    emissive: '#000000',
   })
 
   const headtMaterial = new MeshStandardMaterial({
     ...materials.Head,
-    color: '#FF4336',
+    color: '#ee8600',
   })
 
   useEffect(() => {
@@ -72,6 +79,7 @@ const Hero = (props) => {
               skeleton={nodes.Mesh_1.skeleton}
               castShadow
               receiveShadow
+              toneMapped={false}
             />
             <skinnedMesh
               name="Mesh_2"
