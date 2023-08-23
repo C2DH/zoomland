@@ -9,12 +9,12 @@ import ChapterCard from './ChapterCard'
 
 const Chapter = ({ chapter }) => {
   const [props, api] = useSpring(() => ({
-    fontSize: isMobile ? `12vw` : `5vw`,
-    from: { fontSize: `0vw` },
+    transform: isMobile ? `scale(3)` : `scale(4)`,
+    from: { transform: `scale(0)` },
     config: {
       tension: 600, // How much tension is on the spring
-      mass: 0.5, // The mass of the spring
-      velocity: 1, // The initial speed of the movement
+      mass: 2, // The mass of the spring
+      velocity: 0.01, // The initial speed of the movement
     },
   }))
 
@@ -30,7 +30,7 @@ const Chapter = ({ chapter }) => {
   useEffect(() => {
     if (!isCollected) {
       api.start({
-        fontSize: `3.2vw`,
+        transform: `scale(0)`,
       })
     }
   }, [isCollected])
@@ -51,13 +51,22 @@ const Chapter = ({ chapter }) => {
     <>
       <animated.div
         style={{
-          lineHeight: '10vh',
-          marginBottom: '2rem',
+          lineHeight: '1rem',
+          marginBottom: '2.5rem',
           color: 'var(--rose)',
           ...props,
         }}
       >
-        You've got one chapter!
+        {isMobile ? (
+          <p>
+            You've got <br />
+            one chapter!
+          </p>
+        ) : (
+          <p>
+            You've got <strong>one chapter!</strong>
+          </p>
+        )}
       </animated.div>
       <span style={{ color: 'var(--pale-yellow)' }}>
         {data.n > 0}
