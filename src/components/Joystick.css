@@ -4,3 +4,11 @@
   left: 20px;
   z-index: var(--z-index-joystick);
 }
+
+.Joystick > div {
+  background: var(--pale-yellow) !important;
+}
+
+.Joystick > div button {
+  background: var(--dark-blue) !important;
+}

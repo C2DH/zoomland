@@ -42,8 +42,8 @@ function App() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          width: isMobile ? '70vw' : '60vw',
-          marginLeft: isMobile ? '15vw' : '20vw',
+          width: isMobile ? '70vw' : '50vw',
+          marginLeft: isMobile ? '15vw' : '25vw',
           position: 'relative',
         }}
       >

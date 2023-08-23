@@ -312,7 +312,7 @@ const World = ({
                 debug={false}
               />
               <IcescreamTruck rotation={[0, 1.3, 0]} scale={1.5} position={[-8.7, 0.03, 33.23]} />
-              <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-29.01, 0.07, 53.74]} />
+              <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-29.01, -0.05, 53.74]} />
               <Boat
                 rotation={[0, 0, 0]}
                 scale={[2.5, 2.5, 2.5]}
