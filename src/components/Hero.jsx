@@ -43,6 +43,13 @@ const Hero = (props) => {
     color: '#ee8600',
   })
 
+  const skinMaterial = new MeshStandardMaterial({
+    ...materials.Skin,
+    color: '#b88160',
+    metalness: 0.5,
+    roughness: 1,
+  })
+
   useEffect(() => {
     const action = mappedActions[animation]
     // console.debug('[Hero] animation changed:', animation)
@@ -67,7 +74,7 @@ const Hero = (props) => {
             <skinnedMesh
               name="Mesh"
               geometry={nodes.Mesh.geometry}
-              material={materials.Skin}
+              material={skinMaterial}
               skeleton={nodes.Mesh.skeleton}
               castShadow
               receiveShadow

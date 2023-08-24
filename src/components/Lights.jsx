@@ -15,21 +15,21 @@ const Lights = ({ color = Dawn }) => {
     <>
       <directionalLight
         ref={light}
-        intensity={1}
+        intensity={0.8}
         castShadow
         color={color}
         // position={[40, 10, 25]}
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={[1024, 1024]}
         shadow-camera-near={20}
         shadow-camera-far={150}
-        shadow-camera-top={150}
-        shadow-camera-right={150}
-        shadow-camera-bottom={-150}
-        shadow-camera-left={-150}
+        shadow-camera-top={50}
+        shadow-camera-right={50}
+        shadow-camera-bottom={-50}
+        shadow-camera-left={-50}
         shadow-bias={-0.01}
       />
 
-      <ambientLight intensity={0.12} />
+      {/* <ambientLight intensity={0.08} /> */}
     </>
   )
 }

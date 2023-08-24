@@ -118,6 +118,7 @@ const World = ({
               far={1000}
               // background
               blur={0.08}
+              inte
             />
             <fog attach="fog" color="#E0DCCF" near={20} far={250} />
             {debug && <WorldDashboard />}
