@@ -57,6 +57,7 @@ import Mushrooms from './Mushroom'
 import Prize from './Prize'
 import Butterflies from './butterflies'
 import Scout from './Scout'
+import { useWindowStore } from '../store'
 
 const QuestsById = Quests.reduce((acc, quest) => {
   acc[quest.id] = quest
@@ -76,13 +77,16 @@ const CloseCamera = {
 
 const World = ({
   isMobile = false,
-  width = 500,
-  height = 800,
+  // width = 500,
+  // height = 800,
   debug = false,
   debugPhysics = false,
   enableSounds = true,
 }) => {
   console.debug('[World] render')
+
+  const [width, height] = useWindowStore((state) => [state.width, state.height])
+
   return (
     <>
       {enableSounds && (
