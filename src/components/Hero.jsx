@@ -7,11 +7,11 @@ import {
   AnimationJump,
   useAnimationStore,
 } from '../store'
-import { MeshStandardMaterial } from 'three'
-import { useTexture } from '@react-three/drei'
+import { MeshPhysicalMaterial } from 'three'
+// import { useTexture } from '@react-three/drei'
 
 const Hero = (props) => {
-  const dressTexture = useTexture('../assets/tex/dress.png')
+  // const dressTexture = useTexture('../assets/tex/dress.png')
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Hero.glb')
   const { actions, names } = useAnimations(animations, group)
@@ -28,26 +28,10 @@ const Hero = (props) => {
     state.previousAnimation,
   ])
 
-  const skirtMaterial = new MeshStandardMaterial({
-    ...materials.Skirt,
-    color: null,
-    map: dressTexture,
-    roughness: 1,
-    metalness: 1,
-    emissive: '#000000',
-  })
-
-  const headtMaterial = new MeshStandardMaterial({
-    ...materials.Head,
-    color: '#ee8600',
-  })
-
-  const skinMaterial = new MeshStandardMaterial({
-    ...materials.Skin,
-    color: '#b88160',
-    metalness: 0.5,
-    roughness: 1,
-  })
+  // const headtMaterial = new MeshPhysicalMaterial({
+  //   ...materials.Head,
+  //   color: '#ee8600',
+  // })
 
   useEffect(() => {
     const action = mappedActions[animation]
@@ -73,29 +57,23 @@ const Hero = (props) => {
             <skinnedMesh
               name="Mesh"
               geometry={nodes.Mesh.geometry}
-              material={skinMaterial}
+              material={materials.Skin}
               skeleton={nodes.Mesh.skeleton}
               castShadow
-              receiveShadow
-              toneMapped={true}
             />
             <skinnedMesh
               name="Mesh_1"
               geometry={nodes.Mesh_1.geometry}
-              material={skirtMaterial}
+              material={materials.Skirt}
               skeleton={nodes.Mesh_1.skeleton}
               castShadow
-              receiveShadow
-              toneMapped={true}
             />
             <skinnedMesh
               name="Mesh_2"
               geometry={nodes.Mesh_2.geometry}
-              material={headtMaterial}
+              material={materials.Head}
               skeleton={nodes.Mesh_2.skeleton}
               castShadow
-              receiveShadow
-              toneMapped={true}
             />
           </group>
           <primitive object={nodes.mixamorigHips} />
