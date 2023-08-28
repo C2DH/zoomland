@@ -133,7 +133,7 @@ const World = ({
             <Ocean scale={[12, 12, 12]} position={[0, -2.2, 0]} />
             <Kite rotation={[0, 0, 0]} scale={[1, 1, 1]} position={[2.06, -3.16, -30.67]} />
             <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[60.04, 11.7, 72.7]} />
-            <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[-75.3, 10.0, 2.2]} />
+            <Flag rotation={[0, 2.7, 0]} scale={[0.21, 0.3, 0.21]} position={[-75.3, 9.8, 2.2]} />
             <Flag rotation={[0, 0, 0]} scale={[0.21, 0.21, 0.21]} position={[39.7, 13.1, -52.5]} />
 
             {/* //Pick color - Media #fa953b, History - #306fc5, Hermeneutics - #9e43c8, Digital landscapes - #ed407d, Intro - #7c7c7c */}
@@ -336,7 +336,7 @@ const World = ({
                 position={[45.2, 12.8, 56.68]}
               />
               {/*House - next to Beach*/}
-              <House rotation={[0, -2, 0]} scale={[5.5, 5.5, 5.5]} position={[-10, -0.8, 46]} />
+              <House rotation={[0, -2, 0]} scale={[5.5, 5.5, 5.5]} position={[-10, 0, 46]} />
               {/*House - next to Theatre*/}
               <House
                 rotation={[0, 0 - 2.2, 0]}
@@ -375,7 +375,7 @@ const World = ({
               <Player isMobile={isMobile} debug={debug}></Player>
 
               <Boundaries />
-              <Sensor position={[-60.51, 26.97, -48.47]} />
+              <Sensor height={20} width={20} position={[-60.51, 26.97, -48.47]} />
             </Physics>
           </Canvas>
         </KeyboardControls>

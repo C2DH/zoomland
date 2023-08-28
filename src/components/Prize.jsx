@@ -21,12 +21,12 @@ const Prize = ({
   category = CategoryIntroduction,
   // base position of the prize
   position = [0, 0, 0],
-  radius = 0.7,
-  height = 1.5,
+  radius = 0.3,
+  height = 1,
   yMin = 0,
   yMax = 1,
   scaleMin = 0.5,
-  scaleMax = 1.5,
+  scaleMax = 1.0,
   transparent = true,
   prizeOffsetPosition = [0, 0, 0],
 }) => {
