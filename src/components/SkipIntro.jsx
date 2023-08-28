@@ -10,7 +10,7 @@ const IntroQuest = {
   sentences: [
     'Finally, the island is in sight!',
     'I can see the harbour in the distance.',
-    "Let's finish this, once and for all.",
+    'The original chapters are well-protected here.',
   ],
 }
 

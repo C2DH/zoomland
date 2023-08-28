@@ -6,26 +6,31 @@
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Hey there, dear publisher!",
-        "Hello Andreas!",
-        "How's the book doing? Making my words shine like gold, I hope?",
-        "Well... I would need a copy of it. For the archives, you know...",
-        "Oh, I see. Well, I'm sure you'll find it somewhere around here.",
-        "Oh where exactly?",
-        "I'm sure I left it somewhere around here..."
-      ],
-      "secondMeetingWithoutChapter": [
-        "You haven't find our introduction?",
-        "Not yet, can you help me?",
-        "Uhm... You should check next to our boat"
+        "Hey there, I think I know you!",
+        "Hello, Andreas!",
+        "Ah hello you! Welcome to Zoomland! It's a pleasure to have you here.",
+        "Thank you! Sorry to bother you, but I have an important mission. I need to find the original chapters of the Book.",
+        "Ah, the Book. A noble quest indeed. Digital copies can't be trusted these days.",
+        "Exactly! I've heard the Island holds the key to uncovering the truth. But...",
+        "...",
+        "Where should I start? Any clues?",
+        "Well, the Introduction is just behind you. It's a good place to begin.",
+        "I'll check it out. Thank you!"
       ],
       "runIntoWithoutChapter": [
-        "Have you double check next to our boat?",
-        "Not yet, let me check again!"
+        "You haven't find the Introduction?",
+        "Not yet, can you help me?",
+        "Uhm... Check again next to our boat!"
       ],
-      "firstMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok bye!"],
-      "secondMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok ok ok!"],
-      "runIntoWithChapter": ["Hey there, I see you got it. One less to go!", "Bye Andreas"]
+      "firstMeetingWithChapter": [
+        "Hey there, I think I know you! And you got the Introduction!",
+        "Hello, Andreas!",
+        "Ah hello you, reader! Welcome to Zoomland! It's a pleasure to have you here.",
+        "I need to find the other original chapters of the Book. Can you help me?",
+        "They're somewhere around here, but... sorry, too many things to remember...",
+        "Ok, bye!"
+      ],
+      "runIntoWithChapter": ["Hey there, did you find the other original chapters?"]
     }
   },
   {
