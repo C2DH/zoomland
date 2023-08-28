@@ -34,7 +34,6 @@ const Hero = (props) => {
     map: dressTexture,
     roughness: 1,
     metalness: 1,
-    toneMapped: true,
     emissive: '#000000',
   })
 
@@ -78,6 +77,7 @@ const Hero = (props) => {
               skeleton={nodes.Mesh.skeleton}
               castShadow
               receiveShadow
+              toneMapped={true}
             />
             <skinnedMesh
               name="Mesh_1"
@@ -86,7 +86,7 @@ const Hero = (props) => {
               skeleton={nodes.Mesh_1.skeleton}
               castShadow
               receiveShadow
-              toneMapped={false}
+              toneMapped={true}
             />
             <skinnedMesh
               name="Mesh_2"
@@ -95,6 +95,7 @@ const Hero = (props) => {
               skeleton={nodes.Mesh_2.skeleton}
               castShadow
               receiveShadow
+              toneMapped={true}
             />
           </group>
           <primitive object={nodes.mixamorigHips} />

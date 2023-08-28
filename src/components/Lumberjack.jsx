@@ -37,30 +37,40 @@ const Lumberjack = (props) => {
             geometry={nodes.Cube001_Cube003.geometry}
             material={materials['Material.001']}
             skeleton={nodes.Cube001_Cube003.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Cube002_Cube004"
             geometry={nodes.Cube002_Cube004.geometry}
             material={materials['Material.001']}
             skeleton={nodes.Cube002_Cube004.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Cube_Cube001"
             geometry={nodes.Cube_Cube001.geometry}
             material={materials['Material.001']}
             skeleton={nodes.Cube_Cube001.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Cylinder001_Cylinder004"
             geometry={nodes.Cylinder001_Cylinder004.geometry}
             material={materials['Material.001']}
             skeleton={nodes.Cylinder001_Cylinder004.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Cylinder_Cylinder002"
             geometry={nodes.Cylinder_Cylinder002.geometry}
             material={materials['Material.001']}
             skeleton={nodes.Cylinder_Cylinder002.skeleton}
+            castShadow
+            receiveShadow
           />
         </group>
       </group>

@@ -7,9 +7,9 @@ const Dawn = 0xffe6b3
 const Lights = ({ color = Dawn }) => {
   const light = useRef()
   useFrame((state) => {
-    light.current.position.z = state.camera.position.z
-    light.current.position.x = state.camera.position.x + 40
-    light.current.position.y = state.camera.position.y + 60
+    light.current.position.z = state.camera.position.z + 2
+    light.current.position.x = state.camera.position.x + 0
+    light.current.position.y = state.camera.position.y + 50
   })
   return (
     <>
@@ -20,8 +20,8 @@ const Lights = ({ color = Dawn }) => {
         color={color}
         // position={[40, 10, 25]}
         shadow-mapSize={[1024, 1024]}
-        shadow-camera-near={20}
-        shadow-camera-far={150}
+        shadow-camera-near={0}
+        shadow-camera-far={80}
         shadow-camera-top={50}
         shadow-camera-right={50}
         shadow-camera-bottom={-50}

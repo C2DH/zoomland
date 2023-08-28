@@ -16,7 +16,7 @@ const UpWithPlayer = 'up-with-player'
 const CheckInText = 'Ready?'
 const CheckOutText = 'Free ride!'
 
-const Balloon = ({ yMax = 20, yMin = 0, waitingTime = 5000, ...props }) => {
+const Balloon = ({ yMax = 20, yMin = 0.0, waitingTime = 5000, ...props }) => {
   const collisionTimerRef = useRef()
   const collisionStatusRef = useRef(false)
   const intersectionStatusRef = useRef(false)
