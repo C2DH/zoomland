@@ -115,7 +115,10 @@
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Hey, Editing Dynamo! How's the battle against typos and grammatical foes going? Any victories to report in my chapter's editing crusade?"
+        "Good morning stranger! What you are you looking for on dynamicly devoloping cretive island?",
+        "I lost something very important to me",
+        "If you will be more precise then maybe I can help you",
+        "Sorry I'll be short. My script... I lost it and now trying to find all chapters over yhe island"
       ],
       "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
       "runIntoWithoutChapter": ["Brrrrrrr... Brrrrrr"],

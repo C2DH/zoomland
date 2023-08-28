@@ -56,6 +56,7 @@ import Sensor from './Sensor'
 import Mushrooms from './Mushroom'
 import Prize from './Prize'
 import Butterflies from './butterflies'
+import Scout from './Scout'
 
 const QuestsById = Quests.reduce((acc, quest) => {
   acc[quest.id] = quest
@@ -195,7 +196,7 @@ const World = ({
               >
                 <Editor scale={0.1} rotation={[0, 3, 0]} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.AndreasFickers} position={[78.1, 1.26, -14.51]}>
+              <TheDispatcher quest={QuestsById.AndreasFickers} position={[82.22, 1.05, -15.21]}>
                 <Lumberjack scale={0.45} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
               <TheDispatcher quest={QuestsById.ChristianWachter} position={[46.87, 20.95, -81.69]}>
@@ -203,6 +204,9 @@ const World = ({
               </TheDispatcher>
               <TheDispatcher quest={Quests[3]} position={[6.95, 8.85, 60.91]}>
                 <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
+              </TheDispatcher>
+              <TheDispatcher quest={Quests[3]} position={[30.48, 0.73, -1.56]}>
+                <Scout scale={1.2} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
 
               {/* Boat or harbor */}
