@@ -64,8 +64,8 @@
     }
   },
   {
-    "characterName": "Florentina Armaselu",
-    "avatar": "/assets/avatars/Andreas.jpg",
+    "characterName": "Verena Deutsch",
+    "avatar": "/assets/avatars/Verena.jpg",
     "id": "FlorentinaArmaselu",
     "chapter": "0-introduction",
     "dialogues": {
@@ -93,13 +93,15 @@
     }
   },
   {
-    "characterName": "Alex Butterworth",
-    "avatar": "/assets/avatars/Daniele.jpg",
+    "characterName": "Kirill Mitsurov",
+    "avatar": "/assets/avatars/Kirill.jpg",
     "id": "AlexButterworth",
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Ahoy, Captain Editor! How's the good ship of editing sailing? Have you navigated through my chapter's treacherous waters yet?"
+        "Hi stranger, a nice cap. What do you need on our peaceful island?",
+        "Hi a kind island dweller. I eager to find the origince of the book",
+        "Follow the buterflies, they always trying to get close "
       ],
       "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
       "runIntoWithoutChapter ": ["Brrrrrrr... Brrrrrr"],
@@ -109,8 +111,8 @@
     }
   },
   {
-    "characterName": "Christian Wachter",
-    "avatar": "/assets/avatars/Kirill.jpg",
+    "characterName": "Lars Wieneke",
+    "avatar": "/assets/avatars/Character.jpg",
     "id": "ChristianWachter",
     "chapter": "0-introduction",
     "dialogues": {

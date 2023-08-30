@@ -9,7 +9,7 @@ const DialogueCard = ({
   onClickNext,
   disablePrevious = false,
   disableNext = false,
-  avatar = '/assets/avatars/Florentina.jpg',
+  avatar = '/assets/avatars/Hero.jpg',
   onCompleteLabel = 'Done',
   onClose,
 }) => {

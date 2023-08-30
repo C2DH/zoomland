@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { usePlayerStore } from '../store'
 
-const Scout = (props) => {
+const Florentina = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Scout.glb')
+  const { nodes, materials, animations } = useGLTF('../assets/models/Florentina.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
   const actionRef = useRef(false)
@@ -28,6 +28,7 @@ const Scout = (props) => {
             geometry={nodes.Object_17.geometry}
             material={materials['Material.001']}
             skeleton={nodes.Object_17.skeleton}
+            castShadow
           />
           <primitive object={nodes.mixamorigHips} />
           <primitive object={nodes.Ctrl_Master} />
@@ -45,5 +46,5 @@ const Scout = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Scout.glb')
-export default Scout
+useGLTF.preload('../assets/models/Florentina.glb')
+export default Florentina

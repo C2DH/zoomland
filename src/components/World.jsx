@@ -56,8 +56,8 @@ import Sensor from './Sensor'
 import Mushrooms from './Mushroom'
 import Prize from './Prize'
 import Butterflies from './butterflies'
-import Scout from './Scout'
 import { useWindowStore } from '../store'
+import Florentina from './Scout'
 
 const QuestsById = Quests.reduce((acc, quest) => {
   acc[quest.id] = quest
@@ -210,7 +210,7 @@ const World = ({
                 <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
               <TheDispatcher quest={Quests[3]} position={[30.48, 0.73, -1.56]}>
-                <Scout scale={1.2} rotation={[0, 1.8, 0]} />
+                <Florentina scale={1.2} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
 
               {/* Boat or harbor */}
