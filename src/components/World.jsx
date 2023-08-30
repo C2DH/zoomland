@@ -51,7 +51,7 @@ import Waves from './Waves'
 import Editor from './Editor'
 import Daniele from './Daniele'
 import Kirill from './Kirill'
-import Character from './Character'
+import Lars from './Lars'
 import Sensor from './Sensor'
 import Mushrooms from './Mushroom'
 import Prize from './Prize'
@@ -200,13 +200,13 @@ const World = ({
               <TheDispatcher quest={QuestsById.AndreasFickers} position={[80.22, 1.05, -17.21]}>
                 <Lumberjack scale={0.4} rotation={[0, 0.8, 0]} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.ChristianWachter} position={[46.87, 20.95, -81.69]}>
-                <Character scale={0.1} rotation={[0, 0, 0]} />
+              <TheDispatcher quest={QuestsById.LarsWieneke} position={[46.87, 20.95, -81.69]}>
+                <Lars scale={0.1} rotation={[0, 0, 0]} />
               </TheDispatcher>
-              <TheDispatcher quest={Quests[3]} position={[6.95, 8.85, 60.91]}>
+              <TheDispatcher quest={QuestsById.KirillMitsurov} position={[6.95, 8.85, 60.91]}>
                 <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
-              <TheDispatcher quest={Quests[3]} position={[30.48, 0.73, -1.56]}>
+              <TheDispatcher quest={QuestsById.VerenaDeutsch} position={[30.48, 0.73, -1.56]}>
                 <Editor scale={0.1} rotation={[0, 3, 0]} />
               </TheDispatcher>
 

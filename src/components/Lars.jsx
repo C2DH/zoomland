@@ -7,7 +7,7 @@ import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { usePlayerStore } from '../store'
 
-const Character = (props) => {
+const Lars = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Character.glb')
   const { actions } = useAnimations(animations, group)
@@ -52,4 +52,4 @@ const Character = (props) => {
 }
 
 useGLTF.preload('../assets/models/Character.glb')
-export default Character
+export default Lars

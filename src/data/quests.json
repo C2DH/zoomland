@@ -1,6 +1,35 @@
 [
   {
-    "characterName": "Andreas Fickers",
+    "characterName": "Florentina Armaselu, co-editor of the Book",
+    "avatar": "/assets/avatars/Florentina.jpg",
+    "id": "FlorentinaArmaselu",
+    "chapter": "11-text-fractal-dust-and-informational-granularity",
+    "dialogues": {
+      "firstMeetingWithoutChapter": [
+        "Hey there, dear publisher!",
+        "Hello Andreas!",
+        "How's the book doing? Making my words shine like gold, I hope?",
+        "Well... I would need a copy of it. For the archives, you know...",
+        "Oh, I see. Well, I'm sure you'll find it somewhere around here.",
+        "Oh where exactly?",
+        "I'm sure I left it somewhere around here..."
+      ],
+      "secondMeetingWithoutChapter": [
+        "You haven't find our introduction?",
+        "Not yet, can you help me?",
+        "Uhm... You should check next to our boat"
+      ],
+      "runIntoWithoutChapter": [
+        "Have you double check next to our boat?",
+        "Not yet, let me check again!"
+      ],
+      "firstMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok bye!"],
+      "secondMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok ok ok!"],
+      "runIntoWithChapter": ["Hey there, I see you got it. One less to go!", "Bye Andreas"]
+    }
+  },
+  {
+    "characterName": "Andreas Fickers, co-editor of the Book",
     "avatar": "/assets/avatars/Andreas.jpg",
     "id": "AndreasFickers",
     "chapter": "0-introduction",
@@ -33,11 +62,12 @@
       "runIntoWithChapter": ["Hey there, did you find the other original chapters?"]
     }
   },
+
   {
-    "characterName": "Daniele, lead designer",
+    "characterName": "Daniele Guido, tourist guide in chief of Zoomland",
     "avatar": "/assets/avatars/Daniele.jpg",
     "id": "Daniele",
-    "chapter": "0-introduction",
+    "chapter": "1-adventure-in-zoomland",
     "dialogues": {
       "firstMeetingWithoutChapter": [
         "Welcome to our beautiful island!",
@@ -64,10 +94,10 @@
     }
   },
   {
-    "characterName": "Verena Deutsch",
+    "characterName": "Verena Deutsch, publisher of the Book",
     "avatar": "/assets/avatars/Verena.jpg",
-    "id": "FlorentinaArmaselu",
-    "chapter": "0-introduction",
+    "id": "VerenaDeutsch",
+    "chapter": "3-menocchio-mapped",
     "dialogues": {
       "firstMeetingWithoutChapter": [
         "Hey there, dear publisher!",
@@ -93,10 +123,10 @@
     }
   },
   {
-    "characterName": "Kirill Mitsurov",
+    "characterName": "Kirill Mitsurov, architect of Zoomland",
     "avatar": "/assets/avatars/Kirill.jpg",
-    "id": "AlexButterworth",
-    "chapter": "0-introduction",
+    "id": "KirillMitsurov",
+    "chapter": "16-weather-map",
     "dialogues": {
       "firstMeetingWithoutChapter": [
         "Hi stranger, a nice cap. What do you need on our peaceful island?",
@@ -111,9 +141,9 @@
     }
   },
   {
-    "characterName": "Lars Wieneke",
+    "characterName": "Lars Wieneke, 3D printer of Zoomland",
     "avatar": "/assets/avatars/Character.jpg",
-    "id": "ChristianWachter",
+    "id": "LarsWieneke",
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
@@ -127,252 +157,6 @@
       "firstMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
       "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
       "runIntoWithChapter": ["Brrrrrrr... Brrrrrr"]
-    }
-  },
-  {
-    "characterName": "Amanda Madden",
-    "avatar": "/assets/avatars/Editor.jpg",
-    "id": "AmandaMadden",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Hello, Editor Extraordinaire! How's the secret art of transforming my words into literary gems? Any progress in the alchemical process?"
-      ],
-      "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
-      "runIntoWithoutChapter": ["Brrrrrrr... Brrrrrr"],
-      "firstMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
-      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
-      "runIntoWithChapter": ["Brrrrrrr... Brrrrrr"]
-    }
-  },
-  {
-    "characterName": "Khanh Vo",
-    "avatar": "/assets/avatars/Character.jpg",
-    "id": "KhanhVo",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Greetings, Word Whisperer! How's the mystical dance of editing enchantments going? Any magical revelations in my chapter so far?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Fred Pailler",
-    "id": "FredPailler",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Salutations, Editing Ninja! How's your stealthy progress in slicing and dicing my chapter's content? Any ninja-worthy editing maneuvers to share?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Valérie Schafer",
-    "id": "ValerieSchafer",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Hey there, Editor Extraordinaire! How's the fine art of polishing my words to perfection? Any breakthroughs in your editing masterpiece?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Landry Digeon",
-    "id": "LandryDigeon",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Greetings, Editing Maestro! How's the symphony of words coming along? Any harmonious editing progress in shaping my chapter?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Anjal Amin",
-    "id": "AnjalAmin",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Ahoy, Captain Editor! How's the voyage of navigating my chapter's seas? Any intriguing discoveries in the depths of your editing endeavors?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Nadezhda Povroznik",
-    "id": "NadezhdaPovroznik",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Hello, Editor Extraordinaire! How's the surgical precision of your editing scalpel? Any noteworthy operations performed on my chapter's content?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Daniil Renev",
-    "id": "DaniilRenev",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Greetings, Editing Magician! How's the spellbinding process of turning my words into literary wonders? Any enchanting progress to share?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Vladimir Beresnev",
-    "id": "VladimirBeresnev",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Hey there, Editing Dynamo! How's the battle against the grammar gremlins going? Any victories in the war of words within my chapter?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Johan Malmstedt",
-    "id": "JohanMalmstedt",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Salutations, Word Whisperer! How's the mastery of transforming my thoughts into eloquent prose? Any linguistic triumphs in my chapter's journey?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Chris Tanasescu",
-    "id": "ChrisTanasescu",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Greetings, Editing Extraordinaire! How's the fine art of crafting my words into a tapestry of brilliance? Any strokes of editing genius in progress?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Raluca Tanasescu",
-    "id": "RalucaTanasescu",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Hello, Editing Maestro! How's the creative dance of shaping my chapter's narrative? Any innovative editing techniques you've been experimenting with?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "characterName": "Raluca Tanasescu",
-    "id": "RalucaTanasescu",
-    "chapter": "0-introduction",
-    "dialogues": {
-      "firstMeetingWithoutChapter": [
-        "Hey there, Editor Extraordinaire! How's the magic of your editing wand? Any spells cast upon my chapter's pages for a touch of brilliance?"
-      ],
-      "secondMeetingWithoutChapter": [],
-      "runIntoWithoutChapter": [],
-      "firstMeetingWithChapter": [],
-      "secondMeetingWithChapter": [],
-      "runIntoWithChapter": []
-    }
-  },
-  {
-    "id": "BigFella",
-    "characterName": "A very big fella",
-    "chapter": "1-chapter-1",
-    "dialogues": {
-      "firstMeetingWithChapter": [
-        "Hey there!",
-        "...",
-        "I am BigFella. I don't think you need anything from me. See you around!",
-        "Ok bye!"
-      ],
-      "secondMeetingWithChapter": [
-        "Hey there! I see you have found your chapter. Great!",
-        "...",
-        "I should have hidden it better... Bah!",
-        "Ehm... ok bye!"
-      ],
-      "runIntoWithChapter": ["Nothing else for you here, I'm afraid.", "Ehm... ok bye!"],
-      "firstMeetingWithoutChapter": [
-        "I am BigFella. I guees you have lost something precious.",
-        "...",
-        "I'm pretty sure about it.",
-        "Ok... So... have you seen a well written chapter around here? A sudden gust of wind blew it away from me.",
-        "Of course! I put it aside for you. You have only to answer to this simple riddle and they are yours.",
-        "no way!!",
-        "I'm an object for adventure, that much is true,",
-        "...",
-        "With my 'zoom-tastic' abilities, I'm perfect for you!"
-      ],
-      "secondMeetingWithoutChapter": [
-        "Ehy you! Still nothing eh?",
-        "...",
-        "As I already mentioned, I put it aside for you. But I see you're in a rush...",
-        "... and ... ?",
-        "From where can you zoom out clearly and see everything?",
-        "... ehm the mountain?",
-        "And how can you see the mountain if you're on it! Let me continue please...",
-        "...",
-        "So pack your bags, and hop on board..."
-      ],
-      "runIntoWithoutChapter": [
-        "Still nothing eh?",
-        "... nope ...",
-        "Once again, from where can you zoom out clearly and see everything?",
-        "... ehm a tower?",
-        "You're without hope ... Look above you, and you'll find it."
-      ]
     }
   }
 ]
