@@ -57,7 +57,7 @@ import Mushrooms from './Mushroom'
 import Prize from './Prize'
 import Butterflies from './butterflies'
 import { useWindowStore } from '../store'
-import Florentina from './Scout'
+import Florentina from './Florentina'
 
 const QuestsById = Quests.reduce((acc, quest) => {
   acc[quest.id] = quest
@@ -194,14 +194,11 @@ const World = ({
                   <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
                 </Suspense>
               </TheDispatcher>
-              <TheDispatcher
-                quest={QuestsById.FlorentinaArmaselu}
-                position={[-51.48, 27.01, -51.3]}
-              >
-                <Editor scale={0.1} rotation={[0, 3, 0]} />
+              <TheDispatcher quest={QuestsById.FlorentinaArmaselu} position={[81, 1, -11.57]}>
+                <Florentina scale={1.2} rotation={[0, 2.4, 0]} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.AndreasFickers} position={[82.22, 1.05, -15.21]}>
-                <Lumberjack scale={0.45} rotation={[0, 1.8, 0]} />
+              <TheDispatcher quest={QuestsById.AndreasFickers} position={[80.22, 1.05, -17.21]}>
+                <Lumberjack scale={0.4} rotation={[0, 0.8, 0]} />
               </TheDispatcher>
               <TheDispatcher quest={QuestsById.ChristianWachter} position={[46.87, 20.95, -81.69]}>
                 <Character scale={0.1} rotation={[0, 0, 0]} />
@@ -210,7 +207,7 @@ const World = ({
                 <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
               </TheDispatcher>
               <TheDispatcher quest={Quests[3]} position={[30.48, 0.73, -1.56]}>
-                <Florentina scale={1.2} rotation={[0, 1.8, 0]} />
+                <Editor scale={0.1} rotation={[0, 3, 0]} />
               </TheDispatcher>
 
               {/* Boat or harbor */}
