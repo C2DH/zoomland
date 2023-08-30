@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { Gameplay, OpenSea, Start, usePlayerStore } from '../store'
+import { Gameplay, OpenSea, SceneCredits, Start, usePlayerStore } from '../store'
 import { Vector3 } from 'three'
 import { updateCamera } from '../utils/camera'
 import { easings, useSpring } from '@react-spring/web'
@@ -56,7 +56,7 @@ const Boat = ({
       angle: -Math.PI / 2,
       radius: 4,
       elevation: 2,
-      disable: sceneRef.current === Gameplay,
+      disable: sceneRef.current === Gameplay || sceneRef.current === SceneCredits,
     })
   })
   // slowly moving the boat to the final position
@@ -66,7 +66,7 @@ const Boat = ({
   // })
 
   useEffect(() => {
-    if (sceneRef.current === Gameplay) {
+    if (sceneRef.current === Gameplay || sceneRef.current === SceneCredits) {
       api.set({
         x: positions[1][0],
         y: positions[1][1],

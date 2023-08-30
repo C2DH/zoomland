@@ -38,13 +38,15 @@ const Balloon = ({ yMax = 20, yMin = 0.0, waitingTime = 5000, ...props }) => {
       easing: easings.easeInOutSine,
     },
     onChange: ({ value }) => {
-      // console.log('onChange', value)
-      balloonRef.current.position.y = value.n
-      bodyRef.current.setNextKinematicTranslation({
-        x: balloonRef.current.position.x,
-        y: balloonRef.current.position.y,
-        z: balloonRef.current.position.z,
-      })
+      if (balloonRef.current) {
+        balloonRef.current.position.y = value.n
+
+        bodyRef.current.setNextKinematicTranslation({
+          x: balloonRef.current.position.x,
+          y: balloonRef.current.position.y,
+          z: balloonRef.current.position.z,
+        })
+      }
     },
     onRest: ({ value }) => {
       console.log(

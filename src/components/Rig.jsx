@@ -3,7 +3,7 @@ import { useThree } from '@react-three/fiber'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Vector3 } from 'three'
-import { Gameplay, useMenuStore, usePlayerStore, useWorldStore } from '../store'
+import { Gameplay, SceneCredits, useMenuStore, usePlayerStore, useWorldStore } from '../store'
 
 const Rig = () => {
   // function Rig({ position = new Vector3(0, 0, 2), focus = new Vector3(0, 0, 0) }) {
@@ -19,7 +19,7 @@ const Rig = () => {
   useEffect(() => {
     let radius = 2.5
     let elevation = 1.5
-    let followPlayer = scene === Gameplay
+    let followPlayer = scene === Gameplay || scene === SceneCredits
     if (isCollectingQuest) {
       radius = 1.3
       elevation = 1.8
@@ -34,6 +34,10 @@ const Rig = () => {
     } else if (menuStatus === 'open') {
       radius = 5
       elevation = 3
+    } else if (scene === SceneCredits) {
+      radius = 8
+      elevation = 5
+      followPlayer = true
     }
     setCameraOffset({ radius, elevation, followPlayer })
   }, [scene, menuStatus, pathname, isCollectingQuest, isObservingLandscape])

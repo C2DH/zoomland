@@ -13,6 +13,7 @@ import SideMenu from './components/SideMenu'
 import IntroLogoZoomland from './components/IntroLogoZoomland'
 import SkipIntro from './components/SkipIntro'
 import GameControls from './components/GameControls'
+import Credits from './components/Credits'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
@@ -54,6 +55,7 @@ function App() {
 
       <Vignette></Vignette>
       <SkipIntro />
+      <Credits />
       <GameControls />
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>

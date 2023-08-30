@@ -87,6 +87,7 @@ export const Gameplay = 'gameplay'
 export const OpenSea = 'opensea'
 export const Start = 'start'
 export const Baloon = 'baloon'
+export const SceneCredits = 'credits'
 
 export const usePlayerStore = create(
   persist(

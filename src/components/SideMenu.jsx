@@ -18,6 +18,7 @@ import {
   Gameplay,
   Start,
   useWorldStore,
+  SceneCredits,
 } from '../store'
 import IntroLogoZoomland from './IntroLogoZoomland'
 
@@ -94,6 +95,17 @@ const SideMenu = () => {
                 }}
               >
                 introduction
+              </button>
+            </Nav.Item>
+            <Nav.Item>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  setScene(SceneCredits)
+                  set(MenuClosed)
+                }}
+              >
+                credits
               </button>
             </Nav.Item>
             <Nav.Item className="mb-3">
