@@ -3,7 +3,7 @@ import Lottie from 'react-lottie'
 import { useQueueStore } from '../store/preload'
 import animationData from '../assets/json/zoomland-logo.json'
 
-const IntroLogoZoomland = ({ delay = 500, width, startAnimation = true, id }) => {
+const IntroLogoZoomland = ({ delay = 500, width, height, startAnimation = true, id }) => {
   const lottieRef = useRef()
   const timerRef = useRef()
   const isLoadingComplete = useQueueStore((state) => state.isLoadingComplete)
@@ -38,6 +38,6 @@ const IntroLogoZoomland = ({ delay = 500, width, startAnimation = true, id }) =>
     },
   }
 
-  return <Lottie width={width} options={defaultOptions} ref={lottieRef} />
+  return <Lottie width={width} height={height} options={defaultOptions} ref={lottieRef} />
 }
 export default IntroLogoZoomland

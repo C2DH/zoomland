@@ -52,10 +52,9 @@ function App() {
       </div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>
-
+      <Credits />
       <Vignette></Vignette>
       <SkipIntro />
-      <Credits />
       <GameControls />
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>

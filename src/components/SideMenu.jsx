@@ -14,7 +14,6 @@ import {
   useMenuStore,
   MenuOpen,
   usePlayerStore,
-  OpenSea,
   Gameplay,
   Start,
   useWorldStore,
@@ -94,7 +93,7 @@ const SideMenu = () => {
                   set(MenuClosed)
                 }}
               >
-                introduction
+                Introduction
               </button>
             </Nav.Item>
             <Nav.Item>
@@ -105,7 +104,7 @@ const SideMenu = () => {
                   set(MenuClosed)
                 }}
               >
-                credits
+                Credits
               </button>
             </Nav.Item>
             <Nav.Item className="mb-3">
