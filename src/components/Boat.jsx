@@ -53,7 +53,7 @@ const Boat = ({
     updateCamera(state.camera, {
       target: boatRef.current.getWorldPosition(new Vector3()),
       delta,
-      angle: -Math.PI / 2,
+      angle: Math.PI / 2,
       radius: 4,
       elevation: 2,
       disable: sceneRef.current === Gameplay || sceneRef.current === SceneCredits,
