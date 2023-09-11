@@ -54,6 +54,10 @@
   font-size: var(--font-size-4);
 }
 
+.DialogueCard-body p {
+  text-align: left;
+}
+
 @media screen and (max-width: 768px) {
   .DialogueCard {
     width: 96%;
