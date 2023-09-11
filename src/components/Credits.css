@@ -15,36 +15,12 @@
 
   color: var(--pale-yellow); /* Adjust this as needed */
   overflow: hidden;
+  visibility: hidden;
   z-index: var(--z-index-credits);
 }
 
-.Credits__content.visible {
+.Credits.visible {
   visibility: visible;
-  pointer-events: all;
-}
-
-.Credits__content {
-  position: absolute;
-  visibility: hidden;
-  pointer-events: none;
-  top: -50%; /* Start the content off-screen */
-  left: 50%;
-  transform: translateX(-50%);
-  animation: CreditsScrollAnimation 40s linear infinite; /* Adjust animation duration as needed */
-}
-
-@keyframes CreditsScrollAnimation {
-  0% {
-    top: 100%;
-  }
-  100% {
-    top: -300%; /* Move the content completely off-screen */
-  }
-}
-
-.Credits__content h3 {
-  margin-top: 1rem;
-  margin-bottom: 1.2rem;
 }
 
 .Credits_block {
@@ -90,6 +66,15 @@
 .Credits_logos svg:nth-child(2) {
   height: 120px;
   width: 50px;
+}
+
+/* media screen instruction based on max height */
+@media screen and (min-height: 600px) {
+  .Credits img {
+    height: 300px;
+    width: auto;
+    margin: 0px auto;
+  }
 }
 
 @media only screen and (max-width: 767px) {
