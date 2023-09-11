@@ -1,9 +1,5 @@
 import { Vector3 } from 'three'
 
-function easeInOut(t) {
-  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
-}
-
 export const updateCamera = (
   camera,
   { radius = 2.5, elevation = 1.5, target, delta, angle, disable = false },
