@@ -118,7 +118,7 @@ const World = ({
         >
           <Canvas camera={CloseCamera} shadows dpr={1}>
             <Rig />
-            <Book position={[123.6, -1.6, -10.2]} />
+            <Book position={[123.6, 0, -10.2]} />
             <Environment
               files="/evening_road_01_puresky_1k.hdr"
               near={1}
