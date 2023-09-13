@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react'
 import { KeyboardControls, Environment, Stats, Float } from '@react-three/drei'
+import { Glitch, EffectComposer } from '@react-three/postprocessing'
 import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
 import Landscape from './Landscape'
@@ -118,7 +119,6 @@ const World = ({
         >
           <Canvas camera={CloseCamera} shadows dpr={1}>
             <Rig />
-            <Book position={[123.6, 0, -10.2]} />
             <Environment
               files="/evening_road_01_puresky_1k.hdr"
               near={1}
@@ -132,6 +132,12 @@ const World = ({
             <Lights />
             <Clouds />
             <Butterflies />
+            <Book
+              position={[123.6, -0.05, -10.2]}
+              scale={0.1}
+              // enableGlitch
+              rotation={[0, -Math.PI / 2, 0]}
+            />
             <Mushrooms position={[0, -2, 0]} scale={10} />
             <Grass position={[0, -2.1, 0]} scale={10} />
             <Waves position={[0, -2, 0]} scale={10} />

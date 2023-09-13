@@ -18,6 +18,7 @@ import {
   Start,
   useWorldStore,
   SceneCredits,
+  SceneFakeBook,
 } from '../store'
 import IntroLogoZoomland from './IntroLogoZoomland'
 
@@ -89,7 +90,7 @@ const SideMenu = () => {
               <button
                 className="btn btn-link"
                 onClick={() => {
-                  setScene(Start)
+                  setScene(SceneFakeBook)
                   set(MenuClosed)
                 }}
               >

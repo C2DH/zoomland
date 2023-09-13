@@ -4,11 +4,11 @@ import LogoZoomland from './Svg/LogoZoomland'
 import Counter from './Counter'
 import MenuIcon from './Svg/MenuIcon'
 import RoundButton from './RoundButton'
-import { MenuOpen, useMenuStore } from '../store'
+import { MenuOpen, useMenuStore, usePlayerStore } from '../store'
 
 const Header = ({ isMobile = true }) => {
-  const menuStatus = useMenuStore((state) => state.menuStatus)
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
+  const scene = usePlayerStore((state) => state.scene)
 
   const isMobileStyle = {
     top: isMobile ? '1rem' : '2rem',
@@ -26,9 +26,8 @@ const Header = ({ isMobile = true }) => {
     setMenuStatus(MenuOpen)
   }
 
-  console.log('Toggle', menuStatus)
   return (
-    <div className="Header" style={isMobileStyle}>
+    <div className={`Header ${scene}`} style={isMobileStyle}>
       {isMobile ? null : (
         <div style={logoPosition}>
           <LogoZoomland />

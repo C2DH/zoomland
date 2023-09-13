@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import { Gameplay, Start, usePlayerStore } from './store/index.js'
+import { Gameplay, SceneFakeBook, usePlayerStore } from './store/index.js'
 
 const setIntroTimeout = () => {
   if (scene !== Gameplay) {
-    usePlayerStore.setState({ scene: Start })
+    usePlayerStore.setState({ scene: SceneFakeBook })
   } else {
     usePlayerStore.setState({ scene: Gameplay })
   }
