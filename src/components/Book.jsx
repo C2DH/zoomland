@@ -17,11 +17,6 @@ const Book = ({ enableGlitch = false, ...props }) => {
   const frameWidth = width * 1.2
   return (
     <>
-      {enableGlitch && (
-        <EffectComposer>
-          <Glitch />
-        </EffectComposer>
-      )}
       <group ref={bookRef} {...props} dispose={null}>
         <Html transform={scene !== SceneFakeBook} occlude={scene !== SceneFakeBook}>
           <div
