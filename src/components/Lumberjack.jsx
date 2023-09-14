@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/lumberjack-low-poly-character-d88d033c86
 Title: Lumberjack Low Poly Character
 */
 
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { usePlayerStore } from '../store'
 

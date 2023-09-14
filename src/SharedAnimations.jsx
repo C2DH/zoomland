@@ -1,6 +1,5 @@
 import { useGLTF } from '@react-three/drei'
 import { createContext } from 'react'
-import { useStore } from 'zustand'
 
 export const AnimationsContext = createContext([])
 

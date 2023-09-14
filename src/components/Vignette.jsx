@@ -12,7 +12,7 @@ const interpolator = (v) => {
   return `radial-gradient(ellipse at center, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 0) ${v}%, ${VignetteColor} 95%, ${VignetteColor} 100%)`
 }
 
-const Vignette = ({ children, visible = true, debug = false }) => {
+const Vignette = ({ children, debug = false }) => {
   const [scene] = usePlayerStore((state) => [state.scene])
   const [currentCollectedChapter, isCollectingChapter, collectedChapters] = usePlayerStore(
     (state) => [state.currentCollectedChapter, state.isCollectingChapter, state.collectedChapters],

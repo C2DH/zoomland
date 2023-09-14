@@ -1,13 +1,11 @@
-import { Matrix4, Vector3, Quaternion } from 'three'
-import { useEffect, useMemo, useRef } from 'react'
-import { Gltf } from '@react-three/drei'
+import { useMemo, useRef } from 'react'
 import { InstancedRigidBodies } from '@react-three/rapier'
 /**
  * This component use instancedMesh to render a forest of trees.
  * Given the number of desired tree and an array of their positions,
  * it will render a forest of trees with random scale and rotation.
  */
-const Forest = ({ treesCount = 200, children }) => {
+const Forest = ({ treesCount = 200 }) => {
   const trees = useRef()
 
   const instances = useMemo(() => {

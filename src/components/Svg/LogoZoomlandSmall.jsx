@@ -1,4 +1,4 @@
-const LogoZoomlandSmall = ({ color = 'var(--pale-yellow)', size = 40 }) => {
+const LogoZoomlandSmall = ({ size = 40 }) => {
   const ratio = 63.5 / 34.74
   return (
     <svg

@@ -1,6 +1,5 @@
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
-import { getFrontSideMaterial } from '../utils/common'
 
 const SwedishHorse = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/SwedishHorse.glb')

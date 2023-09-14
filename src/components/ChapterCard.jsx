@@ -1,6 +1,5 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { a, useSpring } from '@react-spring/web'
-import { useWindowStore } from '../store'
 import BirdEyeView from './Svg/BirdEyeView'
 import GroundView from './Svg/GroundView'
 import OverheadView from './Svg/OverheadView'
@@ -23,7 +22,6 @@ const ViewTypes = {
 const ChapterCard = ({ chapter, notFound = false }) => {
   const ref = useRef(null)
   const isFlipped = useRef(false)
-  const [width, height] = useWindowStore((state) => [state.width, state.height])
 
   const [{ transform, opacity }, animate] = useSpring(() => ({
     opacity: 0,
@@ -51,8 +49,6 @@ const ChapterCard = ({ chapter, notFound = false }) => {
     }
     isFlipped.current = !isFlipped.current
     if (isFlipped.current === true) {
-      const maxScale =
-        Math.min(width / ref.current.offsetWidth, height / ref.current.offsetHeight) * 0.9
       animate.start({
         opacity: 1,
         // transform without scale

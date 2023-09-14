@@ -1,10 +1,10 @@
+const LogoRatio = 33 / 65
+
 const LogoGruyter = ({ color = 'var(--pale-yellow)', size = 34 }) => {
-  const ratio = 33 / 65
-  const height = size / ratio
   return (
     <svg
       width={size}
-      height={size / ratio}
+      height={size / LogoRatio}
       viewBox="0 0 33 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

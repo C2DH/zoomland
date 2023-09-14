@@ -7,14 +7,18 @@ import RoundButton from './RoundButton'
 import LogoGruyter from './Svg/LogoGruyter'
 import './Book.css'
 import { useRef } from 'react'
-import { EffectComposer, Glitch } from '@react-three/postprocessing'
+// import { EffectComposer, Glitch } from '@react-three/postprocessing'
 
-const Book = ({ enableGlitch = false, ...props }) => {
+const Book = ({ enableGlitch = false, enabled = false, ...props }) => {
   const [width, height] = useWindowStore((state) => [state.width, state.height])
   const [scene, setScene] = usePlayerStore((state) => [state.scene, state.setScene])
   const bookRef = useRef()
   const frameHeight = height * 1.2
   const frameWidth = width * 1.2
+  if (!enabled) {
+    return null
+  }
+  console.info('[Book] scene', scene, 'enabled', enabled, 'enabledGlitch', enableGlitch)
   return (
     <>
       <group ref={bookRef} {...props} dispose={null}>

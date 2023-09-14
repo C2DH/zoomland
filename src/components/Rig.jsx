@@ -1,8 +1,5 @@
-// import { CameraControls } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Vector3 } from 'three'
 import {
   Gameplay,
   SceneCredits,

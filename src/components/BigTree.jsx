@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { RigidBody } from '@react-three/rapier'
@@ -8,7 +8,7 @@ const BigTree = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/BigTree.glb')
   const seed = Math.random() + 0.8
   // Animate the tree
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const time = state.clock.getElapsedTime()
     const bendFactor = Math.sin(time * seed) * 0.2 + 0.2
     treeRef.current.rotation.z = bendFactor * 0.06

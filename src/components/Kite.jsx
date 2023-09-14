@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
@@ -7,7 +7,7 @@ const Kite = (props) => {
   const { nodes, materials } = useGLTF('../assets/models/Kite.glb')
   const seed = Math.random() + 1
   // Animate the tree
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const time = state.clock.getElapsedTime()
     const bendFactor = Math.sin(time * seed) * 0.3 + 0.8
     kiteRef.current.rotation.z = bendFactor * 0.14

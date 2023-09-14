@@ -1,6 +1,6 @@
 import { RigidBody } from '@react-three/rapier'
 import { usePlayerStore } from '../store'
-import { useSpring, config } from '@react-spring/web'
+// import { useSpring, config } from '@react-spring/web'
 import { useRef } from 'react'
 
 const TheDispatcher = ({ quest, position, children, debug = false }) => {
@@ -37,7 +37,7 @@ const TheDispatcher = ({ quest, position, children, debug = false }) => {
       // })
     }
   }
-  const pricePosition = [position[0], position[1], position[2]]
+  // const pricePosition = [position[0], position[1], position[2]]
   return (
     <group ref={dispatcherRef} position={position}>
       <RigidBody

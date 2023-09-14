@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import {
@@ -13,7 +13,6 @@ import {
 import { Vector3 } from 'three'
 import { updateCamera } from '../utils/camera'
 import { easings, useSpring } from '@react-spring/web'
-import Hero from './Hero'
 import { RigidBody } from '@react-three/rapier'
 
 const Boat = ({

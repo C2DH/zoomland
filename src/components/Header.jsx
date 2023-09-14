@@ -1,4 +1,3 @@
-import React from 'react'
 import './Header.css'
 import LogoZoomland from './Svg/LogoZoomland'
 import Counter from './Counter'

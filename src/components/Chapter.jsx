@@ -5,7 +5,6 @@ import { animated, useSpring } from '@react-spring/web'
 import { useEffect } from 'react'
 import RoundButton from './RoundButton'
 import { isMobile } from 'react-device-detect'
-import ChapterCard from './ChapterCard'
 
 const Chapter = ({ chapter }) => {
   const [props, api] = useSpring(() => ({
@@ -35,7 +34,7 @@ const Chapter = ({ chapter }) => {
     }
   }, [isCollected])
 
-  const { status, error, data } = useQuery({
+  const { data } = useQuery({
     queryKey: ['chapter', chapter.id],
     queryFn: ({ signal }) => {
       return axios

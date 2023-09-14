@@ -19,7 +19,6 @@ const Target = ({
   height = 2,
   priceOffsetPosition = [2, 0, 2],
   priceElevation = 0.5,
-  offset = [0, 0, 0],
   position,
   children,
   transparent = false,
@@ -31,7 +30,7 @@ const Target = ({
 }) => {
   // if vignette should be visible
   const price = useRef()
-  const [props, api] = useSpring(() => ({
+  const [, api] = useSpring(() => ({
     scale: 0.5,
     config: config.wobbly,
     onChange: ({ value }) => {
