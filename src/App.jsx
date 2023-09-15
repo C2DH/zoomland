@@ -14,6 +14,7 @@ import IntroLogoZoomland from './components/IntroLogoZoomland'
 import SkipIntro from './components/SkipIntro'
 import GameControls from './components/GameControls'
 import Credits from './components/Credits'
+import Book from './components/Book'
 
 const Map = React.lazy(() => import('./pages/Map'))
 const Chapters = React.lazy(() => import('./pages/Chapters'))
@@ -50,6 +51,10 @@ function App() {
       >
         <IntroLogoZoomland delay={3000} id="introLogoZoomland" />
       </div>
+      <Book className={'-no'} />
+      <Book className={''} />
+      <Book className={'-two'} />
+      <div className="Glitch_bg"></div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>
       <Credits />

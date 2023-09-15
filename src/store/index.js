@@ -208,3 +208,8 @@ export const useMenuStore = create((set) => ({
   gameControlsStatus: MenuClosed,
   setGameControlsStatus: (gameControlsStatus) => set({ gameControlsStatus }),
 }))
+
+export const useGlitchStore = create((set) => ({
+  globalGlitchClass: '',
+  setGlobalGlitchClass: (newClass) => set({ globalGlitchClass: newClass }),
+}))
