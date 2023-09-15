@@ -202,4 +202,7 @@
   .Book nav {
     display: none;
   }
+  .Book header {
+    padding: 1rem;
+  }
 }
