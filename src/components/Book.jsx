@@ -16,6 +16,10 @@ const Book = ({ enableGlitch = false, enabled = false, className = '', ...props 
 
   const handleButtonClick = () => {
     setGlobalGlitchClass('Glitch') // Replace 'new-class' with the class you want to add
+    setTimeout(() => {
+      setScene(Start)
+      setGlobalGlitchClass('remove')
+    }, 3000)
   }
 
   console.info('[Book] scene', scene, 'enabled', enabled, 'enabledGlitch', enableGlitch)
