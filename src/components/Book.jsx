@@ -24,7 +24,10 @@ const Book = ({ enableGlitch = false, enabled = false, className = '', ...props 
 
   console.info('[Book] scene', scene, 'enabled', enabled, 'enabledGlitch', enableGlitch)
   return (
-    <div className={`Book ${globalGlitchClass}${className}`}>
+    <div
+      style={{ opacity: scene !== SceneFakeBook ? '1' : '0' }}
+      className={`Book ${globalGlitchClass}${className}`}
+    >
       <main className="d-flex flex-column align-items-stretch">
         <header>
           <LogoZoomland color="var(--pale-orange)" />
