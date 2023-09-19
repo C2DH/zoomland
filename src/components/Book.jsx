@@ -6,7 +6,7 @@ import LogoGruyter from './Svg/LogoGruyter'
 import './Book.css'
 import MenuIcon from './Svg/MenuIcon'
 
-const Book = ({ enableGlitch = false, enabled = false, className = '', onClick, ...props }) => {
+const Book = ({ className = '', onClick }) => {
   return (
     <div
       // style={{ opacity: scene === SceneFakeBook ? '1' : '0' }}
