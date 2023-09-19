@@ -80,6 +80,9 @@
   right: 0;
   bottom: 0;
   z-index: var(--z-index-glitching-books-quest);
+  pointer-events: none;
+  /* // background gradiant radial */
+  background: radial-gradient(circle, rgba(237, 64, 125, 0.7) 0%, rgba(25, 48, 128, 0.9) 100%);
 }
 
 @keyframes shake-two {

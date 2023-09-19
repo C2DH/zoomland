@@ -6,6 +6,7 @@ import Quest from './Quest'
 
 const StatusIdle = 'idle'
 const StatusGlitching = 'glitch'
+const StatusQuest = 'quest'
 const StatusDone = 'invisible'
 
 const GlitchingBooks = ({ duration = 3000 }) => {
@@ -14,20 +15,12 @@ const GlitchingBooks = ({ duration = 3000 }) => {
   const [status, setStatus] = useState(StatusIdle)
 
   const onClickHandler = () => {
+    clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
+      setStatus(StatusQuest)
+    }, duration)
     setStatus(StatusGlitching)
-    // setIsGlitching(true)
-    // clearTimeout(timerRef.current)
-    // timerRef.current = setTimeout(() => {
-    //   setScene(Start)
-    //   setIsVisible(false)
-    // }, duration)
   }
-
-  // useEffect(() => {
-  //   return () => {
-  //     clearTimeout(timerRef.current)
-  //   }
-  // }, [])
 
   useEffect(() => {
     if (scene === SceneFakeBook) {
@@ -41,7 +34,7 @@ const GlitchingBooks = ({ duration = 3000 }) => {
   }
 
   return (
-    <div className="GlitchingBooks">
+    <div className={`GlitchingBooks ${status}`}>
       {['-no', '', '-two'].map((className) => (
         <Book
           key={className}
@@ -51,7 +44,7 @@ const GlitchingBooks = ({ duration = 3000 }) => {
       ))}
       <div className="GlitchingBooks__bg"></div>
       <div className="GlitchingBooks__quest">
-        {status === StatusGlitching && (
+        {status === StatusQuest && (
           <Quest
             initialDelay={duration}
             quest={{
