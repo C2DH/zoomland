@@ -82,6 +82,8 @@
   z-index: var(--z-index-glitching-books-quest);
   pointer-events: none;
   /* // background gradiant radial */
+}
+.GlitchingBooks.quest .GlitchingBooks__quest {
   background: radial-gradient(circle, rgba(237, 64, 125, 0.7) 0%, rgba(25, 48, 128, 0.9) 100%);
 }
 
