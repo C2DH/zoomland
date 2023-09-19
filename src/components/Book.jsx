@@ -1,40 +1,16 @@
-import { Html } from '@react-three/drei'
-import {
-  Gameplay,
-  SceneFakeBook,
-  Start,
-  usePlayerStore,
-  useWindowStore,
-  useGlitchStore,
-} from '../store'
 import { Col, Container, Row } from 'react-bootstrap'
 import LogoZoomland from '../components/Svg/LogoZoomland'
 import LogoUni from '../components/Svg/LogoUni'
 import RoundButton from './RoundButton'
 import LogoGruyter from './Svg/LogoGruyter'
 import './Book.css'
-import { useRef, useState } from 'react'
 import MenuIcon from './Svg/MenuIcon'
-// import { EffectComposer, Glitch } from '@react-three/postprocessing'
 
-const Book = ({ enableGlitch = false, enabled = false, className = '', ...props }) => {
-  // const [width, height] = useWindowStore((state) => [state.width, state.height])
-  const { globalGlitchClass, setGlobalGlitchClass } = useGlitchStore()
-  const [scene, setScene] = usePlayerStore((state) => [state.scene, state.setScene])
-
-  const handleButtonClick = () => {
-    setGlobalGlitchClass('Glitch') // Replace 'new-class' with the class you want to add
-    setTimeout(() => {
-      setScene(Gameplay)
-      setGlobalGlitchClass('remove')
-    }, 3000)
-  }
-
-  console.info('[Book] scene', scene, 'enabled', enabled, 'enabledGlitch', enableGlitch)
+const Book = ({ enableGlitch = false, enabled = false, className = '', onClick, ...props }) => {
   return (
     <div
       // style={{ opacity: scene === SceneFakeBook ? '1' : '0' }}
-      className={`Book ${globalGlitchClass}${className}`}
+      className={`Book ${className}`}
     >
       <main className="d-flex flex-column align-items-stretch">
         <header>
@@ -45,7 +21,6 @@ const Book = ({ enableGlitch = false, enabled = false, className = '', ...props 
             <span>ABOUT</span>
             <span>CONTACT</span>
           </nav>
-
           <RoundButton
             className="Fake_menu"
             Icon={MenuIcon}
@@ -66,12 +41,7 @@ const Book = ({ enableGlitch = false, enabled = false, className = '', ...props 
               </div>
               <h3>Exploring scale in digital history and humanities</h3>
               <p className="mb-4">Edited be Florentina Armaselu and Andreas Flickers</p>
-              <RoundButton
-                // onClick={() => setScene(Start)}
-                onClick={handleButtonClick}
-                text="Read Book"
-                backgroundColor="var(--rose)"
-              />
+              <RoundButton onClick={onClick} text="Read Book" backgroundColor="var(--rose)" />
             </Col>
           </Row>
         </Container>
