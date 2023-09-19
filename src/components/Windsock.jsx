@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { useAnimations, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { RigidBody } from '@react-three/rapier'
@@ -15,7 +15,7 @@ export function Windsock({ debug = true, ...props }) {
   const seed = Math.random() + 0.8
 
   // Animate the tree
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const time = state.clock.getElapsedTime() / 2
     const bendFactor = Math.sin(time * seed) * 0.3 + 0.3
     sockSpin.current.rotation.z = bendFactor * 1.2

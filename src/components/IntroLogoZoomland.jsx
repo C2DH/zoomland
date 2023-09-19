@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import Lottie from 'react-lottie'
 import { useQueueStore } from '../store/preload'
 import animationData from '../assets/json/zoomland-logo.json'

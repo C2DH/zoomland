@@ -1,11 +1,18 @@
-import React, { Suspense, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { Gameplay, OpenSea, SceneCredits, Start, usePlayerStore } from '../store'
+import {
+  Gameplay,
+  OpenSea,
+  SceneCredits,
+  SceneFakeBook,
+  Start,
+  usePlayerStore,
+  useWorldStore,
+} from '../store'
 import { Vector3 } from 'three'
 import { updateCamera } from '../utils/camera'
 import { easings, useSpring } from '@react-spring/web'
-import Hero from './Hero'
 import { RigidBody } from '@react-three/rapier'
 
 const Boat = ({
@@ -19,6 +26,7 @@ const Boat = ({
   const platformRef = useRef()
   const setScene = usePlayerStore((state) => state.setScene)
   const sceneRef = useRef(usePlayerStore.getState().scene)
+  const cameraOffsetRef = useRef(useWorldStore.getState().cameraOffset)
   const { nodes, materials } = useGLTF('../assets/models/Boat.glb')
   const seed = Math.random() + 0.8
   const [, api] = useSpring(() => ({
@@ -54,8 +62,8 @@ const Boat = ({
       target: boatRef.current.getWorldPosition(new Vector3()),
       delta,
       angle: -Math.PI / 2,
-      radius: 4,
-      elevation: 2,
+      radius: cameraOffsetRef.current.radius,
+      elevation: cameraOffsetRef.current.elevation,
       disable: sceneRef.current === Gameplay || sceneRef.current === SceneCredits,
     })
   })
@@ -83,8 +91,8 @@ const Boat = ({
             setScene(Gameplay)
           },
         })
-      } else if (state.scene === Start) {
-        // do a transition to the harbour
+      } else if (state.scene === Start || state.scene === SceneFakeBook) {
+        // set the boat in the initial position
         api.set({
           x: positions[0][0],
           y: positions[0][1],
@@ -98,6 +106,10 @@ const Boat = ({
       }
       sceneRef.current = state.scene
     })
+  }, [])
+  useEffect(() => {
+    // link radius
+    return useWorldStore.subscribe((state) => (cameraOffsetRef.current = state.cameraOffset))
   }, [])
 
   console.log('[Boat]', sceneRef.current)

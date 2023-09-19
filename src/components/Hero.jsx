@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import {
   AnimationIdle,
@@ -7,14 +7,13 @@ import {
   AnimationJump,
   useAnimationStore,
 } from '../store'
-import { MeshPhysicalMaterial } from 'three'
 // import { useTexture } from '@react-three/drei'
 
 const Hero = (props) => {
   // const dressTexture = useTexture('../assets/tex/dress.png')
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Hero.glb')
-  const { actions, names } = useAnimations(animations, group)
+  const { actions } = useAnimations(animations, group)
   // remap animation names to current const
   const mappedActions = {
     [AnimationIdle]: actions['idle'],

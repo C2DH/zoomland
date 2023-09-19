@@ -5,7 +5,7 @@ import { MeshStandardMaterial, Object3D } from 'three'
 
 const Clouds = ({ count = 30 }) => {
   const [o3d] = useState(() => new Object3D())
-  const { nodes, materials } = useGLTF('../assets/models/Cloud.glb')
+  const { nodes } = useGLTF('../assets/models/Cloud.glb')
   const items = useRef()
 
   const cloudMaterial = new MeshStandardMaterial({
@@ -30,7 +30,7 @@ const Clouds = ({ count = 30 }) => {
     return instances
   }, [count])
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (!items.current) return
     const time = state.clock.getElapsedTime()
     const mesh = items.current

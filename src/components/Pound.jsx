@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { Plane, shaderMaterial } from '@react-three/drei'
 // import VertexShader from './VertexShader'
 import VertexShader from './Glsl/VertexShader.glsl'

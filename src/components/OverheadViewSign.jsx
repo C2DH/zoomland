@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { MeshStandardMaterial } from 'three'
@@ -8,7 +8,7 @@ const OverheadViewSign = ({ animation = true, color = '#306fc5', ...props }) => 
   const { nodes, materials } = useGLTF('../assets/models/OverheadViewSign.glb')
   const seed = 0.8
   // Animate the tree
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (animation === true) {
       const time = state.clock.getElapsedTime()
       const positionFactor = Math.sin(time * seed) * 0.1

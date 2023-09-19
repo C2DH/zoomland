@@ -1,7 +1,6 @@
 import { Joystick as ReactJoystick } from 'react-joystick-component'
 import './Joystick.css'
 import { useWorldStore } from '../store'
-import { useState } from 'react'
 
 const Joystick = ({ size = 100 }) => {
   const setJoystick = useWorldStore((state) => state.setJoystick)
@@ -15,7 +14,7 @@ const Joystick = ({ size = 100 }) => {
     // console.log('[Joystick]', e.x, speed)
     setJoystick(e.x, e.y)
   }
-  const handleStop = (e, data) => {
+  const handleStop = () => {
     setJoystick(undefined, 0)
   }
   return (

@@ -8,20 +8,12 @@ Title: LowPoly Trump Free Character
 "LowPoly Trump Free Character" (https://skfb.ly/o7HKy) by Denys Almaral is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 */
 
-import React, { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 
 const Egg = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./models/Egg.gltf')
-  const { actions } = useAnimations(animations, group)
-
-  useEffect(() => {
-    // actions[names[animationIndex]].play()
-    // return () => {
-    //   actions[names[animationIndex]].fadeOut(0.5)
-    // }
-  }, [])
+  const { nodes, materials } = useGLTF('./models/Egg.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

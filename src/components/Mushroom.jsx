@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import instances from '../data/Mushrooms'
-import { Object3D, MeshDepthMaterial, RGBADepthPacking } from 'three'
+import { Object3D } from 'three'
 
 const Mushrooms = (props) => {
   const count = instances.length

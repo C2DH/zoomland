@@ -1,23 +1,22 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import './SideMenu.css'
 import './backgroundPattern.css'
-import LogoZoomland from './Svg/LogoZoomland'
 import LogoGruyter from './Svg/LogoGruyter'
 import LogoUni from './Svg/LogoUni'
 import { Nav } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 import RoundButton from './RoundButton'
 import CloseIcon from './Svg/CloseIcon'
-import { a, config, useSpring } from '@react-spring/web'
+import { a, useSpring } from '@react-spring/web'
 import {
   MenuClosed,
   useMenuStore,
   MenuOpen,
   usePlayerStore,
   Gameplay,
-  Start,
   useWorldStore,
   SceneCredits,
+  SceneFakeBook,
 } from '../store'
 import IntroLogoZoomland from './IntroLogoZoomland'
 
@@ -89,7 +88,7 @@ const SideMenu = () => {
               <button
                 className="btn btn-link"
                 onClick={() => {
-                  setScene(Start)
+                  setScene(SceneFakeBook)
                   set(MenuClosed)
                 }}
               >

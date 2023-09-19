@@ -1,16 +1,11 @@
-import { useQuery } from '@tanstack/react-query'
 import { Col, Container, Row } from 'react-bootstrap'
 import Page from './Page'
-import axios from 'axios'
 import ChapterCard from '../components/ChapterCard'
 import { usePlayerStore } from '../store'
 import data from '../data/chapters.json'
 
 const Chapters = () => {
-  const [progress, collectedChapters] = usePlayerStore((state) => [
-    state.progress,
-    state.collectedChapters,
-  ])
+  const [collectedChapters] = usePlayerStore((state) => [state.collectedChapters])
 
   console.debug('[Chapters] collectedChapters', collectedChapters)
   // load chapter using useQuery

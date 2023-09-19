@@ -1,5 +1,5 @@
-import React from 'react'
 import { RigidBody } from '@react-three/rapier'
+import { Fragment } from 'react'
 
 const Forest = ({ positions = [], maxScale = 2, scales = {}, children }) => {
   // generate random scales and rotations for each element in position index
@@ -14,7 +14,7 @@ const Forest = ({ positions = [], maxScale = 2, scales = {}, children }) => {
             : Math.random() * maxScale + 0.2
         const rotation = Math.random() * Math.PI * 2
         return (
-          <React.Fragment key={index}>
+          <Fragment key={index}>
             <RigidBody colliders="cuboid" position={position} scale={[1, 20, 1]} type="fixed">
               <mesh castShadow receiveShadow>
                 <boxGeometry args={[0.6, 0.6, 0.6]} />
@@ -28,7 +28,7 @@ const Forest = ({ positions = [], maxScale = 2, scales = {}, children }) => {
             >
               {children}
             </group>
-          </React.Fragment>
+          </Fragment>
         )
       })}
     </>

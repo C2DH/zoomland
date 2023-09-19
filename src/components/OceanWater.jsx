@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { shaderMaterial } from '@react-three/drei'
 import VertexShader from './Glsl/VertexShader.glsl'
 import FragmentShader from './Glsl/FragmentShader.glsl'

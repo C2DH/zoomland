@@ -10,7 +10,7 @@ const storeElapsedTime = (elapsedTime) => {
 
 const initialElapsedTime = usePlayerStore.getState().initialElapsedTime
 console.debug('[Timer] initialElapsedTime:', initialElapsedTime)
-const Timer = ({ maxElapsedTime = 60 * 10 }) => {
+const Timer = () => {
   const status = useRef(Play)
   const [elapsedTime, setElapsedTime] = useState(initialElapsedTime)
   const [isCollectingChapter, isCollectingQuest] = usePlayerStore((state) => [

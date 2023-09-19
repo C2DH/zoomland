@@ -1,6 +1,3 @@
-import { useSprings, a, config } from '@react-spring/web'
-import { useEffect } from 'react'
-
 const LogoZoomland = ({ color = 'var(--pale-yellow)', size = 160 }) => {
   const ratio = 406 / 69
   return (

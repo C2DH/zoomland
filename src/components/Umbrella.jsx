@@ -1,7 +1,7 @@
 import { useGLTF } from '@react-three/drei'
 import { MeshStandardMaterial } from 'three'
 
-const Umbrella = ({ color, debug = true, ...props }) => {
+const Umbrella = ({ color, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Umbrella.glb')
   const fabricMaterial = new MeshStandardMaterial({
     ...materials.Fabric,
