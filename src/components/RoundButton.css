@@ -9,6 +9,7 @@
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  color: inherit;
 }
 
 .RoundButton:hover {
