@@ -60,17 +60,25 @@
   /* animation: shake 1s linear both infinite; */
 }
 
-.GlitchingBooks .Glitch ~ .GlitchingBooks__bg {
+.GlitchingBooks__bg {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background: url(./assets/img/Glitch.png);
+  background: url(/assets/img/Glitch.png);
   background-size: 75% 200%;
   background-repeat: no-repeat;
-  animation: glitch 1s steps(2, end) both infinite;
+  animation: none;
   opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.GlitchingBooks.glitch .GlitchingBooks__bg,
+.GlitchingBooks.quest .GlitchingBooks__bg {
+  opacity: 1;
+  animation: glitch 1s steps(2, end) both infinite;
 }
 
 .GlitchingBooks__quest {

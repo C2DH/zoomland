@@ -17,6 +17,7 @@ const Quest = ({
   withChapter = false,
   onComplete,
   onCompleteLabel = 'Done',
+  enableClose = false,
 }) => {
   const [sentenceIndex, setSentenceIndex] = useState(-1)
   const [sentences, setSentences] = useState([])
@@ -30,7 +31,7 @@ const Quest = ({
           onComplete()
         }
       }
-      if (event.key === 'Escape') {
+      if (enableClose && event.key === 'Escape') {
         onComplete()
       }
     }

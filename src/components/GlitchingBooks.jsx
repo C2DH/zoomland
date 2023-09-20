@@ -46,7 +46,7 @@ const GlitchingBooks = ({ duration = 3000 }) => {
       <div className="GlitchingBooks__quest">
         {status === StatusQuest && (
           <Quest
-            initialDelay={duration}
+            initialDelay={1000}
             quest={{
               sentences: [
                 'It broke, again.',
