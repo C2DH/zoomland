@@ -1,6 +1,5 @@
 import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
-import { getFrontSideMaterial } from '../utils/common'
 
 const StoneBig = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
   const { nodes, materials } = useGLTF('../assets/models/StoneBig.glb')

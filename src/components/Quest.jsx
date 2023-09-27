@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Quest.css'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
-import { Button, Col, Container, Row } from 'react-bootstrap'
 import DialogueCard from './DialogueCard'
 
 const to = (i, delay = 0) => ({
@@ -18,6 +17,7 @@ const Quest = ({
   withChapter = false,
   onComplete,
   onCompleteLabel = 'Done',
+  enableClose = false,
 }) => {
   const [sentenceIndex, setSentenceIndex] = useState(-1)
   const [sentences, setSentences] = useState([])
@@ -31,7 +31,7 @@ const Quest = ({
           onComplete()
         }
       }
-      if (event.key === 'Escape') {
+      if (enableClose && event.key === 'Escape') {
         onComplete()
       }
     }

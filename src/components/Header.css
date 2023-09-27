@@ -23,3 +23,7 @@
   font-size: var(--font-size-8);
   color: white;
 }
+
+.Header.fakebook {
+  opacity: 0;
+}

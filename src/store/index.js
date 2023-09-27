@@ -88,6 +88,7 @@ export const OpenSea = 'opensea'
 export const Start = 'start'
 export const Baloon = 'baloon'
 export const SceneCredits = 'credits'
+export const SceneFakeBook = 'fakebook'
 
 export const usePlayerStore = create(
   persist(
@@ -207,4 +208,9 @@ export const useMenuStore = create((set) => ({
   setMenuStatus: (menuStatus) => set({ menuStatus }),
   gameControlsStatus: MenuClosed,
   setGameControlsStatus: (gameControlsStatus) => set({ gameControlsStatus }),
+}))
+
+export const useGlitchStore = create((set) => ({
+  globalGlitchClass: '',
+  setGlobalGlitchClass: (newClass) => set({ globalGlitchClass: newClass }),
 }))

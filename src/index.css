@@ -20,11 +20,12 @@
   --z-index-joystick: 5;
   --z-index-header: 6;
   --z-index-approutes: 7;
-  --z-index-toggle-sounds: 8;
+  --z-index-toggle-sounds: 6;
   --z-index-skip-intro: 9;
   --z-index-side-menu: 10;
   --z-index-game-controls: 11;
- 
+  --z-index-glitching-books: 12;
+  --z-index-glitching-books-quest: 13;
 
   --spacer: 1.5em;
   --spacer-half: 0.75em;

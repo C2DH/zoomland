@@ -1,10 +1,10 @@
+const LogoRatio = 225 / 70
+
 const LogoUni = ({ color = 'var(--pale-yellow)', size = 160 }) => {
-  const ratio = 225 / 70
-  const height = size / ratio
   return (
     <svg
       width={size}
-      height={size / ratio}
+      height={size / LogoRatio}
       viewBox="0 0 225 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

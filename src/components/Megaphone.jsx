@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { RigidBody } from '@react-three/rapier'
@@ -8,7 +8,7 @@ const Megaphone = ({ debug = true, ...props }) => {
   const { nodes, materials } = useGLTF('../assets/models/Megaphone.glb')
   const seed = 0.8
   // Animate the tree
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const time = state.clock.getElapsedTime()
     const positionFactor = Math.sin(time * seed) * 0.1
     megaphoneRef.current.position.y = 6.6 + positionFactor

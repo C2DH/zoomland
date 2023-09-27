@@ -1,15 +1,15 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useAnimations, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { MeshStandardMaterial, DoubleSide } from 'three'
 
+const colors = ['#da5df9', '#f95dca', '#f95d7c', '#f98c5d', '#f9da5d']
+
 export function Butterfly(props, color = { color }) {
   const group = useRef()
-  const sockSpin = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/Butterfly.glb')
   const { actions } = useAnimations(animations, group)
 
-  const colors = ['#da5df9', '#f95dca', '#f95d7c', '#f98c5d', '#f9da5d']
   const [currentColor, setCurrentColor] = useState(colors[0])
 
   useFrame(() => {

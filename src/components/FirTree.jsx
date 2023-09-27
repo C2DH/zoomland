@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
@@ -9,7 +9,7 @@ const FirTree = (props) => {
   const { nodes, materials } = useGLTF('../assets/models/FirTree.glb')
   const seed = Math.random() + 0.8
   // Animate the tree
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const time = state.clock.getElapsedTime()
     const bendFactor = Math.sin(time * seed) * 0.3 + 0.3
     treeRef.current.rotation.z = bendFactor * 0.1

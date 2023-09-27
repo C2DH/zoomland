@@ -11,7 +11,7 @@ import OverheadViewSign from '../components/OverheadViewSign'
 import { isMobile } from 'react-device-detect'
 
 const Map = () => {
-  const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
+  const { nodes } = useGLTF('../assets/models/Landscape.glb')
   const playerPosition = useWorldStore((state) => state.playerPosition)
   const d = 10
   const s = 0.8

@@ -1,7 +1,13 @@
 import GroundViewSign from './GroundViewSign'
 import BirdEyeViewSign from './BirdEyeViewSign'
 import OverheadViewSign from './OverheadViewSign'
-import { ViewTypeGround, ViewTypeOverhead, ViewTypeBirdEye, ColorByCategory } from '../constants'
+import {
+  ViewTypeGround,
+  ViewTypeOverhead,
+  ViewTypeBirdEye,
+  ColorByCategory,
+  CategoryIntroduction,
+} from '../constants'
 import { useRef } from 'react'
 import { RigidBody } from '@react-three/rapier'
 import { useSpring, config } from '@react-spring/web'
@@ -41,10 +47,7 @@ const Prize = ({
       prizeRef.current.position.y = position[1] + value.y
     },
   }))
-  const [collectChapter, doneCollectingChapter] = usePlayerStore((state) => [
-    state.collectChapter,
-    // state.doneCollectingChapter,
-  ])
+  const collectChapter = usePlayerStore((state) => state.collectChapter)
   const ViewTypeComponent = ComponentsByName[viewType]
   const color = ColorByCategory[category]
 

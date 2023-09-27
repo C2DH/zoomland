@@ -1,5 +1,5 @@
-import React, { Suspense, useEffect, useRef } from 'react'
-import { GradientTexture, Text, useGLTF } from '@react-three/drei'
+import { useEffect, useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 import { useSpring, easings } from '@react-spring/web'
 import Sensor from './Sensor'
@@ -8,13 +8,13 @@ const BeforeFlyingUp = 'before-flying-up'
 const BeforeFlyingDown = 'before-flying-down'
 const FlyingUp = 'flying-up'
 const FlyingDown = 'flying-down'
-const GroundWithPlayer = 'down-with-player'
-const GroundNoPlayer = 'down-no-player'
-const UpNoPlayer = 'up-no-player'
-const UpWithPlayer = 'up-with-player'
+// const GroundWithPlayer = 'down-with-player'
+// const GroundNoPlayer = 'down-no-player'
+// const UpNoPlayer = 'up-no-player'
+// const UpWithPlayer = 'up-with-player'
 
-const CheckInText = 'Ready?'
-const CheckOutText = 'Free ride!'
+// const CheckInText = 'Ready?'
+// const CheckOutText = 'Free ride!'
 
 const Balloon = ({ yMax = 20, yMin = 0.0, waitingTime = 5000, ...props }) => {
   const collisionTimerRef = useRef()

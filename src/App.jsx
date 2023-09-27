@@ -1,10 +1,10 @@
+import React, { Suspense, useCallback, useEffect } from 'react'
 import Header from './components/Header'
 import Vignette from './components/Vignette'
 import World from './components/World'
 import { Route } from 'react-router-dom'
 import AppRoutes from './AppRoutes'
 import About from './pages/About'
-import React, { Suspense, useCallback, useEffect } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useWindowStore } from './store'
 import { debounce } from './utils/common'
@@ -14,9 +14,10 @@ import IntroLogoZoomland from './components/IntroLogoZoomland'
 import SkipIntro from './components/SkipIntro'
 import GameControls from './components/GameControls'
 import Credits from './components/Credits'
+import GlitchingBooks from './components/GlitchingBooks'
 
-const Map = React.lazy(() => import('./pages/Map'))
-const Chapters = React.lazy(() => import('./pages/Chapters'))
+const MapPage = React.lazy(() => import('./pages/Map'))
+const ChaptersPage = React.lazy(() => import('./pages/Chapters'))
 const queryClient = new QueryClient()
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
       >
         <IntroLogoZoomland delay={3000} id="introLogoZoomland" />
       </div>
+      <GlitchingBooks />
       <SideMenu />
       <Header isMobile={isMobile}></Header>
       <Credits />
@@ -63,7 +65,7 @@ function App() {
           path="/map"
           element={
             <Suspense>
-              <Map />
+              <MapPage />
             </Suspense>
           }
         />
@@ -71,7 +73,7 @@ function App() {
           path="/chapters"
           element={
             <Suspense fallback={null}>
-              <Chapters />
+              <ChaptersPage />
             </Suspense>
           }
         />

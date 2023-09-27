@@ -24,7 +24,7 @@ export default [
   { id: '8-scale-exercises', position: [0, 0.5, 0] },
   {
     id: '9-complexity-and-analytical-creative-approaches-at-scale',
-    position: [1.5486526489257812, 13.522760391235352, -65.97655487060547],
+    position: [1.59, 13.52, -65.98],
   },
   { id: '10-the-scales-of-computational-literary-studies', position: [0, 0.5, 0] },
   { id: '11-text-fractal-dust-and-informational-granularity', position: [-54.4, -0.1, -19.6] },

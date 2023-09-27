@@ -1,11 +1,11 @@
 import { Suspense, lazy } from 'react'
-import { KeyboardControls, Environment, Stats, Float } from '@react-three/drei'
+import { KeyboardControls, Environment } from '@react-three/drei'
+// import { Glitch, EffectComposer } from '@react-three/postprocessing'
 import { Canvas } from '@react-three/fiber'
-import { Physics, RigidBody } from '@react-three/rapier'
+import { Physics } from '@react-three/rapier'
 import Landscape from './Landscape'
 import Lights from './Lights'
 import Forest from './Forest'
-import SmallTree from './SmallTree'
 import './World.css'
 import '../index.css'
 import Player from './Player'
@@ -67,9 +67,6 @@ const QuestsById = Quests.reduce((acc, quest) => {
 const Joystick = lazy(() => import('./Joystick'))
 const WorldDashboard = lazy(() => import('./WorldDashboard'))
 const Sounds = lazy(() => import('./Sounds'))
-const FarAwayCamera = {
-  position: [111.8923846860428, 132.97427986352267, 100.68959842565253],
-}
 
 const CloseCamera = {
   position: [10, 13, 10],

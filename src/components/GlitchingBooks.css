@@ -1,0 +1,143 @@
+.GlitchingBooks {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index-glitching-books);
+}
+
+.GlitchingBooks .Glitch {
+  top: 10px;
+  mix-blend-mode: hard-light;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation: shake 1s linear both infinite;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  15%,
+  55% {
+    transform: translate3d(0, 3px, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  25%,
+  55% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+.GlitchingBooks .Glitch-two {
+  animation: shake-two 1s linear both infinite;
+  top: 10px;
+  opacity: 0;
+  mix-blend-mode: plus-lighter;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* animation: shake 1s linear both infinite; */
+}
+
+.GlitchingBooks__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(/assets/img/Glitch.png);
+  background-size: 75% 200%;
+  background-repeat: no-repeat;
+  animation: none;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.GlitchingBooks.glitch .GlitchingBooks__bg,
+.GlitchingBooks.quest .GlitchingBooks__bg {
+  opacity: 1;
+  animation: glitch 1s steps(2, end) both infinite;
+}
+
+.GlitchingBooks__quest {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index-glitching-books-quest);
+  pointer-events: none;
+  /* // background gradiant radial */
+}
+.GlitchingBooks.quest .GlitchingBooks__quest {
+  background: radial-gradient(circle, rgba(237, 64, 125, 0.7) 0%, rgba(25, 48, 128, 0.9) 100%);
+}
+
+@keyframes shake-two {
+  10%,
+  90% {
+    opacity: 0;
+    transform: translate3d(-4px, 0, 0);
+  }
+  5%,
+  55%,
+  95% {
+    opacity: 0.2;
+  }
+  30%,
+  60%,
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 2px, 0);
+  }
+}
+
+@keyframes glitch {
+  10%,
+  90% {
+    opacity: 0;
+    background-size: 75% 120%;
+  }
+  5%,
+  55%,
+  95% {
+    background-size: 600% 100%;
+    opacity: 0.2;
+  }
+  3%,
+  23%,
+  63%,
+  93% {
+    opacity: 0.1;
+    background-size: 600% 150%;
+  }
+
+  30%,
+  60%,
+  100% {
+    opacity: 1;
+    background-size: 200% 100%;
+  }
+}

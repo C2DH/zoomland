@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 // import VertexShader from './Glsl/VertexShader.glsl'
 // import FragmentShader from './Glsl/FragmentShader.glsl'
 // import { extend, useFrame } from '@react-three/fiber'
-// import React, { useRef } from 'react'
+// import { useRef } from 'react'
 
 // const WaveShaderMaterial = shaderMaterial(
 //   //Uniform
