@@ -40,6 +40,7 @@ const GlitchingBooks = ({ duration = 3000 }) => {
           key={className}
           className={`${status === StatusGlitching ? 'Glitch' : ''}${className}`}
           onClick={onClickHandler}
+          disabled={status === StatusGlitching}
         />
       ))}
       <div className="GlitchingBooks__bg"></div>

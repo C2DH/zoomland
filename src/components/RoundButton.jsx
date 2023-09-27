@@ -7,12 +7,14 @@ const RoundButton = ({
   onClick,
   className = '',
   text = '',
+  disabled = false,
 }) => {
   return (
     <button
       onClick={onClick}
       type="button"
       className={`RoundButton ${className}`}
+      disabled={disabled}
       style={{
         backgroundColor: backgroundColor,
       }}

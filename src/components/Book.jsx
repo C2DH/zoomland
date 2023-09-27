@@ -6,7 +6,7 @@ import LogoGruyter from './Svg/LogoGruyter'
 import './Book.css'
 import MenuIcon from './Svg/MenuIcon'
 
-const Book = ({ className = '', onClick }) => {
+const Book = ({ className = '', disabled = false, onClick }) => {
   return (
     <div
       // style={{ opacity: scene === SceneFakeBook ? '1' : '0' }}
@@ -22,6 +22,7 @@ const Book = ({ className = '', onClick }) => {
             <span>CONTACT</span>
           </nav>
           <RoundButton
+            disabled={disabled}
             className="Fake_menu"
             Icon={MenuIcon}
             color={'var(--pale-yellow)'}
