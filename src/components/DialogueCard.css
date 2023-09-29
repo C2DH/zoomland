@@ -64,3 +64,13 @@
     margin-left: 2%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .DialogueCard .DialogueCard-wrapper {
+    padding-right: 1.5rem;
+  }
+  .DialogueCard .DialogueCard-footer .btn {
+    padding-right: 0rem;
+    text-align: right;
+  }
+}

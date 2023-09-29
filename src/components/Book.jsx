@@ -5,6 +5,7 @@ import RoundButton from './RoundButton'
 import LogoGruyter from './Svg/LogoGruyter'
 import './Book.css'
 import MenuIcon from './Svg/MenuIcon'
+import { isMobile } from 'react-device-detect'
 
 const Book = ({ className = '', disabled = false, onClick }) => {
   return (
@@ -37,9 +38,7 @@ const Book = ({ className = '', disabled = false, onClick }) => {
               </div>
             </Col>
             <Col className="Book_content_right" xs={12} md={6} lg={7} xl={7} xxl={7}>
-              <div className="mb-3">
-                <LogoZoomland size="120" />
-              </div>
+              <div className="mb-3">{isMobile ? null : <LogoZoomland size="120" />}</div>
               <h3>Exploring scale in digital history and humanities</h3>
               <p className="mb-4">Edited be Florentina Armaselu and Andreas Flickers</p>
               <RoundButton onClick={onClick} text="Read Book" backgroundColor="var(--rose)" />

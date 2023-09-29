@@ -1,6 +1,7 @@
 import RoundButton from './RoundButton'
 import CloseIcon from './Svg/CloseIcon'
 import './DialogueCard.css'
+import { isMobile } from 'react-device-detect'
 
 const DialogueCard = ({
   sentence,
@@ -41,14 +42,17 @@ const DialogueCard = ({
           <p>{sentence}</p>
         </div>
         <div className="DialogueCard-footer">
-          <button
-            className="btn btn-link btn-md"
+          {/* <button
+            className={`btn btn-link ${isMobile ? 'btn-ms' : 'btn-md'}`}
             disabled={disablePrevious}
             onClick={onClickPrevious}
           >
             Prev
-          </button>
-          <button className="btn btn-link btn-lg" onClick={onClickNext}>
+          </button> */}
+          <button
+            className={`btn btn-link ${isMobile ? 'btn-md' : 'btn-lg'}`}
+            onClick={onClickNext}
+          >
             {disableNext ? onCompleteLabel : 'Continue'}
           </button>
         </div>
