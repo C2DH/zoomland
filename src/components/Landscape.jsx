@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { MeshStandardMaterial } from 'three'
 
 const Landscape = (props) => {
-  const { nodes, materials } = useGLTF('../assets/models/Landscape.glb')
+  const { nodes, materials } = useGLTF('../assets/models/Landscape_2.glb')
   const addToLoaded = useQueueStore((state) => state.addToLoaded)
 
   useEffect(() => {
