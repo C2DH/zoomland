@@ -6,9 +6,9 @@ import { isMobile } from 'react-device-detect'
 const DialogueCard = ({
   sentence,
   characterName,
-  onClickPrevious,
+  // onClickPrevious,
   onClickNext,
-  disablePrevious = false,
+  // disablePrevious = false,
   disableNext = false,
   avatar = '/assets/avatars/Hero.jpg',
   onCompleteLabel = 'Done',
