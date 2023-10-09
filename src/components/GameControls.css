@@ -30,3 +30,19 @@
     left: calc(50% - 160px);
   }
 }
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+  .GameControls {
+    width: 320px;
+    /* margin-top: 1%; */
+    top: 1%;
+    left: calc(50% - 160px);
+    height: 97vh;
+  }
+  .GameControls h2 {
+    margin-top: ;
+  }
+  .GameControls img {
+    height: 75vh;
+  }
+}

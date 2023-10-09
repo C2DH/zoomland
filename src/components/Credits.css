@@ -78,6 +78,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .Credits {
+    padding: 0 1rem;
+  }
   .Credits__content {
     left: 10%;
     transform: translateX(-5%);

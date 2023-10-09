@@ -7,6 +7,7 @@ import { useAnimationStore, AnimationRun, AnimationJump, AnimationWalk } from '.
 import RoundButton from './RoundButton'
 import SpeakersOff from './Svg/SpeakersOff'
 import SpeakersOn from './Svg/SpeakersOn'
+import { isMobile } from 'react-device-detect'
 
 const SoundEffects = ({ isPlaying }) => {
   const animation = useAnimationStore((state) => state.animation)
@@ -63,7 +64,7 @@ const Sounds = () => {
     <>
       <div
         className="Sounds fill position-fixed bottom-0 end-0"
-        style={{ margin: '2rem', zIndex: 'var(--z-index-toggle-sounds)' }}
+        style={{ margin: isMobile ? '1rem' : '2rem', zIndex: 'var(--z-index-toggle-sounds)' }}
       >
         <RoundButton
           onClick={() => setIsPlaying(!isPlaying)}

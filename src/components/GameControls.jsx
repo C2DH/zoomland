@@ -37,7 +37,7 @@ const GameControls = () => {
           onClick={hide}
         />
       </div>
-      <h2 className="mb-4">Game Controls</h2>
+      <h2 className={isMobile ? 'mb-2' : 'mb-4'}>Game Controls</h2>
       {isMobile ? (
         <img
           src="/assets/svg/character-controls-mobile.svg"

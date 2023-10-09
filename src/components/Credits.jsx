@@ -45,7 +45,7 @@ const Credits = ({ duration = 20000 }) => {
 
   return (
     <div className={`Credits ${scene === SceneCredits ? 'visible' : ''}`}>
-      <a.div style={{ y }} ref={contentRef}>
+      <a.div style={{ y, textAlign: 'center' }} ref={contentRef}>
         {/* this is scrolling automatically */}
         <IntroLogoZoomland delay={5000} height={'auto'} />
         <h2 className="text-center mb-5">Thank you for your love and support! </h2>

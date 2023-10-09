@@ -112,7 +112,6 @@
 
 .menu-footer span {
   position: relative;
-  margin-bottom: 1rem;
   font-size: var(--font-size-1);
   color: var(--pale-yellow);
 }
@@ -125,5 +124,11 @@
   .SideMenu,
   .SideMenu_slide {
     width: calc(100vw - 1rem);
+  }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+  .SideMenu_slide {
+    padding: 1rem;
   }
 }

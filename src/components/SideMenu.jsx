@@ -19,6 +19,7 @@ import {
   SceneFakeBook,
 } from '../store'
 import IntroLogoZoomland from './IntroLogoZoomland'
+import { isMobile } from 'react-device-detect'
 
 const SideMenu = () => {
   const { pathname } = useLocation()
@@ -60,8 +61,11 @@ const SideMenu = () => {
             onClick={onClickHandler}
           />
         </div>
-        <div style={{ marginTop: '0.6rem' }}>
-          <IntroLogoZoomland width={220} startAnimation={menuStatus === MenuOpen} />
+        <div className="IntroLogoZoomland" style={{ marginTop: '0.6rem' }}>
+          <IntroLogoZoomland
+            width={isMobile ? 160 : 220}
+            startAnimation={menuStatus === MenuOpen}
+          />
 
           {/* <LogoZoomland color={'var(--pale-orange)'} /> */}
         </div>
@@ -106,7 +110,7 @@ const SideMenu = () => {
                 Credits
               </button>
             </Nav.Item>
-            <Nav.Item className="mb-3">
+            <Nav.Item className={isMobile ? null : 'mb-3'}>
               <button className="btn btn-link" onClick={saveInitialPropsToPlayerStore}>
                 Save
               </button>
@@ -134,7 +138,7 @@ const SideMenu = () => {
           </Nav>
         </div>
         <div className="menu-footer">
-          <span>Legal notice</span>
+          <span className={isMobile ? null : 'mb-1'}>Legal notice</span>
           <div className="footer-logos">
             <LogoUni />
             <LogoGruyter />

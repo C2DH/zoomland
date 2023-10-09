@@ -13,6 +13,7 @@
 
 .Book main {
   height: 100vh;
+  overflow-y: auto;
 }
 #Book_content {
   max-width: 724px;
