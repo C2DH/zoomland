@@ -118,7 +118,7 @@ const World = ({
               files="/evening_road_01_puresky_1k.hdr"
               near={1}
               far={1000}
-              // background
+              background
               blur={0.08}
               inte
             />
@@ -257,7 +257,7 @@ const World = ({
               <Prize {...Chapters[8]} prizeOffsetPosition={[1, 0.5, -2]} />
               <SwedishHorse
                 rotation={[0, -2, 0]}
-                scale={2.2}
+                scale={1.2}
                 position={Chapters[8].position}
                 debug={false}
               />
@@ -294,11 +294,12 @@ const World = ({
                 debug={false}
               />
 
-              <Prize {...Chapters[13]} prizeOffsetPosition={[1, 1, 5.5]} />
+              <Prize {...Chapters[13]} prizeOffsetPosition={[0, 2, 4]} />
               <FishNet
                 rotation={[0, -2.2, 0]}
                 scale={[2.5, 2.5, 2.5]}
                 position={Chapters[13].position}
+                debug={true}
               />
 
               <Prize {...Chapters[14]} prizeOffsetPosition={[5, 0.5, 0]} />
@@ -316,6 +317,11 @@ const World = ({
               />
               <IcescreamTruck rotation={[0, 1.3, 0]} scale={1.5} position={[-8.7, 0.03, 33.23]} />
               <ObservationTower scale={[0.1, 0.1, 0.1]} position={[-29.01, -0.05, 53.74]} />
+              <ObservationTower
+                scale={[0.15, 0.15, 0.15]}
+                position={[79.4, 10.5, 52.2]}
+                rotation={[0, 1, 0]}
+              />
               <Boat
                 rotation={[0, 0, 0]}
                 scale={[2.5, 2.5, 2.5]}
