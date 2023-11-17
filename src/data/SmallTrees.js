@@ -12,6 +12,7 @@ export default {
     [13.09, 10.1, 77.69],
     [21.19, 10.2, 77.41],
     [25.39, 10.2, 77.39],
+    [79.4, 18.25, 52.2],
     //Horse hill - close to the town
     //Horse hill - house
     [41.3, 12.6, 51.3, { scale: 0.7 }],
