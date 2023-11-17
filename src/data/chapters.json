@@ -2,13 +2,15 @@
   {
     "id": "0-introduction",
     "title": "Introduction",
+    "page": "1",
     "position": [75.18, 1.45, -14.98],
     "priceColor": "#111111",
     "n": 0,
     "viewType": "birdEye",
     "authors": ["Andreas Fickers", "Florentina Armaselu"],
     "category": "introduction",
-    "incipit": "Once upon a time...",
+    "incipit": "Introduction",
+    "excerpt": "Once upon a time...",
     "card": {
       "srcset": "/assets/cards/0-introduction-720w.jpg",
       "src": "/assets/cards/0-introduction-720w.jpg"
@@ -17,7 +19,8 @@
   {
     "id": "1-adventure-in-zoomland",
     "position": [40, 13, -51],
-    "title": "Adventure in Zoomland",
+    "title": "Adventures in Zoomland: Transitions in Scale and the Visual Exploration of Historical Knowledge Graphs as Sequential Storytelling",
+    "page": "19",
     "n": 1,
     "viewType": "birdEye",
     "card": {
@@ -33,12 +36,13 @@
       "scalable data",
       " historical narrative"
     ],
-    "excerpt": "The chapter proposes a conceptual framework for the design of graphical interfaces to knowledge graphs that employ the concept of ‘zoom’, broadly defined to encompass levels of scale, resolution and abstraction ...",
-    "incipit": "Adventure in Zoomland"
+    "incipit": "Adventures in Zoomland",
+    "excerpt": "Transitions in Scale and the Visual Exploration of Historical Knowledge Graphs as Sequential Storytelling"
   },
   {
     "id": "2-capturing-discourse-through-the-digital-lens",
-    "title": "Capturing Discourse through the Digital Lens: Towards a framework for the analysis of pro-democratic discourse in the Weimar Republic",
+    "title": "Capturing Discourse through the Digital Lens: Towards a Framework for the Analysis of Pro-democratic Discourse in the Weimar Republic",
+    "page": "43",
     "n": 2,
     "position": [-24.3, 0.03, 47.6],
     "priceColor": "#306fc5",
@@ -56,12 +60,13 @@
       "srcset": "/assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg",
       "src": "/assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg"
     },
-    "excerpt": "",
-    "incipit": "Capturing Discourse through the Digital Lens"
+    "incipit": "Capturing Discourse through the Digital Lens",
+    "excerpt": "Towards a Framework for the Analysis of Pro-democratic Discourse in the Weimar Republic"
   },
   {
     "id": "3-menocchio-mapped",
     "title": "Menocchio Mapped: Italian Microhistory and the Digital Spatial Turn",
+    "page": "77",
     "n": 3,
     "viewType": "overhead",
     "category": "history",
@@ -72,11 +77,13 @@
       "srcset": "/assets/cards/3-menocchio-mapped-720w.jpg",
       "src": "/assets/cards/3-menocchio-mapped-720w.jpg"
     },
-    "incipit": "Menocchio Mapped: Italian Microhistory ..."
+    "incipit": "Menocchio Mapped",
+    "excerpt": "Italian Microhistory and the Digital Spatial Turn"
   },
   {
     "id": "4-scaling-digital-history-and-documenting-the-self-emancipated",
     "title": "Scaling Digital History and Documenting the Self-Emancipated",
+    "page": "97",
     "n": 4,
     "position": [64.63, 0.4, 78.5],
     "viewType": "ground",
@@ -93,19 +100,21 @@
       "srcset": "/assets/cards/4-scaling-digital-history-720w.jpg",
       "src": "/assets/cards/4-scaling-digital-history-720w.jpg"
     },
-    "excerpt": "",
-    "incipit": "Scaling Digital History and Documenting the ..."
+    "incipit": "Scaling Digital History",
+    "excerpt": "Scaling Digital History and Documenting the Self-Emancipated"
   },
   {
     "id": "5-keep-calm-and-stay-focused",
-    "title": "Keep calm and stay focused: Historicising and intertwining scales and temporalities of online virality",
+    "title": "Keep Calm and Stay Focused: Historicising and Intertwining Scales and Temporalities of Online Virality",
+    "page": "119",
     "n": 5,
     "position": [-22.7, -0.5, 61.1],
     "viewType": "overhead",
     "category": "media",
     "authors": ["Fred Pailler", "Valérie Schafer"],
     "keywords": ["memes", "virality", "Harlem Shake", "scalable reading", "medium reading"],
-    "incipit": "Keep calm and stay focused",
+    "incipit": "Keep Calm and Stay Focused",
+    "excerpt": "Historicising and Intertwining Scales and Temporalities of Online Virality",
     "card": {
       "srcset": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg",
       "src": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg"
@@ -114,6 +123,7 @@
   {
     "id": "6-zooming-in-on-shot-scales",
     "title": "Zooming in on Shot Scales: A Digital Approach to Reframing Transnational TV series Adaptations",
+    "page": "151",
     "n": 6,
     "position": [-24.2, -1, -6.8],
     "viewType": "overhead",
@@ -126,8 +136,8 @@
       "big data",
       "cross-cultural comparison"
     ],
-    "excerpt": "",
     "incipit": "Zooming in on Shot Scales",
+    "excerpt": "A Digital Approach to Reframing Transnational TV series Adaptations",
     "card": {
       "srcset": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg",
       "src": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg"
@@ -135,7 +145,8 @@
   },
   {
     "id": "7-adapting-the-optics",
-    "title": "Adapting the optics: Zoom-in, Zoom-out, and Zoom-zero modes to understand the religious sculpture",
+    "title": "Adapting the Optics: Zoom-in, Zoom-out, and Zoom-zero Modes to Understand Religious Sculptures",
+    "page": "189",
     "n": 7,
     "position": [-71.9, 9.3, 65.5],
     "viewType": "ground",
@@ -148,8 +159,8 @@
       "research optics",
       "authenticity"
     ],
-    "excerpt": "",
-    "incipit": "Adapting the optics",
+    "incipit": "Adapting the Optics",
+    "excerpt": "Zoom-in, Zoom-out, and Zoom-zero Modes to Understand Religious Sculptures",
     "card": {
       "srcset": "/assets/cards/7-adapting-the-optics-720w.jpg",
       "src": "/assets/cards/7-adapting-the-optics-720w.jpg"
@@ -157,7 +168,8 @@
   },
   {
     "id": "8-scale-exercises",
-    "title": "Scale Exercises: Listening to the sonic diversity in 5000 hours of Swedish radio with computers and ears",
+    "title": "Scale Exercises: Listening to the Sonic Diversity in 5000 hours of Swedish Radio with Computers and Ears",
+    "page": "213",
     "n": 8,
     "position": [69.81, 12.3, 45.32],
     "viewType": "ground",
@@ -170,8 +182,8 @@
       "signal processing",
       "media studies"
     ],
-    "excerpt": "",
     "incipit": "Scale Exercises",
+    "excerpt": "Listening to the Sonic Diversity in 5000 hours of Swedish Radio with Computers and Ears",
     "card": {
       "srcset": "/assets/cards/8-scale-exercises-720w.jpg",
       "src": "/assets/cards/8-scale-exercises-720w.jpg"
@@ -180,12 +192,13 @@
   {
     "id": "9-complexity-and-analytical-creative-approaches-at-scale",
     "title": "Complexity and Analytical-creative Approaches at Scale: Iconicity, Monstrosity, and #GraphPoem",
+    "page": "237",
     "n": 9,
     "position": [1.5486526489257812, 12.7, -65.97655487060547],
     "priceColor": "#9e43c8",
     "viewType": "overhead",
     "category": "hermeneutics",
-    "authors": ["Chris Tanasescu", "Raluca Tanasescu"],
+    "authors": ["Chris Tanasescu (MARGENTO)", "Raluca Tanasescu"],
     "keywords": [
       "digital writing",
       "complex dynamic systems",
@@ -193,8 +206,8 @@
       "iconicity",
       "network analysis"
     ],
-    "excerpt": "",
     "incipit": "Complexity and Analytical-creative ...",
+    "excerpt": "Iconicity, Monstrosity, and #GraphPoem",
     "card": {
       "srcset": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg",
       "src": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg"
@@ -202,7 +215,8 @@
   },
   {
     "id": "10-the-scales-of-computational-literary-studies",
-    "title": "The scales of (computational) literary studies: Martin Mueller’s concept of scalable reading in theory and practice",
+    "title": "The Scales of (Computational) Literary Studies: Martin Mueller’s Concept of Scalable Reading in Theory and Practice",
+    "page": "261",
     "n": 10,
     "position": [-20, -0.7, 6],
     "viewType": "overhead",
@@ -215,8 +229,8 @@
       "literary theory",
       "network analysis"
     ],
-    "excerpt": "",
-    "incipit": "The scales of (computational) literary studies",
+    "incipit": "The Scales of (Computational) Literary Studies",
+    "excerpt": "Martin Mueller’s Concept of Scalable Reading in Theory and Practice",
     "card": {
       "srcset": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg",
       "src": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg"
@@ -225,6 +239,7 @@
   {
     "id": "11-text-fractal-dust-and-informational-granularity",
     "title": "Text, Fractal Dust and Informational Granularity: A Study of Scale",
+    "page": "287",
     "n": 11,
     "position": [-54.4, -0.1, -19.6],
     "viewType": "overhead",
@@ -237,8 +252,8 @@
       "informational granularity maps",
       "digital hermeneutics"
     ],
-    "excerpt": "",
     "incipit": "Text, Fractal Dust and Informational Granularity",
+    "excerpt": "A Study of Scale",
     "card": {
       "srcset": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg",
       "src": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg"
@@ -246,15 +261,16 @@
   },
   {
     "id": "12-scale-and-narrative",
-    "title": "Scale and Narrative: Conceiving a long-form digital argument for data-driven microhistory",
+    "title": "Scale and Narrative: Conceiving a Long-form Digital Argument for Data-driven Microhistory",
+    "page": "335",
     "n": 12,
     "position": [64.8, 5.75, -49.23],
     "viewType": "ground",
     "category": "hermeneutics",
     "authors": ["Stephen Robertson"],
     "keywords": ["digital history", "microhistory", "narrative", "argument", "data"],
-    "excerpt": "",
     "incipit": "Scale and Narrative",
+    "excerpt": "Conceiving a Long-form Digital Argument for Data-driven Microhistory",
     "card": {
       "srcset": "/assets/cards/12-scale-and-narrative-720w.jpg",
       "src": "/assets/cards/12-scale-and-narrative-720w.jpg"
@@ -263,14 +279,15 @@
   {
     "id": "13-meaningful-aesthetics",
     "title": "Meaningful Aesthetics: A Comparison of Open Source Network Analysis Tools",
+    "page": "367",
     "n": 13,
     "position": [2.2, -2.8, -30],
     "viewType": "birdEye",
     "category": "digital landscapes",
     "authors": ["Natalie M. Houston"],
     "keywords": ["network analysis", "data visualization", "aesthetics"],
-    "excerpt": "",
     "incipit": "Meaningful Aesthetics",
+    "excerpt": "A Comparison of Open Source Network Analysis Tools",
     "card": {
       "srcset": "/assets/cards/13-meaningful-aesthetics-720w.jpg",
       "src": "/assets/cards/13-meaningful-aesthetics-720w.jpg"
@@ -279,14 +296,15 @@
   {
     "id": "14-defining-level-and-scale-as-socio-technical-operators-for-mining-digital-traces",
     "title": "Defining Level and Scale as Socio-technical Operators for Mining Digital Traces",
+    "page": "407",
     "n": 14,
     "position": [-76.9, 9.6, 22.5],
     "viewType": "birdEye",
     "category": "digital landscapes",
     "authors": ["Quentin Lobbé", "David Chavalarias", "Alexandre Delanoë"],
     "keywords": ["level", "scale", "phylomemy", "semantic map", "macroscope"],
-    "excerpt": "",
     "incipit": "Defining Level and Scale as Socio-technical ...",
+    "excerpt": "Defining Level and Scale as Socio-technical Operators for Mining Digital Traces",
     "card": {
       "srcset": "/assets/cards/14-defining-level-and-scale-720w.jpg",
       "src": "/assets/cards/14-defining-level-and-scale-720w.jpg"
@@ -294,7 +312,8 @@
   },
   {
     "id": "15-zooming-is-not-just-scaling",
-    "title": "Zooming is (not just) scaling: Considerations of scale in old maps from cartographic perspectives on generalisation",
+    "title": "Zooming is (not just) Scaling: Considerations of Scale in Old Maps from Cartographic Perspectives on Generalisation",
+    "page": "427",
     "n": 15,
     "position": [54, 20.4, -85],
     "viewType": "overhead",
@@ -307,8 +326,8 @@
       "old maps",
       "map interpretation"
     ],
-    "excerpt": "",
     "incipit": "Zooming is (not just) scaling",
+    "excerpt": "Considerations of Scale in Old Maps from Cartographic Perspectives on Generalisation",
     "card": {
       "srcset": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg",
       "src": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg"
@@ -317,6 +336,7 @@
   {
     "id": "16-weather-map",
     "title": "Weather Map: A Diachronic Visual Model for Controversy Mapping",
+    "page": "449",
     "n": 16,
     "position": [5.1, 8.8, 66],
     "viewType": "ground",
@@ -329,8 +349,8 @@
       "visual literacy",
       "weather maps"
     ],
-    "excerpt": "",
     "incipit": "Weather Map: A Diachronic Visual ...",
+    "excerpt": "A Diachronic Visual Model for Controversy Mapping",
     "card": {
       "srcset": "/assets/cards/16-weather-map-720w.jpg",
       "src": "/assets/cards/16-weather-map-720w.jpg"
