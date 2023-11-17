@@ -39,14 +39,16 @@ const Endings = () => {
   }, [scene])
 
   return (
-    <a.div style={style} className="Endings">
-      <Quest
-        initialDelay={100}
-        quest={EndingsQuest}
-        onComplete={onCompleteHandler}
-        onCompleteLabel="see Credits"
-        enablePrevious
-      />
+    <a.div style={style} className={`Endings ${scene === SceneEnding ? 'active' : ''}`}>
+      {scene === SceneEnding ? (
+        <Quest
+          initialDelay={100}
+          quest={EndingsQuest}
+          onComplete={onCompleteHandler}
+          onCompleteLabel="see Credits"
+          enablePrevious
+        />
+      ) : null}
     </a.div>
   )
 }
