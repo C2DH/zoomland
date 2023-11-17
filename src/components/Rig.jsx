@@ -8,6 +8,7 @@ import {
   SceneFakeBook,
   useWorldStore,
   Start,
+  SceneEnding,
 } from '../store'
 
 const Rig = () => {
@@ -45,7 +46,7 @@ const Rig = () => {
     } else if (menuStatus === 'open') {
       radius = 5
       elevation = 3
-    } else if (scene === SceneCredits) {
+    } else if (scene === SceneCredits || scene === SceneEnding) {
       radius = 8
       elevation = 5
       followPlayer = true

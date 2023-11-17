@@ -26,13 +26,13 @@ const Chapter = ({ chapter }) => {
     (d) => d.id === chapter.id && Array.isArray(d.readings) && d.readings.length,
   )
 
-  useEffect(() => {
-    if (!isCollected) {
-      api.start({
-        transform: `scale(0)`,
-      })
-    }
-  }, [isCollected])
+  // useEffect(() => {
+  //   if (!isCollected) {
+  //     api.start({
+  //       transform: `scale(0)`,
+  //     })
+  //   }
+  // }, [isCollected])
 
   const { data } = useQuery({
     queryKey: ['chapter', chapter.id],
@@ -67,11 +67,7 @@ const Chapter = ({ chapter }) => {
           </p>
         )}
       </animated.div>
-      <span style={{ color: 'var(--pale-yellow)' }}>
-        {data.n > 0}
-        {isCollected ? '' : 'NEW!!!'}
-        Chapter {data.n}
-      </span>
+      <span style={{ color: 'var(--pale-yellow)' }}>Chapter {data?.n}</span>
       <h3 style={{ color: 'var(--pale-yellow)' }}>{data?.title}</h3>
       <p>{data?.abstract}</p>
       <div className="btn-group">
@@ -79,7 +75,7 @@ const Chapter = ({ chapter }) => {
           // Icon={CloseIcon}
           color={'var(--pale-yellow)'}
           onClick={doneCollectingChapter}
-          text={' OOOOKKK!'}
+          text={'Nice! One less to go'}
         />
       </div>
     </>

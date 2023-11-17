@@ -18,6 +18,7 @@ const Quest = ({
   onComplete,
   onCompleteLabel = 'Done',
   enableClose = false,
+  enablePrevious = false,
 }) => {
   const [sentenceIndex, setSentenceIndex] = useState(-1)
   const [sentences, setSentences] = useState([])
@@ -120,8 +121,8 @@ const Quest = ({
               characterName={isPlayer ? 'You' : quest.characterName || quest.id}
               onClickNext={gotoNextSentence}
               onClickPrevious={gotoPreviousSentence}
-              disableNext={sentenceIndex === sentences.length - 1}
-              disablePrevious={sentenceIndex < 1}
+              disableNext={i === sentences.length - 1}
+              disablePrevious={!enablePrevious || sentenceIndex < 1}
               onClose={onComplete}
               onCompleteLabel={onCompleteLabel}
             />

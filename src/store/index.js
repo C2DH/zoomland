@@ -89,6 +89,7 @@ export const Start = 'start'
 export const Baloon = 'baloon'
 export const SceneCredits = 'credits'
 export const SceneFakeBook = 'fakebook'
+export const SceneEnding = 'ending'
 
 export const usePlayerStore = create(
   persist(
@@ -179,6 +180,18 @@ export const usePlayerStore = create(
           collectedChapters: [],
           isCollectingChapter: false,
           currentCollectedChapter: null,
+        }),
+      newGame: () =>
+        set({
+          initialElapsedTime: 0,
+          progress: 0,
+          collectedChapters: [],
+          isCollectingChapter: false,
+          currentCollectedChapter: null,
+          collectedQuests: [],
+          isCollectingQuest: false,
+          latestCollectedQuest: null,
+          scene: Start,
         }),
     }),
     {

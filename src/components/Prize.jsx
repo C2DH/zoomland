@@ -12,6 +12,7 @@ import { useRef } from 'react'
 import { RigidBody } from '@react-three/rapier'
 import { useSpring, config } from '@react-spring/web'
 import { usePlayerStore } from '../store'
+import PropTypes from 'prop-types'
 
 const ComponentsByName = {
   [ViewTypeGround]: GroundViewSign,
@@ -120,6 +121,21 @@ const Prize = ({
       </group>
     </group>
   )
+}
+
+Prize.propTypes = {
+  id: PropTypes.string.isRequired,
+  viewType: PropTypes.string,
+  category: PropTypes.string,
+  position: PropTypes.arrayOf(PropTypes.number),
+  radius: PropTypes.number,
+  height: PropTypes.number,
+  yMin: PropTypes.number,
+  yMax: PropTypes.number,
+  scaleMin: PropTypes.number,
+  scaleMax: PropTypes.number,
+  transparent: PropTypes.bool,
+  prizeOffsetPosition: PropTypes.arrayOf(PropTypes.number),
 }
 
 export default Prize

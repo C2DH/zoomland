@@ -15,6 +15,7 @@ import SkipIntro from './components/SkipIntro'
 import GameControls from './components/GameControls'
 import Credits from './components/Credits'
 import GlitchingBooks from './components/GlitchingBooks'
+import Endings from './components/Endings'
 
 const MapPage = React.lazy(() => import('./pages/Map'))
 const ChaptersPage = React.lazy(() => import('./pages/Chapters'))
@@ -57,6 +58,7 @@ function App() {
       <Credits />
       <Vignette></Vignette>
       <SkipIntro />
+      <Endings />
       <GameControls />
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>

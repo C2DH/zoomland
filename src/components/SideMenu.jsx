@@ -13,10 +13,10 @@ import {
   useMenuStore,
   MenuOpen,
   usePlayerStore,
-  Gameplay,
   useWorldStore,
   SceneCredits,
   SceneFakeBook,
+  SceneEnding,
 } from '../store'
 import IntroLogoZoomland from './IntroLogoZoomland'
 import { isMobile } from 'react-device-detect'
@@ -28,7 +28,7 @@ const SideMenu = () => {
   const saveInitialPropsToPlayerStore = useWorldStore(
     (state) => state.saveInitialPropsToPlayerStore,
   )
-  const [setScene] = usePlayerStore((state) => [state.setScene])
+  const [setScene, newGame] = usePlayerStore((state) => [state.setScene, state.newGame])
 
   const [{ x }, api] = useSpring(() => ({
     x: menuStatus === MenuClosed ? 800 : 0,
@@ -79,7 +79,7 @@ const SideMenu = () => {
               <button
                 className="btn btn-link"
                 onClick={() => {
-                  setScene(Gameplay)
+                  newGame()
                   set(MenuClosed)
                 }}
               >
@@ -97,6 +97,17 @@ const SideMenu = () => {
                 }}
               >
                 Introduction
+              </button>
+            </Nav.Item>
+            <Nav.Item>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  setScene(SceneEnding)
+                  set(MenuClosed)
+                }}
+              >
+                ... done!
               </button>
             </Nav.Item>
             <Nav.Item>
