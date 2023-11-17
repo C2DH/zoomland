@@ -7,12 +7,8 @@ const SwedishHorse = ({ debug = true, ...props }) => {
   return (
     <group {...props} dispose={null}>
       <RigidBody type={'fixed'} colliders={'hull'}>
-        <mesh position={[1.1, 0, 0]} rotation={[0, 0, 0]} castShadow receiveShadow>
-          <boxGeometry args={[0.35, 3, 0.65]} />
-          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
-        </mesh>
-        <mesh position={[-0.45, 0, 0]} rotation={[0, 0, 0]} castShadow receiveShadow>
-          <boxGeometry args={[0.3, 3, 0.65]} />
+        <mesh position={[0.3, 0, 0]} rotation={[0, 0, 0]} castShadow receiveShadow>
+          <boxGeometry args={[1.8, 3, 0.65]} />
           <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
         </mesh>
       </RigidBody>
