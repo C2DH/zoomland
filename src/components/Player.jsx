@@ -254,7 +254,7 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
       >
         <mesh>
           <boxGeometry args={[5, 0.5, 5]} />
-          <meshStandardMaterial depthWrite={false} color={'red'} />
+          <meshStandardMaterial depthWrite={false} color={'red'} transparent={true} opacity={0} />
         </mesh>
       </RigidBody>
       <RigidBody
