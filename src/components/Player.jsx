@@ -22,7 +22,7 @@ import { useQueueStore } from '../store/preload'
 import { isMobile } from 'react-device-detect'
 
 const JumpForce = 0.7
-const Speed = isMobile ? 1.2 : 0.5
+const Speed = 1.3
 const MaxVel = 3.5
 const MaxSprintVel = 5
 const FreeFallLinvel = 30

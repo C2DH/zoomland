@@ -119,7 +119,7 @@ const World = ({
               near={1}
               far={1000}
               background
-              blur={0.08}
+              blur={0.12}
               inte
             />
             <fog attach="fog" color="#E0DCCF" near={20} far={250} />
@@ -207,11 +207,11 @@ const World = ({
                 <Editor scale={0.1} rotation={[0, 3, 0]} />
               </TheDispatcher>
 
-              {/* Boat or harbor */}
-              <Prize {...Chapters[0]} />
+              {/* Boat or harbor - Introduction */}
+              <Prize {...Chapters[0]} position={Chapters[0].position} />
 
               {/* Zepplin */}
-              <Prize {...Chapters[1]} position={[-75.48, 9.91, 2.78]} />
+              <Prize {...Chapters[1]} position={Chapters[1].position} />
 
               <Prize prizeOffsetPosition={[1.5, 0, 1.5]} {...Chapters[2]} />
               <Balloon
