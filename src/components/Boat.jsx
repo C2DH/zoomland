@@ -5,6 +5,7 @@ import {
   Gameplay,
   OpenSea,
   SceneCredits,
+  SceneEnding,
   SceneFakeBook,
   Start,
   usePlayerStore,
@@ -64,7 +65,10 @@ const Boat = ({
       angle: -Math.PI / 2,
       radius: cameraOffsetRef.current.radius,
       elevation: cameraOffsetRef.current.elevation,
-      disable: sceneRef.current === Gameplay || sceneRef.current === SceneCredits,
+      disable:
+        sceneRef.current === Gameplay ||
+        sceneRef.current === SceneCredits ||
+        sceneRef.current === SceneEnding,
     })
   })
   // slowly moving the boat to the final position

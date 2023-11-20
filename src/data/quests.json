@@ -67,19 +67,17 @@
     "characterName": "Daniele Guido, tourist guide in chief of Zoomland",
     "avatar": "/assets/avatars/Daniele.jpg",
     "id": "Daniele",
-    "chapter": "1-adventure-in-zoomland",
+    "chapter": "2-capturing-discourse-through-the-digital-lens",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Welcome to our beautiful island!",
-        "Hello, do you have any hints for me?",
-        "I highly recommend experiencing our city from a unique perspective. Have you ever been on a hot air balloon ride?"
+        "Welcome to our beautiful island! I hear you're looking for the Original Chapters?",
+        "Hello! Indeed, do you have any hints for me?",
+        "I highly recommend experiencing our city - maybe our democracy - from a unique perspective. Have you ever been on a hot air balloon ride?"
       ],
       "runIntoWithoutChapter": [
         "Welcome back! Did you enjoy the hot air balloon ride?",
-        "Yes and no...",
-        "What do you mean?",
-        "I enjoyed the view, but I didn't find my chapter...",
-        "Oh, I'm sorry to hear that. I'm sure you'll find it somewhere around here."
+        "Well, I haven't found the chapter yet...",
+        "I thought I saw one of the chapter there, someone was reading it before getting on the balloon..."
       ],
       "firstMeetingWithChapter": [
         "Welcome to our beautiful island! I see you found  some of our secrets.",
@@ -129,9 +127,9 @@
     "chapter": "16-weather-map",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Hi stranger, a nice cap. What do you need on our peaceful island?",
+        "Hi stranger, you have a nice cap... What are you looking for on our peaceful island?",
         "Hi a kind island dweller. I eager to find the origince of the book",
-        "Follow the buterflies, they always trying to get close "
+        "One chapter is actually here. For the other, follow the buterflies! They always trying to get close shining things..."
       ],
       "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
       "runIntoWithoutChapter ": ["Brrrrrrr... Brrrrrr"],

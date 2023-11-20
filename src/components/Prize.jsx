@@ -8,10 +8,11 @@ import {
   ColorByCategory,
   CategoryIntroduction,
 } from '../constants'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { RigidBody } from '@react-three/rapier'
 import { useSpring, config } from '@react-spring/web'
 import { usePlayerStore } from '../store'
+import PropTypes from 'prop-types'
 
 const ComponentsByName = {
   [ViewTypeGround]: GroundViewSign,
@@ -37,6 +38,8 @@ const Prize = ({
   prizeOffsetPosition = [0, 0, 0],
 }) => {
   const prizeRef = useRef(null)
+  const isCollected = useRef(usePlayerStore.getState().collectedChapters.some((d) => d.id === id))
+
   const [, api] = useSpring(() => ({
     scale: scaleMin,
     y: yMin,
@@ -52,6 +55,7 @@ const Prize = ({
   const color = ColorByCategory[category]
 
   const collisionEnterHandler = (e) => {
+    if (isCollected.current) return
     if (e.rigidBodyObject.name === 'player') {
       console.debug(
         '[Prize] @collisionEnterHandler \n - chapter:',
@@ -73,6 +77,12 @@ const Prize = ({
       api.start({
         scale: scaleMax,
         y: yMax,
+        onRest: () => {
+          console.debug('[Prize] @collisionEnterHandler onRest', id)
+          api.start({
+            scale: 0,
+          })
+        },
       })
     }
   }
@@ -81,11 +91,26 @@ const Prize = ({
       console.log('[Prize] collisionExitHandler', e.rigidBodyObject.name)
       // doneCollectingChapter(chapter)
       api.start({
-        scale: scaleMin,
+        scale: isCollected.current ? 0 : scaleMin,
         y: yMin,
       })
     }
   }
+
+  useEffect(
+    () =>
+      usePlayerStore.subscribe((state) => {
+        isCollected.current = state.collectedChapters.some((d) => d.id === id)
+        if (isCollected.current) {
+          api.start({
+            scale: 0,
+          })
+        }
+      }),
+    [],
+  )
+
+  if (isCollected.current) return null
 
   if (!color) {
     console.error(`[Prize] color ${color} not found ${id}`)
@@ -120,6 +145,21 @@ const Prize = ({
       </group>
     </group>
   )
+}
+
+Prize.propTypes = {
+  id: PropTypes.string.isRequired,
+  viewType: PropTypes.string,
+  category: PropTypes.string,
+  position: PropTypes.arrayOf(PropTypes.number),
+  radius: PropTypes.number,
+  height: PropTypes.number,
+  yMin: PropTypes.number,
+  yMax: PropTypes.number,
+  scaleMin: PropTypes.number,
+  scaleMax: PropTypes.number,
+  transparent: PropTypes.bool,
+  prizeOffsetPosition: PropTypes.arrayOf(PropTypes.number),
 }
 
 export default Prize

@@ -22,10 +22,11 @@
   --z-index-approutes: 7;
   --z-index-toggle-sounds: 6;
   --z-index-skip-intro: 9;
-  --z-index-side-menu: 10;
-  --z-index-game-controls: 11;
-  --z-index-glitching-books: 12;
-  --z-index-glitching-books-quest: 13;
+  --z-index-endings: 10;
+  --z-index-side-menu: 11;
+  --z-index-game-controls: 12;
+  --z-index-glitching-books: 13;
+  --z-index-glitching-books-quest: 14;
 
   --spacer: 1.5em;
   --spacer-half: 0.75em;

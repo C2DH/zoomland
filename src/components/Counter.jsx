@@ -39,7 +39,9 @@ export const Counter = () => {
         </div>
         <div className="Counter_col align-items-center">
           <Link to="/chapters">Chapters</Link>
-          {collectedChapters.length} / {NumberOfChapters}
+          <span>
+            {collectedChapters.length} / {NumberOfChapters}
+          </span>
         </div>
         <div className="Counter_col">
           <span>Elapsed</span>
