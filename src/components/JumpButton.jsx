@@ -11,7 +11,7 @@ const JumpButton = ({ onClick, ...props }) => {
     // Reset the click effect after a short delay
     setTimeout(() => {
       setClicked(false)
-    }, 300)
+    }, 200)
   }
 
   return (
