@@ -58,7 +58,6 @@ import Prize from './Prize'
 import Butterflies from './butterflies'
 import { useWindowStore } from '../store'
 import Florentina from './Florentina'
-import JumpButton from './JumpButton'
 
 const QuestsById = Quests.reduce((acc, quest) => {
   acc[quest.id] = quest

@@ -1,4 +1,30 @@
 .Sounds {
   position: fixed;
   z-index: var(--z-index-toggle-sounds);
+  left: calc(50% - 5.5rem);
+  margin: 2rem;
+}
+
+.mapButton {
+  right: calc(50% - 5.5rem);
+  z-index: var(--z-index-toggle-sounds);
+  margin: 2rem;
+}
+
+@media (orientation: landscape) {
+  .Sounds {
+    left: 0;
+  }
+  .mapButton {
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .Sounds {
+    margin: 1rem;
+  }
+  .mapButton {
+    margin: 1rem;
+  }
 }

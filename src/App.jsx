@@ -55,10 +55,7 @@ function App() {
         <IntroLogoZoomland delay={3000} id="introLogoZoomland" />
       </div>
       <GlitchingBooks />
-      <div
-        className="Sounds fill position-fixed bottom-0 end-0"
-        style={{ margin: isMobile ? '1rem' : '2rem', zIndex: 'var(--z-index-toggle-sounds)' }}
-      >
+      <div className="mapButton fill position-fixed bottom-0">
         <Link to="/map">
           <RoundButton Icon={MapIcon}></RoundButton>
         </Link>
