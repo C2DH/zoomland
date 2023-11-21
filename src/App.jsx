@@ -2,7 +2,7 @@ import React, { Suspense, useCallback, useEffect } from 'react'
 import Header from './components/Header'
 import Vignette from './components/Vignette'
 import World from './components/World'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import AppRoutes from './AppRoutes'
 import About from './pages/About'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -16,6 +16,8 @@ import GameControls from './components/GameControls'
 import Credits from './components/Credits'
 import GlitchingBooks from './components/GlitchingBooks'
 import Endings from './components/Endings'
+import RoundButton from './components/RoundButton'
+import MapIcon from './components/Svg/MapIcon'
 
 const MapPage = React.lazy(() => import('./pages/Map'))
 const ChaptersPage = React.lazy(() => import('./pages/Chapters'))
@@ -53,6 +55,14 @@ function App() {
         <IntroLogoZoomland delay={3000} id="introLogoZoomland" />
       </div>
       <GlitchingBooks />
+      <div
+        className="Sounds fill position-fixed bottom-0 end-0"
+        style={{ margin: isMobile ? '1rem' : '2rem', zIndex: 'var(--z-index-toggle-sounds)' }}
+      >
+        <Link to="/map">
+          <RoundButton Icon={MapIcon}></RoundButton>
+        </Link>
+      </div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>
       <Credits />

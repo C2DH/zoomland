@@ -2,7 +2,7 @@ import { Vector3 } from 'three'
 
 export const updateCamera = (
   camera,
-  { radius = 1, elevation = 3, target, delta, angle, disable = false },
+  { radius = 3, elevation = 1.7, target, delta, angle, disable = false },
 ) => {
   if (disable) {
     return

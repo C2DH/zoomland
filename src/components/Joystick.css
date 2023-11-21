@@ -1,14 +1,26 @@
 .Joystick {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 10%;
+  left: 1rem;
   z-index: var(--z-index-joystick);
 }
 
 .Joystick > div {
-  background: var(--pale-yellow) !important;
+  height: 80px !important;
+  width: 80px !important;
+  background: transparent !important;
+  border: 1px dashed var(--pale-yellow);
 }
 
 .Joystick > div button {
-  background: var(--dark-blue) !important;
+  height: 60px !important;
+  width: 60px !important;
+  background: var(--pale-yellow) !important;
+  opacity: 0.5;
+}
+
+@media (orientation: landscape) {
+  .Joystick {
+    bottom: calc(50% - 30px);
+  }
 }

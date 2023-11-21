@@ -110,8 +110,8 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
   }, [])
 
   const movePlayerWithJoystick = (state, delta, shouldStayStill) => {
-    const [steeringAngle, speed] = joystickRef.current
-    if (shouldStayStill && speed < 0.1) {
+    const [steeringAngle, speed, isJumping] = joystickRef.current
+    if (shouldStayStill || speed < 0.1) {
       setAnimation(AnimationIdle)
     } else if (speed < 0.5) {
       setAnimation(AnimationWalk)

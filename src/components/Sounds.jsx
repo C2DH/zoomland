@@ -63,7 +63,7 @@ const Sounds = () => {
   return (
     <>
       <div
-        className="Sounds fill position-fixed bottom-0 end-0"
+        className="Sounds fill position-fixed bottom-0 start-0"
         style={{ margin: isMobile ? '1rem' : '2rem', zIndex: 'var(--z-index-toggle-sounds)' }}
       >
         <RoundButton
