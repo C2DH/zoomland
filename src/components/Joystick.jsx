@@ -17,7 +17,7 @@ const Joystick = ({ size = 80 }) => {
     const speedY = e.y > 0 ? e.distance / 2 : -e.distance / 2
     console.log('[Joystick]', speedY, e.distance)
     if (speedY > 0) {
-      setJoystick(-steeringAngle * 10, e.distance / 100, IS_NOT_JUMPING)
+      setJoystick(-steeringAngle * 4, e.distance / 100, IS_NOT_JUMPING)
     }
   }
   const handleStop = () => {
