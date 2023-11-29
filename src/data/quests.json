@@ -81,24 +81,28 @@
     "chapter": "2-capturing-discourse-through-the-digital-lens",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Welcome to our beautiful island! I hear you're looking for the Original Chapters?",
-        "Hello! Indeed, do you have any hints for me?",
-        "I highly recommend experiencing our city - maybe our democracy - from a unique perspective. Have you ever been on a hot air balloon ride?"
-      ],
-      "runIntoWithoutChapter": [
-        "Welcome back! Did you enjoy the hot air balloon ride?",
-        "Well, I haven't found the chapter yet...",
-        "I thought I saw one of the chapter there, someone was reading it before getting on the balloon..."
+        "Welcome, dear Stranger, to our beautiful island!",
+        "Hello, I am not here as a tourist, but on a mission. Fake chapters of the Book have surfaced on social media...",
+        "Ah, I see! That is the right island then, and I have just read the chapter where pro-democratic discourse gets analysed, discourses now lost in time.",
+        "… and do you have it on you?",
+        "Nope! I was queuing... Well, have you ever been on a hot air balloon ride? It is a respite from the constant barrage of distorted truths and chaotic ramblings of today's social media landscapes."
       ],
       "firstMeetingWithChapter": [
-        "Welcome to our beautiful island! I see you found  some of our secrets.",
-        "Yes indeed! Do you have any other hints for me?",
-        "I highly recommend experiencing our island from a unique perspective. Have you ever been on a hot air balloon ride?"
+        "Welcome to our enchanting island, dear Stranger!",
+        "Greetings! I am not here for leisure; I am on a quest to locate other original chapters of the Book.",
+        "Nice! As you may know, they are scattered about; the Book is entwined with the very essence of our island. Every nook and cranny hold a piece of it.",
+        "Yes, sure … any hints?",
+        "Certainly! I highly recommend exploring our Island from a distinctive angle. Have you considered embarking on our mountain trail? The summit offers a breathtaking panorama, where the pages of the Book unfold against the backdrop of our splendid island. "
+      ],
+      "runIntoWithoutChapter": [
+        "Hello again! Have you found the chapter on the analysis of pro-democratic discourse?",
+        "Not yet alas.",
+        "I am certain it is still there, near the beach. Retrieve it and take a leap onto the balloon!"
       ],
       "runIntoWithChapter": [
-        "Welcome back! How can I help you?",
-        "Do you have any hints for me?",
-        "Did you enjoy our special hot air balloon ride?"
+        "Hello again! Still on the quest?",
+        "Yes, still in search of them. Well, one less to go.",
+        "No time for sightseeing? Have you explored our mountain trail yet?"
       ]
     }
   },

@@ -9,8 +9,8 @@ import RoundButton from './RoundButton'
 const IntroQuest = {
   sentences: [
     'Finally, the island is in sight!',
-    'I can see the harbour in the distance.',
-    'The original chapters are well-protected here.',
+    'I can see its harbour in the distance.',
+    'The Book is well-protected here. I should have a word with its inhabitants.',
   ],
 }
 
