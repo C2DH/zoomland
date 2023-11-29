@@ -6,26 +6,34 @@
     "chapter": "11-text-fractal-dust-and-informational-granularity",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Hey there, dear publisher!",
-        "Hello Andreas!",
-        "How's the book doing? Making my words shine like gold, I hope?",
-        "Well... I would need a copy of it. For the archives, you know...",
-        "Oh, I see. Well, I'm sure you'll find it somewhere around here.",
-        "Oh where exactly?",
-        "I'm sure I left it somewhere around here..."
+        "Hello! Glad to meet you. What brings you here?",
+        "Hello, Florentina! I would like to explore the island and discover its secrets. More precisely, I am looking for a book.",
+        "You can find plenty of things here, at any scale … Large, small, and in-between, but they might not be what they seem ... Keep your eyes and ears open to any hint.  ",
+        "I will, thanks for your advice!"
+      ],
+      "firstMeetingWithChapter": [
+        "Hi! I have gathered parts of the book I was searching for, but the rest is still scattered on the island. Any idea where can I find more?",
+        "Ground, trees and sky may be carriers of signs.",
+        "Oh, I see!"
       ],
       "secondMeetingWithoutChapter": [
-        "You haven't find our introduction?",
+        "Hi there! How can I help you?",
         "Not yet, can you help me?",
         "Uhm... You should check next to our boat"
       ],
       "runIntoWithoutChapter": [
-        "Have you double check next to our boat?",
-        "Not yet, let me check again!"
+        "Nice to see you again. Hope you have enjoyed your quest.",
+        "Yes, the walk was gorgeous, but I haven’t yet accomplished my mission. Could you help me a little bit?",
+        "Sure. Have you ever examined in detail the structure of a large tree? Branching patterns are one of the marvels of the geometry of nature.",
+        "I will give it a try. Thank you!"
       ],
-      "firstMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok bye!"],
-      "secondMeetingWithChapter": ["Hey there, I see you got it. One less to go!", "Ok ok ok!"],
-      "runIntoWithChapter": ["Hey there, I see you got it. One less to go!", "Bye Andreas"]
+      "runIntoWithChapter": [
+        "Hi! Did you find what you were looking for?",
+        "Yes, some pieces but not yet the whole. Still searching for another clue.",
+        "Any artifact that you encounter could make it.",
+        "Got it! Thanks again."
+      ],
+      "secondMeetingWithChapter": ["..."]
     }
   },
   {
@@ -35,31 +43,34 @@
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Hey there, I think I know you!",
+        "Hey there, I know you!",
         "Hello, Andreas!",
-        "Ah hello you! Welcome to Zoomland! It's a pleasure to have you here.",
-        "Thank you! Sorry to bother you, but I have an important mission. I need to find the original chapters of the Book.",
-        "Ah, the Book. A noble quest indeed. Digital copies can't be trusted these days.",
-        "Exactly! I've heard the Island holds the key to uncovering the truth. But...",
-        "...",
+        "Ah hello you! Welcome to Zoomland, island of the Book! It is a pleasure to have you here.",
+        "Thank you! Sorry to bother you, but... the digital copies of the Book have been corrupted, its chapters are mostly fake...",
+        "Ah, the Book. And the digital realm...",
+        "…Well, I need to get the original chapters of the Book.",
+        "A noble quest indeed. Digital copies cannot be trusted these days!",
         "Where should I start? Any clues?",
-        "Well, the Introduction is just behind you. It's a good place to begin.",
-        "I'll check it out. Thank you!"
-      ],
-      "runIntoWithoutChapter": [
-        "You haven't find the Introduction?",
-        "Not yet, can you help me?",
-        "Uhm... Check again next to our boat!"
+        "Well, the Introduction is just behind me. It is a good place to begin."
       ],
       "firstMeetingWithChapter": [
-        "Hey there, I think I know you! And you got the Introduction!",
+        "Hey there, I know you!",
         "Hello, Andreas!",
-        "Ah hello you, reader! Welcome to Zoomland! It's a pleasure to have you here.",
-        "I need to find the other original chapters of the Book. Can you help me?",
-        "They're somewhere around here, but... sorry, too many things to remember...",
-        "Ok, bye!"
+        "Ah hello you! But... Why do you have the only original manuscript of the Introduction on you?",
+        "The digital copies of the Book have been corrupted; fake chapters begin to circulate.",
+        "I see... digital source criticism ahead!"
       ],
-      "runIntoWithChapter": ["Hey there, did you find the other original chapters?"]
+
+      "runIntoWithoutChapter": [
+        "You have not found the Introduction yet?",
+        "Not yet, can you help me?",
+        "Just get the floating coin behind my shoulders.",
+        "Ah ok, thanks!"
+      ],
+      "runIntoWithChapter": [
+        "Hey there, which chapter are you looking for?",
+        "Talk to the good people on the island, they always have good hints."
+      ]
     }
   },
 
@@ -127,15 +138,33 @@
     "chapter": "16-weather-map",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Hi stranger, you have a nice cap... What are you looking for on our peaceful island?",
-        "Hi a kind island dweller. I eager to find the origince of the book",
-        "One chapter is actually here. For the other, follow the buterflies! They always trying to get close shining things..."
+        "Hi stranger, a nice cap. What do you need on our peaceful island?",
+        "Hi, a kind island dweller. I am eager to find the origins of the book.",
+        "The weather map is always changing. Have a look at the windsock to find the truth.",
+        "Thanks a bunch!",
+        "My pleasure"
+      ],
+      "firstMeetingWithChapter": [
+        "Hoping you rode those wind waves to success.",
+        "It was almost like you said. Anyway, I'm up for round two of this epic treasure hunt!",
+        "Ahoy, butterfly hunter! They're like nature's GPS to cool stuff. Where they flutter, goodies gather.",
+        "Another good hint, much appreciated.",
+        "Good luck!"
+      ],
+      "runIntoWithoutChapter ": [
+        "I think you still have questions.",
+        "It's probably because the island is so spectacular that's why I forgot your hints",
+        "Time to play detective, Sherlock! Keep an eye out for those spinning signs.",
+        "My eagle-eye will never miss them again. Seriously, thanks a ton for the assist.",
+        "It's not a big deal, I'm here for you!"
+      ],
+      "runIntoWithChapter": [
+        "More chapters are waiting for you. Go, go, go, hurry up!!!",
+        "Yes, no time to chill. The mission is in progress!",
+        "..., :)"
       ],
       "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
-      "runIntoWithoutChapter ": ["Brrrrrrr... Brrrrrr"],
-      "firstMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
-      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
-      "runIntoWithChapter": ["Brrrrrrr... Brrrrrr"]
+      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"]
     }
   },
   {
@@ -145,16 +174,31 @@
     "chapter": "0-introduction",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Good morning stranger! What you are you looking for on dynamicly devoloping cretive island?",
-        "I lost something very important to me",
-        "If you will be more precise then maybe I can help you",
-        "Sorry I'll be short. My script... I lost it and now trying to find all chapters over yhe island"
+        "Hello, I’m searching for some lost academic chapters. Could you help me out?",
+        "Ah, the eternal quest for knowledge! I once searched for my glasses for hours, only to find them on my head. Science is a bit like that, isn't it?",
+        "I guess it can be. I’m not sure where to start looking, though.",
+        "In science, as in life, sometimes you find things where you least expect them – like in the fridge, next to the leftover pizza. Keep your eyes open!"
+      ],
+      "firstMeetingWithChapter": [
+        "Hi Lars, I found one of the chapters! It talks about the unpredictability of scientific discovery.",
+        "Marvellous! Science is like a surprise party – you never know what you’ll find. Maybe a new theory, or maybe just a sock.",
+        "It definitely keeps things interesting.",
+        "Absolutely! And remember, every discovery, big or small, is another piece of the grand puzzle. Even the sock."
+      ],
+      "runIntoWithoutChapter": [
+        "Hey Lars, still no luck finding those chapters.",
+        "You know, science is 99% searching and 1% finding. Or was that my TV remote? Either way, keep looking!",
+        "I’ll keep that in mind. Thanks for the pep talk.",
+        "Anytime! And if you find my remote while you’re at it, let me know!"
+      ],
+      "runIntoWithChapter": [
+        "Lars, I found another chapter! This one’s about the joy of discovery in science.",
+        "Fantastic! There’s nothing like that 'Eureka!' moment. It’s like finding money in your pocket. But smarter.",
+        "It’s definitely rewarding.",
+        "Indeed! And who knows what other wonders you’ll uncover? Maybe even my remote!"
       ],
       "secondMeetingWithoutChapter": ["Brrrrrrr... Brrrrrr"],
-      "runIntoWithoutChapter": ["Brrrrrrr... Brrrrrr"],
-      "firstMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
-      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"],
-      "runIntoWithChapter": ["Brrrrrrr... Brrrrrr"]
+      "secondMeetingWithChapter": ["Brrrrrrr... Brrrrrr"]
     }
   }
 ]
