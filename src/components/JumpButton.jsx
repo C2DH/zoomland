@@ -11,11 +11,24 @@ const JumpButton = ({ onClick, ...props }) => {
     // Reset the click effect after a short delay
     setTimeout(() => {
       setClicked(false)
-    }, 200)
+    }, 100)
+  }
+
+  const handleTouchEnd = () => {
+    setClicked(false)
+
+    setTimeout(() => {
+      setClicked(true)
+    }, 100)
   }
 
   return (
-    <div className={`JumpButton ${isClicked ? 'clicked' : ''}`} onClick={handleClick} {...props}>
+    <div
+      className={`JumpButton ${isClicked ? 'clicked' : ''}`}
+      onTouchEnd={handleTouchEnd}
+      onClick={handleClick}
+      {...props}
+    >
       <span>JUMP</span>
     </div>
   )
