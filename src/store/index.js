@@ -117,13 +117,24 @@ export const usePlayerStore = create(
           isObservingLandscape,
         }),
       collectQuest: (quest) => {
-        console.debug('[store] collectQuest:', quest.id)
         const collectedQuests = get().collectedQuests
         const alreadyCollectedQuestIndex = collectedQuests.findIndex((q) => q.id === quest.id)
+        console.debug(
+          '[store] collectQuest:',
+          quest.id,
+          alreadyCollectedQuestIndex,
+          collectedQuests,
+        )
         if (alreadyCollectedQuestIndex > -1) {
+          const updatedQuest = {
+            ...quest,
+            meetings: (collectedQuests[alreadyCollectedQuestIndex].meetings || []).concat(
+              new Date().toISOString(),
+            ),
+          }
           return set({
             isCollectingQuest: true,
-            latestCollectedQuest: quest,
+            latestCollectedQuest: updatedQuest,
             collectedQuests: collectedQuests.map((q, i) => {
               if (i !== alreadyCollectedQuestIndex) {
                 return q
