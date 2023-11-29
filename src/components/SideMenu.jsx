@@ -136,7 +136,7 @@ const SideMenu = () => {
               <button
                 className="btn btn-link"
                 onClick={() => {
-                  setGameControlsStatus(MenuOpen)
+                  setGameControlsStatus(MenuClosed)
                   set(MenuClosed)
                 }}
               >
