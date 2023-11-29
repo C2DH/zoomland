@@ -16,22 +16,7 @@ const Chapter = ({ chapter }) => {
     },
   }))
 
-  const [collectedChapters, doneCollectingChapter] = usePlayerStore((state) => [
-    state.collectedChapters,
-    state.doneCollectingChapter,
-  ])
-
-  // const isCollected = collectedChapters.some(
-  //   (d) => d.id === chapter.id && Array.isArray(d.readings) && d.readings.length,
-  // )
-
-  // useEffect(() => {
-  //   if (!isCollected) {
-  //     api.start({
-  //       transform: `scale(0)`,
-  //     })
-  //   }
-  // }, [isCollected])
+  const [doneCollectingChapter] = usePlayerStore((state) => [state.doneCollectingChapter])
 
   const { data } = useQuery({
     queryKey: ['chapter', chapter.id],
