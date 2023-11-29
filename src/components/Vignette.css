@@ -44,3 +44,9 @@
     width: 90%;
   }
 }
+
+@media (orientation: landscape) {
+  .Vignette_subs {
+    width: 90%;
+  }
+}
