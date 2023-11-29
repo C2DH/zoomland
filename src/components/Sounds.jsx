@@ -66,6 +66,7 @@ const Sounds = () => {
         <RoundButton
           onClick={() => setIsPlaying(!isPlaying)}
           Icon={isPlaying ? SpeakersOn : SpeakersOff}
+          margin={isMobile ? '1rem' : '2rem'}
         ></RoundButton>
       </div>
 
