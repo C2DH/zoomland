@@ -2,7 +2,7 @@ import { Vector3 } from 'three'
 
 export const updateCamera = (
   camera,
-  { radius = 2.5, elevation = 1.5, target, delta, angle, disable = false },
+  { radius = 3, elevation = 1.7, target, delta, angle, disable = false },
 ) => {
   if (disable) {
     return
@@ -17,5 +17,5 @@ export const updateCamera = (
     ),
     delta * 2,
   )
-  camera.lookAt(new Vector3(target.x, target.y + 1.5, target.z))
+  camera.lookAt(new Vector3(target.x, target.y + 1.6, target.z))
 }

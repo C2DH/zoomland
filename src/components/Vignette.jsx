@@ -9,7 +9,7 @@ import Chapter from './Chapter'
 
 const VignetteColor = 'rgba(25, 48, 128, 0.8)'
 const interpolator = (v) => {
-  return `radial-gradient(ellipse at center, rgba(0, 0, 0, 0) ${v}%, rgba(0, 0, 0, 0) ${v}%, ${VignetteColor} 95%, ${VignetteColor} 100%)`
+  return `radial-gradient(ellipse at center, rgba(25, 48, 128, 0) ${v}%, rgba(25, 48, 128, 0) ${v}%, ${VignetteColor} 80%, ${VignetteColor} 100%)`
 }
 
 const Vignette = ({ children, debug = false }) => {
@@ -68,7 +68,7 @@ const Vignette = ({ children, debug = false }) => {
   useEffect(() => {
     if (isCollectingChapter || isCollectingQuest || scene === OpenSea || scene === Start) {
       api.start({
-        qty: 50,
+        qty: 0,
       })
     } else {
       api.start({

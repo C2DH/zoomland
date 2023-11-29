@@ -1,13 +1,15 @@
 .Quest {
   color: white;
   position: absolute;
-  bottom: 100px;
+  height: 100vh;
+  bottom: 0;
   width: 100%;
 }
 
 .Quest_sentence {
   position: absolute;
-  bottom: 100px;
+  height: 100vh;
+  bottom: 0;
   width: 100%;
   margin: auto;
 }

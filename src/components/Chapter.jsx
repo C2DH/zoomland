@@ -2,13 +2,12 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { usePlayerStore } from '../store'
 import { animated, useSpring } from '@react-spring/web'
-import { useEffect } from 'react'
 import RoundButton from './RoundButton'
 import { isMobile } from 'react-device-detect'
 
 const Chapter = ({ chapter }) => {
-  const [props, api] = useSpring(() => ({
-    transform: isMobile ? `scale(3)` : `scale(4)`,
+  const [props] = useSpring(() => ({
+    transform: isMobile ? `scale(2.5)` : `scale(4)`,
     from: { transform: `scale(0)` },
     config: {
       tension: 600, // How much tension is on the spring
@@ -17,22 +16,7 @@ const Chapter = ({ chapter }) => {
     },
   }))
 
-  const [collectedChapters, doneCollectingChapter] = usePlayerStore((state) => [
-    state.collectedChapters,
-    state.doneCollectingChapter,
-  ])
-
-  const isCollected = collectedChapters.some(
-    (d) => d.id === chapter.id && Array.isArray(d.readings) && d.readings.length,
-  )
-
-  useEffect(() => {
-    if (!isCollected) {
-      api.start({
-        transform: `scale(0)`,
-      })
-    }
-  }, [isCollected])
+  const [doneCollectingChapter] = usePlayerStore((state) => [state.doneCollectingChapter])
 
   const { data } = useQuery({
     queryKey: ['chapter', chapter.id],
@@ -57,29 +41,34 @@ const Chapter = ({ chapter }) => {
         }}
       >
         {isMobile ? (
-          <p>
+          <p
+            style={{
+              textShadow: '0px 2px 4px rgba(0, 0, 0, 0.35)',
+            }}
+          >
             You've got <br />
             one chapter!
           </p>
         ) : (
-          <p>
+          <p
+            style={{
+              textShadow: '0px 2px 4px rgba(0, 0, 0, 0.35)',
+            }}
+          >
             You've got <strong>one chapter!</strong>
           </p>
         )}
       </animated.div>
-      <span style={{ color: 'var(--pale-yellow)' }}>
-        {data.n > 0}
-        {isCollected ? '' : 'NEW!!!'}
-        Chapter {data.n}
-      </span>
+      <span style={{ color: 'var(--pale-yellow)' }}>Chapter {data?.n}</span>
       <h3 style={{ color: 'var(--pale-yellow)' }}>{data?.title}</h3>
       <p>{data?.abstract}</p>
       <div className="btn-group">
         <RoundButton
           // Icon={CloseIcon}
+          backgroundColor="var(--rose)"
           color={'var(--pale-yellow)'}
           onClick={doneCollectingChapter}
-          text={' OOOOKKK!'}
+          text={'Nice! One less to go'}
         />
       </div>
     </>

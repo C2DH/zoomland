@@ -19,10 +19,10 @@ import {
 } from '../store'
 import { updateCamera } from '../utils/camera'
 import { useQueueStore } from '../store/preload'
-import { isMobile } from 'react-device-detect'
+// import { isMobile } from 'react-device-detect'
 
 const JumpForce = 0.7
-const Speed = isMobile ? 1.2 : 0.5
+const Speed = 1.3
 const MaxVel = 3.5
 const MaxSprintVel = 5
 const FreeFallLinvel = 30
@@ -111,7 +111,7 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
 
   const movePlayerWithJoystick = (state, delta, shouldStayStill) => {
     const [steeringAngle, speed] = joystickRef.current
-    if (shouldStayStill && speed < 0.1) {
+    if (shouldStayStill || speed < 0.1) {
       setAnimation(AnimationIdle)
     } else if (speed < 0.5) {
       setAnimation(AnimationWalk)

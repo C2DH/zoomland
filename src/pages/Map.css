@@ -1,0 +1,50 @@
+#Map {
+  position: relative;
+}
+
+#Map #category {
+  position: absolute;
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 0.7rem;
+  bottom: 0;
+  right: 1rem;
+  margin: 2rem;
+  background-color: var(--dark-blue-alpha);
+  font-size: 0.8rem;
+  z-index: 2;
+}
+
+#Map #category div:nth-child(1)::before {
+  background-color: var(--intro-color);
+}
+
+#Map #category div:nth-child(2)::before {
+  background-color: var(--hermeneutics);
+}
+
+#Map #category div:nth-child(3)::before {
+  background-color: var(--history);
+}
+
+#Map #category div:nth-child(4)::before {
+  background-color: var(--digital-landscapes);
+}
+
+#Map #category div:nth-child(5)::before {
+  background-color: var(--media);
+}
+
+#Map #category div {
+  position: relative;
+}
+
+#Map #category div::before {
+  content: '';
+  position: absolute;
+  top: 0.2rem;
+  left: -1rem;
+  display: block;
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 100%;
+}

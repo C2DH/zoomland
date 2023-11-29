@@ -6,14 +6,14 @@ import { isMobile } from 'react-device-detect'
 const DialogueCard = ({
   sentence,
   characterName,
-  // onClickPrevious,
+  onClickPrevious,
   onClickNext,
-  // disablePrevious = false,
+  disablePrevious = false,
   disableNext = false,
   avatar = '/assets/avatars/Hero.jpg',
   onCompleteLabel = 'Done',
   onClose,
-  enableClose = false,
+  enableClose = true,
 }) => {
   return (
     <div className="DialogueCard">
@@ -42,13 +42,14 @@ const DialogueCard = ({
           <p>{sentence}</p>
         </div>
         <div className="DialogueCard-footer">
-          {/* <button
-            className={`btn btn-link ${isMobile ? 'btn-ms' : 'btn-md'}`}
-            disabled={disablePrevious}
-            onClick={onClickPrevious}
-          >
-            Prev
-          </button> */}
+          {disablePrevious ? null : (
+            <button
+              className={`btn btn-link ${isMobile ? 'btn-ms' : 'btn-md'}`}
+              onClick={onClickPrevious}
+            >
+              (back)
+            </button>
+          )}
           <button
             className={`btn btn-link ${isMobile ? 'btn-md' : 'btn-lg'}`}
             onClick={onClickNext}

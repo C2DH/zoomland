@@ -1,13 +1,15 @@
 .DialogueCard {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   height: 100%;
+  width: 100%;
   left: 0;
   right: 0;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 7;
 }
 
 .DialogueCard .DialogueCard-wrapper {
@@ -22,6 +24,7 @@
 }
 
 .DialogueCard .DialogueCard-wrapper h4 {
+  padding-right: 2.5rem;
   color: var(--orange);
 }
 
@@ -65,12 +68,18 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .DialogueCard .DialogueCard-wrapper {
     padding-right: 1.5rem;
+    padding: 1.5rem;
+    margin-left: 0rem;
   }
   .DialogueCard .DialogueCard-footer .btn {
     padding-right: 0rem;
     text-align: right;
+  }
+  .DialogueCard .avatar {
+    top: -6rem;
+    left: calc(50% - 57.5px);
   }
 }

@@ -1,8 +1,8 @@
-import React, { Suspense, useCallback, useEffect } from 'react'
+import React, { Suspense, useCallback, useEffect, useState } from 'react'
 import Header from './components/Header'
 import Vignette from './components/Vignette'
 import World from './components/World'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import AppRoutes from './AppRoutes'
 import About from './pages/About'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -15,12 +15,37 @@ import SkipIntro from './components/SkipIntro'
 import GameControls from './components/GameControls'
 import Credits from './components/Credits'
 import GlitchingBooks from './components/GlitchingBooks'
+import Endings from './components/Endings'
+import RoundButton from './components/RoundButton'
+import MapIcon from './components/Svg/MapIcon'
+import { Gameplay, usePlayerStore } from './store/index.js'
+import { MenuClosed, MenuOpen, useMenuStore } from './store'
 
 const MapPage = React.lazy(() => import('./pages/Map'))
 const ChaptersPage = React.lazy(() => import('./pages/Chapters'))
 const queryClient = new QueryClient()
 
 function App() {
+  const [active, setActive] = useState(true)
+  const setGameControlsStatus = useMenuStore((state) => state.setGameControlsStatus)
+  const scene = usePlayerStore.getState().scene
+
+  const deactivateMapBtn = () => {
+    setActive(false)
+  }
+
+  useEffect(() => {
+    setGameControlsStatus(MenuOpen)
+    if (scene === Gameplay) {
+      const timeoutId = setTimeout(() => {
+        setGameControlsStatus(MenuClosed)
+      }, 10000)
+
+      // Cleanup the timeout to avoid memory leaks
+      return () => clearTimeout(timeoutId)
+    }
+  }, []) // Empty dependency array ensures that this effect runs only
+
   const updateDimensions = useWindowStore((state) => state.updateDimensions)
   const change = () => {
     console.debug('[app] change')
@@ -52,11 +77,22 @@ function App() {
         <IntroLogoZoomland delay={3000} id="introLogoZoomland" />
       </div>
       <GlitchingBooks />
+      <div className="mapButton fill position-fixed bottom-0">
+        <Link to="/map">
+          <RoundButton
+            onClick={deactivateMapBtn}
+            active={active}
+            Icon={MapIcon}
+            margin={isMobile ? '1rem' : '2rem'}
+          ></RoundButton>
+        </Link>
+      </div>
       <SideMenu />
       <Header isMobile={isMobile}></Header>
       <Credits />
       <Vignette></Vignette>
       <SkipIntro />
+      <Endings />
       <GameControls />
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>

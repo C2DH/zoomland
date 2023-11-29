@@ -1,5 +1,5 @@
 import { useSpring, a } from '@react-spring/web'
-import { MenuClosed, useMenuStore } from '../store'
+import { MenuOpen, useMenuStore } from '../store'
 import './GameControls.css'
 import { useEffect } from 'react'
 import RoundButton from './RoundButton'
@@ -17,16 +17,16 @@ const GameControls = () => {
   }))
 
   const hide = () => {
-    setGameControlsStatus(MenuClosed)
+    setGameControlsStatus(MenuOpen)
   }
 
   useEffect(() => {
     api.start({
-      opacity: gameControlsStatus === MenuClosed ? 0 : 1,
-      display: gameControlsStatus === MenuClosed ? 'none' : 'block',
+      opacity: gameControlsStatus === 'open' ? 0 : 1,
+      display: gameControlsStatus === 'open' ? 'none' : 'block',
     })
   }, [gameControlsStatus])
-
+  console.log('showControls', gameControlsStatus)
   return (
     <a.div style={style} className="GameControls">
       <div style={{ marginRight: '0.7rem', position: 'absolute', right: 0, top: '0.7rem' }}>
