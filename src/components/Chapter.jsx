@@ -8,7 +8,7 @@ import { isMobile } from 'react-device-detect'
 
 const Chapter = ({ chapter }) => {
   const [props, api] = useSpring(() => ({
-    transform: isMobile ? `scale(3)` : `scale(4)`,
+    transform: isMobile ? `scale(2.5)` : `scale(4)`,
     from: { transform: `scale(0)` },
     config: {
       tension: 600, // How much tension is on the spring
@@ -57,12 +57,20 @@ const Chapter = ({ chapter }) => {
         }}
       >
         {isMobile ? (
-          <p>
+          <p
+            style={{
+              textShadow: '0px 2px 4px rgba(0, 0, 0, 0.35)',
+            }}
+          >
             You've got <br />
             one chapter!
           </p>
         ) : (
-          <p>
+          <p
+            style={{
+              textShadow: '0px 2px 4px rgba(0, 0, 0, 0.35)',
+            }}
+          >
             You've got <strong>one chapter!</strong>
           </p>
         )}
@@ -73,6 +81,7 @@ const Chapter = ({ chapter }) => {
       <div className="btn-group">
         <RoundButton
           // Icon={CloseIcon}
+          backgroundColor="var(--rose)"
           color={'var(--pale-yellow)'}
           onClick={doneCollectingChapter}
           text={'Nice! One less to go'}
