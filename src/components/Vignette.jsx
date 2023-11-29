@@ -8,7 +8,6 @@ import Quest from './Quest'
 import Chapter from './Chapter'
 
 const VignetteColor = 'rgba(25, 48, 128, 0.8)'
-const VignetteOpacity = 0
 const interpolator = (v) => {
   return `radial-gradient(ellipse at center, rgba(25, 48, 128, 0) ${v}%, rgba(25, 48, 128, 0) ${v}%, ${VignetteColor} 80%, ${VignetteColor} 100%)`
 }

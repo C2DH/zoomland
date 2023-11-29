@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './JumpButton.css'
 
-const JumpButton = ({ onClick, ...props }) => {
+const JumpButton = ({ props }) => {
   const [isClicked, setClicked] = useState(false)
 
   const handleClick = () => {

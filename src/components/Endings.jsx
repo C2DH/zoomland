@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Quest from './Quest'
 
 import './Endings.css'
-import chapters from '../data/chapters'
+// import chapters from '../data/chapters'
 
 const EndingsQuest = {
   sentences: [

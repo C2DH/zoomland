@@ -2,12 +2,11 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { usePlayerStore } from '../store'
 import { animated, useSpring } from '@react-spring/web'
-import { useEffect } from 'react'
 import RoundButton from './RoundButton'
 import { isMobile } from 'react-device-detect'
 
 const Chapter = ({ chapter }) => {
-  const [props, api] = useSpring(() => ({
+  const [props] = useSpring(() => ({
     transform: isMobile ? `scale(2.5)` : `scale(4)`,
     from: { transform: `scale(0)` },
     config: {
@@ -22,9 +21,9 @@ const Chapter = ({ chapter }) => {
     state.doneCollectingChapter,
   ])
 
-  const isCollected = collectedChapters.some(
-    (d) => d.id === chapter.id && Array.isArray(d.readings) && d.readings.length,
-  )
+  // const isCollected = collectedChapters.some(
+  //   (d) => d.id === chapter.id && Array.isArray(d.readings) && d.readings.length,
+  // )
 
   // useEffect(() => {
   //   if (!isCollected) {
