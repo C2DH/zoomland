@@ -13,7 +13,7 @@ const DialogueCard = ({
   avatar = '/assets/avatars/Hero.jpg',
   onCompleteLabel = 'Done',
   onClose,
-  enableClose = false,
+  enableClose = true,
 }) => {
   return (
     <div className="DialogueCard">
