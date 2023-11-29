@@ -25,7 +25,7 @@ const GameControls = () => {
       opacity: gameControlsStatus === 'open' ? 0 : 1,
       display: gameControlsStatus === 'open' ? 'none' : 'block',
     })
-  }, [gameControlsStatus, , MenuClosed, MenuOpen])
+  }, [gameControlsStatus])
   console.log('showControls', gameControlsStatus)
   return (
     <a.div style={style} className="GameControls">
