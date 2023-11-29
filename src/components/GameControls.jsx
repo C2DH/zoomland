@@ -1,5 +1,5 @@
 import { useSpring, a } from '@react-spring/web'
-import { MenuClosed, MenuOpen, useMenuStore } from '../store'
+import { MenuOpen, useMenuStore } from '../store'
 import './GameControls.css'
 import { useEffect } from 'react'
 import RoundButton from './RoundButton'
