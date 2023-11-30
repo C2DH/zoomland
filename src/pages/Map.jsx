@@ -11,7 +11,6 @@ import OverheadViewSign from '../components/OverheadViewSign'
 import { isMobile } from 'react-device-detect'
 import { usePlayerStore } from '../store'
 import Chapters from '../data/chapters.json'
-import './Map.css'
 
 const Map = () => {
   const collectedChapters = usePlayerStore((state) => state.collectedChapters)

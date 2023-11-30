@@ -1,6 +1,5 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useState } from 'react'
 import { KeyboardControls, Environment } from '@react-three/drei'
-// import { Glitch, EffectComposer } from '@react-three/postprocessing'
 import { Canvas } from '@react-three/fiber'
 import { Physics } from '@react-three/rapier'
 import Landscape from './Landscape'
@@ -80,8 +79,6 @@ const World = ({
   debugPhysics = false,
   enableSounds = true,
 }) => {
-  console.debug('[World] render')
-
   const [width, height] = useWindowStore((state) => [state.width, state.height])
 
   return (

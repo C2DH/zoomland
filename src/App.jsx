@@ -1,4 +1,4 @@
-import React, { Suspense, useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Header from './components/Header'
 import Vignette from './components/Vignette'
 import World from './components/World'
@@ -20,9 +20,8 @@ import RoundButton from './components/RoundButton'
 import MapIcon from './components/Svg/MapIcon'
 import { Gameplay, usePlayerStore } from './store/index.js'
 import { MenuClosed, MenuOpen, useMenuStore } from './store'
-
-const MapPage = React.lazy(() => import('./pages/Map'))
-const ChaptersPage = React.lazy(() => import('./pages/Chapters'))
+import MapPage from './pages/Map'
+import ChaptersPage from './pages/Chapters'
 const queryClient = new QueryClient()
 
 function App() {
@@ -97,22 +96,8 @@ function App() {
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>
         <Route path="/about" element={<About />} />
-        <Route
-          path="/map"
-          element={
-            <Suspense>
-              <MapPage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/chapters"
-          element={
-            <Suspense fallback={null}>
-              <ChaptersPage />
-            </Suspense>
-          }
-        />
+        <Route path="/map" element={<MapPage />} />
+        <Route path="/chapters" element={<ChaptersPage />} />
         <Route path="*" element={<></>} />
       </AppRoutes>
     </QueryClientProvider>
