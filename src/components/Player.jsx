@@ -19,10 +19,9 @@ import {
 } from '../store'
 import { updateCamera } from '../utils/camera'
 import { useQueueStore } from '../store/preload'
-// import { isMobile } from 'react-device-detect'
 
 const JumpForce = 0.7
-const Speed = 1.3
+const Speed = 0.7
 const MaxVel = 3.5
 const MaxSprintVel = 5
 const FreeFallLinvel = 30
@@ -175,8 +174,6 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
       return
     }
     const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = getKeys()
-
-    const isMoving = moveForward || moveBackward || moveLeft || moveRight
     const impulse = { x: 0, y: 0, z: 0 }
     // animation
     if (shouldStayStill && !jump) {
