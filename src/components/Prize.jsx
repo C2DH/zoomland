@@ -13,6 +13,7 @@ import { RigidBody } from '@react-three/rapier'
 import { useSpring, config } from '@react-spring/web'
 import { usePlayerStore } from '../store'
 import PropTypes from 'prop-types'
+import { Vector3 } from 'three'
 
 const ComponentsByName = {
   [ViewTypeGround]: GroundViewSign,
@@ -38,6 +39,7 @@ const Prize = ({
   prizeOffsetPosition = [0, 0, 0],
 }) => {
   const prizeRef = useRef(null)
+  const colliderRef = useRef(null)
   const isCollected = useRef(usePlayerStore.getState().collectedChapters.some((d) => d.id === id))
 
   const [, api] = useSpring(() => ({
@@ -45,6 +47,7 @@ const Prize = ({
     y: yMin,
     config: config.wobbly,
     onChange: ({ value }) => {
+      if (prizeRef.current === null) return
       // console.log('[Prize] onChange', value)
       prizeRef.current.scale.set(value.scale, value.scale, value.scale)
       prizeRef.current.position.y = position[1] + value.y
@@ -81,6 +84,11 @@ const Prize = ({
           console.debug('[Prize] @collisionEnterHandler onRest', id)
           api.start({
             scale: 0,
+          })
+          colliderRef.current.setNextKinematicTranslation({
+            x: position[0],
+            y: position[1] - 100,
+            z: position[2],
           })
         },
       })
@@ -125,8 +133,9 @@ const Prize = ({
   return (
     <group position={prizeOffsetPosition}>
       <RigidBody
+        ref={colliderRef}
         colliders={'hull'}
-        type={'fixed'}
+        type={'kinematicPosition'}
         onCollisionEnter={collisionEnterHandler}
         onCollisionExit={collisionExitHandler}
         position={position}
