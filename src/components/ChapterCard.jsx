@@ -19,7 +19,7 @@ const ViewTypes = {
   overhead: OverheadView,
 }
 
-const ChapterCard = ({ chapter, notFound = false }) => {
+const ChapterCard = ({ chapter, onFlipped, notFound = false }) => {
   const ref = useRef(null)
   const isFlipped = useRef(false)
 
@@ -33,7 +33,7 @@ const ChapterCard = ({ chapter, notFound = false }) => {
       }
     },
     onRest: () => {
-      if (isFlipped.current === false) {
+      if (ref.current && isFlipped.current === false) {
         ref.current.style.zIndex = 0
       }
     },
@@ -48,6 +48,7 @@ const ChapterCard = ({ chapter, notFound = false }) => {
       return
     }
     isFlipped.current = !isFlipped.current
+    onFlipped(isFlipped.current)
     if (isFlipped.current === true) {
       animate.start({
         opacity: 1,
