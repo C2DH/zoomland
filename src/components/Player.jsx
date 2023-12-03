@@ -179,15 +179,14 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
     const isMoving = moveForward || moveBackward || moveLeft || moveRight
     const impulse = { x: 0, y: 0, z: 0 }
     // animation
-    if (shouldStayStill || (!isMoving && !jump)) {
+    if (shouldStayStill && !jump) {
       setAnimation(AnimationIdle)
     } else if (jump && isOnFloor.current) {
       impulse.y += JumpForce
       rigidbody.current.applyImpulse(impulse)
       isOnFloor.current = false
       setAnimation(AnimationJump)
-    } else if (moveForward || moveBackward || moveLeft || moveRight) {
-      const linvel = rigidbody.current.linvel()
+    } else {
       if (moveLeft) {
         angle.current += 1.2 * delta
       } else if (moveRight) {
