@@ -1,9 +1,8 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import { usePlayerStore } from '../store'
 import { animated, useSpring } from '@react-spring/web'
 import RoundButton from './RoundButton'
 import { isMobile } from 'react-device-detect'
+import Chapters from '../data/chapters.json'
 
 const Chapter = ({ chapter }) => {
   const [props] = useSpring(() => ({
@@ -17,19 +16,8 @@ const Chapter = ({ chapter }) => {
   }))
 
   const [doneCollectingChapter] = usePlayerStore((state) => [state.doneCollectingChapter])
+  const data = Chapters.find((d) => d.id === chapter.id)
 
-  const { data } = useQuery({
-    queryKey: ['chapter', chapter.id],
-    queryFn: ({ signal }) => {
-      return axios
-        .get(`/data/chapters/${chapter.id}.json`, {
-          signal,
-        })
-        .then(({ data }) => data)
-    },
-    enabled: typeof chapter.title === 'undefined',
-  })
-  if (!data) return 'loading...'
   return (
     <>
       <animated.div
