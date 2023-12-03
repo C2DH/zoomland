@@ -21,3 +21,5 @@ export const ColorByCategory = {
   [CategoryHermeneutics]: ColorHermeneutics,
   [CategoryDigitalLandscapes]: ColorDigitalLandscapes,
 }
+
+export const MaxCollectedChapters = 17
