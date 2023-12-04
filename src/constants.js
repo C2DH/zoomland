@@ -23,3 +23,7 @@ export const ColorByCategory = {
 }
 
 export const MaxCollectedChapters = 17
+
+export const ForestColliderName = 'forest'
+
+export const CollidersNames = [ForestColliderName]
