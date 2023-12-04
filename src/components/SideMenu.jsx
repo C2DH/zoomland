@@ -16,12 +16,12 @@ import {
   useWorldStore,
   SceneCredits,
   SceneFakeBook,
-  SceneEnding,
+  Gameplay,
 } from '../store'
 import IntroLogoZoomland from './IntroLogoZoomland'
 import { isMobile } from 'react-device-detect'
 
-const SideMenu = () => {
+const SideMenu = ({ debug = false }) => {
   const { pathname } = useLocation()
   const [menuStatus, set] = useMenuStore((state) => [state.menuStatus, state.setMenuStatus])
   const setGameControlsStatus = useMenuStore((state) => state.setGameControlsStatus)
@@ -75,63 +75,35 @@ const SideMenu = () => {
           {children} */}
         <div className="menu-body">
           <Nav>
+            {/* add space */}
+
             <Nav.Item>
               <button
                 className="btn btn-link"
                 onClick={() => {
-                  newGame()
+                  setScene(Gameplay)
                   set(MenuClosed)
                 }}
               >
-                New Game
+                (Back to game)
               </button>
             </Nav.Item>
 
-            {/* add space */}
-            <Nav.Item>
-              <button
-                className="btn btn-link"
-                onClick={() => {
-                  setScene(SceneFakeBook)
-                  set(MenuClosed)
-                }}
-              >
-                Introduction
-              </button>
-            </Nav.Item>
-            <Nav.Item>
-              <button
-                className="btn btn-link"
-                onClick={() => {
-                  setScene(SceneEnding)
-                  set(MenuClosed)
-                }}
-              >
-                ... done!
-              </button>
-            </Nav.Item>
-            <Nav.Item>
-              <button
-                className="btn btn-link"
-                onClick={() => {
-                  setScene(SceneCredits)
-                  set(MenuClosed)
-                }}
-              >
-                Credits
-              </button>
-            </Nav.Item>
-            <Nav.Item className={isMobile ? null : 'mb-3'}>
-              <button className="btn btn-link" onClick={saveInitialPropsToPlayerStore}>
-                Save
-              </button>
-            </Nav.Item>
+            {debug ? (
+              <Nav.Item className={isMobile ? null : 'mb-3'}>
+                <button className="btn btn-link" onClick={saveInitialPropsToPlayerStore}>
+                  Save
+                </button>
+              </Nav.Item>
+            ) : null}
+            <div className="py-2"></div>
             <Nav.Item>
               <Link to="/map">Map</Link>
             </Nav.Item>
             <Nav.Item>
               <Link to="/chapters">Chapters</Link>
             </Nav.Item>
+            <div className="py-2"></div>
             <Nav.Item>
               <button
                 className="btn btn-link"
@@ -145,6 +117,30 @@ const SideMenu = () => {
             </Nav.Item>
             <Nav.Item>
               <Link to="/about">About</Link>
+            </Nav.Item>
+            <Nav.Item>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  setScene(SceneCredits)
+                  set(MenuClosed)
+                }}
+              >
+                Credits
+              </button>
+            </Nav.Item>
+
+            <div className="py-2"></div>
+            <Nav.Item>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  newGame()
+                  set(MenuClosed)
+                }}
+              >
+                New Game
+              </button>
             </Nav.Item>
           </Nav>
         </div>
