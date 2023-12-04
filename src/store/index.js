@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { MaxCollectedChapters } from '../constants'
 
 export const AnimationIdle = 'idle'
 export const AnimationWalk = 'walk'
@@ -81,7 +82,6 @@ export const useWorldStore = create((set, get) => ({
     })
   },
 }))
-export const NumberOfChapters = 17
 export const NumberOfQuests = 10
 
 export const Gameplay = 'gameplay'
@@ -181,11 +181,17 @@ export const usePlayerStore = create(
           isCollectingChapter: true,
           currentCollectedChapter: chapter,
           collectedChapters: [...collectedChapters, chapter],
-          progress: (collectedChapters.length + 1) / NumberOfChapters,
+          progress: (collectedChapters.length + 1) / MaxCollectedChapters,
         })
       },
-      doneCollectingChapter: () =>
-        set({ isCollectingChapter: false, currentCollectedChapter: null }),
+      doneCollectingChapter: () => {
+        const collectedChapters = get().collectedChapters
+        if (collectedChapters.length === MaxCollectedChapters) {
+          set({ scene: SceneEnding, isCollectingChapter: false, currentCollectedChapter: null })
+        } else {
+          set({ isCollectingChapter: false, currentCollectedChapter: null })
+        }
+      },
       resetCollectedChapters: () =>
         set({
           progress: 0,
@@ -204,7 +210,7 @@ export const usePlayerStore = create(
           collectedQuests: [],
           isCollectingQuest: false,
           latestCollectedQuest: null,
-          scene: Start,
+          scene: SceneFakeBook,
         })
       },
     }),

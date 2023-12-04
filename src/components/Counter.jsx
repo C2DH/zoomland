@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
-import { usePlayerStore, NumberOfChapters } from '../store'
+import { usePlayerStore } from '../store'
 import Timer from './Timer'
 import './Counter.css'
 import { Link } from 'react-router-dom'
 
 import animationData from '../assets/json/awesome-stars.json'
 import Lottie from 'react-lottie'
+import { MaxCollectedChapters } from '../constants'
 
 export const Counter = () => {
   const lottieRef = useRef(null)
@@ -40,7 +41,7 @@ export const Counter = () => {
         <div className="Counter_col align-items-center">
           <Link to="/chapters">Chapters</Link>
           <span>
-            {collectedChapters.length} / {NumberOfChapters}
+            {collectedChapters.length} / {MaxCollectedChapters}
           </span>
         </div>
         <div className="Counter_col">
