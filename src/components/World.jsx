@@ -187,25 +187,47 @@ const World = ({
               rotationSpeed={0.3}
             />
             <Physics debug={debugPhysics}>
-              <TheDispatcher quest={QuestsById.Daniele} position={[61.1, 11.02, -16.51]}>
-                <Suspense fallback={null}>
-                  <Daniele scale={0.065} rotation={[0, 1.8, 0]} />
-                </Suspense>
+              <TheDispatcher
+                quest={QuestsById.Daniele}
+                rotation={[0, 1.8, 0]}
+                position={[61.1, 11.02, -16.51]}
+              >
+                <Daniele scale={0.065} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.FlorentinaArmaselu} position={[81, 1, -11.57]}>
-                <Florentina scale={1.2} rotation={[0, 2.4, 0]} />
+              <TheDispatcher
+                quest={QuestsById.FlorentinaArmaselu}
+                rotation={[0, 2.4, 0]}
+                position={[81, 1, -11.57]}
+              >
+                <Florentina scale={1.2} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.AndreasFickers} position={[80.22, 1.05, -17.21]}>
-                <Lumberjack scale={0.4} rotation={[0, 0.8, 0]} />
+              <TheDispatcher
+                quest={QuestsById.AndreasFickers}
+                rotation={[0, 0.8, 0]}
+                position={[80.22, 1.05, -17.21]}
+              >
+                <Lumberjack scale={0.4} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.LarsWieneke} position={[46.87, 20.95, -81.69]}>
-                <Lars scale={0.1} rotation={[0, 0, 0]} />
+              <TheDispatcher
+                quest={QuestsById.LarsWieneke}
+                rotation={[0, 0, 0]}
+                position={[46.87, 20.95, -81.69]}
+              >
+                <Lars scale={0.1} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.KirillMitsurov} position={[6.95, 8.85, 60.91]}>
-                <Kirill scale={0.1} rotation={[0, 1.8, 0]} />
+              <TheDispatcher
+                quest={QuestsById.KirillMitsurov}
+                rotation={[0, 1.8, 0]}
+                position={[6.95, 8.85, 60.91]}
+              >
+                <Kirill scale={0.1} />
               </TheDispatcher>
-              <TheDispatcher quest={QuestsById.VerenaDeutsch} position={[30.48, 0.73, -1.56]}>
-                <Editor scale={0.1} rotation={[0, 3, 0]} />
+              <TheDispatcher
+                quest={QuestsById.VerenaDeutsch}
+                rotation={[0, 3, 0]}
+                position={[30.48, 0.73, -1.56]}
+              >
+                <Editor scale={0.1} />
               </TheDispatcher>
 
               {/* Boat or harbor - Introduction */}
