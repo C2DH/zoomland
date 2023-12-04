@@ -1,6 +1,5 @@
 import Hero from './Hero'
 import { Suspense, useEffect, useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
 import { RigidBody, CapsuleCollider } from '@react-three/rapier'
 import { useKeyboardControls } from '@react-three/drei'
 import { Vector3 } from 'three'
@@ -20,7 +19,6 @@ import {
 import { updateCamera } from '../utils/camera'
 import { useQueueStore } from '../store/preload'
 import useSafeFrame from '../hooks'
-import { CollidersNames } from '../constants'
 
 const JumpForce = 0.9
 const Speed = 0.7
@@ -275,7 +273,7 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
           initialPlayerPosition[1] + 2,
           initialPlayerPosition[2],
         ]}
-        onCollisionEnter={(e) => {
+        onCollisionEnter={() => {
           isOnFloor.current = true
         }}
         scale={[scale, scale, scale]}
