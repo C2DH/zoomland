@@ -22,7 +22,7 @@ const Quest = ({
 }) => {
   const [sentenceIndex, setSentenceIndex] = useState(-1)
   const [sentences, setSentences] = useState([])
-
+  const [actuallyEnableClose, setActuallyEnableClose] = useState(enableClose)
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -54,6 +54,8 @@ const Quest = ({
       s = withChapter
         ? quest.dialogues.firstMeetingWithChapter
         : quest.dialogues.firstMeetingWithoutChapter
+      // prevent closing the quest too fast
+      setActuallyEnableClose(false)
       // reduce the possibility, but increases our chance to get the same sentence
       // } else if (quest.meetings.length === 1) {
       //   // second time. use only second sentences
@@ -61,6 +63,7 @@ const Quest = ({
       //     ? quest.dialogues.secondMeetingWithChapter
       //     : quest.dialogues.secondMeetingWithoutChapter
     } else {
+      setActuallyEnableClose(true)
       // third time. use only third sentences
       s = withChapter ? quest.dialogues.runIntoWithChapter : quest.dialogues.runIntoWithoutChapter
     }
@@ -125,6 +128,7 @@ const Quest = ({
               disablePrevious={!enablePrevious || sentenceIndex < 1}
               onClose={onComplete}
               onCompleteLabel={onCompleteLabel}
+              enableClose={actuallyEnableClose}
             />
           </animated.div>
         )
