@@ -48,6 +48,7 @@ const GlitchingBooks = ({ duration = 3000 }) => {
         {status === StatusQuest && (
           <Quest
             initialDelay={1000}
+            enableClose={false}
             quest={{
               sentences: [
                 'It broke, again.',
