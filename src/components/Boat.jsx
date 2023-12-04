@@ -15,6 +15,7 @@ import { Vector3 } from 'three'
 import { updateCamera } from '../utils/camera'
 import { easings, useSpring } from '@react-spring/web'
 import { RigidBody } from '@react-three/rapier'
+import useSafeFrame from '../hooks'
 
 const Boat = ({
   positions = [
@@ -54,7 +55,7 @@ const Boat = ({
   }))
 
   // Animate using nice springs instead
-  useFrame((state, delta) => {
+  useSafeFrame((state, delta) => {
     const time = state.clock.getElapsedTime()
     const bendFactor = Math.sin(time * seed) * 0.2 + 0.2
     boatRef.current.rotation.z = bendFactor * 0.15

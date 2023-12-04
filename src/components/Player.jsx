@@ -19,8 +19,10 @@ import {
 } from '../store'
 import { updateCamera } from '../utils/camera'
 import { useQueueStore } from '../store/preload'
+import useSafeFrame from '../hooks'
+import { CollidersNames } from '../constants'
 
-const JumpForce = 0.7
+const JumpForce = 0.9
 const Speed = 0.7
 const MaxVel = 3.5
 const MaxSprintVel = 5
@@ -32,6 +34,7 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
   const rigidbody = useRef()
   const platformRef = useRef()
   const isOnFloor = useRef(true)
+  const isOnFloorTimer = useRef(0)
   const character = useRef()
   // joystick
   // Fetch initial state
@@ -158,7 +161,7 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
     rigidbody.current.setGravityScale(1)
   }
 
-  useFrame((state, delta) => {
+  useSafeFrame((state, delta) => {
     if (!rigidbody.current) return
     const shouldStayStill = isCollectingQuest || isCollectingChapter || scene !== Gameplay
     // check velocity
@@ -168,7 +171,12 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
       translateTo(new Vector3(...position))
       return
     }
-
+    isOnFloorTimer.current = isOnFloor.current ? 0 : isOnFloorTimer.current + 1
+    if (isOnFloorTimer.current > 60) {
+      console.debug('[Player] @useFrame - isOnFloorTimer', isOnFloorTimer.current)
+      isOnFloor.current = true
+      isOnFloorTimer.current = 0
+    }
     if (isMobile) {
       movePlayerWithJoystick(state, delta, shouldStayStill)
       return
@@ -192,6 +200,7 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
       const quadLinvel = linvel.z * linvel.z + linvel.x * linvel.x
       const maxQuadVel = MaxVel * MaxVel
       const maxForwardVel = sprint ? MaxSprintVel * MaxSprintVel : maxQuadVel
+
       if (moveForward && quadLinvel < maxForwardVel) {
         // add current angle to the impulse
         impulse.x += Math.sin(angle.current) * Speed
@@ -266,7 +275,7 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
           initialPlayerPosition[1] + 2,
           initialPlayerPosition[2],
         ]}
-        onCollisionEnter={() => {
+        onCollisionEnter={(e) => {
           isOnFloor.current = true
         }}
         scale={[scale, scale, scale]}
