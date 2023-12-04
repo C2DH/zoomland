@@ -25,6 +25,7 @@ export const useAnimationStore = create((set, get) => ({
 
 export const useWorldStore = create((set, get) => ({
   elapsedTime: 0,
+  resetElapsedTime: () => set({ elapsedTime: 0 }),
   playerPosition: DefaultPlayerPosition,
   playerAngle: DefaultPlayerAngle,
   cameraOffset: {
@@ -192,7 +193,8 @@ export const usePlayerStore = create(
           isCollectingChapter: false,
           currentCollectedChapter: null,
         }),
-      newGame: () =>
+      newGame: () => {
+        useWorldStore.setState({ elapsedTime: 0 })
         set({
           initialElapsedTime: 0,
           progress: 0,
@@ -203,7 +205,8 @@ export const usePlayerStore = create(
           isCollectingQuest: false,
           latestCollectedQuest: null,
           scene: Start,
-        }),
+        })
+      },
     }),
     {
       name: 'player-store',
