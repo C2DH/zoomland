@@ -24,7 +24,7 @@ const wrapSentences = (sentences, url, title) => {
 const Chapters = () => {
   const [searchParams] = useSearchParams()
   const inititalChapterId = searchParams.get('id')
-  const initialChapterIdx = data.findIndex((d) => d.id === inititalChapterId)
+  const initialChapterIdx = data.findIndex((d) => d.id === inititalChapterId) || -1
   const [sentences, setSentences] = useState(
     initialChapterIdx !== -1
       ? wrapSentences(data[initialChapterIdx].sentences, null, data[initialChapterIdx].title)
@@ -79,9 +79,17 @@ const Chapters = () => {
         {sentences.length ? (
           <Quest
             onlyYou
-            defaultYouLabel={'Chapter #' + String(selectedChapterIdx).padStart(2, '0')}
+            defaultYouLabel={
+              selectedChapterIdx > -1
+                ? 'Chapter #' + String(selectedChapterIdx).padStart(2, '0')
+                : 'You'
+            }
             asHtml
-            defaultAvatar={`/assets/cards/${data[selectedChapterIdx].id}-720w.jpg`}
+            defaultAvatar={
+              selectedChapterIdx > -1
+                ? `/assets/cards/${data[selectedChapterIdx].id}-720w.jpg`
+                : undefined
+            }
             enablePrevious
             enableSpaceKey={false}
             enableClose

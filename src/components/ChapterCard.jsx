@@ -171,7 +171,7 @@ const ChapterCard = ({ chapter, idx = -1, onFlipped, notFound = false }) => {
             })}
           </div>
           <div className="ChapterCard_link">
-            <a href={chapter.url || import.meta.env.VITE_BOOK_URL} target="_blank">
+            <a href={chapter.url || import.meta.env.VITE_BOOK_URL} target="_blank" rel="noreferrer">
               PDF
             </a>
           </div>
