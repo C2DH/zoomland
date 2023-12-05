@@ -1,9 +1,15 @@
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { MeshStandardMaterial } from 'three'
+import { MeshStandardMaterial, DoubleSide } from 'three'
 
-const GroundViewSign = ({ animation = true, color = 'var(--media-category-color)', ...props }) => {
+const GroundViewSign = ({
+  animation = true,
+  transparent = false,
+  opacity = '1',
+  color = 'var(--media-category-color)',
+  ...props
+}) => {
   const signRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/GroundViewSign.glb')
 
@@ -22,6 +28,15 @@ const GroundViewSign = ({ animation = true, color = 'var(--media-category-color)
   const signColor = new MeshStandardMaterial({
     ...materials.Media,
     color: color,
+    opacity: opacity,
+    transparent: transparent,
+  })
+  const signBodyColor = new MeshStandardMaterial({
+    ...materials.Media,
+    color: '#FFFFFF',
+    opacity: opacity,
+    transparent: transparent,
+    side: DoubleSide,
   })
 
   return (
@@ -47,7 +62,7 @@ const GroundViewSign = ({ animation = true, color = 'var(--media-category-color)
             castShadow
             receiveShadow
             geometry={nodes.GroundView002_3.geometry}
-            material={materials['1_WHITE']}
+            material={signBodyColor}
           />
         </group>
       </group>
