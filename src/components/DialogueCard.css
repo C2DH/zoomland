@@ -13,7 +13,7 @@
 }
 
 .DialogueCard .DialogueCard-wrapper {
-  pointer-events: all;
+  pointer-events: auto;
   padding: 1.5rem 3rem 1.5rem 6rem;
   position: relative;
   width: 500px;

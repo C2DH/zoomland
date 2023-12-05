@@ -13,6 +13,8 @@ const from = (i) => ({ x: 0, y: i * -250, opacity: 0 })
 
 const Quest = ({
   quest,
+  defaultAvatar = '/assets/avatars/Hero.jpg',
+  defaultYouLabel = 'You',
   onlyYou = false,
   asHtml = false,
   initialDelay = 100,
@@ -125,9 +127,9 @@ const Quest = ({
           >
             <DialogueCard
               asHtml={asHtml}
-              avatar={isPlayer ? undefined : quest.avatar}
+              avatar={isPlayer ? defaultAvatar : quest.avatar}
               sentence={sentences[i]}
-              characterName={isPlayer ? 'You' : quest.characterName || quest.id}
+              characterName={isPlayer ? defaultYouLabel : quest.characterName || quest.id}
               onClickNext={gotoNextSentence}
               onClickPrevious={gotoPreviousSentence}
               disableNext={i === sentences.length - 1}
