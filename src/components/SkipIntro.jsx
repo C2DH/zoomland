@@ -1,10 +1,9 @@
-import { Gameplay, OpenSea, Start, usePlayerStore } from '../store'
+import { OpenSea, Start, usePlayerStore } from '../store'
 import { useQueueStore } from '../store/preload'
 import { useEffect } from 'react'
 import { useSpring, a } from '@react-spring/web'
 import Quest from './Quest'
 import './SkipIntro.css'
-import RoundButton from './RoundButton'
 
 const IntroQuest = {
   sentences: [

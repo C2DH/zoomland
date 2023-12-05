@@ -15,7 +15,6 @@ import {
   usePlayerStore,
   useWorldStore,
   SceneCredits,
-  SceneFakeBook,
   Gameplay,
 } from '../store'
 import IntroLogoZoomland from './IntroLogoZoomland'
