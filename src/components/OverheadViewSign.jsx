@@ -1,9 +1,15 @@
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { MeshStandardMaterial } from 'three'
+import { MeshStandardMaterial, DoubleSide } from 'three'
 
-const OverheadViewSign = ({ animation = true, color = '#306fc5', ...props }) => {
+const OverheadViewSign = ({
+  animation = true,
+  transparent = false,
+  opacity = '1',
+  color = '#306fc5',
+  ...props
+}) => {
   const signRef = useRef()
   const { nodes, materials } = useGLTF('../assets/models/OverheadViewSign.glb')
   const seed = 0.8
@@ -21,7 +27,18 @@ const OverheadViewSign = ({ animation = true, color = '#306fc5', ...props }) => 
   const signColor = new MeshStandardMaterial({
     ...materials.Media,
     color: color,
+    opacity: opacity,
+    transparent: transparent,
   })
+  const signBodyColor = new MeshStandardMaterial({
+    ...materials.Media,
+    color: '#FFFFFF',
+    opacity: opacity,
+    transparent: transparent,
+    side: DoubleSide,
+  })
+
+  console.log('MeshStandardMaterial', signColor)
 
   return (
     <group ref={signRef} {...props} dispose={null}>
@@ -32,7 +49,7 @@ const OverheadViewSign = ({ animation = true, color = '#306fc5', ...props }) => 
             castShadow
             receiveShadow
             geometry={nodes.Circle015.geometry}
-            material={materials['1_WHITE']}
+            material={signBodyColor}
           />
           <mesh
             name="Circle015_1"
