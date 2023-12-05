@@ -43,7 +43,7 @@ const Chapters = () => {
         </Row>
       </Container>
       <div
-        style={{ position: 'fixed', pointerEvents: 'none' }}
+        style={{ position: 'fixed', pointerEvents: 'none', zIndex: 120 }}
         className="pointer-events-none top-0 bottom-0 end-0 start-0"
       >
         {sentences.length ? (
