@@ -8,6 +8,7 @@ const DialogueCard = ({
   characterName,
   onClickPrevious,
   onClickNext,
+  asHtml = false,
   disablePrevious = false,
   disableNext = false,
   avatar = '/assets/avatars/Hero.jpg',
@@ -39,7 +40,7 @@ const DialogueCard = ({
         <div className="avatar" style={{ backgroundImage: `url(${avatar})` }}></div>
         <div className="DialogueCard-body">
           <h4>{characterName}</h4>
-          <p>{sentence}</p>
+          {asHtml ? <div dangerouslySetInnerHTML={{ __html: sentence }}></div> : <p>{sentence}</p>}
         </div>
         <div className="DialogueCard-footer">
           {disablePrevious ? null : (
