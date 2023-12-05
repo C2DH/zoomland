@@ -12,6 +12,11 @@
   color: var(--pale-yellow);
   text-decoration: underline;
 }
+
+.Chapters .Quest .text-muted {
+  color: var(--pale-yellow) !important;
+  opacity: 0.7;
+}
 .Chapters .Quest a::before {
   /* display right arrow */
   content: '\2192\00a0';
