@@ -3,6 +3,7 @@ import { animated, useSpring } from '@react-spring/web'
 import RoundButton from './RoundButton'
 import { isMobile } from 'react-device-detect'
 import Chapters from '../data/chapters.json'
+import { Link } from 'react-router-dom'
 
 const Chapter = ({ chapter }) => {
   const [props] = useSpring(() => ({
@@ -49,7 +50,21 @@ const Chapter = ({ chapter }) => {
       </animated.div>
       <span style={{ color: 'var(--pale-yellow)' }}>Chapter {data?.n}</span>
       <h3 style={{ color: 'var(--pale-yellow)' }}>{data?.title}</h3>
-      <p>{data?.abstract}</p>
+      <p>
+        {data?.abstract}
+        <br />
+        <Link
+          to={`/chapters?id=${chapter.id}`}
+          style={{
+            color: 'var(--pale-yellow)',
+            textDecoration: 'underline',
+            pointerEvents: 'auto',
+          }}
+        >
+          See all collected chapters
+        </Link>
+      </p>
+
       <div className="btn-group">
         <RoundButton
           // Icon={CloseIcon}

@@ -33,6 +33,11 @@
   width: 50%;
   text-align: center;
   transform-origin: center;
+  pointer-events: none;
+}
+.Vignette_subs::selection,
+.Vignette_subs::-moz-selection {
+  background: transparent;
 }
 
 .Vignette_subs h3 {
