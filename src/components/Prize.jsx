@@ -13,7 +13,6 @@ import { RigidBody } from '@react-three/rapier'
 import { useSpring, config } from '@react-spring/web'
 import { usePlayerStore } from '../store'
 import PropTypes from 'prop-types'
-import { Vector3 } from 'three'
 
 const ComponentsByName = {
   [ViewTypeGround]: GroundViewSign,

@@ -137,7 +137,14 @@
       "src": "/assets/cards/4-scaling-digital-history-720w.jpg"
     },
     "incipit": "Scaling Digital History",
-    "sentences": [],
+    "sentences": [
+      "Ah, I recall delving into the thought-provoking content of this chapter.",
+      "This chapter explores scale in public and digital history projects by examining runaway advertisements from nineteenth-century Virginia newspapers placed by members of the Founding Generation.",
+      "As digital history allows for new scalability, the chapter documents existing databases to frame microhistories of enslaved individuals within the larger historiography of slavery, agency, and resistance.",
+      "The microhistories captured within runaway advertisements are often fragmented and unfound, creating evidentiary gaps within the scholarship of enslaved narratives.",
+      "Our digital project's intervention proposes reading each runaway advertisement as micro-maps of the enslaved individual's life and historical environment.",
+      "This interdisciplinary approach uses the digital humanities method of thick mapping to juxtapose temporal, spatial, geographic, environmental, and historical data into a layered reconstruction of networks, community, and kinship within enslaved communities from the early United States."
+    ],
     "excerpt": "Scaling Digital History and Documenting the Self-Emancipated"
   },
   {
@@ -151,7 +158,11 @@
     "authors": ["Fred Pailler", "Valérie Schafer"],
     "keywords": ["memes", "virality", "Harlem Shake", "scalable reading", "medium reading"],
     "incipit": "Keep Calm and Stay Focused",
-    "sentences": [],
+    "sentences": [
+      "After explaining why spatialities and temporalities, as well as platforms, matter in the historicization of virality, this chapter takes the Harlem Shake as a case study to demonstrate how scalable and medium reading may allow reconstructing past virality.",
+      "It discusses the challenges of flow and circulations of memes, the sources and tools that may be used to renew an approach that may benefit from contextualization, which is not only dedicated to content and to a semiotic approach but also to the containers, the communities, and stakeholders involved in these flexible and deeply adaptable phenomena.",
+      "By intertwining sources from the live and archived web, by crossing corpora based on the press, the archived web, and social networks (Twitter in this case), the authors enlighten the complexity at stake in the reconstruction of past virality."
+    ],
     "excerpt": "Historicising and Intertwining Scales and Temporalities of Online Virality",
     "card": {
       "srcset": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg",
@@ -175,7 +186,15 @@
       "cross-cultural comparison"
     ],
     "incipit": "Zooming in on Shot Scales",
-    "sentences": [],
+    "sentences": [
+      "Ah, I recall studying the fascinating content of this pilot study.",
+      "This pilot study illustrates an empirical cross-cultural comparative analysis of transnational TV series adaptations.",
+      "It investigates patterns of shot scale distribution in conjunction with gender and display of emotions to uncover and compare cultural representation in France and the US.",
+      "The study showcases 16 episodes of Law & Order: Criminal Intent and its French adaptation, Paris Enquêtes Criminelles, for a total of 44,602 frames.",
+      "Relying on the deep learning toolkit, the Möbius Trip, we propose an objective shot-scale model to frame and quantify a large quantity of data.",
+      "We propose a layered, four-level reading of the data through intercultural models, media theories, and feminist and psychological approaches to articulate cultural decoding.",
+      "This study provides insights into the ethics of televisual representations of male and female characters on screen across cultures and the process through which cultural proximity is achieved."
+    ],
     "excerpt": "A Digital Approach to Reframing Transnational TV series Adaptations",
     "card": {
       "srcset": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg",
@@ -199,7 +218,13 @@
       "authenticity"
     ],
     "incipit": "Adapting the Optics",
-    "sentences": [],
+    "sentences": [
+      "The paper is devoted to the significance of the scale and physical dimensions of cultural heritage objects for their study and reuse in virtual environments.",
+      "In the lens of the paper is a project on digitization and virtual representation of religious sculpture from the Perm Art Gallery.",
+      "The gallery's collection includes wooden sculptures of gods and saints, various decorations from churches, and a large carved iconostasis in the late baroque style, which is 25 meters high.",
+      "The paper focuses on the analysis of mediation through Zoom-in, Zoom-out, and Zoom-zero modes for the study of cultural heritage by objects recontextualization and reconstruction of these contexts and addresses the issue of the authenticity of the digitized heritage.",
+      "In the conclusion, the limitations and benefits from the opportunity to variate the scales and coordinates tuning the optics of the objects' representations are discussed."
+    ],
     "excerpt": "Zoom-in, Zoom-out, and Zoom-zero Modes to Understand Religious Sculptures",
     "card": {
       "srcset": "/assets/cards/7-adapting-the-optics-720w.jpg",
@@ -223,7 +248,15 @@
       "media studies"
     ],
     "incipit": "Scale Exercises",
-    "sentences": [],
+    "sentences": [
+      "This article explores the significance of scale within the field of audio analysis.",
+      "The introduction of digital signal processing methods is today enabling large-scale processing of recorded sound, which in turn provides access to vast amounts of unexplored audiovisual data.",
+      "It is now possible to zoom the sounds of our past.",
+      "In order to highlight both affordances and limitations of these new methods, this article studies 5000 hours of Swedish radio from the 1980s.",
+      "By adopting computational tools from bioacoustics, linguistics, and musicology, it becomes possible to study trends and developments in the acoustic style of broadcasting.",
+      "This provides insight into the changing characteristics of public service media in the era of de-monopolization.",
+      "However, to achieve these insights, the historian needs to practice the sonic scales."
+    ],
     "excerpt": "Listening to the Sonic Diversity in 5000 hours of Swedish Radio with Computers and Ears",
     "card": {
       "srcset": "/assets/cards/8-scale-exercises-720w.jpg",
@@ -248,7 +281,13 @@
       "network analysis"
     ],
     "incipit": "Complexity and Analytical-creative ...",
-    "sentences": [],
+    "sentences": [
+      "By revisiting concepts such as monstrosity and iconicity, the chapter reconsiders digital writing from a complex system perspective involving multi-scale architecture, performativity, and intermedia.",
+      "The case in point is the Graph Poem project—applying graph theory and natural language processing in poetry—particularly with its analytical-creative approaches informing certain computationally assembled anthologies coming out of the project.",
+      "The algorithms deployed in those anthologies operate at different scales, expanding networked text corpora by adding poem-nodes based on both small-scale, poetry diction related, and large-scale, network-topology-relevant criteria.",
+      "Such methodology illustrates a politically updated data-focused relevance of monstrosity beyond the recent post-disciplinary theory, as well as a concept of iconicity drawing mainly on writing theory and performance studies.",
+      "A complexity-informed notion of digital writing thus emerges foregrounding scale, monstrosity, and iconicity as conjoined features of digital space and the digital in general."
+    ],
     "excerpt": "Iconicity, Monstrosity, and #GraphPoem",
     "card": {
       "srcset": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg",
@@ -272,7 +311,12 @@
       "network analysis"
     ],
     "incipit": "The Scales of (Computational) Literary Studies",
-    "sentences": [],
+    "sentences": [
+      "Starting from a detailed reconstruction of Martin Mueller's theoretical conceptualization of scalable reading, my article focuses on the practical implications that scalable reading has on (computational) literary studies.",
+      "Based on an extensive analysis of scalable reading where I structure the concept in four different dimensions that are important to understand the idea of scaling, I will examine the practical consequences that scalable reading can have when analyzing literature.",
+      "For this, I will examine different forms of literary network analysis of German plays and analyze them in light of the various dimensions of scaling.",
+      "Doing so, I illustrate how qualitative and quantitative methods in literary studies can be brought together in a fruitful way."
+    ],
     "excerpt": "Martin Mueller's Concept of Scalable Reading in Theory and Practice",
     "card": {
       "srcset": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg",
