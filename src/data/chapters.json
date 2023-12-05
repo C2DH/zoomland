@@ -10,6 +10,14 @@
     "authors": ["Andreas Fickers", "Florentina Armaselu"],
     "category": "introduction",
     "incipit": "Introduction",
+    "sentences": [
+      "I remember quite well this introduction, it opens with a quote from a book by Franco Moretti.",
+      "The digital turn has brought about a new awareness of scale in the humanities.",
+      "The digital humanities have been instrumental in developing new methods and tools for the analysis of large-scale data,",
+      "and in the process have also contributed to a new understanding of scale in the humanities.",
+      "The digital humanities have thus been at the forefront of a new awareness of scale in the humanities,",
+      "and have contributed to a new understanding of scale in the humanities."
+    ],
     "excerpt": "Once upon a time...",
     "card": {
       "srcset": "/assets/cards/0-introduction-720w.jpg",
@@ -37,6 +45,17 @@
       " historical narrative"
     ],
     "incipit": "Adventures in Zoomland",
+    "sentences": [
+      "Oh, I remember exploring the fascinating concepts in this chapter.",
+      "The chapter proposes a conceptual framework for the design of graphical interfaces to knowledge graphs.",
+      "These interfaces employ the concept of 'zoom', broadly defined to encompass levels of scale, resolution, and abstraction.",
+      "This design aims to enable exploratory forms of historical hypothesis formation and testing, as well as narrative elaboration.",
+      "The process involves illustrative and speculative reflection on a series of recent or current digital history projects.",
+      "These projects are in which the author has been involved and involve the semantic modeling of data representing sociabilities, mobilities, temporalities, and identity.",
+      "They seek to encourage a hermeneutic sensitivity to evidential uncertainty.",
+      "Reference is included to methods of knowledge graph creation and refinement, both automated and participatory.",
+      "The extended concept of 'zoom' adopted is located within its media and aesthetic history."
+    ],
     "excerpt": "Transitions in Scale and the Visual Exploration of Historical Knowledge Graphs as Sequential Storytelling"
   },
   {
@@ -61,6 +80,17 @@
       "src": "/assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg"
     },
     "incipit": "Capturing Discourse through the Digital Lens",
+    "sentences": [
+      "Ah, I recall delving into the innovative concepts discussed in this paragraph.",
+      "Scalable reading has become a pathbreaking approach for discourse studies in Digital History.",
+      "While large-scale analysis broadens the examination of primary sources and explores discourse features independent from the historian's experience, close inspection evaluates findings in light of the historical context.",
+      "However, if we want to bring the best of both worlds together fruitfully, methods must be geared to the material, the discourses under scrutiny, their historical contexts, and our epistemic interests.",
+      "This paper proposes a methodological framework of scalable reading, specifically for pro-democratic discourses in the Weimar Republic.",
+      "Accessing democratic thinking in Weimar Germany's fragmented political culture has been a significant concern of historical research.",
+      "This includes examining newspapers, as they represent opinion-shaping mass media.",
+      "Historians have, however, not exhausted this potential, and they have hardly engaged with scalable reading.",
+      "This paper aims to close this gap by outlining the primarily heuristic benefits of scalable reading for studying democratic discourses in Weimar's press."
+    ],
     "excerpt": "Towards a Framework for the Analysis of Pro-democratic Discourse in the Weimar Republic"
   },
   {
@@ -78,6 +108,12 @@
       "src": "/assets/cards/3-menocchio-mapped-720w.jpg"
     },
     "incipit": "Menocchio Mapped",
+    "sentences": [
+      "Ah, I remember exploring the intriguing ideas presented in this article.",
+      "This article looks at the juxtapositions of Italian microhistory and digital spatial history.",
+      "While microhistory and digital history are in opposition to one another in terms of scale, they have similar aims, particularly a commitment to a methodology whose partial purpose is overcoming the silences of the subaltern and underrepresented in the archive.",
+      "Digital history can help microhistorians find the exceptional normal in a cache of documents, follow clues, and illuminate the mentalities, particularly the spatial ones, of their subjects."
+    ],
     "excerpt": "Italian Microhistory and the Digital Spatial Turn"
   },
   {
@@ -101,6 +137,14 @@
       "src": "/assets/cards/4-scaling-digital-history-720w.jpg"
     },
     "incipit": "Scaling Digital History",
+    "sentences": [
+      "Ah, I recall delving into the thought-provoking content of this chapter.",
+      "This chapter explores scale in public and digital history projects by examining runaway advertisements from nineteenth-century Virginia newspapers placed by members of the Founding Generation.",
+      "As digital history allows for new scalability, the chapter documents existing databases to frame microhistories of enslaved individuals within the larger historiography of slavery, agency, and resistance.",
+      "The microhistories captured within runaway advertisements are often fragmented and unfound, creating evidentiary gaps within the scholarship of enslaved narratives.",
+      "Our digital project's intervention proposes reading each runaway advertisement as micro-maps of the enslaved individual's life and historical environment.",
+      "This interdisciplinary approach uses the digital humanities method of thick mapping to juxtapose temporal, spatial, geographic, environmental, and historical data into a layered reconstruction of networks, community, and kinship within enslaved communities from the early United States."
+    ],
     "excerpt": "Scaling Digital History and Documenting the Self-Emancipated"
   },
   {
@@ -114,6 +158,11 @@
     "authors": ["Fred Pailler", "Valérie Schafer"],
     "keywords": ["memes", "virality", "Harlem Shake", "scalable reading", "medium reading"],
     "incipit": "Keep Calm and Stay Focused",
+    "sentences": [
+      "After explaining why spatialities and temporalities, as well as platforms, matter in the historicization of virality, this chapter takes the Harlem Shake as a case study to demonstrate how scalable and medium reading may allow reconstructing past virality.",
+      "It discusses the challenges of flow and circulations of memes, the sources and tools that may be used to renew an approach that may benefit from contextualization, which is not only dedicated to content and to a semiotic approach but also to the containers, the communities, and stakeholders involved in these flexible and deeply adaptable phenomena.",
+      "By intertwining sources from the live and archived web, by crossing corpora based on the press, the archived web, and social networks (Twitter in this case), the authors enlighten the complexity at stake in the reconstruction of past virality."
+    ],
     "excerpt": "Historicising and Intertwining Scales and Temporalities of Online Virality",
     "card": {
       "srcset": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg",
@@ -137,6 +186,15 @@
       "cross-cultural comparison"
     ],
     "incipit": "Zooming in on Shot Scales",
+    "sentences": [
+      "Ah, I recall studying the fascinating content of this pilot study.",
+      "This pilot study illustrates an empirical cross-cultural comparative analysis of transnational TV series adaptations.",
+      "It investigates patterns of shot scale distribution in conjunction with gender and display of emotions to uncover and compare cultural representation in France and the US.",
+      "The study showcases 16 episodes of Law & Order: Criminal Intent and its French adaptation, Paris Enquêtes Criminelles, for a total of 44,602 frames.",
+      "Relying on the deep learning toolkit, the Möbius Trip, we propose an objective shot-scale model to frame and quantify a large quantity of data.",
+      "We propose a layered, four-level reading of the data through intercultural models, media theories, and feminist and psychological approaches to articulate cultural decoding.",
+      "This study provides insights into the ethics of televisual representations of male and female characters on screen across cultures and the process through which cultural proximity is achieved."
+    ],
     "excerpt": "A Digital Approach to Reframing Transnational TV series Adaptations",
     "card": {
       "srcset": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg",
@@ -160,6 +218,13 @@
       "authenticity"
     ],
     "incipit": "Adapting the Optics",
+    "sentences": [
+      "The paper is devoted to the significance of the scale and physical dimensions of cultural heritage objects for their study and reuse in virtual environments.",
+      "In the lens of the paper is a project on digitization and virtual representation of religious sculpture from the Perm Art Gallery.",
+      "The gallery's collection includes wooden sculptures of gods and saints, various decorations from churches, and a large carved iconostasis in the late baroque style, which is 25 meters high.",
+      "The paper focuses on the analysis of mediation through Zoom-in, Zoom-out, and Zoom-zero modes for the study of cultural heritage by objects recontextualization and reconstruction of these contexts and addresses the issue of the authenticity of the digitized heritage.",
+      "In the conclusion, the limitations and benefits from the opportunity to variate the scales and coordinates tuning the optics of the objects' representations are discussed."
+    ],
     "excerpt": "Zoom-in, Zoom-out, and Zoom-zero Modes to Understand Religious Sculptures",
     "card": {
       "srcset": "/assets/cards/7-adapting-the-optics-720w.jpg",
@@ -183,6 +248,15 @@
       "media studies"
     ],
     "incipit": "Scale Exercises",
+    "sentences": [
+      "This article explores the significance of scale within the field of audio analysis.",
+      "The introduction of digital signal processing methods is today enabling large-scale processing of recorded sound, which in turn provides access to vast amounts of unexplored audiovisual data.",
+      "It is now possible to zoom the sounds of our past.",
+      "In order to highlight both affordances and limitations of these new methods, this article studies 5000 hours of Swedish radio from the 1980s.",
+      "By adopting computational tools from bioacoustics, linguistics, and musicology, it becomes possible to study trends and developments in the acoustic style of broadcasting.",
+      "This provides insight into the changing characteristics of public service media in the era of de-monopolization.",
+      "However, to achieve these insights, the historian needs to practice the sonic scales."
+    ],
     "excerpt": "Listening to the Sonic Diversity in 5000 hours of Swedish Radio with Computers and Ears",
     "card": {
       "srcset": "/assets/cards/8-scale-exercises-720w.jpg",
@@ -207,6 +281,13 @@
       "network analysis"
     ],
     "incipit": "Complexity and Analytical-creative ...",
+    "sentences": [
+      "By revisiting concepts such as monstrosity and iconicity, the chapter reconsiders digital writing from a complex system perspective involving multi-scale architecture, performativity, and intermedia.",
+      "The case in point is the Graph Poem project—applying graph theory and natural language processing in poetry—particularly with its analytical-creative approaches informing certain computationally assembled anthologies coming out of the project.",
+      "The algorithms deployed in those anthologies operate at different scales, expanding networked text corpora by adding poem-nodes based on both small-scale, poetry diction related, and large-scale, network-topology-relevant criteria.",
+      "Such methodology illustrates a politically updated data-focused relevance of monstrosity beyond the recent post-disciplinary theory, as well as a concept of iconicity drawing mainly on writing theory and performance studies.",
+      "A complexity-informed notion of digital writing thus emerges foregrounding scale, monstrosity, and iconicity as conjoined features of digital space and the digital in general."
+    ],
     "excerpt": "Iconicity, Monstrosity, and #GraphPoem",
     "card": {
       "srcset": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg",
@@ -215,7 +296,7 @@
   },
   {
     "id": "10-the-scales-of-computational-literary-studies",
-    "title": "The Scales of (Computational) Literary Studies: Martin Mueller’s Concept of Scalable Reading in Theory and Practice",
+    "title": "The Scales of (Computational) Literary Studies: Martin Mueller's Concept of Scalable Reading in Theory and Practice",
     "page": "261",
     "n": 10,
     "position": [-20, -0.7, 6],
@@ -230,7 +311,13 @@
       "network analysis"
     ],
     "incipit": "The Scales of (Computational) Literary Studies",
-    "excerpt": "Martin Mueller’s Concept of Scalable Reading in Theory and Practice",
+    "sentences": [
+      "Starting from a detailed reconstruction of Martin Mueller's theoretical conceptualization of scalable reading, my article focuses on the practical implications that scalable reading has on (computational) literary studies.",
+      "Based on an extensive analysis of scalable reading where I structure the concept in four different dimensions that are important to understand the idea of scaling, I will examine the practical consequences that scalable reading can have when analyzing literature.",
+      "For this, I will examine different forms of literary network analysis of German plays and analyze them in light of the various dimensions of scaling.",
+      "Doing so, I illustrate how qualitative and quantitative methods in literary studies can be brought together in a fruitful way."
+    ],
+    "excerpt": "Martin Mueller's Concept of Scalable Reading in Theory and Practice",
     "card": {
       "srcset": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg",
       "src": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg"
@@ -253,6 +340,11 @@
       "digital hermeneutics"
     ],
     "incipit": "Text, Fractal Dust and Informational Granularity",
+    "sentences": [
+      "This chapter proposes a method of text analysis that combines conceptual aspects from the model of scalable or zoomable text (z-text), topic modeling, and fractal geometry.",
+      "It argues that this type of methodology may assist in detecting different levels of generality and specificity in texts and reveal some characteristics of the assemblage of blocks of text, above the word level, at different scales of representation.",
+      "Applications of such an approach can range from hermeneutics and discourse analysis to text (and possibly z-text) generation and summarization."
+    ],
     "excerpt": "A Study of Scale",
     "card": {
       "srcset": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg",
@@ -270,6 +362,14 @@
     "authors": ["Stephen Robertson"],
     "keywords": ["digital history", "microhistory", "narrative", "argument", "data"],
     "incipit": "Scale and Narrative",
+    "sentences": [
+      "The framework for historical argument derived from the print monograph is increasing untenable for digital historians.",
+      "Digital argument is inclusive rather than selective in both its evidence and its form.",
+      "The data required by digital methods produce multiple intertwined threads of interpretation and argument, resulting in arguments that are more expansive, larger in scale, than fit a book.",
+      "The alternative is obviously to present digital argument in its 'native' medium.",
+      "This chapter analyzes how I conceived a form for one such argument, Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935—a multi-layered, hyperlinked narrative that connects different scales of analysis: individual events, aggregated patterns, and a chronological narrative.",
+      "In three sections, I lay out my understanding of the nature of digital argument, the options I considered for presenting it, and the details of the form that I decided to employ."
+    ],
     "excerpt": "Conceiving a Long-form Digital Argument for Data-driven Microhistory",
     "card": {
       "srcset": "/assets/cards/12-scale-and-narrative-720w.jpg",
@@ -287,6 +387,12 @@
     "authors": ["Natalie M. Houston"],
     "keywords": ["network analysis", "data visualization", "aesthetics"],
     "incipit": "Meaningful Aesthetics",
+    "sentences": [
+      "As a contribution to a critical hermeneutics of data visualization, this chapter presents a critical examination of the default aesthetics used in three open-source network analysis software packages: Pajek, Cytoscape, and Gephi.",
+      "The aesthetics of network graphs are produced by the selection of the algorithm, algorithm-specific parameters, the visualization of statistical measures, and the elements of line, shape, and color that are applied.",
+      "In this study, visualizations of the character interaction network from Victor Hugo's novel Les Misérables are generated using the default parameters available in each software package, in order to explore the assumptions embedded in the tool and contribute to a humanist analysis of network analysis software and its outputs.",
+      "Because network visualizations assist in understanding data structures at a variety of scales, critical awareness of how network graphs are produced contributes to a more situated, self-reflective data visualization practice that recognizes how aesthetics are always creating meaning."
+    ],
     "excerpt": "A Comparison of Open Source Network Analysis Tools",
     "card": {
       "srcset": "/assets/cards/13-meaningful-aesthetics-720w.jpg",
@@ -304,6 +410,18 @@
     "authors": ["Quentin Lobbé", "David Chavalarias", "Alexandre Delanoë"],
     "keywords": ["level", "scale", "phylomemy", "semantic map", "macroscope"],
     "incipit": "Defining Level and Scale as Socio-technical ...",
+    "sentences": [
+      "In this article, we investigate the epistemological dimensions pertaining to the notion of scale in Digital Humanities (DH).",
+      "We first echo the growing concerns of digital tools makers who call for separating the notion of complexity from the metaphor of scale frequently used in the DH literature.",
+      "We then harvest a corpus of 825 DH papers related to the notion of scale, and we build a semantic map on top of them to highlight the various ways DH scholars make use of scale in their contributions.",
+      "By reviewing this map, we show that scale acts as a blurry concept in DH literature along with level used as a sibling.",
+      "We then argue for distinguishing between level and scale as a way to reconstruct and visualize the complexity of the social sphere.",
+      "We redefine level and scale as operators of a socio-technical algebra.",
+      "This algebra aims at increasing our collective capacity to mine digital traces.",
+      "We then give practical examples of the joint use of level and scale with the phylomemy reconstruction process.",
+      "We finally introduce GarganText, a free text mining software heir of de Rosnay's Macroscope.",
+      "We explain how GarganText embeds our definitions of level and scale in light of mathematical foundations, programming technologies, and design principles."
+    ],
     "excerpt": "Defining Level and Scale as Socio-technical Operators for Mining Digital Traces",
     "card": {
       "srcset": "/assets/cards/14-defining-level-and-scale-720w.jpg",
@@ -327,6 +445,16 @@
       "map interpretation"
     ],
     "incipit": "Zooming is (not just) scaling",
+    "sentences": [
+      "Cartographic concepts of scale developed to help provide a framework for traditional map production, including generalization.",
+      "Contemporary digital humanities researchers rarely have knowledge of this framework and practices.",
+      "Geographers worked closely with cartographers, leading to map scale possessing a wide array of epistemological and ontological characteristics that became inherent and even implicit.",
+      "Map scale was essential to other fields.",
+      "The digitization of traditional maps and the creation of scanned map applications for computers in the 1990s opened new types of access.",
+      "Combined with scale-dependent raster graphics, the convincing illusion of zooming through space developed as the primary interface for digital maps.",
+      "The informationalization of geographic knowledge and cartographic functions has extended zooming to these maps, although these digital maps are distinct from traditional paper media maps.",
+      "Theories and methods of historical interpretative research extend new possibilities for DH research to consider cartographic generalization and its manipulations indicated by scale."
+    ],
     "excerpt": "Considerations of Scale in Old Maps from Cartographic Perspectives on Generalisation",
     "card": {
       "srcset": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg",
@@ -350,6 +478,14 @@
       "weather maps"
     ],
     "incipit": "Weather Map: A Diachronic Visual ...",
+    "sentences": [
+      "The Weather Map is a visual model to investigate public debates on media.",
+      "Relying on the Media Cloud archives, the visual model transforms a simple query into a sophisticated visualization by employing the visual grammar of synoptic weather charts.",
+      "Peaks of pressure and clashes between airmasses are used to describe the conflicts in media through the temporal dimension, diving into the human and non-human dynamics that make the controversy alive.",
+      "The Weather Map was conceived as a digital tool to help students and scholars analyze public debates, according to the controversy mapping field founded by Bruno Latour.",
+      "In particular, the visual model pushes the boundaries of graphic design of network visualization, exploring advanced techniques to represent network visualizations.",
+      "The outcome is a web-based application developed in JavaScript and Python at the disposal of education and research."
+    ],
     "excerpt": "A Diachronic Visual Model for Controversy Mapping",
     "card": {
       "srcset": "/assets/cards/16-weather-map-720w.jpg",

@@ -47,3 +47,13 @@ or, shortly
 ```
 
 that's it!
+
+
+## folder tree
+```bash
+├── README.md
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json

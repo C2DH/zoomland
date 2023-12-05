@@ -13,10 +13,13 @@ const from = (i) => ({ x: 0, y: i * -200, opacity: 0 })
 
 const Quest = ({
   quest,
+  onlyYou = false,
+  asHtml = false,
   initialDelay = 100,
   withChapter = false,
   onComplete,
   onCompleteLabel = 'Done',
+  enableSpaceKey = true,
   enableClose = false,
   enablePrevious = false,
 }) => {
@@ -25,7 +28,7 @@ const Quest = ({
   const [actuallyEnableClose, setActuallyEnableClose] = useState(enableClose)
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
+      if (enableSpaceKey && (event.key === 'Enter' || event.key === ' ')) {
         if (sentenceIndex < sentences.length - 1) {
           setSentenceIndex(sentenceIndex + 1)
         } else {
@@ -108,17 +111,20 @@ const Quest = ({
   return (
     <div className="Quest">
       {props.map(({ x, y, opacity }, i) => {
-        const isPlayer = i % 2 === 1
+        const isPlayer = onlyYou ? true : i % 2 === 1
+
         return (
           <animated.div
             key={i}
             className="Quest_sentence"
             style={{
               opacity,
+              pointerEvents: opacity > 0 ? 'auto' : 'none',
               transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
             }}
           >
             <DialogueCard
+              asHtml={asHtml}
               avatar={isPlayer ? undefined : quest.avatar}
               sentence={sentences[i]}
               characterName={isPlayer ? 'You' : quest.characterName || quest.id}
