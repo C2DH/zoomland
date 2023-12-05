@@ -21,3 +21,6 @@
   /* display right arrow */
   content: '\2192\00a0';
 }
+.Chapters .Quest .avatar {
+  background-size: contain;
+}
