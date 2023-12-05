@@ -12,6 +12,7 @@
   color: var(--pale-yellow);
   text-decoration: underline;
 }
+
 .Chapters .Quest a::before {
   /* display right arrow */
   content: '\2192\00a0';

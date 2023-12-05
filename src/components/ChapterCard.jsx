@@ -45,11 +45,11 @@ const ChapterCard = ({ chapter, idx = -1, onFlipped, notFound = false }) => {
 
   const clickHandler = () => {
     if (notFound) {
-      onFlipped({ flipped: isFlipped.current, id: chapter.id, idx })
+      onFlipped({ flipped: isFlipped.current, notFound, id: chapter.id, idx })
       return
     }
     isFlipped.current = !isFlipped.current
-    onFlipped({ flipped: isFlipped.current, id: chapter.id, idx })
+    onFlipped({ flipped: isFlipped.current, notFound, id: chapter.id, idx })
     if (isFlipped.current === true) {
       animate.start({
         opacity: 1,
@@ -169,6 +169,11 @@ const ChapterCard = ({ chapter, idx = -1, onFlipped, notFound = false }) => {
                 </div>
               )
             })}
+          </div>
+          <div className="ChapterCard_link">
+            <a href={chapter.url || import.meta.env.VITE_BOOK_URL} target="_blank">
+              PDF
+            </a>
           </div>
           <div className="ChapterCard_logo">
             <LogoZoomland color="var(--dark-blue)"></LogoZoomland>

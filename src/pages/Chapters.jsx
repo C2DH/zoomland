@@ -11,18 +11,22 @@ const Chapters = () => {
   const [sentences, setSentences] = useState(['Here I store the Chapters securely.'])
   const [collectedChapters] = usePlayerStore((state) => [state.collectedChapters])
 
-  const onFlippedHandler = ({ flipped, idx }) => {
+  const onFlippedHandler = ({ flipped, notFound, idx }) => {
     console.debug('[Chapters] onFlipped', flipped)
-    setSentences(
-      data[idx].sentences.map((s, i, arr) =>
-        [
-          `${i + 1} / ${arr.length}  &mdash; "`,
-          s,
-          '<br/><br/>',
-          `<a href="${import.meta.env.VITE_BOOK_URL}" target="_blank">Read online</a>`,
-        ].join(''),
-      ),
-    )
+    if (notFound || flipped) {
+      setSentences(
+        data[idx].sentences.map((s, i, arr) =>
+          [
+            `${i + 1} / ${arr.length}  &mdash; "`,
+            s,
+            '<br/><br/>',
+            `<a href="${import.meta.env.VITE_BOOK_URL}" target="_blank">Read online</a>`,
+          ].join(''),
+        ),
+      )
+    } else {
+      setSentences([])
+    }
   }
 
   return (

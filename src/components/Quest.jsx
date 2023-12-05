@@ -5,11 +5,11 @@ import DialogueCard from './DialogueCard'
 
 const to = (i, delay = 0) => ({
   x: 0,
-  y: i * 200,
+  y: i * 250,
   opacity: 0,
   delay: delay,
 })
-const from = (i) => ({ x: 0, y: i * -200, opacity: 0 })
+const from = (i) => ({ x: 0, y: i * -250, opacity: 0 })
 
 const Quest = ({
   quest,
