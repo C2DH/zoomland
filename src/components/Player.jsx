@@ -109,36 +109,56 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
     })
   }, [])
 
-  const movePlayerWithJoystick = (state, delta, shouldStayStill) => {
+  const movePlayerWithJoystick = (state, delta, shouldStayStill, linvel) => {
+    const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = joystickRef.current
+    movePlayerWithDirections({
+      moveForward,
+      moveBackward,
+      moveLeft,
+      moveRight,
+      jump,
+      sprint: true,
+      state,
+      delta,
+      shouldStayStill,
+      linvel,
+    })
+    const characterWorldPosition = character.current.getWorldPosition(new Vector3())
+    updateCamera(state.camera, { target: characterWorldPosition, delta, angle: angle.current })
+  }
+
+  const oldmovePlayerWithJoystick = (state, delta, shouldStayStill) => {
     const [steeringAngle, speed] = joystickRef.current
-    if (shouldStayStill || speed < 0.1) {
+    const isIdle = shouldStayStill || (speed < 0.1 && speed > -0.1)
+    if (isIdle) {
       setAnimation(AnimationIdle)
-    } else if (speed < 0.5) {
+    } else if (speed < 0.5 && speed > -0.5) {
       setAnimation(AnimationWalk)
-    } else if (speed >= 0.5) {
+    } else if (speed >= 0.5 || speed <= -0.5) {
       setAnimation(AnimationRun)
     }
-    if (!shouldStayStill && speed >= 0.1) {
-      const linvel = rigidbody.current.linvel()
-      const quadLinvel = linvel.z * linvel.z + linvel.x * linvel.x
-      const maxQuadVel = MaxVel * MaxVel
-      const impulse = { x: 0, y: 0, z: 0 }
+    if (isIdle) {
+      return
+    }
+    const linvel = rigidbody.current.linvel()
+    const quadLinvel = linvel.z * linvel.z + linvel.x * linvel.x
+    const maxQuadVel = MaxVel * MaxVel
+    const impulse = { x: 0, y: 0, z: 0 }
 
-      if (speed > 0) {
-        const maxForwardVel = speed < 0.5 ? MaxVel : MaxSprintVel
-        if (speed && quadLinvel < maxForwardVel) {
-          // add current angle to the impulse
-          impulse.x += Math.sin(angle.current) * Speed
-          impulse.z += Math.cos(angle.current) * Speed
-          rigidbody.current.applyImpulse(impulse, true)
-        }
-      } else {
-        // move backward
-        if (quadLinvel < maxQuadVel) {
-          impulse.x -= Math.sin(angle.current) * Speed * 0.35
-          impulse.z -= Math.cos(angle.current) * Speed * 0.35
-          rigidbody.current.applyImpulse(impulse, true)
-        }
+    if (speed > 0) {
+      const maxForwardVel = speed < 0.5 ? MaxVel : MaxSprintVel
+      if (speed && quadLinvel < maxForwardVel) {
+        // add current angle to the impulse
+        impulse.x += Math.sin(angle.current) * Speed
+        impulse.z += Math.cos(angle.current) * Speed
+        rigidbody.current.applyImpulse(impulse, true)
+      }
+    } else {
+      // move backward
+      if (quadLinvel < maxQuadVel) {
+        impulse.x -= Math.sin(angle.current) * Speed * 0.35
+        impulse.z -= Math.cos(angle.current) * Speed * 0.35
+        rigidbody.current.applyImpulse(impulse, true)
       }
     }
 
@@ -176,10 +196,57 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
       isOnFloorTimer.current = 0
     }
     if (isMobile) {
-      movePlayerWithJoystick(state, delta, shouldStayStill)
+      movePlayerWithJoystick(state, delta, shouldStayStill, linvel)
       return
     }
     const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = getKeys()
+    const characterWorldPosition = movePlayerWithDirections({
+      moveForward,
+      moveBackward,
+      moveLeft,
+      moveRight,
+      jump,
+      state,
+      sprint,
+      delta,
+      shouldStayStill,
+      linvel,
+    })
+    updateCamera(state.camera, {
+      target: characterWorldPosition,
+      delta,
+      angle: angle.current,
+      radius: cameraOffsetRef.current.radius,
+      elevation: cameraOffsetRef.current.elevation,
+      disable: !cameraOffsetRef.current.followPlayer,
+    })
+  })
+
+  const movePlayerWithDirections = ({
+    moveForward,
+    moveBackward,
+    moveLeft,
+    moveRight,
+    jump,
+    sprint,
+    delta,
+    state,
+    shouldStayStill,
+    linvel,
+  }) => {
+    console.debug('[Player] @movePlayerWithDirections', {
+      moveForward,
+      moveBackward,
+      moveLeft,
+      moveRight,
+      jump,
+      sprint,
+      delta,
+      state,
+      shouldStayStill,
+      linvel,
+    })
+
     const impulse = { x: 0, y: 0, z: 0 }
     // animation
     if (shouldStayStill && !jump) {
@@ -233,15 +300,8 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
     // smooth rotation angle
     // character.current.rotation.y += angle.current * 0.1
     character.current.rotation.y += (angle.current - character.current.rotation.y) * 0.75
-    updateCamera(state.camera, {
-      target: characterWorldPosition,
-      delta,
-      angle: angle.current,
-      radius: cameraOffsetRef.current.radius,
-      elevation: cameraOffsetRef.current.elevation,
-      disable: !cameraOffsetRef.current.followPlayer,
-    })
-  })
+    return characterWorldPosition
+  }
 
   return (
     <>

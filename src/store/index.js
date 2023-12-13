@@ -8,7 +8,14 @@ export const AnimationRun = 'run'
 export const AnimationJump = 'jump'
 export const DefaultPlayerPosition = [94.44, 0.26, -13.71]
 export const DefaultPlayerAngle = -Math.PI / 2
-
+export const DefaultJoystick = {
+  moveForward: false,
+  moveBackward: false,
+  moveLeft: false,
+  moveRight: false,
+  jump: false,
+  sprint: false,
+}
 export const useAnimationStore = create((set, get) => ({
   animation: AnimationIdle,
   previousAnimation: null,
@@ -34,7 +41,13 @@ export const useWorldStore = create((set, get) => ({
     elevation: 1.5,
     followPlayer: false,
   },
-  joystick: [DefaultPlayerAngle, 0],
+  // joystick: [DefaultPlayerAngle, 0],
+  joystick: DefaultJoystick,
+  setJoystick: (d) => {
+    return set({
+      joystick: d || DefaultJoystick,
+    })
+  },
   // change only if angle is different
   setPlayerPosition: (playerPosition) => {
     const simplifiedPlayerPosition = [
@@ -48,16 +61,16 @@ export const useWorldStore = create((set, get) => ({
     console.debug('[store] setPlayerPosition:', simplifiedPlayerPosition)
     return set({ playerPosition: simplifiedPlayerPosition })
   },
-  setJoystick: (angle, speed) => {
-    if (isNaN(angle)) {
-      const previousPlayerAngle = get().playerAngle
-      return set({ joystick: [previousPlayerAngle, 0] })
-    }
-    return set({
-      playerAngle: angle,
-      joystick: [angle, speed],
-    })
-  },
+  // setJoystick: (angle, speed) => {
+  //   if (isNaN(angle)) {
+  //     const previousPlayerAngle = get().playerAngle
+  //     return set({ joystick: [previousPlayerAngle, 0] })
+  //   }
+  //   return set({
+  //     playerAngle: angle,
+  //     joystick: [angle, speed],
+  //   })
+  // },
   setCameraOffset: ({ radius, elevation, followPlayer }) =>
     set({ cameraOffset: { radius, elevation, followPlayer } }),
   // change only if angle is different

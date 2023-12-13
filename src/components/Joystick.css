@@ -1,13 +1,17 @@
 .Joystick {
   position: fixed;
-  bottom: 1rem;
+  bottom: 80px;
   left: 1rem;
+  top: 6rem;
+  right: 1rem;
   z-index: var(--z-index-joystick);
 }
-
+.Joystick .ReactNipple {
+  height: 100%;
+}
 .Joystick > div {
-  height: 80px !important;
-  width: 80px !important;
+  /* height: 80px !important;
+  width: 80px !important; */
   background: transparent !important;
   border: 1px dashed var(--pale-yellow);
 }
