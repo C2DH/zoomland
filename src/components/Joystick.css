@@ -1,6 +1,6 @@
 .Joystick {
   position: fixed;
-  bottom: 80px;
+  bottom: 60px;
   left: 1rem;
   top: 6rem;
   right: 1rem;
@@ -9,18 +9,20 @@
 .Joystick .ReactNipple {
   height: 100%;
 }
-.Joystick > div {
-  /* height: 80px !important;
-  width: 80px !important; */
+.Joystick .back {
+  height: 80px !important;
+  width: 80px !important;
   background: transparent !important;
   border: 1px dashed var(--pale-yellow);
 }
 
-.Joystick > div button {
+.Joystick .front {
   height: 60px !important;
   width: 60px !important;
   background: var(--pale-yellow) !important;
   opacity: 0.5;
+  margin-left: -40px !important;
+  margin-top: -40px !important;
 }
 
 @media (orientation: landscape) {
