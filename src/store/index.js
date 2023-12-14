@@ -15,6 +15,7 @@ export const DefaultJoystick = {
   moveRight: false,
   jump: false,
   sprint: false,
+  speedCoeff: 0,
 }
 export const useAnimationStore = create((set, get) => ({
   animation: AnimationIdle,

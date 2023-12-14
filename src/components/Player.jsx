@@ -110,19 +110,25 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
   }, [])
 
   const movePlayerWithJoystick = (state, delta, shouldStayStill, linvel) => {
-    const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint } = joystickRef.current
-    movePlayerWithDirections({
-      moveForward,
-      moveBackward,
-      moveLeft,
-      moveRight,
-      jump,
-      sprint: true,
-      state,
-      delta,
-      shouldStayStill,
-      linvel,
-    })
+    const { moveForward, moveBackward, moveLeft, moveRight, jump, sprint, speedCoeff } =
+      joystickRef.current
+    if (moveForward || moveBackward || moveLeft || moveRight || jump) {
+      movePlayerWithDirections({
+        moveForward,
+        moveBackward,
+        moveLeft,
+        moveRight,
+        jump,
+        sprint,
+        state,
+        delta,
+        shouldStayStill,
+        linvel,
+        speedCoeff,
+      })
+    } else {
+      setAnimation(AnimationIdle)
+    }
     const characterWorldPosition = character.current.getWorldPosition(new Vector3())
     updateCamera(state.camera, { target: characterWorldPosition, delta, angle: angle.current })
   }
@@ -233,20 +239,9 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
     state,
     shouldStayStill,
     linvel,
+    speedCoeff = 0.35,
+    speed = Speed,
   }) => {
-    console.debug('[Player] @movePlayerWithDirections', {
-      moveForward,
-      moveBackward,
-      moveLeft,
-      moveRight,
-      jump,
-      sprint,
-      delta,
-      state,
-      shouldStayStill,
-      linvel,
-    })
-
     const impulse = { x: 0, y: 0, z: 0 }
     // animation
     if (shouldStayStill && !jump) {
@@ -268,12 +263,12 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
 
       if (moveForward && quadLinvel < maxForwardVel) {
         // add current angle to the impulse
-        impulse.x += Math.sin(angle.current) * Speed
-        impulse.z += Math.cos(angle.current) * Speed
+        impulse.x += Math.sin(angle.current) * speed * speedCoeff
+        impulse.z += Math.cos(angle.current) * speed * speedCoeff
         rigidbody.current.applyImpulse(impulse, true)
       } else if (moveBackward && quadLinvel < maxQuadVel) {
-        impulse.x -= Math.sin(angle.current) * Speed * 0.5
-        impulse.z -= Math.cos(angle.current) * Speed * 0.5
+        impulse.x -= Math.sin(angle.current) * speed * speedCoeff * 0.35
+        impulse.z -= Math.cos(angle.current) * speed * speedCoeff * 0.35
         rigidbody.current.applyImpulse(impulse, true)
       }
       if (quadLinvel < 0.5) {

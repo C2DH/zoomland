@@ -16,13 +16,24 @@ const Joystick = () => {
 
   const handleMove = (e, data) => {
     if (!data.direction) return
+    // const steeringSpeed = data.direction.x === 'left' ? -1 : 1
+    const speedCoeff = 1 - Math.abs(Math.cos(data.angle.radian))
+
+    const moveForwardOnly =
+      data.direction.y === 'up' && data.angle.degree > 45 && data.angle.degree < 135
+    const moveBackwardOnly =
+      data.direction.y === 'down' && data.angle.degree > 225 && data.angle.degree < 315
+
+    // console.debug('[Joystick] @move', speedCoeff, moveForwardOnly, moveBackwardOnly)
+
     joystickProps.current = {
       moveForward: data.direction.y === 'up',
       moveBackward: data.direction.y === 'down',
-      moveLeft: data.direction.x === 'left',
-      moveRight: data.direction.x === 'right',
+      moveLeft: !moveForwardOnly && !moveBackwardOnly && data.direction.x === 'left',
+      moveRight: !moveForwardOnly && !moveBackwardOnly && data.direction.x === 'right',
       sprint: data.distance > 50,
       jump: joystickProps.current.jump,
+      speedCoeff: data.direction.y === 'up' ? speedCoeff : speedCoeff * 0.5,
     }
     update()
   }
