@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import './SideMenu.css'
-import './backgroundPattern.css'
 import LogoGruyter from './Svg/LogoGruyter'
 import LogoUni from './Svg/LogoUni'
 import { Nav } from 'react-bootstrap'
@@ -115,7 +114,7 @@ const SideMenu = ({ debug = false }) => {
                   Game Controls
                 </button>
               </Nav.Item>
-            ) :null}
+            ) : null}
             <Nav.Item>
               <Link to="/about">About</Link>
             </Nav.Item>
