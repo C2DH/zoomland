@@ -24,14 +24,12 @@ const Joystick = () => {
     const moveBackwardOnly =
       data.direction.y === 'down' && data.angle.degree > 225 && data.angle.degree < 315
 
-    // console.debug('[Joystick] @move', speedCoeff, moveForwardOnly, moveBackwardOnly)
-
     joystickProps.current = {
       moveForward: data.direction.y === 'up',
       moveBackward: data.direction.y === 'down',
       moveLeft: !moveForwardOnly && !moveBackwardOnly && data.direction.x === 'left',
       moveRight: !moveForwardOnly && !moveBackwardOnly && data.direction.x === 'right',
-      sprint: data.distance > 50,
+      sprint: data.force > 1,
       jump: joystickProps.current.jump,
       speedCoeff: data.direction.y === 'up' ? speedCoeff : speedCoeff * 0.5,
     }
@@ -39,7 +37,7 @@ const Joystick = () => {
   }
 
   const handleStop = () => {
-    joystickProps.current = { ...DefaultJoystick, jump: joystickProps.current.jump }
+    joystickProps.current = { ...DefaultJoystick, jump: joystickProps.current.jump, sprint: false }
     update()
   }
 
@@ -51,7 +49,7 @@ const Joystick = () => {
     jumpingTimerRef.current = setTimeout(() => {
       joystickProps.current.jump = false
       update()
-    }, 1000)
+    }, 300)
   }
 
   useEffect(() => {

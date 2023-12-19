@@ -1,35 +1,28 @@
-import { useState } from 'react'
 import './JumpButton.css'
+import { useSpring, a, config } from '@react-spring/web'
 
-const JumpButton = ({ props }) => {
-  const [isClicked, setClicked] = useState(false)
+const JumpButton = ({ onClick, className='' }) => {
+  const [style, api] = useSpring(() => ({ scale: 0, config: config.gentle }))
 
-  const handleClick = () => {
-    // Update the state to toggle the click effect
-    setClicked(true)
-
-    // Reset the click effect after a short delay
-    setTimeout(() => {
-      setClicked(false)
-    }, 100)
+  const handleClick = (e) => {
+    api.start({ scale: 3, config: config.gentle, onRest: () => api.start({ scale: 0, config: config.stiff  }) })
+    onClick(e)
   }
 
   const handleTouchEnd = () => {
-    setClicked(false)
-
-    setTimeout(() => {
-      setClicked(true)
-    }, 100)
+    api.start({ scale: 0,  config: config.stiff })
   }
 
   return (
     <div
-      className={`JumpButton ${isClicked ? 'clicked' : ''}`}
+      className={`JumpButton ${className}`}
       onTouchEnd={handleTouchEnd}
       onClick={handleClick}
-      {...props}
+      onKeyDown={() => {}}
+      tabIndex={0}
     >
       <span>JUMP</span>
+      <a.div style={style} className="JumpButton__flash" />
     </div>
   )
 }
