@@ -16,7 +16,7 @@
   outline: none;
 }
 
-.JumpButton::after{
+.JumpButton::after {
   content: '';
   position: absolute;
   height: 80px;
@@ -24,13 +24,13 @@
   top: 0;
   left: 0;
   background-color: transparent;
-  border: 2px dashed var(--pale-yellow);
+  border: 1.6px dashed var(--pale-yellow);
   border-radius: 100%;
   z-index: 1000;
 }
 
-.JumpButton__flash{
-  position:absolute;
+.JumpButton__flash {
+  position: absolute;
   height: 80px;
   width: 80px;
   top: 0;
@@ -39,8 +39,8 @@
   background-color: var(--pale-yellow);
   border: 2px solid transparent;
   border-radius: 100%;
-  scale: .5;
-  opacity: .6;
+  scale: 0.5;
+  opacity: 0.6;
 }
 
 .JumpButton span {
@@ -51,22 +51,6 @@
   user-select: none;
   font-weight: 900;
   text-shadow: 1px 1px 2px var(--dark-blue);
-}
-
-
-@keyframes JumpButton_flash {
-  0%, 50%, 100% {
-     opacity: 1;
-  }
-  25%, 75% {
-     opacity: 0;
-  }
-}
-
-
-.JumpButton.clicked .JumpButton__flash, .JumpButton:hover .JumpButton__flash {
-
-  animation: JumpButton_flash 0.5s ease-in-out;
 }
 
 @media (orientation: landscape) {
