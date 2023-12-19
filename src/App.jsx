@@ -93,7 +93,7 @@ function App() {
       <Vignette></Vignette>
       <SkipIntro />
       <Endings />
-      <GameControls />
+      {!isMobile ? <GameControls />: null}
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>
         <Route path="/about" element={<About />} />

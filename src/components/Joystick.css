@@ -5,6 +5,16 @@
   top: 6rem;
   right: 1rem;
   z-index: var(--z-index-joystick);
+  -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in Internet Explorer 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/p
+   */
+   -ms-user-select: none;
+   user-select: none;
 }
 .Joystick .ReactNipple {
   height: 100%;
@@ -24,9 +34,8 @@
   margin-left: -40px !important;
   margin-top: -40px !important;
 }
-
 @media (orientation: landscape) {
   .Joystick {
-    bottom: calc(50% - 30px);
+   right: 100px;
   }
 }

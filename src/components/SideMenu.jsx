@@ -103,17 +103,19 @@ const SideMenu = ({ debug = false }) => {
               <Link to="/chapters">Chapters</Link>
             </Nav.Item>
             <div className="py-2"></div>
-            <Nav.Item>
-              <button
-                className="btn btn-link"
-                onClick={() => {
-                  setGameControlsStatus(MenuClosed)
-                  set(MenuClosed)
-                }}
-              >
-                Game Controls
-              </button>
-            </Nav.Item>
+            {!isMobile ? (
+              <Nav.Item>
+                <button
+                  className="btn btn-link"
+                  onClick={() => {
+                    setGameControlsStatus(MenuClosed)
+                    set(MenuClosed)
+                  }}
+                >
+                  Game Controls
+                </button>
+              </Nav.Item>
+            ) :null}
             <Nav.Item>
               <Link to="/about">About</Link>
             </Nav.Item>
