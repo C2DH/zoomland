@@ -51,16 +51,15 @@ const GlitchingBooks = ({ duration = 3000 }) => {
             enableClose={false}
             quest={{
               sentences: [
-                'It broke, again.',
-                'So... Can we actually trust the digital?',
-                "I'll go for the Source.",
+                'This version of the book seems to be broken!',
+                'I need to try and find the original.',
               ],
             }}
             onComplete={() => {
               setStatus(StatusDone)
               setScene(Start)
             }}
-            onCompleteLabel="Let's get to Zoomland!"
+            onCompleteLabel="Let’s head to Zoomland!"
           />
         )}
       </div>

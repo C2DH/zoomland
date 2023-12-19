@@ -8,8 +8,8 @@ import './SkipIntro.css'
 const IntroQuest = {
   sentences: [
     'Finally, the island is in sight!',
-    'I can see its harbour in the distance.',
-    'The Book is well-protected here. I should have a word with its inhabitants.',
+    'I can see the harbour in the distance.',
+    'The Book is well protected here. I’d like to go and meet the locals.',
   ],
 }
 
