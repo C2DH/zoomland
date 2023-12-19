@@ -9,7 +9,7 @@ const LogoUni = ({ color = 'var(--pale-yellow)', size = 160 }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath="url(#clip0_425_4445)">
+      
         <path d="M200.115 21.6753H193.471V28.3195H200.115V21.6753Z" fill={color} />
         <path d="M210.91 32.0469H204.266V38.691H210.91V32.0469Z" fill={color} />
         <path d="M204.435 11.9814H197.791V18.6256H204.435V11.9814Z" fill={color} />
@@ -324,12 +324,6 @@ const LogoUni = ({ color = 'var(--pale-yellow)', size = 160 }) => {
           d="M44.0809 36.1374C45.5211 36.1374 46.695 34.9635 46.695 33.5233C46.695 32.0831 45.5211 30.9092 44.0809 30.9092C42.6407 30.9092 41.4668 32.0831 41.4668 33.5233C41.4668 34.9635 42.6407 36.1374 44.0809 36.1374Z"
           fill={color}
         />
-      </g>
-      <defs>
-        <clipPath id="clip0_425_4445">
-          <rect width="224.316" height="69.08" fill="white" transform="translate(0.439453)" />
-        </clipPath>
-      </defs>
     </svg>
   )
 }
