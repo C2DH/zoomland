@@ -35,7 +35,6 @@ export function Airship(props) {
         material={materials.Metal}
         position={[-8.51, 0, 0]}
         rotation={[-Math.PI, 0, 0]}
-        scale={[-0.75, -0.13, -0.13]}
       />
       <mesh geometry={nodes.Airship_1.geometry} material={materials.White} />
       <mesh geometry={nodes.Airship_2.geometry} material={materials.Red} />
