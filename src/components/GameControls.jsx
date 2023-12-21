@@ -1,5 +1,5 @@
 import { useSpring, a } from '@react-spring/web'
-import { usePersistentStore } from '../store'
+import { Gameplay, usePersistentStore, usePlayerStore } from '../store'
 import './GameControls.css'
 import { useEffect, useRef } from 'react'
 import RoundButton from './RoundButton'
@@ -9,7 +9,7 @@ import { isMobile } from 'react-device-detect'
 const GameControls = () => {
   const hasSeenGameControlsTimerRef = useRef(null)
   const isVisible = useRef(false)
-
+  const scene = usePlayerStore((state) => state.scene)
   const [hasSeenGameControls, setHasSeenGameControls] = usePersistentStore((state) => [
     state.hasSeenGameControls,
     state.setHasSeenGameControls,
@@ -28,8 +28,8 @@ const GameControls = () => {
   }))
 
   useEffect(() => {
-    console.debug('[GameControls] hasSeenGameControls:', hasSeenGameControls)
-    if (!hasSeenGameControls) {
+    console.debug('[GameControls] hasSeenGameControls:', hasSeenGameControls,' scene: ', scene)
+    if (scene === Gameplay && !hasSeenGameControls) {
       console.debug('[GameControls] show')
     
       hasSeenGameControlsTimerRef.current = setTimeout(() => show(), 500)
@@ -37,7 +37,7 @@ const GameControls = () => {
     return () => {
       clearTimeout(hasSeenGameControlsTimerRef.current)
     }
-  }, [hasSeenGameControls])
+  }, [scene, hasSeenGameControls])
 
   const show = () => {
     console.debug('[GameControls] show!!!')
