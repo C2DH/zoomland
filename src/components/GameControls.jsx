@@ -17,7 +17,7 @@ const GameControls = () => {
 
   const [style, api] = useSpring(() => ({
     opacity: 0,
-    display: 'block',
+    display: 'none',
     onRest: () => {
       if (!isVisible.current) {
         api.set({
