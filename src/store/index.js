@@ -108,7 +108,7 @@ export const SceneEnding = 'ending'
 
 export const usePersistentStore = create(
   persist(
-    (set, get) => ({
+    (set) => ({
       acceptCookies: false,
       setAcceptCookies: (acceptCookies) => set({ acceptCookies }),
       acceptAnalytics: true,
