@@ -106,6 +106,22 @@ export const SceneCredits = 'credits'
 export const SceneFakeBook = 'fakebook'
 export const SceneEnding = 'ending'
 
+export const usePersistentStore = create(
+  persist(
+    (set, get) => ({
+      acceptCookies: false,
+      setAcceptCookies: (acceptCookies) => set({ acceptCookies }),
+      acceptAnalytics: true,
+      setAcceptAnalytics: (acceptAnalytics) => set({ acceptAnalytics }),
+      hasSeenGameControls: false,
+      setHasSeenGameControls: (hasSeenGameControls) => set({ hasSeenGameControls }),
+    }),
+    {
+      name: 'persistent-store',
+    },
+  ),
+)
+
 export const usePlayerStore = create(
   persist(
     (set, get) => ({
