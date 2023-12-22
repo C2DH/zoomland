@@ -54,7 +54,8 @@
       "Reference is included to methods of knowledge graph creation and refinement, both automated and participatory.",
       "The extended concept of 'zoom' adopted is located within its media and aesthetic history."
     ],
-    "excerpt": "Transitions in Scale and the Visual Exploration of Historical Knowledge Graphs as Sequential Storytelling"
+    "excerpt": "Transitions in Scale and the Visual Exploration of Historical Knowledge Graphs as Sequential Storytelling",
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-002/html"
   },
   {
     "id": "2-capturing-discourse-through-the-digital-lens",
@@ -88,7 +89,8 @@
       "Historians have, however, not exhausted this potential, and they have hardly engaged with scalable reading.",
       "This paper aims to close this gap by outlining the primarily heuristic benefits of scalable reading for studying democratic discourses in Weimar's press."
     ],
-    "excerpt": "Towards a Framework for the Analysis of Pro-democratic Discourse in the Weimar Republic"
+    "excerpt": "Towards a Framework for the Analysis of Pro-democratic Discourse in the Weimar Republic",
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-003/html"
   },
   {
     "id": "3-menocchio-mapped",
@@ -110,7 +112,8 @@
       "While microhistory and digital history are in opposition to one another in terms of scale, they have similar aims, particularly a commitment to a methodology whose partial purpose is overcoming the silences of the subaltern and underrepresented in the archive.",
       "Digital history can help microhistorians find the exceptional normal in a cache of documents, follow clues, and illuminate the mentalities, particularly the spatial ones, of their subjects."
     ],
-    "excerpt": "Italian Microhistory and the Digital Spatial Turn"
+    "excerpt": "Italian Microhistory and the Digital Spatial Turn",
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-003/html"
   },
   {
     "id": "4-scaling-digital-history-and-documenting-the-self-emancipated",
@@ -140,7 +143,8 @@
       "Our digital project's intervention proposes reading each runaway advertisement as micro-maps of the enslaved individual's life and historical environment.",
       "This interdisciplinary approach uses the digital humanities method of thick mapping to juxtapose temporal, spatial, geographic, environmental, and historical data into a layered reconstruction of networks, community, and kinship within enslaved communities from the early United States."
     ],
-    "excerpt": "Scaling Digital History and Documenting the Self-Emancipated"
+    "excerpt": "Scaling Digital History and Documenting the Self-Emancipated",
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-005/html"
   },
   {
     "id": "5-keep-calm-and-stay-focused",
@@ -162,7 +166,8 @@
     "card": {
       "srcset": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg",
       "src": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-006/html"
   },
   {
     "id": "6-zooming-in-on-shot-scales",
@@ -193,7 +198,8 @@
     "card": {
       "srcset": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg",
       "src": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-007/html"
   },
   {
     "id": "7-adapting-the-optics",
@@ -223,7 +229,8 @@
     "card": {
       "srcset": "/assets/cards/7-adapting-the-optics-720w.jpg",
       "src": "/assets/cards/7-adapting-the-optics-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-008/html"
   },
   {
     "id": "8-scale-exercises",
@@ -255,7 +262,8 @@
     "card": {
       "srcset": "/assets/cards/8-scale-exercises-720w.jpg",
       "src": "/assets/cards/8-scale-exercises-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-009/html"
   },
   {
     "id": "9-complexity-and-analytical-creative-approaches-at-scale",
@@ -286,11 +294,12 @@
     "card": {
       "srcset": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg",
       "src": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-010/html"
   },
   {
     "id": "10-the-scales-of-computational-literary-studies",
-    "title": "The Scales of (Computational) Literary Studies: Martin Mueller's Concept of Scalable Reading in Theory and Practice",
+    "title": "The Scales of (Computational) Literary Studies: Martin Mueller’s Concept of Scalable Reading in Theory and Practice",
     "page": "261",
     "n": 10,
     "position": [-20, -0.7, 6],
@@ -315,7 +324,8 @@
     "card": {
       "srcset": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg",
       "src": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-011/html"
   },
   {
     "id": "11-text-fractal-dust-and-informational-granularity",
@@ -343,7 +353,8 @@
     "card": {
       "srcset": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg",
       "src": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-012/html"
   },
   {
     "id": "12-scale-and-narrative",
@@ -357,18 +368,19 @@
     "keywords": ["digital history", "microhistory", "narrative", "argument", "data"],
     "incipit": "Scale and Narrative",
     "sentences": [
-      "The framework for historical argument derived from the print monograph is increasing untenable for digital historians.",
+      "The framework for historical argument derived from the print monograph is increasingly untenable for digital historians.",
       "Digital argument is inclusive rather than selective in both its evidence and its form.",
-      "The data required by digital methods produce multiple intertwined threads of interpretation and argument, resulting in arguments that are more expansive, larger in scale, than fit a book.",
+      "The data required by digital methods produces multiple intertwined threads of interpretation and argument, resulting in arguments that are more expansive, larger in scale, than fit a book.",
       "The alternative is obviously to present digital argument in its 'native' medium.",
-      "This chapter analyzes how I conceived a form for one such argument, Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935—a multi-layered, hyperlinked narrative that connects different scales of analysis: individual events, aggregated patterns, and a chronological narrative.",
-      "In three sections, I lay out my understanding of the nature of digital argument, the options I considered for presenting it, and the details of the form that I decided to employ."
+      "This chapter analyzes how I conceive a form for one such argument, Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935—a multi-layered, hyperlinked narrative that connects different scales of analysis: individual events, aggregated patterns, and a chronological narrative.",
+      "In three sections I lay out my understanding of the nature of digital argument, the options I consider for presenting it and the details of the form that I decide to employ."
     ],
     "excerpt": "Conceiving a Long-form Digital Argument for Data-driven Microhistory",
     "card": {
       "srcset": "/assets/cards/12-scale-and-narrative-720w.jpg",
       "src": "/assets/cards/12-scale-and-narrative-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-013/html"
   },
   {
     "id": "13-meaningful-aesthetics",
@@ -391,7 +403,8 @@
     "card": {
       "srcset": "/assets/cards/13-meaningful-aesthetics-720w.jpg",
       "src": "/assets/cards/13-meaningful-aesthetics-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-014/html"
   },
   {
     "id": "14-defining-level-and-scale-as-socio-technical-operators-for-mining-digital-traces",
@@ -420,7 +433,8 @@
     "card": {
       "srcset": "/assets/cards/14-defining-level-and-scale-720w.jpg",
       "src": "/assets/cards/14-defining-level-and-scale-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-015/html"
   },
   {
     "id": "15-zooming-is-not-just-scaling",
@@ -453,7 +467,8 @@
     "card": {
       "srcset": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg",
       "src": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-016/html"
   },
   {
     "id": "16-weather-map",
@@ -477,13 +492,14 @@
       "Relying on the Media Cloud archives, the visual model transforms a simple query into a sophisticated visualization by employing the visual grammar of synoptic weather charts.",
       "Peaks of pressure and clashes between airmasses are used to describe the conflicts in media through the temporal dimension, diving into the human and non-human dynamics that make the controversy alive.",
       "The Weather Map was conceived as a digital tool to help students and scholars analyze public debates, according to the controversy mapping field founded by Bruno Latour.",
-      "In particular, the visual model pushes the boundaries of graphic design of network visualization, exploring advanced techniques to represent network visualizations.",
+      "In particular, the visual model pushes the boundaries of network visualization, exploring advanced techniques of graphic design.",
       "The outcome is a web-based application developed in JavaScript and Python at the disposal of education and research."
     ],
     "excerpt": "A Diachronic Visual Model for Controversy Mapping",
     "card": {
       "srcset": "/assets/cards/16-weather-map-720w.jpg",
       "src": "/assets/cards/16-weather-map-720w.jpg"
-    }
+    },
+    "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-017/html"
   }
 ]

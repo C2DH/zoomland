@@ -33,6 +33,7 @@ const Chapter = ({ chapter }) => {
           <p
             style={{
               textShadow: '0px 2px 4px rgba(0, 0, 0, 0.35)',
+              color: 'var(--orange)',
             }}
           >
             You've got <br />
@@ -42,6 +43,7 @@ const Chapter = ({ chapter }) => {
           <p
             style={{
               textShadow: '0px 2px 4px rgba(0, 0, 0, 0.35)',
+              color: 'var(--orange)',
             }}
           >
             You've got <strong>one chapter!</strong>

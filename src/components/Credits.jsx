@@ -58,15 +58,19 @@ const Credits = ({ duration = 20000 }) => {
           </p>
           <span>Introduction</span>
         </div>
+        {/* HISTORY */}
         <div className="Credits_block">
           <p>Alex Butterworth</p>
-          <span>Adventure in Zoomland</span>
+          <span>
+            Adventures in Zoomland: Transitions in Scale and the Visual Exploration of Historical
+            Knowledge Graphs as Sequential Storytelling
+          </span>
         </div>
         <div className="Credits_block">
           <p>Christian Wachter</p>
           <span>
-            Capturing Discourse through the Digital Lens: Towards a framework for the analysis of
-            pro-democratic discourse in the Weimar Republic
+            Capturing Discourse through the Digital Lens: Towards a Framework for the Analysis of
+            Pro-democratic Discourse in the Weimar Republic
           </span>
         </div>
         <div className="Credits_block">
@@ -81,6 +85,7 @@ const Credits = ({ duration = 20000 }) => {
           </p>
           <span>Scaling Digital History and Documenting the Self-Emancipated</span>
         </div>
+        {/* MEDIA */}
         <div className="Credits_block">
           <p>
             Fred Pailler
@@ -88,8 +93,8 @@ const Credits = ({ duration = 20000 }) => {
             Valérie Schafer
           </p>
           <span>
-            Keep calm and stay focused: Historicising and intertwining scales and temporalities of
-            online virality
+            Keep Calm and Stay Focused: Historicising and Intertwining Scales and Temporalities of
+            Online Virality
           </span>
         </div>
         <div className="Credits_block">
@@ -112,10 +117,18 @@ const Credits = ({ duration = 20000 }) => {
             Vladimir Beresnev
           </p>
           <span>
-            Adapting the optics: Zoom-in, Zoom-out, and Zoom-zero modes to understand the religious
-            sculpture
+            Adapting the Optics: Zoom-in, Zoom-out, and Zoom-zero Modes to Understand Religious
+            Sculptures
           </span>
         </div>
+        <div className="Credits_block">
+          <p>Johan Malmstedt</p>
+          <span>
+            Scale Exercises: Listening to the Sonic Diversity in 5000 hours of Swedish Radio with
+            Computers and Ears
+          </span>
+        </div>
+        {/* HERMENEUTICS */}
         <div className="Credits_block">
           <p>
             Chris Tanasescu
@@ -130,21 +143,22 @@ const Credits = ({ duration = 20000 }) => {
         <div className="Credits_block">
           <p>Benjamin Krautter</p>
           <span>
-            The scales of (computational) literary studies: Martin Mueller’s concept of scalable
-            reading in theory and practice
+            The Scales of (Computational) Literary Studies: Martin Mueller’s Concept of Scalable
+            Reading in Theory and Practice
           </span>
         </div>
         <div className="Credits_block">
           <p>Florentina Armaselu</p>
-          <span>A Study of Scale</span>
+          <span>Text, Fractal Dust and Informational Granularity: A Study of Scale</span>
         </div>
         <div className="Credits_block">
           <p>Stephen Robertson</p>
           <span>
-            Scale and Narrative: Conceiving a long-form digital argument for data-driven
-            microhistory
+            Scale and Narrative: Conceiving a Long-form Digital Argument for Data-driven
+            Microhistory
           </span>
         </div>
+        {/* DIGITAL LANDSCAPES */}
         <div className="Credits_block">
           <p>Natalie M. Houston</p>
           <span>Meaningful Aesthetics: A Comparison of Open Source Network Analysis Tools</span>
@@ -168,8 +182,8 @@ const Credits = ({ duration = 20000 }) => {
             Marta Kuźma
           </p>
           <span>
-            Zooming is (not just) scaling: Considerations of scale in old maps from cartographic
-            perspectives on generalisation
+            Zooming is (not just) Scaling: Considerations of Scale in Old Maps from Cartographic
+            Perspectives on Generalisation
           </span>
         </div>
         <div className="Credits_block mb-5">
@@ -180,6 +194,7 @@ const Credits = ({ duration = 20000 }) => {
           </p>
           <span>Weather Map: A Diachronic Visual Model for Controversy Mapping</span>
         </div>
+
         <img
           className="mb-5"
           src="./assets/img/Zoomland_sketch.jpg"
@@ -208,6 +223,10 @@ const Credits = ({ duration = 20000 }) => {
           <span>Polygon Picasso / 3D Modeling</span>
         </div>
         <h3 className="text-center mt-5">SPECIAL THANKS</h3>
+        <div className="Credits_block">
+          <p>Sarah Cooper </p>
+          <span>Linguistic Alchemist</span>
+        </div>
         <div className="Credits_block mb-5">
           <p>Wojciech Dobry</p>
           <span>ThreeJs Guru</span>
