@@ -108,11 +108,10 @@
     "chapter": "3-menocchio-mapped",
     "dialogues": {
       "firstMeetingWithoutChapter": [
-        "Oh, hello there. I'm Verena Deutsch, the publisher of that book everyone's talking about.",
-        "...Hello, nice to meet you!",
+        "Oh, hello there. I'm Verena from De Gruyter, the publisher of that book everyone's talking about.",
+        "You've probably heard … some chapters are missing.",
         "I'm terribly sorry about the chapters. It keeps me up at night, thinking of all that lost knowledge.",
-        "Ok, thanks! Do you know where they can be found?",
-        "I'm afraid not. But I do know that the chapters are scattered all over the island. You'll have to search high and low to find them."
+        "They should be somewhere on this island. I am here to find them."
       ],
       "firstMeetingWithChapter": [
         "Is that... one of the chapters? My word, you found it! This is incredible!",
