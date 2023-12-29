@@ -12,6 +12,7 @@ import {
   useMenuStore,
   MenuOpen,
   usePlayerStore,
+  usePersistentStore,
   useWorldStore,
   SceneCredits,
   Gameplay,
@@ -22,7 +23,7 @@ import { isMobile } from 'react-device-detect'
 const SideMenu = ({ debug = false }) => {
   const { pathname } = useLocation()
   const [menuStatus, set] = useMenuStore((state) => [state.menuStatus, state.setMenuStatus])
-  const setGameControlsStatus = useMenuStore((state) => state.setGameControlsStatus)
+  const setHasSeenGameControls = usePersistentStore((state) => state.setHasSeenGameControls)
   const saveInitialPropsToPlayerStore = useWorldStore(
     (state) => state.saveInitialPropsToPlayerStore,
   )
@@ -102,19 +103,18 @@ const SideMenu = ({ debug = false }) => {
               <Link to="/chapters">Chapters</Link>
             </Nav.Item>
             <div className="py-2"></div>
-            {!isMobile ? (
+  
               <Nav.Item>
                 <button
                   className="btn btn-link"
                   onClick={() => {
-                    setGameControlsStatus(MenuClosed)
+                    setHasSeenGameControls(false)
                     set(MenuClosed)
                   }}
                 >
                   Game Controls
                 </button>
               </Nav.Item>
-            ) : null}
             <Nav.Item>
               <Link to="/about">About</Link>
             </Nav.Item>

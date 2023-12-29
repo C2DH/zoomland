@@ -1,32 +1,60 @@
 import { useSpring, a } from '@react-spring/web'
-import { MenuOpen, useMenuStore } from '../store'
+import { Gameplay, usePersistentStore, usePlayerStore } from '../store'
 import './GameControls.css'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import RoundButton from './RoundButton'
 import CloseIcon from './Svg/CloseIcon'
 import { isMobile } from 'react-device-detect'
 
 const GameControls = () => {
-  const [gameControlsStatus, setGameControlsStatus] = useMenuStore((state) => [
-    state.gameControlsStatus,
-    state.setGameControlsStatus,
+  const hasSeenGameControlsTimerRef = useRef(null)
+  const isVisible = useRef(false)
+  const scene = usePlayerStore((state) => state.scene)
+  const [hasSeenGameControls, setHasSeenGameControls] = usePersistentStore((state) => [
+    state.hasSeenGameControls,
+    state.setHasSeenGameControls,
   ])
 
   const [style, api] = useSpring(() => ({
     opacity: 0,
+    display: 'none',
+    onRest: () => {
+      if (!isVisible.current) {
+        api.set({
+          display: 'none',
+        })
+      }
+    }
   }))
 
+  useEffect(() => {
+    console.debug('[GameControls] hasSeenGameControls:', hasSeenGameControls,' scene: ', scene)
+    if (scene === Gameplay && !hasSeenGameControls) {
+      console.debug('[GameControls] show')
+    
+      hasSeenGameControlsTimerRef.current = setTimeout(() => show(), 500)
+    }
+    return () => {
+      clearTimeout(hasSeenGameControlsTimerRef.current)
+    }
+  }, [scene, hasSeenGameControls])
+
+  const show = () => {
+    console.debug('[GameControls] show!!!')
+    isVisible.current = true
+    api.start({
+      opacity: 1,
+      display: 'block',
+    })
+  }
   const hide = () => {
-    setGameControlsStatus(MenuOpen)
+    isVisible.current = false
+    api.start({
+      opacity: 0,
+    })
+    setHasSeenGameControls(true)
   }
 
-  useEffect(() => {
-    api.start({
-      opacity: gameControlsStatus === 'open' ? 0 : 1,
-      display: gameControlsStatus === 'open' ? 'none' : 'block',
-    })
-  }, [gameControlsStatus])
-  console.log('showControls', gameControlsStatus)
   return (
     <a.div style={style} className="GameControls">
       <div style={{ marginRight: '0.7rem', position: 'absolute', right: 0, top: '0.7rem' }}>
