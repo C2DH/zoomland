@@ -233,6 +233,8 @@ export const usePlayerStore = create(
         useWorldStore.setState({ elapsedTime: 0 })
         set({
           initialElapsedTime: 0,
+          initialPlayerPosition: DefaultPlayerPosition,
+          initialPlayerAngle: DefaultPlayerAngle,
           progress: 0,
           collectedChapters: [],
           isCollectingChapter: false,
