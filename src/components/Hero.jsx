@@ -12,7 +12,7 @@ import {
 const Hero = (props) => {
   // const dressTexture = useTexture('../assets/tex/dress.png')
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Hero.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Hero.glb')
   const { actions } = useAnimations(animations, group)
   // remap animation names to current const
   const mappedActions = {
@@ -160,5 +160,5 @@ const Hero = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Hero.glb')
+useGLTF.preload('assets/models/Hero.glb')
 export default Hero

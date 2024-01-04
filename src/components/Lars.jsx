@@ -9,7 +9,7 @@ import { usePlayerStore } from '../store'
 
 const Lars = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Character.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Character.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
   console.log(nodes, 'NODES')
@@ -51,5 +51,5 @@ const Lars = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Character.glb')
+useGLTF.preload('assets/models/Character.glb')
 export default Lars

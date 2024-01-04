@@ -24,14 +24,14 @@ const GameControls = () => {
           display: 'none',
         })
       }
-    }
+    },
   }))
 
   useEffect(() => {
-    console.debug('[GameControls] hasSeenGameControls:', hasSeenGameControls,' scene: ', scene)
+    console.debug('[GameControls] hasSeenGameControls:', hasSeenGameControls, ' scene: ', scene)
     if (scene === Gameplay && !hasSeenGameControls) {
       console.debug('[GameControls] show')
-    
+
       hasSeenGameControlsTimerRef.current = setTimeout(() => show(), 500)
     }
     return () => {
@@ -68,13 +68,13 @@ const GameControls = () => {
       <h2 className={isMobile ? 'mb-2' : 'mb-4'}>Game Controls</h2>
       {isMobile ? (
         <img
-          src="/assets/svg/character-controls-mobile.svg"
+          src="assets/svg/character-controls-mobile.svg"
           alt="Game controls"
           className="GameControls-img w-100"
         />
       ) : (
         <img
-          src="/assets/svg/character-controls-desktop.svg"
+          src="assets/svg/character-controls-desktop.svg"
           alt="Game controls"
           className="GameControls-img w-100"
         />

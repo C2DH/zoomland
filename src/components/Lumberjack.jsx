@@ -13,7 +13,7 @@ import { usePlayerStore } from '../store'
 
 const Lumberjack = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Lumberjack.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Lumberjack.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
   console.debug('[Lumberjack] isCollectingQuest', isCollectingQuest, actions)
@@ -78,6 +78,6 @@ const Lumberjack = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Lumberjack.glb')
+useGLTF.preload('assets/models/Lumberjack.glb')
 
 export default Lumberjack

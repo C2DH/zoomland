@@ -5,7 +5,7 @@ import { RigidBody } from '@react-three/rapier'
 
 const Megaphone = ({ debug = true, ...props }) => {
   const megaphoneRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/Megaphone.glb')
+  const { nodes, materials } = useGLTF('assets/models/Megaphone.glb')
   const seed = 0.8
   // Animate the tree
   useFrame((state) => {
@@ -46,5 +46,5 @@ const Megaphone = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Megaphone.glb')
+useGLTF.preload('assets/models/Megaphone.glb')
 export default Megaphone

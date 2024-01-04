@@ -4,7 +4,7 @@ import { usePlayerStore } from '../store'
 
 const Florentina = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Florentina.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Florentina.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
   const actionRef = useRef(false)
@@ -46,5 +46,5 @@ const Florentina = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Florentina.glb')
+useGLTF.preload('assets/models/Florentina.glb')
 export default Florentina

@@ -5,7 +5,7 @@ import { MeshStandardMaterial, Object3D } from 'three'
 
 const Clouds = ({ count = 30 }) => {
   const [o3d] = useState(() => new Object3D())
-  const { nodes } = useGLTF('../assets/models/Cloud.glb')
+  const { nodes } = useGLTF('assets/models/Cloud.glb')
   const items = useRef()
 
   const cloudMaterial = new MeshStandardMaterial({
@@ -59,5 +59,5 @@ const Clouds = ({ count = 30 }) => {
     ></instancedMesh>
   )
 }
-useGLTF.preload('../assets/models/Cloud.glb')
+useGLTF.preload('assets/models/Cloud.glb')
 export default Clouds

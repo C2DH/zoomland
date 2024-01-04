@@ -5,7 +5,7 @@ import { RigidBody } from '@react-three/rapier'
 
 const Banjo = ({ debug = true, ...props }) => {
   const banjoRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/Banjo.glb')
+  const { nodes, materials } = useGLTF('assets/models/Banjo.glb')
   const seed = 0.8
   // Animate the tree
   useFrame((state) => {
@@ -46,5 +46,5 @@ const Banjo = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Banjo.glb')
+useGLTF.preload('assets/models/Banjo.glb')
 export default Banjo

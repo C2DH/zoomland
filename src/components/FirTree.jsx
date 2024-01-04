@@ -6,7 +6,7 @@ import { getFrontSideMaterial } from '../utils/common'
 
 const FirTree = (props) => {
   const treeRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/FirTree.glb')
+  const { nodes, materials } = useGLTF('assets/models/FirTree.glb')
   const seed = Math.random() + 0.8
   // Animate the tree
   useFrame((state) => {
@@ -44,5 +44,5 @@ const FirTree = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/FirTree.glb')
+useGLTF.preload('assets/models/FirTree.glb')
 export default FirTree

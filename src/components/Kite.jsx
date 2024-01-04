@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 
 const Kite = (props) => {
   const kiteRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/Kite.glb')
+  const { nodes, materials } = useGLTF('assets/models/Kite.glb')
   const seed = Math.random() + 1
   // Animate the tree
   useFrame((state) => {
@@ -51,5 +51,5 @@ const Kite = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Kite.glb')
+useGLTF.preload('assets/models/Kite.glb')
 export default Kite

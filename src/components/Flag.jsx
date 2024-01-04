@@ -3,7 +3,7 @@ import { useAnimations, useGLTF } from '@react-three/drei'
 
 export function Flag(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Flag.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Flag.glb')
   const { actions } = useAnimations(animations, group)
 
   useEffect(() => {
@@ -37,6 +37,6 @@ export function Flag(props) {
   )
 }
 
-useGLTF.preload('../assets/models/Flag.glb')
+useGLTF.preload('assets/models/Flag.glb')
 
 export default Flag

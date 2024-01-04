@@ -6,7 +6,7 @@ import { RigidBody } from '@react-three/rapier'
 export function Windsock({ debug = true, ...props }) {
   const group = useRef()
   const sockSpin = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Windsock.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Windsock.glb')
   const { actions } = useAnimations(animations, group)
 
   useEffect(() => {
@@ -78,6 +78,6 @@ export function Windsock({ debug = true, ...props }) {
   )
 }
 
-useGLTF.preload('../assets/models/Windsock.glb')
+useGLTF.preload('assets/models/Windsock.glb')
 
 export default Windsock

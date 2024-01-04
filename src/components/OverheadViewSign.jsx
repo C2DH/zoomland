@@ -11,7 +11,7 @@ const OverheadViewSign = ({
   ...props
 }) => {
   const signRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/OverheadViewSign.glb')
+  const { nodes, materials } = useGLTF('assets/models/OverheadViewSign.glb')
   const seed = 0.8
   // Animate the tree
   useFrame((state) => {
@@ -71,5 +71,5 @@ const OverheadViewSign = ({
   )
 }
 
-useGLTF.preload('../assets/models/OverheadViewSign.glb')
+useGLTF.preload('assets/models/OverheadViewSign.glb')
 export default OverheadViewSign

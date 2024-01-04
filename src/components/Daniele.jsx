@@ -9,7 +9,7 @@ import { usePlayerStore } from '../store'
 
 const Daniele = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Daniele.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Daniele.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
   const actionRef = useRef(false)
@@ -52,5 +52,5 @@ const Daniele = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Daniele.glb')
+useGLTF.preload('assets/models/Daniele.glb')
 export default Daniele

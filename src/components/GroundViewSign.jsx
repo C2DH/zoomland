@@ -11,7 +11,7 @@ const GroundViewSign = ({
   ...props
 }) => {
   const signRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/GroundViewSign.glb')
+  const { nodes, materials } = useGLTF('assets/models/GroundViewSign.glb')
 
   const seed = 0.8
   // Animate the tree
@@ -70,5 +70,5 @@ const GroundViewSign = ({
   )
 }
 
-useGLTF.preload('../assets/models/GroundViewSign.glb')
+useGLTF.preload('assets/models/GroundViewSign.glb')
 export default GroundViewSign

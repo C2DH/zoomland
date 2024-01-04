@@ -26,7 +26,7 @@ export function Airship(props) {
     fanRotation.current.rotation.x = elapsedTime * 5
   })
 
-  const { nodes, materials } = useGLTF('../assets/models/Airship.glb')
+  const { nodes, materials } = useGLTF('assets/models/Airship.glb')
   return (
     <group ref={mesh} {...props} dispose={null}>
       <mesh
@@ -46,4 +46,4 @@ export function Airship(props) {
   )
 }
 
-useGLTF.preload('../assets/models/Airship.glb')
+useGLTF.preload('assets/models/Airship.glb')

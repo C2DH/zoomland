@@ -16,7 +16,7 @@ import './Map.css'
 const Map = () => {
   const collectedChapters = usePlayerStore((state) => state.collectedChapters)
   const collectedChaptersIds = collectedChapters.map((d) => d.id)
-  const { nodes } = useGLTF('../assets/models/Landscape.glb')
+  const { nodes } = useGLTF('assets/models/Landscape.glb')
   const playerPosition = useWorldStore((state) => state.playerPosition)
   const d = 10
   const s = 0.8
@@ -416,5 +416,5 @@ const Map = () => {
   )
 }
 
-useGLTF.preload('../assets/models/Landscape.glb')
+useGLTF.preload('assets/models/Landscape.glb')
 export default Map

@@ -28,7 +28,7 @@ const Boat = ({
   const setScene = usePlayerStore((state) => state.setScene)
   const sceneRef = useRef(usePlayerStore.getState().scene)
   const cameraOffsetRef = useRef(useWorldStore.getState().cameraOffset)
-  const { nodes, materials } = useGLTF('../assets/models/Boat.glb')
+  const { nodes, materials } = useGLTF('assets/models/Boat.glb')
   const seed = Math.random() + 0.8
   const [, api] = useSpring(() => ({
     x: positions[0][0],
@@ -171,5 +171,5 @@ const Boat = ({
   )
 }
 
-useGLTF.preload('../assets/models/Boat.glb')
+useGLTF.preload('assets/models/Boat.glb')
 export default Boat

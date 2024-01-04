@@ -1,7 +1,7 @@
 import { useGLTF } from '@react-three/drei'
 
 const Cloud = (props) => {
-  const { nodes, materials } = useGLTF('../assets/models/Cloud.glb')
+  const { nodes, materials } = useGLTF('assets/models/Cloud.glb')
 
   return (
     <group {...props} dispose={null}>
@@ -15,5 +15,5 @@ const Cloud = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Cloud.glb')
+useGLTF.preload('assets/models/Cloud.glb')
 export default Cloud

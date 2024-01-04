@@ -116,7 +116,7 @@ const World = ({
           <Canvas camera={CloseCamera} shadows dpr={1}>
             <Rig />
             <Environment
-              files="/evening_road_01_puresky_1k.hdr"
+              files={`${import.meta.env.BASE_URL || '/'}evening_road_01_puresky_1k.hdr`}
               near={1}
               far={1000}
               background

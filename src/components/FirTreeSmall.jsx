@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 
 const FirTreeSmall = (props) => {
   const treeRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/FirTreeSmall.glb')
+  const { nodes, materials } = useGLTF('assets/models/FirTreeSmall.glb')
   const seed = Math.random() + 0.8
   // Animate the tree
   useFrame((state) => {
@@ -42,5 +42,5 @@ const FirTreeSmall = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/FirTreeSmall.glb')
+useGLTF.preload('assets/models/FirTreeSmall.glb')
 export default FirTreeSmall

@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 
 const Ufo = ({ debug = true, ...props }) => {
-  const { nodes, materials } = useGLTF('../assets/models/Ufo.glb')
+  const { nodes, materials } = useGLTF('assets/models/Ufo.glb')
 
   return (
     <group {...props} dispose={null}>
@@ -26,5 +26,5 @@ const Ufo = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Ufo.glb')
+useGLTF.preload('assets/models/Ufo.glb')
 export default Ufo

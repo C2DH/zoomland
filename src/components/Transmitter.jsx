@@ -5,7 +5,7 @@ import { RigidBody } from '@react-three/rapier'
 
 const Transmitter = ({ debug = true, ...props }) => {
   const transmitterRotation = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/Transmitter.glb')
+  const { nodes, materials } = useGLTF('assets/models/Transmitter.glb')
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime()
@@ -33,5 +33,5 @@ const Transmitter = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Transmitter.glb')
+useGLTF.preload('assets/models/Transmitter.glb')
 export default Transmitter

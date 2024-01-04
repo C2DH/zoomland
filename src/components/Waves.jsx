@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Waves = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Waves.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Waves.glb')
   const { actions } = useAnimations(animations, group)
 
   useEffect(() => {
@@ -26,5 +26,5 @@ const Waves = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Waves.glb')
+useGLTF.preload('assets/models/Waves.glb')
 export default Waves

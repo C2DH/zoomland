@@ -3,7 +3,7 @@ import { RigidBody } from '@react-three/rapier'
 import { getFrontSideMaterial } from '../utils/common'
 
 const House = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
-  const { nodes, materials } = useGLTF('../assets/models/House.glb')
+  const { nodes, materials } = useGLTF('assets/models/House.glb')
 
   return (
     <RigidBody colliders={'hull'} type={'fixed'}>
@@ -69,5 +69,5 @@ const House = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
   )
 }
 
-useGLTF.preload('../assets/models/House.glb')
+useGLTF.preload('assets/models/House.glb')
 export default House

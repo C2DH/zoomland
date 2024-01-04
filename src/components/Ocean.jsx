@@ -17,7 +17,7 @@ import { useGLTF } from '@react-three/drei'
 // extend({ WaveShaderMaterial })
 
 const Ocean = (props) => {
-  const { nodes, materials } = useGLTF('../assets/models/Ocean.glb')
+  const { nodes, materials } = useGLTF('assets/models/Ocean.glb')
   // const shaderMaterialRef = useRef()
   // useFrame(({ clock }) => (shaderMaterialRef.current.uTime = clock.getElapsedTime()))
   return (
@@ -34,5 +34,5 @@ const Ocean = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Ocean.glb')
+useGLTF.preload('assets/models/Ocean.glb')
 export default Ocean

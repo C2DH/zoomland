@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 
 const Arch = ({ debug = true, ...props }) => {
-  const { nodes, materials } = useGLTF('../assets/models/Arch.glb')
+  const { nodes, materials } = useGLTF('assets/models/Arch.glb')
   return (
     <group {...props} dispose={null}>
       <RigidBody type={'fixed'} colliders={'hull'}>
@@ -20,5 +20,5 @@ const Arch = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Arch.glb')
+useGLTF.preload('assets/models/Arch.glb')
 export default Arch

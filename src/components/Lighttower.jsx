@@ -3,7 +3,7 @@ import { RigidBody } from '@react-three/rapier'
 import { getFrontSideMaterial } from '../utils/common'
 
 const Lighttower = ({ debug = true, ...props }) => {
-  const { nodes, materials } = useGLTF('../assets/models/Lighttower.glb')
+  const { nodes, materials } = useGLTF('assets/models/Lighttower.glb')
   return (
     <group {...props} dispose={null}>
       <RigidBody type={'fixed'} colliders={'hull'}>
@@ -40,5 +40,5 @@ const Lighttower = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Lighttower.glb')
+useGLTF.preload('assets/models/Lighttower.glb')
 export default Lighttower

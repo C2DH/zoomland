@@ -1,7 +1,7 @@
 import { useGLTF } from '@react-three/drei'
 
 const FishNet = (props) => {
-  const { nodes, materials } = useGLTF('../assets/models/FishNet.glb')
+  const { nodes, materials } = useGLTF('assets/models/FishNet.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.Floats.geometry} material={materials.Floats} />
@@ -11,5 +11,5 @@ const FishNet = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/FishNet.glb')
+useGLTF.preload('assets/models/FishNet.glb')
 export default FishNet

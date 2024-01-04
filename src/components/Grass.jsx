@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber'
 
 const Grass = (props) => {
   const count = instances.length
-  const { nodes } = useGLTF('../assets/models/Grass.glb')
+  const { nodes } = useGLTF('assets/models/Grass.glb')
   const [o3d] = useState(() => new Object3D())
   const items = useRef()
 
@@ -38,5 +38,5 @@ const Grass = (props) => {
     </group>
   )
 }
-useGLTF.preload('../assets/models/Grass.glb')
+useGLTF.preload('assets/models/Grass.glb')
 export default Grass

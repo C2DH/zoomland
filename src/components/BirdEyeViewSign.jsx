@@ -11,7 +11,7 @@ const BirdEyeViewSign = ({
   ...props
 }) => {
   const signRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/BirdEyeViewSign.glb')
+  const { nodes, materials } = useGLTF('assets/models/BirdEyeViewSign.glb')
   const seed = 0.8
   // Animate the tree
   useFrame((state) => {
@@ -69,5 +69,5 @@ const BirdEyeViewSign = ({
   )
 }
 
-useGLTF.preload('../assets/models/BirdEyeViewSign.glb')
+useGLTF.preload('assets/models/BirdEyeViewSign.glb')
 export default BirdEyeViewSign

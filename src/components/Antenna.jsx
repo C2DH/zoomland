@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 
 const Antenna = ({ debug = true, ...props }) => {
-  const { nodes, materials } = useGLTF('../assets/models/Antenna.glb')
+  const { nodes, materials } = useGLTF('assets/models/Antenna.glb')
 
   return (
     <group {...props} dispose={null}>
@@ -34,5 +34,5 @@ const Antenna = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Antenna.glb')
+useGLTF.preload('assets/models/Antenna.glb')
 export default Antenna

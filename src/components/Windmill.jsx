@@ -6,7 +6,7 @@ import { getFrontSideMaterial } from '../utils/common'
 
 const Windmill = ({ debug = true, ...props }) => {
   const fanRotation = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/WindMill.glb')
+  const { nodes, materials } = useGLTF('assets/models/WindMill.glb')
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime()
@@ -84,5 +84,5 @@ const Windmill = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/WindMill.glb')
+useGLTF.preload('assets/models/WindMill.glb')
 export default Windmill

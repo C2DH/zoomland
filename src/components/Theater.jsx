@@ -3,7 +3,7 @@ import { RigidBody } from '@react-three/rapier'
 import { getFrontSideMaterial } from '../utils/common'
 
 const Theater = ({ debug = true, ...props }) => {
-  const { nodes, materials } = useGLTF('../assets/models/Theater.glb')
+  const { nodes, materials } = useGLTF('assets/models/Theater.glb')
 
   return (
     <group {...props} dispose={null}>
@@ -43,5 +43,5 @@ const Theater = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Theater.glb')
+useGLTF.preload('assets/models/Theater.glb')
 export default Theater

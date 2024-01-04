@@ -7,7 +7,7 @@ const colors = ['#da5df9', '#f95dca', '#f95d7c', '#f98c5d', '#f9da5d']
 
 export function Butterfly(props, color = { color }) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Butterfly.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Butterfly.glb')
   const { actions } = useAnimations(animations, group)
 
   const [currentColor, setCurrentColor] = useState(colors[0])
@@ -72,6 +72,6 @@ export function Butterfly(props, color = { color }) {
   )
 }
 
-useGLTF.preload('../assets/models/Butterfly.glb')
+useGLTF.preload('assets/models/Butterfly.glb')
 
 export default Butterfly

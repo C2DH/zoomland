@@ -9,7 +9,7 @@ import { usePlayerStore } from '../store'
 
 const Editor = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Editor.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Editor.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
   console.log(nodes, 'NODES')
@@ -51,5 +51,5 @@ const Editor = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Editor.glb')
+useGLTF.preload('assets/models/Editor.glb')
 export default Editor

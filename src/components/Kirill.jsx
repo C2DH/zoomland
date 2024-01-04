@@ -9,7 +9,7 @@ import { usePlayerStore } from '../store'
 
 const Kirill = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('../assets/models/Kirill.glb')
+  const { nodes, materials, animations } = useGLTF('assets/models/Kirill.glb')
   const { actions } = useAnimations(animations, group)
   const isCollectingQuest = usePlayerStore((state) => state.isCollectingQuest)
 
@@ -50,5 +50,5 @@ const Kirill = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/Kirill.glb')
+useGLTF.preload('assets/models/Kirill.glb')
 export default Kirill

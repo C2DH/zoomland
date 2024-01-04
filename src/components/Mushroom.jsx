@@ -5,7 +5,7 @@ import { Object3D } from 'three'
 
 const Mushrooms = (props) => {
   const count = instances.length
-  const { nodes, materials } = useGLTF('../assets/models/Mushroom.glb')
+  const { nodes, materials } = useGLTF('assets/models/Mushroom.glb')
   const [o3d] = useState(() => new Object3D())
   const items = useRef()
 
@@ -37,5 +37,5 @@ const Mushrooms = (props) => {
     </group>
   )
 }
-useGLTF.preload('../assets/models/Mushroom.glb')
+useGLTF.preload('assets/models/Mushroom.glb')
 export default Mushrooms

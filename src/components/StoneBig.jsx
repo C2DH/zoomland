@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 
 const StoneBig = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
-  const { nodes, materials } = useGLTF('../assets/models/StoneBig.glb')
+  const { nodes, materials } = useGLTF('assets/models/StoneBig.glb')
   return (
     <>
       <RigidBody colliders={'hull'} type={'fixed'} castShadow receiveShadow>
@@ -28,5 +28,5 @@ const StoneBig = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
   )
 }
 
-useGLTF.preload('../assets/models/StoneBig.glb')
+useGLTF.preload('assets/models/StoneBig.glb')
 export default StoneBig

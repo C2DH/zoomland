@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 
 const WindTurbine = (props) => {
   const turbineRotation = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/WindTurbine.glb')
+  const { nodes, materials } = useGLTF('assets/models/WindTurbine.glb')
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime()
@@ -33,5 +33,5 @@ const WindTurbine = (props) => {
   )
 }
 
-useGLTF.preload('../assets/models/WindTurbine.glb')
+useGLTF.preload('assets/models/WindTurbine.glb')
 export default WindTurbine

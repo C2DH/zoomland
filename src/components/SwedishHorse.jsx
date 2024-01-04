@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 
 const SwedishHorse = ({ debug = true, ...props }) => {
-  const { nodes, materials } = useGLTF('../assets/models/SwedishHorse.glb')
+  const { nodes, materials } = useGLTF('assets/models/SwedishHorse.glb')
 
   return (
     <group {...props} dispose={null}>
@@ -23,5 +23,5 @@ const SwedishHorse = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/SwedishHorse.glb')
+useGLTF.preload('assets/models/SwedishHorse.glb')
 export default SwedishHorse

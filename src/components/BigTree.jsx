@@ -5,7 +5,7 @@ import { RigidBody } from '@react-three/rapier'
 
 const BigTree = ({ debug = true, ...props }) => {
   const treeRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/BigTree.glb')
+  const { nodes, materials } = useGLTF('assets/models/BigTree.glb')
   const seed = Math.random() + 0.8
   // Animate the tree
   useFrame((state) => {
@@ -33,5 +33,5 @@ const BigTree = ({ debug = true, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/BigTree.glb')
+useGLTF.preload('assets/models/BigTree.glb')
 export default BigTree

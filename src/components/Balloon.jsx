@@ -29,7 +29,7 @@ const Balloon = ({ yMax = 20, yMin = 0.0, waitingTime = 5000, ...props }) => {
   const baloonTimerRef = useRef()
   // rigidbody reference
   const bodyRef = useRef()
-  const { nodes, materials } = useGLTF('../assets/models/Balloon.glb')
+  const { nodes, materials } = useGLTF('assets/models/Balloon.glb')
 
   const [, api] = useSpring(() => ({
     n: 0,
@@ -284,5 +284,5 @@ const Balloon = ({ yMax = 20, yMin = 0.0, waitingTime = 5000, ...props }) => {
   )
 }
 
-useGLTF.preload('../assets/models/Balloon.glb')
+useGLTF.preload('assets/models/Balloon.glb')
 export default Balloon
