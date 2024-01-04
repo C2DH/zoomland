@@ -14,6 +14,13 @@ run-build:
 	VITE_GIT_REVISION=$(shell git rev-parse --short HEAD) \
 	yarn build
 
+run-build-zoomland:
+	VITE_GIT_TAG=${BUILD_TAG} \
+	VITE_GIT_REMOTE=$(shell git config --get remote.origin.url) \
+	VITE_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
+	VITE_GIT_REVISION=$(shell git rev-parse --short HEAD) \
+	yarn build-zoomland
+
 run-build-netlify:
 	VITE_GIT_TAG=${BUILD_TAG} \
 	VITE_GIT_REMOTE=$(shell git config --get remote.origin.url) \
@@ -24,3 +31,4 @@ run-build-netlify:
 
 run-deploy-netlify:
 	netlify deploy --dir=dist --prod 
+
