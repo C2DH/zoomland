@@ -87,7 +87,9 @@ const Chapters = () => {
             asHtml
             defaultAvatar={
               selectedChapterIdx > -1
-                ? `/assets/cards/${data[selectedChapterIdx].id}-220w.jpg`
+                ? `${import.meta.env.BASE_URL || '/'}assets/cards/${
+                    data[selectedChapterIdx].id
+                  }-220w.jpg`
                 : undefined
             }
             enablePrevious
