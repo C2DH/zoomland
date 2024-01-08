@@ -13,7 +13,7 @@ const from = (i) => ({ x: 0, y: i * -250, opacity: 0 })
 
 const Quest = ({
   quest,
-  defaultAvatar = '/assets/avatars/Hero.jpg',
+  defaultAvatar = 'assets/avatars/Hero.jpg',
   defaultYouLabel = 'You',
   onlyYou = false,
   asHtml = false,

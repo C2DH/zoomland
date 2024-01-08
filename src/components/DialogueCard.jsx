@@ -11,7 +11,7 @@ const DialogueCard = ({
   asHtml = false,
   disablePrevious = false,
   disableNext = false,
-  avatar = '/assets/avatars/Hero.jpg',
+  avatar = 'assets/avatars/Hero.jpg',
   onCompleteLabel = 'Done',
   onClose,
   enableClose = true,
@@ -37,7 +37,10 @@ const DialogueCard = ({
             />
           </div>
         ) : null}
-        <div className="avatar" style={{ backgroundImage: `url(${avatar})` }}></div>
+        <div
+          className="avatar"
+          style={{ backgroundImage: `url(${(import.meta.env.BASE_URL || '/') + avatar})` }}
+        ></div>
         <div className="DialogueCard-body">
           <h4>{characterName}</h4>
           {asHtml ? <div dangerouslySetInnerHTML={{ __html: sentence }}></div> : <p>{sentence}</p>}

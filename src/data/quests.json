@@ -1,7 +1,7 @@
 [
   {
     "characterName": "Florentina Armaselu, co-editor of the Book",
-    "avatar": "/assets/avatars/Florentina.jpg",
+    "avatar": "assets/avatars/Florentina.jpg",
     "id": "FlorentinaArmaselu",
     "chapter": "11-text-fractal-dust-and-informational-granularity",
     "dialogues": {
@@ -34,7 +34,7 @@
   },
   {
     "characterName": "Andreas Fickers, co-editor of the Book",
-    "avatar": "/assets/avatars/Andreas.jpg",
+    "avatar": "assets/avatars/Andreas.jpg",
     "id": "AndreasFickers",
     "chapter": "0-introduction",
     "dialogues": {
@@ -71,7 +71,7 @@
 
   {
     "characterName": "Daniele Guido, tourist guide in chief of Zoomland",
-    "avatar": "/assets/avatars/Daniele.jpg",
+    "avatar": "assets/avatars/Daniele.jpg",
     "id": "Daniele",
     "chapter": "2-capturing-discourse-through-the-digital-lens",
     "dialogues": {
@@ -103,7 +103,7 @@
   },
   {
     "characterName": "Verena Deutsch, publisher of the Book",
-    "avatar": "/assets/avatars/Verena.jpg",
+    "avatar": "assets/avatars/Verena.jpg",
     "id": "VerenaDeutsch",
     "chapter": "3-menocchio-mapped",
     "dialogues": {
@@ -129,7 +129,7 @@
   },
   {
     "characterName": "Kirill Mitsurov, architect of Zoomland",
-    "avatar": "/assets/avatars/Kirill.jpg",
+    "avatar": "assets/avatars/Kirill.jpg",
     "id": "KirillMitsurov",
     "chapter": "16-weather-map",
     "dialogues": {
@@ -163,7 +163,7 @@
   },
   {
     "characterName": "Lars Wieneke, 3D printer of Zoomland",
-    "avatar": "/assets/avatars/Character.jpg",
+    "avatar": "assets/avatars/Character.jpg",
     "id": "LarsWieneke",
     "chapter": "0-introduction",
     "dialogues": {
