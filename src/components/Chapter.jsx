@@ -63,7 +63,11 @@ const Chapter = ({ chapter }) => {
         </button>
       </div>
       <div className="btn-group">
-        <Link to={`/chapters?id=${chapter.id}`} className="text-light">
+        <Link
+          to={`/chapters?id=${chapter.id}`}
+          onClick={doneCollectingChapter}
+          className="text-light"
+        >
           <RoundButton
             // Icon={CloseIcon}
             backgroundColor="var(--rose)"

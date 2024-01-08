@@ -17,6 +17,7 @@ const IntroLogoZoomland = ({
   const timerRef = useRef()
   const [styles, api] = useSpring(() => ({
     opacity: 0,
+    display: 'block',
   }))
   const isLoadingComplete = useQueueStore((state) => state.isLoadingComplete)
   const scene = usePlayerStore((state) => state.scene)
@@ -46,6 +47,12 @@ const IntroLogoZoomland = ({
         api.start({
           opacity: 0,
           delay: 2000,
+          onRest: () => {
+            console.debug(`[IntroLogoZoomland #${id}]`, '@useEffect onRest')
+            api.set({
+              display: 'none',
+            })
+          },
         })
     }, delay)
     return () => {
