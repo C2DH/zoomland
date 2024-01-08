@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import Header from './components/Header'
 import Vignette from './components/Vignette'
 import World from './components/World'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import AppRoutes from './AppRoutes'
 import About from './pages/About'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -16,23 +16,17 @@ import GameControls from './components/GameControls'
 import Credits from './components/Credits'
 import GlitchingBooks from './components/GlitchingBooks'
 import Endings from './components/Endings'
-import RoundButton from './components/RoundButton'
-import MapIcon from './components/Svg/MapIcon'
 import { Gameplay, usePlayerStore } from './store/index.js'
 import { MenuClosed, MenuOpen, useMenuStore } from './store'
 import ChaptersPage from './pages/Chapters'
 import MapPage from './pages/Map'
+import MapButton from './components/MapButton.jsx'
 
 const queryClient = new QueryClient()
 
 function App() {
-  const [active, setActive] = useState(true)
   const setGameControlsStatus = useMenuStore((state) => state.setGameControlsStatus)
   const scene = usePlayerStore.getState().scene
-
-  const deactivateMapBtn = () => {
-    setActive(false)
-  }
 
   useEffect(() => {
     setGameControlsStatus(MenuOpen)
@@ -77,16 +71,7 @@ function App() {
         <IntroLogoZoomland delay={2500} id="introLogoZoomland" hideOnComplete />
       </div>
       <GlitchingBooks />
-      <div className="mapButton fill position-fixed bottom-0">
-        <Link to="/map">
-          <RoundButton
-            onClick={deactivateMapBtn}
-            active={active}
-            Icon={MapIcon}
-            margin={isMobile ? '1rem' : '2rem'}
-          ></RoundButton>
-        </Link>
-      </div>
+      <MapButton />
       <SideMenu />
       <Header isMobile={isMobile}></Header>
       <Credits />
