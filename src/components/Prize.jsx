@@ -80,14 +80,10 @@ const Prize = ({
         scale: scaleMax,
         y: yMax,
         onRest: () => {
-          console.debug('[Prize] @collisionEnterHandler onRest', id)
+          console.debug('[Prize] @collisionEnterHandler onRest', id, colliderRef.current)
+          colliderRef.current.setEnabled(false)
           api.start({
             scale: 0,
-          })
-          colliderRef.current.setNextKinematicTranslation({
-            x: position[0],
-            y: position[1] - 100,
-            z: position[2],
           })
         },
       })
