@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 import { getFrontSideMaterial } from '../utils/common'
 
-const House = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
+const House = (props) => {
   const { nodes, materials } = useGLTF('assets/models/House.glb')
 
   return (

@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
 import { getFrontSideMaterial } from '../utils/common'
 
-const Lighttower = ({ debug = true, ...props }) => {
+const Lighttower = (props) => {
   const { nodes, materials } = useGLTF('assets/models/Lighttower.glb')
   return (
     <group {...props} dispose={null}>

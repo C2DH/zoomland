@@ -17,7 +17,6 @@ import {
   useWorldStore,
 } from '../store'
 import { updateCamera } from '../utils/camera'
-import { useQueueStore } from '../store/preload'
 import useSafeFrame from '../hooks'
 
 const JumpForce = 0.9
