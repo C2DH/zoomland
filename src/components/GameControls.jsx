@@ -32,7 +32,7 @@ const GameControls = () => {
     if (scene === Gameplay && !hasSeenGameControls) {
       console.debug('[GameControls] show')
 
-      hasSeenGameControlsTimerRef.current = setTimeout(() => show(), 4500)
+      hasSeenGameControlsTimerRef.current = setTimeout(() => show(), 5000)
     }
     return () => {
       clearTimeout(hasSeenGameControlsTimerRef.current)
