@@ -29,6 +29,11 @@ const HarbourWallWest = {
   rotation: [0, -0.1, 0],
   size: [0.1, 7, 10],
 }
+const HarbourBottom = {
+  position: [94, 0.1, -14.9],
+  rotation: [0, 0, 1.58],
+  size: [0.1, 9, 7],
+}
 /**
  * Create a lot of very simple rigidbodies to be used as
  * boundaries for the game.
@@ -41,6 +46,7 @@ const Boundaries = ({ debug = false }) => {
     PlatformWallEast,
     HarbourWallEast,
     HarbourWallWest,
+    HarbourBottom,
   ].map((b, i) => (
     <RigidBody
       key={i}
