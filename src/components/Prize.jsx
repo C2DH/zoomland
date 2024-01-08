@@ -13,6 +13,7 @@ import { RigidBody } from '@react-three/rapier'
 import { useSpring, config } from '@react-spring/web'
 import { usePlayerStore } from '../store'
 import PropTypes from 'prop-types'
+import { useShallow } from 'zustand/react/shallow'
 
 const ComponentsByName = {
   [ViewTypeGround]: GroundViewSign,
@@ -39,7 +40,9 @@ const Prize = ({
 }) => {
   const prizeRef = useRef(null)
   const colliderRef = useRef(null)
-  const isCollected = useRef(usePlayerStore.getState().collectedChapters.some((d) => d.id === id))
+  const isCollected = usePlayerStore(
+    useShallow((state) => state.collectedChapters.some((d) => d.id === id)),
+  )
 
   const [, api] = useSpring(() => ({
     scale: scaleMin,
@@ -76,12 +79,14 @@ const Prize = ({
         e.rigidBodyObject.position.z - position[2],
       )
       collectChapter({ id: id })
+      colliderRef.current.setEnabled(false)
+
       api.start({
         scale: scaleMax,
         y: yMax,
         onRest: () => {
           console.debug('[Prize] @collisionEnterHandler onRest', id, colliderRef.current)
-          colliderRef.current.setEnabled(false)
+
           api.start({
             scale: 0,
           })
@@ -94,26 +99,24 @@ const Prize = ({
       console.log('[Prize] collisionExitHandler', e.rigidBodyObject.name)
       // doneCollectingChapter(chapter)
       api.start({
-        scale: isCollected.current ? 0 : scaleMin,
+        scale: isCollected ? 0 : scaleMin,
         y: yMin,
       })
     }
   }
 
-  useEffect(
-    () =>
-      usePlayerStore.subscribe((state) => {
-        isCollected.current = state.collectedChapters.some((d) => d.id === id)
-        if (isCollected.current) {
-          api.start({
-            scale: 0,
-          })
-        }
-      }),
-    [],
-  )
-
-  if (isCollected.current) return null
+  useEffect(() => {
+    console.debug('[Prize] @useEffect', id, isCollected)
+    if (isCollected) {
+      api.start({
+        scale: 0,
+      })
+    } else {
+      api.start({
+        scale: scaleMin,
+      })
+    }
+  }, [isCollected])
 
   if (!color) {
     console.error(`[Prize] color ${color} not found ${id}`)
