@@ -75,6 +75,12 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+.text-light {
+  color: var(--pale-yellow) !important;
+}
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
 a:hover {
   color: #535bf2;
 }
@@ -87,15 +93,15 @@ body {
   min-height: 100vh;
   overflow: hidden;
   -moz-user-select: none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
 
-   /*
+  /*
      Introduced in Internet Explorer 10.
      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
    */
-   -ms-user-select: none;
-   user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 h1 {

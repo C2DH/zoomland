@@ -20,9 +20,9 @@ import RoundButton from './components/RoundButton'
 import MapIcon from './components/Svg/MapIcon'
 import { Gameplay, usePlayerStore } from './store/index.js'
 import { MenuClosed, MenuOpen, useMenuStore } from './store'
+import ChaptersPage from './pages/Chapters'
+import MapPage from './pages/Map'
 
-const MapPage = React.lazy(() => import('./pages/Map'))
-const ChaptersPage = React.lazy(() => import('./pages/Chapters'))
 const queryClient = new QueryClient()
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div
-        className="Lottie-animation fade-out"
+        className="Lottie-animation"
         style={{
           zIndex: '7',
           display: 'flex',
@@ -74,7 +74,7 @@ function App() {
           position: 'relative',
         }}
       >
-        <IntroLogoZoomland delay={3000} id="introLogoZoomland" />
+        <IntroLogoZoomland delay={2500} id="introLogoZoomland" hideOnComplete />
       </div>
       <GlitchingBooks />
       <div className="mapButton fill position-fixed bottom-0">
@@ -93,26 +93,12 @@ function App() {
       <Vignette></Vignette>
       <SkipIntro />
       <Endings />
-      {!isMobile ? <GameControls />: null}
+      {!isMobile ? <GameControls /> : null}
       <World isMobile={isMobile} width={window.innerWidth} height={window.innerHeight} />
       <AppRoutes>
         <Route path="/about" element={<About />} />
-        <Route
-          path="/map"
-          element={
-            <Suspense>
-              <MapPage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/chapters"
-          element={
-            <Suspense fallback={null}>
-              <ChaptersPage />
-            </Suspense>
-          }
-        />
+        <Route path="/map" element={<MapPage />} />
+        <Route path="/chapters" element={<ChaptersPage />} />
         <Route path="*" element={<></>} />
       </AppRoutes>
     </QueryClientProvider>

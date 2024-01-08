@@ -44,6 +44,10 @@
   font-size: var(--vignette-font-size);
 }
 
+.Vignette_subs .btn-link:hover {
+  border-color: transparent !important;
+}
+
 @media screen and (max-width: 768px) {
   .Vignette_subs {
     width: 90%;

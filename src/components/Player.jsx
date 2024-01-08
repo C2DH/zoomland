@@ -30,7 +30,6 @@ let internalDebounceTimer = null
 
 const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPosition }) => {
   const rigidbody = useRef()
-  const platformRef = useRef()
   const isOnFloor = useRef(true)
   const isOnFloorTimer = useRef(0)
   const character = useRef()
@@ -89,24 +88,6 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
     }
     // link radius
     return useWorldStore.subscribe((state) => (cameraOffsetRef.current = state.cameraOffset))
-  }, [])
-
-  useEffect(() => {
-    return useQueueStore.subscribe((state) => {
-      console.debug(
-        '[Player] @useEffect - useQueueStore.subscribe',
-        state.loaded,
-        state.isLoadingComplete,
-      )
-      platformRef.current.setTranslation(
-        new Vector3([
-          initialPlayerPosition[0],
-          initialPlayerPosition[1] + 10,
-          initialPlayerPosition[2],
-        ]),
-        true,
-      )
-    })
   }, [])
 
   const movePlayerWithJoystick = (state, delta, shouldStayStill, linvel) => {
@@ -258,21 +239,6 @@ const Player = ({ isMobile = false, scale = 0.6, position = DefaultPlayerPositio
 
   return (
     <>
-      <RigidBody
-        ref={platformRef}
-        type="fixed"
-        colliders={'cuboid'}
-        position={[
-          initialPlayerPosition[0],
-          initialPlayerPosition[1] + 0.5,
-          initialPlayerPosition[2],
-        ]}
-      >
-        <mesh>
-          <boxGeometry args={[5, 0.5, 5]} />
-          <meshStandardMaterial depthWrite={false} color={'red'} transparent={true} opacity={0} />
-        </mesh>
-      </RigidBody>
       <RigidBody
         ref={rigidbody}
         restitution={0}

@@ -52,29 +52,25 @@ const Chapter = ({ chapter }) => {
       </animated.div>
       <span style={{ color: 'var(--pale-yellow)' }}>Chapter {data?.n}</span>
       <h3 style={{ color: 'var(--pale-yellow)' }}>{data?.title}</h3>
-      <p>
-        {data?.abstract}
-        <br />
-        <Link
-          to={`/chapters?id=${chapter.id}`}
-          style={{
-            color: 'var(--pale-yellow)',
-            textDecoration: 'underline',
-            pointerEvents: 'auto',
-          }}
-        >
-          See all collected chapters
-        </Link>
-      </p>
+      <p>{data?.abstract}</p>
 
-      <div className="btn-group">
-        <RoundButton
-          // Icon={CloseIcon}
-          backgroundColor="var(--rose)"
-          color={'var(--pale-yellow)'}
+      <div className="mb-2">
+        <button
           onClick={doneCollectingChapter}
-          text={'Nice! One less to go'}
-        />
+          className="btn btn-transparent btn-link text-light pointer-events-auto"
+        >
+          Nice! One less to go
+        </button>
+      </div>
+      <div className="btn-group">
+        <Link to={`/chapters?id=${chapter.id}`} className="text-light">
+          <RoundButton
+            // Icon={CloseIcon}
+            backgroundColor="var(--rose)"
+            color={'var(--pale-yellow)'}
+            text={'Read the chapter!'}
+          />
+        </Link>
       </div>
     </>
   )
