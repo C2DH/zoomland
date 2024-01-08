@@ -7,14 +7,6 @@ const House = (props, transparent = true, geometryPosition = [0, 0, 0]) => {
 
   return (
     <RigidBody colliders={'hull'} type={'fixed'}>
-      <mesh position={geometryPosition}>
-        <cylinderGeometry />
-        <meshStandardMaterial
-          color="green"
-          transparent={transparent}
-          opacity={transparent ? 0 : 0.7}
-        />
-      </mesh>
       <group {...props} dispose={null}>
         <mesh
           castShadow

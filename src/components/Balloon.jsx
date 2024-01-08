@@ -225,35 +225,6 @@ const Balloon = ({ yMax = 20, yMin = 0.0, waitingTime = 5000, ...props }) => {
         </mesh>
       </RigidBody>
 
-      {/* <Suspense fallback={null}>
-        <group {...props} dispose={null}>
-          <Text
-            position={[1, 0.5, 0]}
-            ref={textRef}
-            scale={[0.1, 0.1, 0.1]}
-            color="black" // default
-            anchorX="center" // default
-            anchorY="middle" // default
-          >
-            {CheckOutText}
-          </Text>
-        </group>
-      </Suspense> */}
-      {/* platform  */}
-      {/* <mesh
-        position={[props.position[0], props.position[1] - 0.03, props.position[2]]}
-        receiveShadow
-        castShadow
-      >
-        <cylinderGeometry receiveShadow args={[1.5, 0.5, 0.1, 32]} />
-        <meshBasicMaterial receiveShadow>
-          <GradientTexture
-            stops={[0, 1]} // As many stops as you want
-            colors={['aquamarine', 'hotpink']} // Colors need to match the number of stops
-            size={1024} // Size is optional, default = 1024
-          />
-        </meshBasicMaterial>
-      </mesh> */}
       <group {...props} dispose={null} ref={balloonRef}>
         <mesh
           castShadow

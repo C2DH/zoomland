@@ -7,35 +7,31 @@ const Lighttower = ({ debug = true, ...props }) => {
   return (
     <group {...props} dispose={null}>
       <RigidBody type={'fixed'} colliders={'hull'}>
-        <mesh position={[0, 0, 0]} rotation={[0, 0, 0]}>
-          <cylinderGeometry args={[0.3, 0.7, 5, 8]} />
-          <meshStandardMaterial color="green" transparent={!debug} opacity={debug ? 1 : 0} />
-        </mesh>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Lighthouse.geometry}
+          material={getFrontSideMaterial(materials.Walls)}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Lighthouse_1.geometry}
+          material={getFrontSideMaterial(materials.Red)}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Lighthouse_2.geometry}
+          material={materials.Blue}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Lighthouse_3.geometry}
+          material={getFrontSideMaterial(materials.Base)}
+        />
       </RigidBody>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Lighthouse.geometry}
-        material={getFrontSideMaterial(materials.Walls)}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Lighthouse_1.geometry}
-        material={getFrontSideMaterial(materials.Red)}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Lighthouse_2.geometry}
-        material={materials.Blue}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Lighthouse_3.geometry}
-        material={getFrontSideMaterial(materials.Base)}
-      />
     </group>
   )
 }
