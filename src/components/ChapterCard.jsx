@@ -118,7 +118,12 @@ const ChapterCard = ({ chapter, idx = -1, onFlipped, notFound = false }) => {
           perspective: '600px',
         }}
       >
-        {notFound && <img src="/assets/cards/not-found-720w.jpg" className="ChapterCard_cover" />}
+        {notFound && (
+          <img
+            src={`${import.meta.env.BASE_URL || '/'}assets/cards/not-found-720w.jpg`}
+            className="ChapterCard_cover"
+          />
+        )}
         {hasCover && !notFound && (
           <img srcSet={chapter.card.srcset} alt={chapter.card.alt} className="ChapterCard_cover" />
         )}

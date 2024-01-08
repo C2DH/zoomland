@@ -19,8 +19,8 @@
     ],
     "excerpt": "Once upon a time...",
     "card": {
-      "srcset": "/assets/cards/0-introduction-720w.jpg",
-      "src": "/assets/cards/0-introduction-720w.jpg"
+      "srcset": "assets/cards/0-introduction-720w.jpg",
+      "src": "assets/cards/0-introduction-720w.jpg"
     }
   },
   {
@@ -31,8 +31,8 @@
     "n": 1,
     "viewType": "birdEye",
     "card": {
-      "srcset": "/assets/cards/1-adventure-in-zoomland-720w.jpg",
-      "src": "/assets/cards/1-adventure-in-zoomland-720w.jpg"
+      "srcset": "assets/cards/1-adventure-in-zoomland-720w.jpg",
+      "src": "assets/cards/1-adventure-in-zoomland-720w.jpg"
     },
     "authors": ["Alex Butterworth"],
     "category": "history",
@@ -75,8 +75,8 @@
       "democracy"
     ],
     "card": {
-      "srcset": "/assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg",
-      "src": "/assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg"
+      "srcset": "assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg",
+      "src": "assets/cards/2-capturing-discourse-through-the-digital-lens-720w.jpg"
     },
     "incipit": "Capturing Discourse through the Digital Lens",
     "sentences": [
@@ -103,8 +103,8 @@
     "authors": ["Amanda Madden"],
     "keywords": ["microhistory", "digital history", "spatial history", "GIS"],
     "card": {
-      "srcset": "/assets/cards/3-menocchio-mapped-720w.jpg",
-      "src": "/assets/cards/3-menocchio-mapped-720w.jpg"
+      "srcset": "assets/cards/3-menocchio-mapped-720w.jpg",
+      "src": "assets/cards/3-menocchio-mapped-720w.jpg"
     },
     "incipit": "Menocchio Mapped",
     "sentences": [
@@ -132,8 +132,8 @@
       "community networks"
     ],
     "card": {
-      "srcset": "/assets/cards/4-scaling-digital-history-720w.jpg",
-      "src": "/assets/cards/4-scaling-digital-history-720w.jpg"
+      "srcset": "assets/cards/4-scaling-digital-history-720w.jpg",
+      "src": "assets/cards/4-scaling-digital-history-720w.jpg"
     },
     "incipit": "Scaling Digital History",
     "sentences": [
@@ -164,8 +164,8 @@
     ],
     "excerpt": "Historicising and Intertwining Scales and Temporalities of Online Virality",
     "card": {
-      "srcset": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg",
-      "src": "/assets/cards/5-keep-calm-and-stay-focused-720w.jpg"
+      "srcset": "assets/cards/5-keep-calm-and-stay-focused-720w.jpg",
+      "src": "assets/cards/5-keep-calm-and-stay-focused-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-006/html"
   },
@@ -196,8 +196,8 @@
     ],
     "excerpt": "A Digital Approach to Reframing Transnational TV series Adaptations",
     "card": {
-      "srcset": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg",
-      "src": "/assets/cards/6-zooming-in-on-shot-scales-720w.jpg"
+      "srcset": "assets/cards/6-zooming-in-on-shot-scales-720w.jpg",
+      "src": "assets/cards/6-zooming-in-on-shot-scales-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-007/html"
   },
@@ -227,8 +227,8 @@
     ],
     "excerpt": "Zoom-in, Zoom-out, and Zoom-zero Modes to Understand Religious Sculptures",
     "card": {
-      "srcset": "/assets/cards/7-adapting-the-optics-720w.jpg",
-      "src": "/assets/cards/7-adapting-the-optics-720w.jpg"
+      "srcset": "assets/cards/7-adapting-the-optics-720w.jpg",
+      "src": "assets/cards/7-adapting-the-optics-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-008/html"
   },
@@ -260,8 +260,8 @@
     ],
     "excerpt": "Listening to the Sonic Diversity in 5000 hours of Swedish Radio with Computers and Ears",
     "card": {
-      "srcset": "/assets/cards/8-scale-exercises-720w.jpg",
-      "src": "/assets/cards/8-scale-exercises-720w.jpg"
+      "srcset": "assets/cards/8-scale-exercises-720w.jpg",
+      "src": "assets/cards/8-scale-exercises-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-009/html"
   },
@@ -292,8 +292,8 @@
     ],
     "excerpt": "Iconicity, Monstrosity, and #GraphPoem",
     "card": {
-      "srcset": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg",
-      "src": "/assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg"
+      "srcset": "assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg",
+      "src": "assets/cards/9-complexity-and-analytical-creative-approaches-at-scale-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-010/html"
   },
@@ -322,8 +322,8 @@
     ],
     "excerpt": "Martin Mueller's Concept of Scalable Reading in Theory and Practice",
     "card": {
-      "srcset": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg",
-      "src": "/assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg"
+      "srcset": "assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg",
+      "src": "assets/cards/10-the-scales-of-computational-literary-studies-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-011/html"
   },
@@ -351,8 +351,8 @@
     ],
     "excerpt": "A Study of Scale",
     "card": {
-      "srcset": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg",
-      "src": "/assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg"
+      "srcset": "assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg",
+      "src": "assets/cards/11-text-fractal-dust-and-informational-granularity-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-012/html"
   },
@@ -377,8 +377,8 @@
     ],
     "excerpt": "Conceiving a Long-form Digital Argument for Data-driven Microhistory",
     "card": {
-      "srcset": "/assets/cards/12-scale-and-narrative-720w.jpg",
-      "src": "/assets/cards/12-scale-and-narrative-720w.jpg"
+      "srcset": "assets/cards/12-scale-and-narrative-720w.jpg",
+      "src": "assets/cards/12-scale-and-narrative-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-013/html"
   },
@@ -401,8 +401,8 @@
     ],
     "excerpt": "A Comparison of Open Source Network Analysis Tools",
     "card": {
-      "srcset": "/assets/cards/13-meaningful-aesthetics-720w.jpg",
-      "src": "/assets/cards/13-meaningful-aesthetics-720w.jpg"
+      "srcset": "assets/cards/13-meaningful-aesthetics-720w.jpg",
+      "src": "assets/cards/13-meaningful-aesthetics-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-014/html"
   },
@@ -431,8 +431,8 @@
     ],
     "excerpt": "Defining Level and Scale as Socio-technical Operators for Mining Digital Traces",
     "card": {
-      "srcset": "/assets/cards/14-defining-level-and-scale-720w.jpg",
-      "src": "/assets/cards/14-defining-level-and-scale-720w.jpg"
+      "srcset": "assets/cards/14-defining-level-and-scale-720w.jpg",
+      "src": "assets/cards/14-defining-level-and-scale-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-015/html"
   },
@@ -465,8 +465,8 @@
     ],
     "excerpt": "Considerations of Scale in Old Maps from Cartographic Perspectives on Generalisation",
     "card": {
-      "srcset": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg",
-      "src": "/assets/cards/15-zooming-is-not-just-scaling-720w.jpg"
+      "srcset": "assets/cards/15-zooming-is-not-just-scaling-720w.jpg",
+      "src": "assets/cards/15-zooming-is-not-just-scaling-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-016/html"
   },
@@ -497,8 +497,8 @@
     ],
     "excerpt": "A Diachronic Visual Model for Controversy Mapping",
     "card": {
-      "srcset": "/assets/cards/16-weather-map-720w.jpg",
-      "src": "/assets/cards/16-weather-map-720w.jpg"
+      "srcset": "assets/cards/16-weather-map-720w.jpg",
+      "src": "assets/cards/16-weather-map-720w.jpg"
     },
     "url": "https://www.degruyter.com/document/doi/10.1515/9783111317779-017/html"
   }

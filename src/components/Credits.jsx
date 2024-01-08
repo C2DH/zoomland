@@ -197,7 +197,7 @@ const Credits = ({ duration = 20000 }) => {
 
         <img
           className="mb-5"
-          src="./assets/img/Zoomland_sketch.jpg"
+          src={`${import.meta.env.BASE_URL || '/'}assets/img/Zoomland_sketch.jpg`}
           alt="Zoomland - island drawing"
           width="100%"
         />
@@ -231,7 +231,12 @@ const Credits = ({ duration = 20000 }) => {
           <p>Wojciech Dobry</p>
           <span>ThreeJs Guru</span>
         </div>
-        <img className="mb-5" src="./assets/img/three_graces.jpg" alt="three Graces" width="100%" />
+        <img
+          className="mb-5"
+          src={`${import.meta.env.BASE_URL || '/'}assets/img/three_graces.jpg`}
+          alt="three Graces"
+          width="100%"
+        />
         <p className="text-center mb-5 mt-5">
           <br />
           Icons made by{' '}
