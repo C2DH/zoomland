@@ -45,7 +45,7 @@ const IntroLogoZoomland = ({
       hideOnComplete &&
         api.start({
           opacity: 0,
-          delay: 1000,
+          delay: 2000,
         })
     }, delay)
     return () => {
