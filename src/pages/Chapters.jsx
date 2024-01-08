@@ -37,7 +37,13 @@ const Chapters = () => {
     console.debug('[Chapters] onFlipped', flipped)
     if (notFound || flipped) {
       setSelectedChapterIdx(idx)
-      setSentences(wrapSentences(data[idx].sentences, data[idx].url, data[idx].title))
+      if (notFound) {
+        setSentences([
+          `"${data[idx].title}" is still missing...<br/><br/>(hint: the related object of the chapter is somewhere on this island).`,
+        ])
+      } else {
+        setSentences(wrapSentences(data[idx].sentences, data[idx].url, data[idx].title))
+      }
     } else {
       setSelectedChapterIdx(-1)
       setSentences([])
