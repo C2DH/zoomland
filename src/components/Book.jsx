@@ -34,7 +34,10 @@ const Book = ({ className = '', disabled = false, onClick }) => {
           <Row className="d-flex align-items-center">
             <Col xs={12} md={6} lg={5} xl={5} xxl={5} className="mb-0">
               <div className="img-wrapper">
-                <img src="/assets/img/Book.jpg" alt="Book cover" />
+                <img
+                  src={`${import.meta.env.BASE_URL || '/'}assets/img/Book.jpg`}
+                  alt="Book cover"
+                />
               </div>
             </Col>
             <Col className="Book_content_right" xs={12} md={6} lg={7} xl={7} xxl={7}>
