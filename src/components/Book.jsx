@@ -13,7 +13,7 @@ const Book = ({ className = '', disabled = false, onClick }) => {
       // style={{ opacity: scene === SceneFakeBook ? '1' : '0' }}
       className={`Book ${className}`}
     >
-      <main className="d-flex flex-column align-items-stretch" onClick={isMobile ? onClick : null}>
+      <main className="d-flex flex-column align-items-stretch" onClick={onClick}>
         <header>
           <LogoZoomland color="var(--pale-orange)" />
           <nav>
@@ -43,7 +43,7 @@ const Book = ({ className = '', disabled = false, onClick }) => {
             <Col className="Book_content_right" xs={12} md={6} lg={7} xl={7} xxl={7}>
               <div className="mb-3">{isMobile ? null : <LogoZoomland size="120" />}</div>
               <h3>Exploring scale in digital history and humanities</h3>
-              <p className="mb-4">Edited by Florentina Armaselu and Andreas Flickers</p>
+              <p className="mb-4">Edited by Florentina Armaselu and Andreas Fickers</p>
               <RoundButton text="Read the book" backgroundColor="var(--rose)" onClick={onClick} />
             </Col>
           </Row>
