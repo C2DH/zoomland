@@ -108,10 +108,12 @@ const Prize = ({
   useEffect(() => {
     console.debug('[Prize] @useEffect', id, isCollected)
     if (isCollected) {
+      colliderRef.current.setEnabled(false)
       api.start({
         scale: 0,
       })
     } else {
+      colliderRef.current.setEnabled(true)
       api.start({
         scale: scaleMin,
       })
