@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { useGLTF, MeshDistortMaterial } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import instances from '../data/lawn'
 import { Object3D, DoubleSide } from 'three'
 import { useFrame } from '@react-three/fiber'
@@ -27,13 +27,7 @@ const Grass = (props) => {
   return (
     <group {...props} dispose={null}>
       <instancedMesh frustumCulled={false} ref={items} args={[nodes.Grass.geometry, null, count]}>
-        <MeshDistortMaterial
-          side={DoubleSide}
-          color="green"
-          distort={0.5}
-          speed={1}
-          factor={10}
-        ></MeshDistortMaterial>
+        <meshBasicMaterial side={DoubleSide} color="green" />
       </instancedMesh>
     </group>
   )
