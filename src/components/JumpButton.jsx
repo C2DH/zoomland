@@ -18,16 +18,17 @@ const JumpButton = ({ onClick, className = '' }) => {
   }
 
   return (
-    <div
+    <button
       className={`JumpButton ${className}`}
       onTouchEnd={handleTouchEnd}
       onClick={handleClick}
+      onTouchStart={handleClick}
       onKeyDown={() => {}}
-      tabIndex={0}
+      role="button"
     >
       <span>JUMP</span>
       <a.div style={style} className="JumpButton__flash" />
-    </div>
+    </button>
   )
 }
 
