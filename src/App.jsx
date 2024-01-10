@@ -71,7 +71,7 @@ function App() {
         <IntroLogoZoomland delay={2500} id="introLogoZoomland" hideOnComplete />
       </div>
       <GlitchingBooks />
-      <MapButton />
+      <MapButton isMobile={isMobile} />
       <SideMenu />
       <Header isMobile={isMobile}></Header>
       <Credits />

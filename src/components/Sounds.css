@@ -1,19 +1,28 @@
 .Sounds {
   position: fixed;
+  bottom: 2rem;
   z-index: var(--z-index-toggle-sounds);
-  left: calc(50% - 4.5rem);
+  right: 50%;
+  margin-right: 0.5rem;
 }
 
-.mapButton {
-  right: calc(50% - 4.5rem);
+.MapButton {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  margin-left: 0.5rem;
   z-index: var(--z-index-toggle-sounds);
 }
 
-@media (orientation: landscape) {
+@media (min-width: 768px) {
   .Sounds {
-    left: 0;
+    bottom: 2rem;
+    right: auto;
+    left: 2rem;
   }
-  .mapButton {
-    right: 0;
+  .MapButton {
+    bottom: 2rem;
+    right: 2rem;
+    left: auto;
   }
 }
