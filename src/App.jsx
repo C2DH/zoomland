@@ -21,6 +21,8 @@ import { MenuClosed, MenuOpen, useMenuStore } from './store'
 import ChaptersPage from './pages/Chapters'
 import MapPage from './pages/Map'
 import MapButton from './components/MapButton.jsx'
+import AnalyticsProvider from './components/AnaliyticsProvider.jsx'
+import MatomoTracker from './components/MatomoTracker.jsx'
 
 const queryClient = new QueryClient()
 
@@ -70,6 +72,9 @@ function App() {
       >
         <IntroLogoZoomland delay={2500} id="introLogoZoomland" hideOnComplete />
       </div>
+      <AnalyticsProvider>
+        <MatomoTracker />
+      </AnalyticsProvider>
       <GlitchingBooks />
       <MapButton isMobile={isMobile} />
       <SideMenu />
