@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom'
 import { useMatomo } from '@jonkoops/matomo-tracker-react'
 import { usePlayerStore } from '../store'
 
+const BaseUrl = String(import.meta.env.BASE_URL || '/').replace(/\/$/, '') // /'zoomland' or ''
+
 const MatomoTracker = () => {
   const { trackPageView } = useMatomo()
   const { pathname, search } = useLocation()
@@ -11,7 +13,7 @@ const MatomoTracker = () => {
   const latestCollectedQuest = usePlayerStore((state) => state.latestCollectedQuest)
 
   useEffect(() => {
-    const url = [pathname, search].join('')
+    const url = [BaseUrl, pathname, search].join('')
     console.debug('[MatomoTracker] track pageview:', url)
     trackPageView({
       href: url,
@@ -19,7 +21,7 @@ const MatomoTracker = () => {
   }, [pathname, search])
 
   useEffect(() => {
-    const href = `/scene/${scene}`
+    const href = `${BaseUrl}/scene/${scene}`
     // this is the page indeed.
     console.debug('[MatomoTracker] track scene:', href)
     trackPageView({
@@ -31,7 +33,7 @@ const MatomoTracker = () => {
     if (!currentCollectedChapter) {
       return
     }
-    const href = `/chapter/${currentCollectedChapter.id}`
+    const href = `${BaseUrl}/chapter/${currentCollectedChapter.id}`
     console.debug('[MatomoTracker] track currentCollectedChapter:', href)
     trackPageView({
       href,
@@ -43,8 +45,8 @@ const MatomoTracker = () => {
       return
     }
     const href = Array.isArray(latestCollectedQuest.meetings)
-      ? `/quest/${latestCollectedQuest.id}/${latestCollectedQuest.meetings.length}`
-      : `/quest/${latestCollectedQuest.id}`
+      ? `${BaseUrl}/quest/${latestCollectedQuest.id}/${latestCollectedQuest.meetings.length}`
+      : `${BaseUrl}/quest/${latestCollectedQuest.id}`
     console.debug('[MatomoTracker] track latestCollectedQuest:', href)
     trackPageView({
       href,

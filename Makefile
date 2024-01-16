@@ -19,6 +19,7 @@ run-build-zoomland:
 	VITE_GIT_REMOTE=$(shell git config --get remote.origin.url) \
 	VITE_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
 	VITE_GIT_REVISION=$(shell git rev-parse --short HEAD) \
+	rm -rf dist/* && \
 	yarn build-zoomland
 
 run-build-netlify:
