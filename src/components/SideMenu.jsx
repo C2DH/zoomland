@@ -103,18 +103,18 @@ const SideMenu = ({ debug = false }) => {
               <Link to="/chapters">Chapters</Link>
             </Nav.Item>
             <div className="py-2"></div>
-  
-              <Nav.Item>
-                <button
-                  className="btn btn-link"
-                  onClick={() => {
-                    setHasSeenGameControls(false)
-                    set(MenuClosed)
-                  }}
-                >
-                  Game Controls
-                </button>
-              </Nav.Item>
+
+            <Nav.Item>
+              <button
+                className="btn btn-link"
+                onClick={() => {
+                  setHasSeenGameControls(false)
+                  set(MenuClosed)
+                }}
+              >
+                Game Controls
+              </button>
+            </Nav.Item>
             <Nav.Item>
               <Link to="/about">About</Link>
             </Nav.Item>
@@ -145,7 +145,9 @@ const SideMenu = ({ debug = false }) => {
           </Nav>
         </div>
         <div className="menu-footer">
-          <span className={isMobile ? null : 'mb-1'}>Legal notice</span>
+          <Link to="https://www.c2dh.uni.lu/legal-notice" target="_blank">
+            <span className={isMobile ? null : 'mb-1'}>Legal notice</span>
+          </Link>
           <div className="footer-logos">
             <LogoUni />
             <LogoGruyter />
